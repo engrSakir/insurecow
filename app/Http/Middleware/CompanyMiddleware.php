@@ -16,21 +16,36 @@ class CompanyMiddleware
      */
     public function handle($request, Closure $next)
     {
-         if(Auth::user()->role_1==='f'){
+         if(Auth::user()->role_1=='c'){
 
-            return "hello";
+            return $next($request);
+
         
 
         }
-        elseif(!Auth::user()->role_1==='c'){
-            return "hi";
+        elseif(Auth::user()->role_1=='f'){
+            return $next($request);
+
         }
-        elseif(!Auth::user()->role_1==='b'){
-            return "hi";
+        elseif(Auth::user()->role_1=='b'){
+            return $next($request);
+
+        }
+        elseif(Auth::user()->role_1=='m'){
+            return $next($request);
+
+        }
+        elseif(Auth::user()->role_1=='s'){
+            return $next($request);
+
+        }
+        elseif(Auth::user()->role_2=='fa'){
+            return $next($request);
+
         }
         
         else {
-        return $next($request);
+            abort(403);
         }
         
     }

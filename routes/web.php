@@ -17,19 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 // --------------------------- farmer ----------------------
+Auth::routes();
 
+Route::middleware('company')->group(function(){
 
-Route::middleware('auth')->group(function(){
+    
 
+    Route::get('/home', 'HomeController@index')->name('home');
 
 
 });
