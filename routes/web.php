@@ -25,12 +25,14 @@ Route::get('/', function () {
 
 // --------------------------- farmer ----------------------
 Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::middleware('company')->group(function(){
 
     
 
-    Route::get('/home', 'HomeController@index')->name('home');
+    // Route::get('/home', 'HomeController@index')->name('home');
 
 
 });

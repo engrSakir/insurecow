@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::id()){
-            if(Auth::user()->role_1==='c'){
+            if(Auth::user()->role_1=='c'){
                 // return redirect()->route('home');
                 // return view('home');
                 return "company";
@@ -64,7 +64,7 @@ class HomeController extends Controller
                 // return redirect('/home');
             }
             else {
-                abort(404);
+                abort(403);
             }
             
     }
