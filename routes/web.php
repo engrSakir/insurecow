@@ -35,5 +35,14 @@ Route::middleware('company')->group(function(){
 
 });
 
+Route::middleware('farmer')->group(function(){
+
+    
+
+    // Route::get('/home', 'HomeController@index')->name('home');
+
+
+});
+
 
 // --------------------------- farmer ----------------------

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Closure;
 
-class CompanyMiddleware
+class FarmerMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,16 +16,12 @@ class CompanyMiddleware
      */
     public function handle($request, Closure $next)
     {
-         if(Auth::user()->role_1=='c'){
+        if(Auth::user()->role_1=='f'){
 
             return $next($request);
 
-        
-
         }
-        
-        
-        else {
+        else{
             abort(403);
         }
         
