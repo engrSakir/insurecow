@@ -48,3 +48,8 @@ Route::middleware('farmer')->group(function(){
 
 
 // --------------------------- farmer ----------------------
+
+
+Route::group(['prefix' => 'company'], function(){
+    Route::get('home', 'CompanyController@index')->name('company.index');
+});
