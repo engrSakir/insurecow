@@ -27,33 +27,39 @@ class HomeController extends Controller
         if(Auth::id()){
             if(Auth::user()->role_1==='c'){
                 // return redirect()->route('home');
-                return view('home');
+                // return view('home');
+                return "company";
             }
             elseif(Auth::user()->role_1=='f')
             {
-                return view('/home');
+                // return view('/home');
+                return "farmer";
             }
             elseif(Auth::user()->role_1=='b')
             {
-                return view('/home');
+                // return view('/home');
+                return "bank";
 
                 // return redirect('/home');
             }
             elseif(Auth::user()->role_1=='m')
             {
-                return view('/home');
+                // return view('/home');
+                return "mfi";
 
                 // return redirect('/home');
             }
             elseif(Auth::user()->role_1=='s')
             {
-                return view('/home');
+                // return view('/home');
+                return "super admin";
 
                 // return redirect('/home');
             }
             elseif(Auth::user()->role_2=='fa')
             {
-                return view('/home');
+                // return view('/home');
+                return "field agent";
 
                 // return redirect('/home');
             }
