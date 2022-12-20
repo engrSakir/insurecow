@@ -36,6 +36,10 @@ Route::group(['prefix' => 'company'], function(){
     Route::get('home', 'CompanyController@index')->name('company.index');
     Route::get('reg', 'CompanyController@reg')->name('company.reg');
     Route::post('store', 'CompanyController@store')->name('company.store');
+    Route::get('delete/{id}', 'CompanyController@delete')->name('company.delete');
+
+    
+
 
 });
 

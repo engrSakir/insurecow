@@ -14,7 +14,9 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        return view('company.index');
+        $user=User::all();
+
+        return view('company.index',compact('user'));
     }
     function reg(){
         return view('company.reg');
@@ -56,6 +58,11 @@ class CompanyController extends Controller
         $user->save();
         return redirect()->back();
     }
+    function delete($id){
+        $user=User::find($id);
+        $user->delete();
+        return redirect()->back();
+    }
 
     /**
      * Display the specified resource.
@@ -63,9 +70,9 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+       
     }
 
     /**
