@@ -46,8 +46,8 @@
                   <input type="password" name="password" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label  class="form-label">Adress</label>
-                    <input type="text" name="address" class="form-control">
+                    <label  class="form-label">Address</label>
+                    <input type="text" name="adress" class="form-control">
                   </div>
                   <div class="mb-3">
                   <select class="form-control" name="role_1" >

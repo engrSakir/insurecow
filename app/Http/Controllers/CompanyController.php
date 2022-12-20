@@ -44,7 +44,7 @@ class CompanyController extends Controller
         $validate=[
             'name'=>'required|max:20',
             'email'=>'required|email',
-            'address'=>'required|max:30',
+            'adress'=>'required|max:30',
         ];
         $this->validate($request,$validate);
         $user=new User;
