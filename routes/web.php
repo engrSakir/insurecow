@@ -54,9 +54,12 @@ Route::middleware('farmer')->group(function(){
 
 Route::group(['prefix' => 'company'], function(){
     Route::get('home', 'CompanyController@index')->name('company.index');
+    Route::get('reg', 'CompanyController@reg')->name('company.reg');
+
 });
 
 Route::group(['prefix' => 'superadmin'], function(){
     Route::get('home', 'SuperAdminController@index')->name('superadmin.index');
-    Route::get('reg', 'CompanyController@reg')->name('company.reg');
+    Route::get('profile', 'SuperAdminController@profile')->name('superadmin.profile');
+
 });

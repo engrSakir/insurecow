@@ -28,6 +28,14 @@
                     <label  class="form-label">Address</label>
                     <input type="text" class="form-control">
                   </div>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">Company</option>
+                    <option value="2">NGO</option>
+                    <option value="3">Bank</option>
+                    <option value="4">MFI</option>
+
+                  </select><br><br>
                 
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
