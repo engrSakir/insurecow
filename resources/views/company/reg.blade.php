@@ -1,3 +1,10 @@
+@if(session()->has('message'))
+          <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+          {{session()->get('message')}}
+          </div>
+
+        @endif
 @extends('layouts.main')
 
 @section('content')
@@ -42,15 +49,16 @@
                     <label  class="form-label">Adress</label>
                     <input type="text" name="address" class="form-control">
                   </div>
-                  <select class="form-select" name="role_1" aria-label="Default select example">
+                  <div class="mb-3">
+                  <select class="form-control" name="role_1" >
                     <option selected>Open this select menu</option>
-                    <option value="p">Company</option>
+                    <option value="c">Company</option>
                     <option value="n">NGO</option>
                     <option value="b">Bank</option>
                     <option value="m">MFI</option>
 
                   </select><br><br>
-                
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
         </div>

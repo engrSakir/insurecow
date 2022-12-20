@@ -56,7 +56,7 @@ class CompanyController extends Controller
         $user->adress=$request->adress;
         $user->role_1=$request->role_1;
         $user->save();
-        return redirect()->back();
+        return redirect()->back()->with('message','Registration successfully complete');
     }
     function delete($id){
         $user=User::find($id);
