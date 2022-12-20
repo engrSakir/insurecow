@@ -18,45 +18,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-// --------------------------- farmer ----------------------
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+// --------------------------- company ----------------------
 Route::middleware('company')->group(function(){
-
-    
-
-   
     // Route::get('/home', 'HomeController@index')->name('home');
-
-
 });
-
-Route::middleware('farmer')->group(function(){
-
-    
-
-    // Route::get('/home', 'HomeController@index')->name('home');
-
-
-});
-
 
 // --------------------------- farmer ----------------------
-
-
-Route::group(['prefix' => 'company'], function(){
-    Route::get('home', 'CompanyController@index')->name('company.index');
+Route::middleware('farmer')->group(function(){
+    // Route::get('/home', 'HomeController@index')->name('home');
 });
 
+// --------------------------- company ----------------------
+Route::group(['prefix' => 'company'], function(){
+    Route::get('home', 'CompanyController@index')->name('company.index');
+    Route::get('reg', 'CompanyController@reg')->name('company.reg');
+});
+
+// --------------------------- superadmin ----------------------
 Route::group(['prefix' => 'superadmin'], function(){
     Route::get('home', 'SuperAdminController@index')->name('superadmin.index');
-    Route::get('reg', 'CompanyController@reg')->name('company.reg');
 });
