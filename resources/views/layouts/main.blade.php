@@ -63,7 +63,7 @@
 
             <!-- Nav Item - Registration -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('company.index') }}">
+                <a class="nav-link" href="{{ route('company.reg') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Registration</span></a>
             </li>

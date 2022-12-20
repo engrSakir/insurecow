@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +33,7 @@ Route::middleware('company')->group(function(){
 
     
 
+   
     // Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -52,4 +54,8 @@ Route::middleware('farmer')->group(function(){
 
 Route::group(['prefix' => 'company'], function(){
     Route::get('home', 'CompanyController@index')->name('company.index');
+    Route::get('reg', 'CompanyController@reg')->name('company.reg');
+
+    
+
 });
