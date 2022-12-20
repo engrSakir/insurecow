@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
+use Illuminate\Support\Facades\Hash;
 class CompanyController extends Controller
 {
     /**
@@ -38,7 +39,22 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate=[
+            'name'=>'required|max:20',
+            'email'=>'required|email',
+            'address'=>'required|max:30',
+        ];
+        $this->validate($request,$validate);
+        $user=new User;
+        $user->name=$request->name;
+        $user->phone=$request->phone;
+
+        $user->email=$request->email;
+        $user->password=Hash::make($request->password);
+        $user->adress=$request->adress;
+        $user->role_1=$request->role_1;
+        $user->save();
+        return redirect()->back();
     }
 
     /**

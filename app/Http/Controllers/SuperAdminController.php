@@ -16,6 +16,10 @@ class SuperAdminController extends Controller
         return view('superadmin.index');
     }
 
+    function profile(){
+        return view('superadmin.profile');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
