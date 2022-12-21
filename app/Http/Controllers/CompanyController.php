@@ -3,25 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use Illuminate\Support\Facades\Hash;
+
 class CompanyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $user=User::all();
-
-        return view('company.index',compact('user'));
+        return view('company.index');
     }
-    function reg(){
-        return view('company.reg');
 
-    }
+   
 
     /**
      * Show the form for creating a new resource.
@@ -41,27 +31,7 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        $validate=[
-            'name'=>'required|max:20',
-            'email'=>'required|email',
-            'adress'=>'required|max:30',
-        ];
-        $this->validate($request,$validate);
-        $user=new User;
-        $user->name=$request->name;
-        $user->phone=$request->phone;
-
-        $user->email=$request->email;
-        $user->password=Hash::make($request->password);
-        $user->adress=$request->adress;
-        $user->role_1=$request->role_1;
-        $user->save();
-        return redirect()->back()->with('message','Registration successfully complete');
-    }
-    function delete($id){
-        $user=User::find($id);
-        $user->delete();
-        return redirect()->back();
+        //
     }
 
     /**
@@ -70,9 +40,9 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-       
+        //
     }
 
     /**

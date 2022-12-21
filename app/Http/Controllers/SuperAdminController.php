@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
+use Illuminate\Support\Facades\Hash;
+// use Barryvdh\DomPDF\Facade\PDF;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 class SuperAdminController extends Controller
 {
     /**
@@ -13,11 +17,17 @@ class SuperAdminController extends Controller
      */
     public function index()
     {
-        return view('superadmin.index');
-    }
+        // return "test";
+        $user=User::all();
 
+        return view('superadmin.index',compact('user'));
+    }
     function profile(){
         return view('superadmin.profile');
+    }
+    function reg(){
+        return view('superadmin.reg');
+
     }
 
     /**
@@ -38,7 +48,31 @@ class SuperAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate=[
+            'name'=>'required|max:20',
+            'email'=>'required|email',
+            'adress'=>'required|max:30',
+        ];
+        $this->validate($request,$validate);
+        $user=new User;
+        $user->name=$request->name;
+        $user->phone=$request->phone;
+
+        $user->email=$request->email;
+        $user->password=Hash::make($request->password);
+        $user->adress=$request->adress;
+        $user->role_1=$request->role_1;
+        $user->save();
+        return redirect()->back()->with('message','Registration successfully complete');
+    }
+    function delete($id){
+        $user=User::find($id);
+        $user->delete();
+        return redirect()->back();
+    }
+
+    function download(){
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
 
     /**
@@ -47,9 +81,9 @@ class SuperAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+       
     }
 
     /**

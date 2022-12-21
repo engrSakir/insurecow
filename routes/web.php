@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\SuperAdminController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,20 +33,23 @@ Route::middleware('farmer')->group(function(){
     // Route::get('/home', 'HomeController@index')->name('home');
 });
 
-// --------------------------- company ----------------------
-Route::group(['prefix' => 'company'], function(){
-    Route::get('home', 'CompanyController@index')->name('company.index');
-    Route::get('reg', 'CompanyController@reg')->name('company.reg');
-    Route::post('store', 'CompanyController@store')->name('company.store');
-    Route::get('delete/{id}', 'CompanyController@delete')->name('company.delete');
+// --------------------------- superadmin----------------------
+Route::group(['prefix' => 'superadmin'], function(){
+    Route::get('home', 'SuperAdminController@index')->name('superadmin.index');
+    Route::get('reg', 'SuperAdminController@reg')->name('superadmin.reg');
+    Route::post('store', 'SuperAdminController@store')->name('superadmin.store');
+    Route::get('delete/{id}', 'SuperAdminController@delete')->name('superadmin.delete');
+    Route::get('download', 'SuperAdminController@download')->name('superadmin.download');
+    Route::get('profile', 'SuperAdminController@profile')->name('superadmin.profile');
+
 
     
 
 
 });
 
-// --------------------------- superadmin ----------------------
-Route::group(['prefix' => 'superadmin'], function(){
-    Route::get('home', 'SuperAdminController@index')->name('superadmin.index');
-    Route::get('profile', 'SuperAdminController@profile')->name('superadmin.profile');
+//--------------------------- company ----------------------
+Route::group(['prefix' => 'company'], function(){
+    Route::get('home', 'CompanyController@index')->name('company.index');
+    Route::get('profile', 'CompanyController@profile')->name('company.profile');
 });
