@@ -23,7 +23,7 @@
               </ul>
           </div>
       @endif
-            <form action="{{url('company/store')}}" method="post">
+            <form action="{{url('superadmin/store')}}" method="post">
               @csrf
                 <div class="mb-3">
                     <label class="form-label">Company Name</label>
