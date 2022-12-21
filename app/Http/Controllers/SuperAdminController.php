@@ -67,7 +67,11 @@ class SuperAdminController extends Controller
     }
     function delete($id){
         $user=User::find($id);
+        if($user->role_1=='s'){
+            return "don't try to delete this";
+        }else {
         $user->delete();
+        }
         return redirect()->back();
     }
 
