@@ -24,9 +24,6 @@ class SuperAdminController extends Controller
 
         return view('superadmin.index',compact('user'));
     }
-    function profile(){
-        return view('superadmin.profile');
-    }
     function reg(){
         return view('superadmin.reg');
 

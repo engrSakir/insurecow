@@ -13,8 +13,10 @@
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
- 
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
@@ -27,7 +29,8 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('company.index') }}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center"
+                href="{{ route('company.index') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -47,12 +50,23 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Nav Item - Profile -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('superadmin.profile') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Profile</span></a>
-            </li>
+            @if (auth()->user()->profile()->count() == 0)
+                <!-- Nav Item - Profile -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('profiles.index') }}">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Profile</span></a>
+                </li>
+            @else
+                <!-- Nav Item - Profile Edit -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('profiles.edit', auth()->user()->id) }}">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Edit Profile</span></a>
+                </li>
+            @endif
+
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -70,13 +84,13 @@
             <!-- Nav Item - History -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('superadmin.index') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>History</span></a>
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>History</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-            
+
 
         </ul>
         <!-- End of Sidebar -->

@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <!-- Page Heading -->
             <h1 class="h3 mb-4 text-gray-800 text-center">Super Admin Profile</h1>
-            <form action="{{ route('profile.save') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('profiles.store') }}" method="POST" enctype="multipart/form-data">
               @csrf
                 <div class="mb-3">
                     <label class="form-label">Full Name</label>
