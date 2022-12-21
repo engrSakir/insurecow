@@ -12,7 +12,7 @@
                 </div>
             {{-- export button --}}
                 <div style="display: flex; justify-content:right ; padding:20px;">
-                    <a href="{{url('superadmin/download')}}" class="btn btn-success">Export Excel</a>
+                    <a href="{{route('superadmin.download')}}" class="btn btn-success">Export Excel</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -35,7 +35,7 @@
                                     <td>{{$users->created_at}}</td>
                                     
                                     <td><a href="#" class="btn btn-primary"><i class="fa fa-upload" aria-hidden="true"></i></a></td>
-                                    <td><a href="{{url('superadmin/delete',$users->id)}}" class="btn btn-danger" onclick="return confirm('Are You Sure to Delte This?')"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                    <td><a href="{{route('superadmin.delete',$users->id)}}" class="btn btn-danger" onclick="return confirm('Are You Sure to Delte This?')"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                     
                                 </tr> 
                                

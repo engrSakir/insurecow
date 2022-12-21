@@ -52,6 +52,7 @@ class SuperAdminController extends Controller
     {
         $validate=[
             'name'=>'required|max:20',
+            'phone'=>'required|unique:users',
             'email'=>'required|email',
             'adress'=>'required|max:30',
         ];
