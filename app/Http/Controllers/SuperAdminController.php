@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Profile;
 use Illuminate\Support\Facades\Hash;
 // use Barryvdh\DomPDF\Facade\PDF;
 use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Auth;
 class SuperAdminController extends Controller
 {
     /**
@@ -119,5 +121,21 @@ class SuperAdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function saveProfile(Request $request) 
+    {
+        $user = User::find(Auth::user()->id);
+
+        $profile = new Profile;
+        $profile->website   = $request->website;
+        $profile->about     = $request->about;
+        $profile->user_id   = Auth::user()->id;
+
+        if (request('image')) {
+            $profile->image = \request('image')->store('images');
+        }
+
+        $user->profile()->save($profile);
     }
 }
