@@ -49,7 +49,7 @@
 
             <!-- Nav Item - Profile -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('superadmin.profile') }}">
+                <a class="nav-link" href="{{ route('profiles.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Profile</span></a>
             </li>
