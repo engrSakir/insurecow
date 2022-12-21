@@ -41,6 +41,7 @@ Route::group(['prefix' => 'superadmin'], function(){
     Route::get('delete/{id}', 'SuperAdminController@delete')->name('superadmin.delete');
     Route::get('download', 'SuperAdminController@download')->name('superadmin.download');
     Route::get('profile', 'SuperAdminController@profile')->name('superadmin.profile');
+    Route::post('profile', 'SuperAdminController@saveProfile')->name('profile.save');
 
 
     

@@ -6,29 +6,29 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
             <!-- Page Heading -->
-            <h1 class="h3 mb-4 text-gray-800 text-center">Register Company/NGO/Bank</h1>
-            <form>
+            <h1 class="h3 mb-4 text-gray-800 text-center">Super Admin Profile</h1>
+            <form action="{{ route('profile.save') }}" method="POST" enctype="multipart/form-data">
+              @csrf
                 <div class="mb-3">
                     <label class="form-label">Full Name</label>
-                    <input type="text" class="form-control" placeholder="Enter Full Name">
-                  </div>
-                 
+                    <input type="text" class="form-control" placeholder="Enter Full Name" value="{{ Auth::user()->name }}">
+                </div>
                 <div class="mb-3">
                   <label class="form-label">Email address</label>
-                  <input type="email" class="form-control" placeholder="Enter Email">
+                  <input type="email" class="form-control" placeholder="Enter Email" value="{{ Auth::user()->email }}">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Website</label>
-                    <input type="text" class="form-control" placeholder="Enter Personal Website Address">
+                    <input type="text" name="website" class="form-control" placeholder="Enter Personal Website Address">
                   </div>
                
                 <div class="mb-3">
                     <label  class="form-label">About</label>
-                    <input type="text" class="form-control" placeholder="Enter About">
+                    <input type="text"  name="about" class="form-control" placeholder="Enter About">
                   </div>
                   <div class="form-control">
                     <i class="fa fa-upload" aria-hidden="true"></i>
-                   <input type="file">
+                   <input type="file" name="image">
                   </div><br>
         
                 <button type="submit" class="btn btn-primary">Submit</button>
