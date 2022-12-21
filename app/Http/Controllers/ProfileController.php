@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Profile;
+use App\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -23,7 +25,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        return "test";
     }
 
     /**
@@ -34,24 +36,22 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+
+        $inputs = \request()->validate([
             'website'   => 'required',
-            'user_id'   => 'required',
+            'about'   => 'required',
             'image'     => 'required|mimes:jpeg,jpg,png',
         ]);
 
-        $user = User::find(Auth::user()->id);
-
-        $profile = new Profile;
-        $profile->website   = $request->website;
-        $profile->about     = $request->about;
-        $profile->user_id   = Auth::user()->id;
+        $inputs['user_id'] = auth()->user()->id;
 
         if (request('image')) {
-            $profile->image = \request('image')->store('images');
+            $inputs['image'] = \request('image')->store('images');
         }
 
-        $user->profile()->save($profile);
+
+        Profile::create($inputs);
+        return redirect()->route('superadmin.index');
     }
 
     /**
@@ -73,7 +73,10 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $profile = Profile::where('user_id',$id)->orderBy('id','desc')->first();
+        return view('superadmin.edit', compact('profile'));
+
     }
 
     /**
@@ -83,9 +86,37 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Profile $profile)
     {
-        //
+
+        $inputs = \request()->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'website'   => 'required',
+            'about'   => 'required',
+            'image'     => 'mimes:jpeg,jpg,png',
+        ]);
+
+        if (request('image')) {
+            $inputs['image'] = \request('image')->store('images');
+        }else {
+            $inputs['image'] = $profile->image;
+        }
+
+        $profile->update([
+            'website' => $inputs['website'],
+            'about' => $inputs['about'],
+            'image' => $inputs['image'],
+        ]);
+
+        $user_data = $profile->user_id;
+
+        User::findOrFail($user_data)->update([
+            'name' => $inputs['name'],
+            'email' => $inputs['email'],
+        ]);
+
+        return redirect()->route('superadmin.index');
     }
 
     /**
