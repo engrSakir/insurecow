@@ -29,10 +29,7 @@
                     <label class="form-label">Company Name</label>
                     <input type="text" name="name" class="form-control">
                   </div>
-                  <div class="mb-3">
-                    <label class="form-label"></label>
-                    <input type="hidden" class="form-control">
-                  </div>
+                  
                   <div class="mb-3">
                     <label class="form-label">Phone</label>
                     <input type="text" name="phone" class="form-control">
