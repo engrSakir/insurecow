@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Agent;
 use Illuminate\Http\Request;
 
-class CompanyController extends Controller
+class AgentController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        return view('company.index');
-    }
-
-    function reg(){
-
-        return view('company.reg');
-
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class CompanyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Agent  $agent
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Agent $agent)
     {
         //
     }
@@ -52,10 +52,10 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Agent  $agent
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Agent $agent)
     {
         //
     }
@@ -64,10 +64,10 @@ class CompanyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Agent  $agent
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Agent $agent)
     {
         //
     }
@@ -75,10 +75,10 @@ class CompanyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Agent  $agent
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Agent $agent)
     {
         //
     }

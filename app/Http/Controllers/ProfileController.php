@@ -37,11 +37,12 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
 
-        $inputs = \request()->validate([
+        $inputs = [
             'website'   => 'required',
             'about'   => 'required',
             'image'     => 'required|mimes:jpeg,jpg,png',
-        ]);
+        ];
+        $this->validate($request,$inputs);
 
         $inputs['user_id'] = auth()->user()->id;
 
@@ -128,5 +129,9 @@ class ProfileController extends Controller
     public function destroy($id)
     {
         //
+    }
+    function company(){
+        return view('company.profile');
+        
     }
 }

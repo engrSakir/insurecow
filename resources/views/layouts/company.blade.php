@@ -30,7 +30,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center"
-                href="{{ route('superadmin.index') }}">
+                href="{{ route('company.index') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -42,7 +42,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('superadmin.index') }}">
+                <a class="nav-link" href="{{ route('company.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -73,7 +73,9 @@
 
             <!-- Nav Item - Registration -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('superadmin.reg') }}">
+
+                <a class="nav-link" href="{{ route('company.reg') }}">
+
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Registration</span></a>
             </li>
@@ -83,7 +85,8 @@
 
             <!-- Nav Item - History -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('superadmin.index') }}">
+                <a class="nav-link" href="{{ route('company.index') }}">
+
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>History</span></a>
             </li>
