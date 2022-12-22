@@ -130,4 +130,8 @@ class ProfileController extends Controller
     {
         //
     }
+    function company(){
+        return view('company.profile');
+        
+    }
 }
