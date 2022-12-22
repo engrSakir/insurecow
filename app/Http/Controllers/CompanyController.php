@@ -11,7 +11,11 @@ class CompanyController extends Controller
         return view('company.index');
     }
 
-   
+    function reg(){
+
+        return view('company.reg');
+
+    }
 
     /**
      * Show the form for creating a new resource.

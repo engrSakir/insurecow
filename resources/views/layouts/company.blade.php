@@ -73,7 +73,9 @@
 
             <!-- Nav Item - Registration -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('superadmin.reg') }}">
+
+                <a class="nav-link" href="{{ route('company.reg') }}">
+
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Registration</span></a>
             </li>
@@ -83,7 +85,8 @@
 
             <!-- Nav Item - History -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('superadmin.index') }}">
+                <a class="nav-link" href="{{ route('company.index') }}">
+
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>History</span></a>
             </li>

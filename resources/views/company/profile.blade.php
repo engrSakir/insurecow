@@ -6,7 +6,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
             <!-- Page Heading -->
-            <h1 class="h3 mb-4 text-gray-800 text-center">Super Admin Profile</h1>
+            <h1 class="h3 mb-4 text-gray-800 text-center">Company Profile</h1>
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -16,10 +16,10 @@
                 </ul>
             </div>
         @endif
-            <form action="{{ route('profiles.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data">
               @csrf
                 <div class="mb-3">
-                    <label class="form-label">Full Name</label>
+                    <label class="form-label">Company Name</label>
                     <input type="text" class="form-control" placeholder="Enter Full Name" value="{{ Auth::user()->name }}">
                 </div>
                 <div class="mb-3">
@@ -27,10 +27,17 @@
                   <input type="email" class="form-control" placeholder="Enter Email" value="{{ Auth::user()->email }}">
                 </div>
                 <div class="mb-3">
+                  <label class="form-label">Phone</label>
+                  <input type="text" class="form-control" placeholder="Enter Email" value="{{ Auth::user()->phone }}">
+                </div>
+                <div class="mb-3">
                     <label class="form-label">Website</label>
                     <input type="text" name="website" class="form-control" placeholder="Enter Personal Website Address">
                   </div>
-               
+                  <div class="mb-3">
+                    <label  class="form-label">Address</label>
+                    <input type="text"  name="about" class="form-control" placeholder="Enter About">
+                  </div>
                 <div class="mb-3">
                     <label  class="form-label">About</label>
                     <input type="text"  name="about" class="form-control" placeholder="Enter About">
