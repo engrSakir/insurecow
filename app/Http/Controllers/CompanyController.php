@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Profile;
+use Illuminate\Support\Facades\Hash;
 
 class CompanyController extends Controller
 {
@@ -35,7 +38,24 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate=[
+            'name'=>'required|max:20',
+            'phone'=>'required|unique:users',
+            'email'=>'required|email',
+            'adress'=>'required|max:30',
+        ];
+        $this->validate($request,$validate);
+        
+        $user=new User;
+        $user->name=$request->name;
+        $user->phone=$request->phone;
+
+        $user->email=$request->email;
+        $user->password=Hash::make($request->password);
+        $user->adress=$request->adress;
+        $user->role_2=$request->role_2;
+        $user->save();
+        return redirect()->back()->with('message','Registration successfully complete');
     }
 
     /**
@@ -44,6 +64,8 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    
     public function show($id)
     {
         //
@@ -55,10 +77,7 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+    
 
     /**
      * Update the specified resource in storage.
@@ -67,10 +86,7 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+   
 
     /**
      * Remove the specified resource from storage.
