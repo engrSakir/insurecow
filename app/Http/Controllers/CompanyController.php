@@ -4,14 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Profile;
+use App\Company;
 use Illuminate\Support\Facades\Hash;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class CompanyController extends Controller
 {
     public function index()
     {
-        return view('company.index');
+        $company=User::all();
+        return view('company.index',compact('company'));
     }
 
     function reg(){
@@ -57,7 +61,19 @@ class CompanyController extends Controller
         $user->save();
         return redirect()->back()->with('message','Registration successfully complete');
     }
+    function delete($id){
+        $user=User::find($id);
+        if($user->role_1=='s'){
+            return "don't try to delete this";
+        }else {
+        $user->delete();
+        }
+        return redirect()->back();
+    }
 
+    function download(){
+        return Excel::download(new UsersExport, 'users.xlsx');
+    }
     /**
      * Display the specified resource.
      *
