@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 // use Barryvdh\DomPDF\Facade\PDF;
 use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 class SuperAdminController extends Controller
 {
     /**

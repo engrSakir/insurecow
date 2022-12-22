@@ -46,5 +46,7 @@ Route::group(['prefix' => 'superadmin'], function(){
 //--------------------------- company ----------------------
 Route::group(['prefix' => 'company'], function(){
     Route::get('home', 'CompanyController@index')->name('company.index');
-    Route::get('profile', 'CompanyController@profile')->name('company.profile');
+    Route::get('reg', 'CompanyController@reg')->name('company.reg');
+    Route::resource('profiles', 'ProfileController');
+
 });
