@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.company')
 
 @section('content')
 <!-- Main Content -->
@@ -16,12 +16,13 @@
                 </ul>
             </div>
         @endif
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('profiles.store') }}" method="POST" enctype="multipart/form-data">
               @csrf
                 <div class="mb-3">
                     <label class="form-label">Company Name</label>
                     <input type="text" class="form-control" placeholder="Enter Full Name" value="{{ Auth::user()->name }}">
                 </div>
+                
                 <div class="mb-3">
                   <label class="form-label">Email address</label>
                   <input type="email" class="form-control" placeholder="Enter Email" value="{{ Auth::user()->email }}">
@@ -36,7 +37,7 @@
                   </div>
                   <div class="mb-3">
                     <label  class="form-label">Address</label>
-                    <input type="text"  name="about" class="form-control" placeholder="Enter About">
+                    <input type="text"  name="address" class="form-control" placeholder="Enter About">
                   </div>
                 <div class="mb-3">
                     <label  class="form-label">About</label>

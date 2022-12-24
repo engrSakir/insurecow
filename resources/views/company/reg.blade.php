@@ -5,7 +5,7 @@
           </div>
 
         @endif
-@extends('layouts.main')
+@extends('layouts.company')
 
 @section('content')
 <!-- Main Content -->
@@ -23,20 +23,17 @@
               </ul>
           </div>
       @endif
-            <form action="" method="post">
+            <form action="{{route('company.store')}}" method="post">
               @csrf
                 <div class="mb-3">
                     <label class="form-label">Full Name</label>
                     <input type="text" name="name" class="form-control">
                   </div>
-                  <div class="mb-3">
+                  {{-- <div class="mb-3">
                     <label class="form-label">Employee ID</label>
                     <input type="text" name="name" class="form-control">
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label">Date Of Birth</label>
-                    <input type="date" class="form-control">
-                  </div>
+                  </div> --}}
+                  
                   <div class="mb-3">
                     <label class="form-label">Phone</label>
                     <input type="text" name="phone" class="form-control">
@@ -45,10 +42,7 @@
                   <label class="form-label">Email address</label>
                   <input type="email" name="email" class="form-control">
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">NID</label>
-                    <input type="text" name="nid" class="form-control">
-                  </div>
+                
                 <div class="mb-3">
                   <label  class="form-label">Password</label>
                   <input type="password" name="password" class="form-control">
@@ -56,6 +50,14 @@
                 <div class="mb-3">
                     <label  class="form-label">Address</label>
                     <input type="text" name="adress" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                    <select class="form-control" name="role_2" >
+                      <option selected>Open this select menu</option>
+                      <option value="fa">Field Agent</option>
+                      
+  
+                    </select><br><br>
                   </div>
                   
                 <button type="submit" class="btn btn-primary form-control">Submit</button>
