@@ -14,6 +14,7 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="{{asset('/css/register_page_02.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/form_page.css')}}" />
 
     <title>InsureCow</title>
 </head>
@@ -33,6 +34,15 @@
  <!--==================== JavaScript Bundle with Popper ====================-->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+//=========form js===============
+<script src="{{asset('js/face_of_cow.js')}}"></script>
+<script src="{{asset('js/left_side.js')}}"></script>
+<script src="{{asset('js/right_side.js')}}"></script>
+<script src="{{asset('js/special_marks.js')}}"></script>
+<script src="{{asset('js/cow_with_owner.js')}}"></script>
+<script src="{{asset('js/pdf_upload.js')}}"></script>
 </script>
 </body>
 </html>
