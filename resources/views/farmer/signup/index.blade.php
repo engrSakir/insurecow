@@ -14,6 +14,7 @@
                 </div>
             </div>
 
+
             <!--Register Form-->
             <div class="col-lg-6">
                 <div class="card right-card p-5 h-100">
@@ -21,7 +22,9 @@
                         <p class="heading-text mb-4">Register Account</p>
                         <p class="subheading-text mb-5"> Creat your Insure Cow account! </p>
 
-                        <form action="" method="">
+                        <form action="{{ route('farmer.store') }}" method="post">
+                            {{ csrf_field() }}
+
                             <!--User Name-->
                             <div class="mb-4">
                                 <label for="name" class="form-label">Full Name: </label>
@@ -34,7 +37,7 @@
                                 <label for="email" class="form-label">Email: </label>
                                 <input type="email" name="email" class="form-control fontAwesome input-form" placeholder="&#xf0e0;"
                                     required="required">
-                                    
+
                             </div>
                             <div class="mb-4">
                                 <label for="nid"  class="form-label">NID: </label>
@@ -47,11 +50,18 @@
                                     required="required">
                             </div>
                             <div class="mb-4">
-                                <label for="phones"  class="form-label">Phone Number: </label>
+                                <label for="phone"  class="form-label">Phone Number: </label>
                                 <input type="text" name="phone" class="form-control fontAwesome input-form" placeholder="&#xf0e0;"
                                     required="required">
                             </div>
-                           
+
+
+                            <div class="mb-4">
+                                <label for="address"  class="form-label">Address: </label>
+                                <input type="text" name="adress" class="form-control fontAwesome input-form" placeholder="&#xf0e0;"
+                                       required="required">
+                            </div>
+
                              <!--User Password-->
                              <div class="mb-4">
                                 <label for="password" class="form-label">Password :  </label>
@@ -59,9 +69,9 @@
                                     placeholder="&#xf023;" required="required">
                             </div>
 
-                            
 
-                            
+
+
                             <!--Terms & Conditions-->
                             <div class="col-12 mb-4">
                                 <div class="form-check">
@@ -86,4 +96,7 @@
         </div>
     </section>
 
+    </body>
+    </html>
     @endsection
+

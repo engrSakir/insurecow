@@ -60,5 +60,12 @@ Route::group(['prefix' => 'company'], function(){
 
 Route::group(['prefix'=>'farmer'],function(){
     Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
+    Route::resource('farmer','farmer\FarmerController');
+});
+
+
+Route::get('log_out', function (){
+    \auth()->logout();
+    return "log out";
 });
 
