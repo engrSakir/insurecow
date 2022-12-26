@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\farmer;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class FarmerController extends Controller
 {
@@ -14,7 +17,12 @@ class FarmerController extends Controller
      */
     public function index()
     {
-        return view('farmer.signup.index');
+        if(\auth()->user() == null){
+            return view('farmer.signup.index');
+
+        }else{
+            return "farmer page after logged in, code farmer/FarmerController";
+        }
     }
 
     /**
@@ -35,7 +43,31 @@ class FarmerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validate=[
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'nid'   => 'required',
+            'adress'   => 'required',
+            'phone'   => 'required',
+            'dob'   => 'required',
+            'password'   => 'required',
+        ];
+        $this->validate($request,$validate);
+
+        $user=new User;
+        $user->name=$request->name;
+        $user->phone=$request->phone;
+        $user->email=$request->email;
+        $user->password=Hash::make($request->password);
+        $user->adress=$request->adress;
+        $user->nid=$request->nid;
+        $user->dob=$request->dob;
+        $user->save();
+
+        $credentials = $request->only('phone', 'password');
+        Auth::attempt($credentials);
+
     }
 
     /**
