@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\farmer;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class FarmerController extends Controller
@@ -13,7 +14,7 @@ class FarmerController extends Controller
      */
     public function index()
     {
-        return view('../farmer/signup.index');
+        return view('farmer.signup.index');
     }
 
     /**
