@@ -24,6 +24,7 @@
 
                         <form action="{{ route('farmer.store') }}" method="post">
                             {{ csrf_field() }}
+
                             <!--User Name-->
                             <div class="mb-4">
                                 <label for="name" class="form-label">Full Name: </label>
@@ -54,8 +55,9 @@
                                     required="required">
                             </div>
 
+
                             <div class="mb-4">
-                                <label for="phone"  class="form-label">Address: </label>
+                                <label for="address"  class="form-label">Address: </label>
                                 <input type="text" name="adress" class="form-control fontAwesome input-form" placeholder="&#xf0e0;"
                                        required="required">
                             </div>
