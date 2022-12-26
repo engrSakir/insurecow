@@ -37458,3 +37458,4 @@ module.exports = __webpack_require__(/*! /home/tahmid/insurecow/resources/sass/a
 /***/ })
 
 /******/ });
+
