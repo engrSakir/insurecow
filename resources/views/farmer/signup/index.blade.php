@@ -21,7 +21,7 @@
                         <p class="heading-text mb-4">Register Account</p>
                         <p class="subheading-text mb-5"> Creat your Insure Cow account! </p>
 
-                        <form>
+                        <form action="" method="">
                             <!--User Name-->
                             <div class="mb-4">
                                 <label for="name" class="form-label">Full Name: </label>
@@ -51,7 +51,7 @@
                                 <input type="text" name="phone" class="form-control fontAwesome input-form" placeholder="&#xf0e0;"
                                     required="required">
                             </div>
-
+                           
                              <!--User Password-->
                              <div class="mb-4">
                                 <label for="password" class="form-label">Password :  </label>
@@ -87,6 +87,3 @@
     </section>
 
     @endsection
-</body>
-
-</html>
