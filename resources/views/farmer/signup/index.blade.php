@@ -47,7 +47,7 @@
                                     required="required">
                             </div>
                             <div class="mb-4">
-                                <label for="phone"  class="form-label">Phone Number: </label>
+                                <label for="phones"  class="form-label">Phone Number: </label>
                                 <input type="text" name="phone" class="form-control fontAwesome input-form" placeholder="&#xf0e0;"
                                     required="required">
                             </div>
