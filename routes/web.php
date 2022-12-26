@@ -61,7 +61,12 @@ Route::group(['prefix' => 'company'], function(){
 Route::group(['prefix'=>'farmer'],function(){
     Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
     Route::resource('farmer','farmer\FarmerController');
+    Route::resource('reg_one','farmer\RegistrationController');
+
+    
+
 });
+
 
 
 Route::get('log_out', function (){
