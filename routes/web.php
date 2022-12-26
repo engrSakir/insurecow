@@ -55,3 +55,10 @@ Route::group(['prefix' => 'company'], function(){
 
 
 });
+
+//--------------------------- farmer ----------------------
+
+Route::group(['prefix'=>'farmer'],function(){
+    Route::get('home', 'FarmerController@index')->name('farmer.index');
+
+});
