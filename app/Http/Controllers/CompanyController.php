@@ -49,7 +49,7 @@ class CompanyController extends Controller
             'adress'=>'required|max:30',
         ];
         $this->validate($request,$validate);
-        
+
         $user=new User;
         $user->name=$request->name;
         $user->phone=$request->phone;
@@ -57,7 +57,7 @@ class CompanyController extends Controller
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
         $user->adress=$request->adress;
-        $user->role_2=$request->role_2;
+        $user->role_1=$request->role_2;
         $user->save();
         return redirect()->back()->with('message','Registration successfully complete');
     }
@@ -81,7 +81,7 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    
+
     public function show($id)
     {
         //
@@ -93,7 +93,7 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
 
     /**
      * Update the specified resource in storage.
@@ -102,7 +102,7 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   
+
 
     /**
      * Remove the specified resource from storage.
