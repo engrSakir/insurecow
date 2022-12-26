@@ -24,7 +24,7 @@ class RegistrationController extends Controller
      */
     public function create()
     {
-        //
+        return view('farmer.signup.reg_two');
     }
 
     /**
