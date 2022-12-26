@@ -1,8 +1,8 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!--==================== BOOTSTRAP ====================-->
     <link
@@ -24,7 +24,7 @@
     />
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="{{ asset('css/form_page.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/form_page.css') }}"/>
 
     <title>InsureCow</title>
 </head>
@@ -42,7 +42,8 @@
         <div class="card-block p-2 card-block-middle mb-4">
             <h4 class="ms-4">Attachment</h4>
         </div>
-        <form class="">
+        <form class="{{ route('reg_one.store') }}" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
             <div class="card-block p-2 card-block-down mb-4">
                 <div class="row px-4 mt-4 mb-3">
                     <!-- Owner NID : -->
@@ -55,12 +56,13 @@
                                     type="file"
                                     onchange="readURL(this);"
                                     accept="image/*"
+                                    name="nid"
                                 />
-                                <img class="img-card" src="{{ asset('images/image.png') }}" />
+                                <img class="img-card" src="{{ asset('images/image.png') }}"/>
                             </div>
 
                             <div class="file-upload-content">
-                                <img class="file-upload-image" src="" alt="face-of-cow" />
+                                <img class="file-upload-image" src="" alt="face-of-cow"/>
                             </div>
                             <div class="image-title-wrap">
                                 <button
@@ -91,8 +93,9 @@
                                     type="file"
                                     onchange="readURL2(this);"
                                     accept="image/*"
+                                    name="vet"
                                 />
-                                <img class="img-card" src="{{ asset('images/image.png') }}" />
+                                <img class="img-card" src="{{ asset('images/image.png') }}"/>
                             </div>
 
                             <div class="file2-upload-content">
@@ -131,8 +134,9 @@
                                     type="file"
                                     onchange="readURL3(this);"
                                     accept="image/*"
+                                    name="chairman"
                                 />
-                                <img class="img-card" src="{{ asset('images/image.png') }}" />
+                                <img class="img-card" src="{{ asset('images/image.png') }}"/>
                             </div>
 
                             <div class="file3-upload-content">
@@ -163,7 +167,7 @@
                 </div>
             </div>
 
-            <hr />
+            <hr/>
 
             <div class="row px-4">
                 <div class="col-md-6 mb-4">
@@ -175,6 +179,7 @@
                             type="date"
                             id="inputFirstName"
                             class="form-control input-style"
+                            name="issue_date"
                         />
                     </div>
                 </div>
@@ -185,7 +190,7 @@
                         >Period of Insurance:</label
                         >
 
-                        <select name="" id="" class="form-control input-style">
+                        <select name="poi" id="" class="form-control input-style">
                             <option value="1">1</option>
                         </select>
                     </div>
@@ -218,7 +223,7 @@
 </section>
 
 <!--==================== FOOTER ====================-->
-<hr class="hr-style" />
+<hr class="hr-style"/>
 
 @include('inc.ffooter')
 
