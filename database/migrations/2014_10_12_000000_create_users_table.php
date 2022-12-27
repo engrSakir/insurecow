@@ -25,6 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('adress')->nullable();
             $table->string('nid')->unique()->nullable();
             $table->string('dob')->nullable();
+            $table->string('agent_employee_id')->nullable();
+
 
             $table->string('role_1')->default('f');
             // $table->string('role_2')->nullable();

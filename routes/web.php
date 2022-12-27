@@ -64,6 +64,7 @@ Route::group(['prefix'=>'farmer'],function(){
     Route::resource('reg_one','farmer\RegistrationController');
     Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
 
+    Route::resource('profile','farmer\FarmerProfileController');
 
     
 
