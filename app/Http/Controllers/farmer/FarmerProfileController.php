@@ -5,8 +5,10 @@ namespace App\Http\Controllers\farmer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+
 use App\Profile;
 use App\User;
+
 
 class FarmerProfileController extends Controller
 {
@@ -17,7 +19,7 @@ class FarmerProfileController extends Controller
      */
     public function index()
     {
-        return view('farmer.profile');
+        return view('farmer.profile.profile');
     }
 
     /**

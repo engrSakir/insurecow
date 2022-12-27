@@ -47,6 +47,8 @@ class CompanyController extends Controller
             'phone'=>'required|unique:users',
             'email'=>'required|email',
             'adress'=>'required|max:30',
+            'agent_employee_id'=>'required',
+
         ];
         $this->validate($request,$validate);
 
@@ -57,7 +59,9 @@ class CompanyController extends Controller
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
         $user->adress=$request->adress;
-        $user->role_1=$request->role_2;
+        $user->agent_employee_id=$request->agent_employee_id;
+
+        $user->role_1=$request->role_1;
         $user->save();
         return redirect()->back()->with('message','Registration successfully complete');
     }

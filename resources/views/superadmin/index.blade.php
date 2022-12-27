@@ -208,13 +208,8 @@
                                     <td>{{$users->created_at}}</td>
                                     
                                     <td><a href="#" class="btn btn-primary"><i class="fa fa-upload" aria-hidden="true"></i></a></td>
-                                   
-                                    
-                                   
-                                    <td><a href="{{route('superadmin.delete',$users->id)}}" class="btn btn-danger" onclick="return confirm('Are You Sure to Delete This?')"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                                    
-                                   
 
+                                    <td><a href="{{route('superadmin.delete',$users->id)}}" class="btn btn-danger" onclick="return confirm('Are You sure to delete this?')"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                    
                                 </tr> 
                                
@@ -230,4 +225,8 @@
         <!-- /.container-fluid -->
     </div>
 <!-- End of Main Content -->
+
+
 @endsection
+
+

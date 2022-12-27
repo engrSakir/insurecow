@@ -29,7 +29,7 @@
 
                         <!--Features-->
                         <li class="nav-item navbar-brand">
-                            <a href="#" class="nav-link">Features </a>
+                            <a href="#" class="nav-link">Profile </a>
                         </li>
 
                         <!--Our Goals-->

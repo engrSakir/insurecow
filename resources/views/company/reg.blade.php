@@ -52,7 +52,11 @@
                     <input type="text" name="adress" class="form-control">
                   </div>
                   <div class="mb-3">
-                    <select class="form-control" name="role_2" >
+                    <label  class="form-label">Employee ID</label>
+                    <input type="text" name="agent_employee_id" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                    <select class="form-control" name="role_1" >
                       <option selected>Open this select menu</option>
                       <option value="fa">Field Agent</option>
                       

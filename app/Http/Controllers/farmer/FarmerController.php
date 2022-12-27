@@ -81,7 +81,7 @@ class FarmerController extends Controller
      */
     public function show($id)
     {
-        //
+        return "";
     }
 
     /**

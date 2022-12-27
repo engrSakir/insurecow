@@ -47,7 +47,7 @@ Route::group(['prefix' => 'superadmin'], function(){
 Route::group(['prefix' => 'company'], function(){
     Route::get('home', 'CompanyController@index')->name('company.index');
     Route::get('reg', 'CompanyController@reg')->name('company.reg');
-    Route::resource('profiles', 'CompanyProfileController');
+    Route::resource('profile', 'CompanyProfileController');
     Route::post('store', 'CompanyController@store')->name('company.store');
     Route::get('delete/{id}', 'CompanyController@delete')->name('company.delete');
     Route::get('download', 'CompanyController@download')->name('company.download');
@@ -60,6 +60,9 @@ Route::group(['prefix'=>'farmer'],function(){
     Route::resource('farmerprofiles','farmer\FarmerProfileController');
     Route::resource('reg_one','farmer\RegistrationController');
     Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
+
+    Route::resource('profile','farmer\FarmerProfileController');
+
 });
 
 
