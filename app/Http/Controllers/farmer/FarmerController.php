@@ -1,28 +1,31 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\farmer;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\User;
-use App\Company;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Exports\UsersExport;
-use Maatwebsite\Excel\Facades\Excel;
 
-
-class CompanyController extends Controller
+class FarmerController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $company=User::all();
-        return view('company.index',compact('company'));
+        if(\auth()->user() == null){
+            return view('farmer.signup.index');
+
+        }else{
+            return "farmer page after logged in, code farmer/FarmerController";
+        }
     }
 
-    function reg(){
-
-        return view('company.reg');
-
-    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -42,46 +45,39 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
+
         $validate=[
-            'name'=>'required|max:20',
-            'phone'=>'required|unique:users',
-            'email'=>'required|email',
-            'adress'=>'required|max:30',
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'nid'   => 'required',
+            'adress'   => 'required',
+            'phone'   => 'required',
+            'dob'   => 'required',
+            'password'   => 'required',
         ];
         $this->validate($request,$validate);
 
         $user=new User;
         $user->name=$request->name;
         $user->phone=$request->phone;
-
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
         $user->adress=$request->adress;
-        $user->role_1=$request->role_2;
+        $user->nid=$request->nid;
+        $user->dob=$request->dob;
         $user->save();
-        return redirect()->back()->with('message','Registration successfully complete');
-    }
-    function delete($id){
-        $user=User::find($id);
-        if($user->role_1=='s'){
-            return "don't try to delete this";
-        }else {
-        $user->delete();
-        }
-        return redirect()->back();
+
+        $credentials = $request->only('phone', 'password');
+        Auth::attempt($credentials);
+
     }
 
-    function download(){
-        return Excel::download(new UsersExport, 'users.xlsx');
-    }
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-
     public function show($id)
     {
         //
@@ -93,7 +89,10 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
+    public function edit($id)
+    {
+        //
+    }
 
     /**
      * Update the specified resource in storage.
@@ -102,7 +101,10 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
+    public function update(Request $request, $id)
+    {
+        //
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -114,6 +116,4 @@ class CompanyController extends Controller
     {
         //
     }
-
-  
 }
