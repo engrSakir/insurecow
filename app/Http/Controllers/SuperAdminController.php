@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 // use Barryvdh\DomPDF\Facade\PDF;
 use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 class SuperAdminController extends Controller
 {
     /**
@@ -67,7 +67,11 @@ class SuperAdminController extends Controller
     }
     function delete($id){
         $user=User::find($id);
+        if($user->role_1=='s'){
+            return "don't try to delete this";
+        }else {
         $user->delete();
+        }
         return redirect()->back();
     }
 

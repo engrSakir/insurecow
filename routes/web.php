@@ -46,5 +46,33 @@ Route::group(['prefix' => 'superadmin'], function(){
 //--------------------------- company ----------------------
 Route::group(['prefix' => 'company'], function(){
     Route::get('home', 'CompanyController@index')->name('company.index');
-    Route::get('profile', 'CompanyController@profile')->name('company.profile');
+    Route::get('reg', 'CompanyController@reg')->name('company.reg');
+    Route::resource('profiles', 'CompanyProfileController');
+    Route::post('store', 'CompanyController@store')->name('company.store');
+    Route::get('delete/{id}', 'CompanyController@delete')->name('company.delete');
+    Route::get('download', 'CompanyController@download')->name('company.download');
+
+
+
 });
+
+//--------------------------- farmer ----------------------
+
+Route::group(['prefix'=>'farmer'],function(){
+    Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
+    Route::resource('farmer','farmer\FarmerController');
+    Route::resource('reg_one','farmer\RegistrationController');
+    Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
+
+
+    
+
+});
+
+
+
+Route::get('log_out', function (){
+    \auth()->logout();
+    return "log out";
+});
+

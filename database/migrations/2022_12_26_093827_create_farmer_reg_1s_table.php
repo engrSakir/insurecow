@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompaniesTable extends Migration
+class CreateFarmerReg1sTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateCompaniesTable extends Migration
      */
     public function up()
     {
-        Schema::create('companies', function (Blueprint $table) {
+        Schema::create('farmer_reg_1s', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->string('website');
-            $table->longText('address');
-            $table->longText('about');
+            $table->string('nid');
+            $table->string('vet');
+            $table->string('chairman')->nullable();
+            $table->date('issue_date');
+            $table->string('poi');
+            $table->string('user_id');
 
-            $table->integer('user_id');
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class CreateCompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('farmer_reg_1s');
     }
 }

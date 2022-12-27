@@ -30,7 +30,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center"
-                href="{{ route('company.index') }}">
+                href="{{ route('superadmin.index') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -137,7 +137,14 @@
         </div>
     </div>
     <!-- Logout Modal-->
+    <!-- Page level custom scripts -->
+  
 
+    <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
+
+    <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
+    <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
+<!-- Bootstrap core JavaScript-->
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
+       
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
@@ -73,7 +73,9 @@
 
             <!-- Nav Item - Registration -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('superadmin.reg') }}">
+
+                <a class="nav-link" href="{{ route('company.reg') }}">
+
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Registration</span></a>
             </li>
@@ -83,7 +85,8 @@
 
             <!-- Nav Item - History -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('superadmin.index') }}">
+                <a class="nav-link" href="{{ route('company.index') }}">
+
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>History</span></a>
             </li>
@@ -137,8 +140,15 @@
         </div>
     </div>
     <!-- Logout Modal-->
+    <!-- Page level custom scripts -->
+   
+    
 
-    <!-- Bootstrap core JavaScript-->
+    <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
+
+    <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
+    <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
+    
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
@@ -149,6 +159,7 @@
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 
     <!-- Page level plugins -->
+
     <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
@@ -157,6 +168,9 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+    
+
+    
 </body>
 
 </html>
