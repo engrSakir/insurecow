@@ -53,14 +53,14 @@
             @if (auth()->user()->profile()->count() == 0)
                 <!-- Nav Item - Profile -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('profiles.index') }}">
+                    <a class="nav-link" href="{{ route('farmerprofiles.index') }}">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Profile</span></a>
                 </li>
             @else
                 <!-- Nav Item - Profile Edit -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('profiles.edit', auth()->user()->id) }}">
+                    <a class="nav-link" href="{{ route('farmerprofiles.edit', auth()->user()->id) }}">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Edit Profile</span></a>
                 </li>

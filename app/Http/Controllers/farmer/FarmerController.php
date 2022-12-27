@@ -17,12 +17,13 @@ class FarmerController extends Controller
      */
     public function index()
     {
-        if(\auth()->user() == null){
-            return view('farmer.signup.index');
+        // if(\auth()->user() == null){
+        //     return view('farmer.index');
 
-        }else{
-            return "farmer page after logged in, code farmer/FarmerController";
-        }
+        // }else{
+        //     return "farmer page after logged in, code farmer/FarmerController";
+        // }
+        return view('farmer.index');
     }
 
     
