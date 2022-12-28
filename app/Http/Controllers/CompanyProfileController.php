@@ -39,18 +39,20 @@ class CompanyProfileController extends Controller
 
 
         $company->save();
+        // return redirect()->back();
+
         return redirect()->route('company.index');
     }
 
     public function edit($id)
     {
 
-        $profile = Company::where('user_id',$id)->orderBy('id','desc')->first();
-        return view('superadmin.edit', compact('profile'));
+        $company = Company::where('user_id',$id)->orderBy('id','desc')->first();
+        return view('company.edit', compact('company'));
 
     }
 
-    public function update(Request $request,Company $profile)
+    public function update(Request $request,Company $company)
     {
 
         $inputs = \request()->validate([
@@ -66,10 +68,10 @@ class CompanyProfileController extends Controller
         if (request('image')) {
             $inputs['image'] = \request('image')->store('images');
         }else {
-            $inputs['image'] = $profile->image;
+            $inputs['image'] = $company->image;
         }
 
-        $profile->update([
+        $company->update([
             'website' => $inputs['website'],
             'address' => $inputs['address'],
 
@@ -78,12 +80,13 @@ class CompanyProfileController extends Controller
             'image' => $inputs['image'],
         ]);
 
-        $user_data = $profile->user_id;
+        $user_data = $company->user_id;
 
         User::findOrFail($user_data)->update([
             'name' => $inputs['name'],
             'email' => $inputs['email'],
         ]);
+        // return redirect()->back();
 
         return redirect()->route('company.index');
     }
