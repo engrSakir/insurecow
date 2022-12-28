@@ -91,6 +91,20 @@
                     <span>History</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Pending Policy List</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Pending Quotations</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -142,7 +156,6 @@
     <!-- Logout Modal-->
     <!-- Page level custom scripts -->
    
-    
 
     <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
 
@@ -168,7 +181,48 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{-- Sweet alert script start --}}
+    @if(session()->has('message'))
+        <script>
+           swal("Done!!","{!! Session::get('message')!!}","success",{
+              button:"OK",
+            })
+        </script>
+
+    @endif
+
+    @if(session()->has('warn'))
+        <script>
+           swal("Hey??","{!! Session::get('warn')!!}","warning",{
+              button:"OK",
+            })
+        </script>
+
+    @endif
+
+   <script type="text/javascript">
+            function confirmation(e) {
+            e.preventDefault();
+
+            var url = e.currentTarget.getAttribute('href')
+            
+            Swal.fire({
+                icon: 'warning',
+                title: 'Are you sure?',
+                text: 'This action cannot be undone!',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, recall!'
+            }).then((result) => {
+                if (result.value) {
+                    window.location.href=url;
+                }
+            })
+        }
+    </script>
 
     
 </body>

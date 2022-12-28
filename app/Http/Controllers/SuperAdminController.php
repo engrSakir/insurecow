@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Auth;
+
 class SuperAdminController extends Controller
 {
     /**
@@ -63,15 +64,16 @@ class SuperAdminController extends Controller
         $user->adress=$request->adress;
         $user->role_1=$request->role_1;
         $user->save();
-        return redirect()->back()->with('message','Registration successfully complete');
+        return redirect()->back()->with('message','Registration successfully complete !!');
     }
     function delete($id){
         $user=User::find($id);
         if($user->role_1=='s'){
-            return "don't try to delete this";
+            return redirect()->back()->with('warn',"Don't try to delete this !!");
         }else {
         $user->delete();
         }
+        
         return redirect()->back();
     }
 

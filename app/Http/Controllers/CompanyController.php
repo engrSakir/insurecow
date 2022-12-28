@@ -68,8 +68,19 @@ class CompanyController extends Controller
     function delete($id){
         $user=User::find($id);
         if($user->role_1=='s'){
-            return "don't try to delete this";
-        }else {
+            return redirect()->back()->with('warn',"Don't try to delete this !!");
+            
+        } elseif($user->role_1=='c'){
+            return redirect()->back()->with('warn',"Don't try to delete this !!");
+            
+
+        }
+       
+        elseif($user->role_1=='f'){
+            return redirect()->back()->with('warn',"Don't try to delete this !!");
+            
+        }
+        else {
         $user->delete();
         }
         return redirect()->back();
