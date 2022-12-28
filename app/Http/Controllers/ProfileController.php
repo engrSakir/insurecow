@@ -43,15 +43,20 @@ class ProfileController extends Controller
             'image'     => 'required|mimes:jpeg,jpg,png',
         ];
         $this->validate($request,$inputs);
+        $admin=new Profile();
+        $admin->website=$request->website;
+        
+        $admin->about=$request->about;
 
-        $inputs['user_id'] = auth()->user()->id;
+        $admin['user_id'] = auth()->user()->id;
 
         if (request('image')) {
-            $inputs['image'] = \request('image')->store('images');
+            $admin['image'] = \request('image')->store('images');
         }
 
 
-        Profile::create($inputs);
+        $admin->save();
+       
         return redirect()->route('superadmin.index');
     }
 
