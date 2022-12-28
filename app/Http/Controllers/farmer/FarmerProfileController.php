@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 
-use App\Profile;
+use App\FarmerProfile;
 use App\User;
 
 
@@ -40,22 +40,32 @@ class FarmerProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $inputs = [
-            'website'   => 'required',
-            'about'   => 'required',
-            'image'     => 'required|mimes:jpeg,jpg,png',
-        ];
-        $this->validate($request,$inputs);
+        $request->validate([
+            'first_name'   => 'required',
+            'last_name'    => 'required',
+            'email'        => 'required',
+            'phone'        => 'required',
+            'address'      => 'required',
+            'city'         => 'required',
+            'district'     => 'required',
+            'zip_code'     => 'required',
+            'country'      => 'required',
+        ]);
 
-        $inputs['user_id'] = auth()->user()->id;
+        $farmer_profile = new FarmerProfile();
+        $farmer_profile->first_name = $request->first_name;
+        $farmer_profile->last_name = $request->last_name;
+        $farmer_profile->email = $request->email;
+        $farmer_profile->phone = $request->phone;
+        $farmer_profile->address = $request->address;
+        $farmer_profile->city = $request->city;
+        $farmer_profile->district = $request->district;
+        $farmer_profile->zip_code = $request->zip_code;
+        $farmer_profile->country = $request->country;
+        $farmer_profile->user_id = auth()->user()->id;
+        $farmer_profile->save();
 
-        if (request('image')) {
-            $inputs['image'] = \request('image')->store('images');
-        }
-
-
-        Profile::create($inputs);
-        return redirect()->route('farmer.index');
+        return redirect()->back();
     }
 
     /**
@@ -77,7 +87,7 @@ class FarmerProfileController extends Controller
      */
     public function edit($id)
     {
-        $profile = Profile::where('user_id',$id)->orderBy('id','desc')->first();
+        $profile = FarmerProfile::where('user_id',$id)->orderBy('id','desc')->first();
         return view('farmer.edit', compact('profile'));
     }
 
@@ -90,32 +100,18 @@ class FarmerProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $inputs = \request()->validate([
-            'name' => 'required',
-            'email' => 'required|unique:users',
-            'website'   => 'required',
-            'about'   => 'required',
-            'image'     => 'mimes:jpeg,jpg,png',
-        ]);
-        $profile = Profile::findOrFail($id);
-        $profile->update([
-            'website'   => $inputs['website'],
-            'about'     => $inputs['about'],
-            'image'     => $inputs['image'],
-        ]);
-
-        if (request('image')) {
-            $inputs['image'] = \request('image')->store('images');
-        }else {
-            $inputs['image'] = $profile->image;
-        }
-
-        $user_data = $profile->user_id;
-
-        User::findOrFail($user_data)->update([
-            'name' => $inputs['name'],
-            'email' => $inputs['email'],
-        ]);
+        $farmer_profile = FarmerProfile::where('user_id',$id)->orderBy('id','desc')->first();
+        $farmer_profile->first_name = $request->first_name;
+        $farmer_profile->last_name = $request->last_name;
+        $farmer_profile->email = $request->email;
+        $farmer_profile->phone = $request->phone;
+        $farmer_profile->address = $request->address;
+        $farmer_profile->city = $request->city;
+        $farmer_profile->district = $request->district;
+        $farmer_profile->zip_code = $request->zip_code;
+        $farmer_profile->country = $request->country;
+        $farmer_profile->user_id = auth()->user()->id;
+        $farmer_profile->save();
 
         return redirect()->route('farmer.index');
     }

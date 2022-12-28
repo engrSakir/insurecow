@@ -28,9 +28,19 @@
                         </li>
 
                         <!--Features-->
-                        <li class="nav-item navbar-brand">
-                            <a href="#" class="nav-link">Profile </a>
-                        </li>
+                        @if (auth()->user()->farmer_profile()->count() == 0)
+                        <!-- Nav Item - Profile -->
+                            <li class="nav-item navbar-brand">
+                                <a class="nav-link" href="{{ route('farmerprofiles.index') }}">
+                                    <span>Profile</span></a>
+                            </li>
+                        @else
+                            <!-- Nav Item - Profile Edit -->
+                            <li class="nav-item navbar-brand">
+                                <a class="nav-link" href="{{ route('farmerprofiles.edit', auth()->user()->id) }}">
+                                    <span>Edit Profile</span></a>
+                            </li>
+                        @endif
 
                         <!--Our Goals-->
                         <li class="nav-item navbar-brand">

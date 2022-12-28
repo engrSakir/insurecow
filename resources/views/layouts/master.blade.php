@@ -37,7 +37,7 @@
  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-//=========form js===============
+
 <script src="{{asset('js/reg_js/face_of_cow.js')}}"></script>
 <script src="{{asset('js/reg_js/left_side.js')}}"></script>
 <script src="{{asset('js/reg_js/right_side.js')}}"></script>

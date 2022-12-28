@@ -50,7 +50,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            @if (auth()->user()->profile()->count() == 0)
+            @if (auth()->user()->farmer_profile()->count() == 0)
                 <!-- Nav Item - Profile -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('farmerprofiles.index') }}">
