@@ -52,42 +52,50 @@ class CompanyProfileController extends Controller
 
     }
 
-    public function update(Request $request,Company $company)
+    public function update(Request $request,$id)
     {
 
-        $inputs = \request()->validate([
-            'name' => 'required',
-            'email' => 'required|unique:users',
+        $inputs = [
+            
             'website'   => 'required',
             'about'   => 'required',
             'address'   => 'required',
 
-            'image'     => 'mimes:jpeg,jpg,png',
-        ]);
+            
+        ];
+        $this->validate($request,$inputs);
+
+        $company=Company::find($id);
+        $company->website=$request->website;
+        $company->about=$request->about;
+        $company->address=$request->address;
+
 
         if (request('image')) {
-            $inputs['image'] = \request('image')->store('images');
+            $company['image'] = \request('image')->store('images');
         }else {
-            $inputs['image'] = $company->image;
+            $company['image'] = $request->image;
         }
+        $company->save();
+        return redirect()->route('company.index');
 
-        $company->update([
-            'website' => $inputs['website'],
-            'address' => $inputs['address'],
 
-            'about' => $inputs['about'],
+        // $company->update([
+        //     'website' => $inputs['website'],
+        //     'address' => $inputs['address'],
 
-            'image' => $inputs['image'],
-        ]);
+        //     'about' => $inputs['about'],
 
-        $user_data = $company->user_id;
+        //     'image' => $inputs['image'],
+        // ]);
 
-        User::findOrFail($user_data)->update([
-            'name' => $inputs['name'],
-            'email' => $inputs['email'],
-        ]);
+        // $user_data = $company->user_id;
+
+        // User::findOrFail($user_data)->update([
+        //     'name' => $inputs['name'],
+        //     'email' => $inputs['email'],
+        // ]);
         // return redirect()->back();
 
-        return redirect()->route('company.index');
     }
 }

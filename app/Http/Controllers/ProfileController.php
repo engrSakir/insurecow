@@ -100,7 +100,7 @@ class ProfileController extends Controller
             
             'website'   => 'required',
             'about'   => 'required',
-            'image'     => 'mimes:jpeg,jpg,png',
+            
         ];
         $this->validate($request,$inputs);
 
