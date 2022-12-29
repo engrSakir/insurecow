@@ -34,6 +34,10 @@
 
                         <!--Plans-->
                         <li class="nav-item navbar-brand">
+                            <a href="{{ route('farmer.notification') }}" class="nav-link">Notifications</a>
+                        </li>
+
+                        <li class="nav-item navbar-brand">
                             <a href="{{ route('farmer.registered.cattle') }}" class="nav-link">Registered Cattles</a>
                         </li>
 
