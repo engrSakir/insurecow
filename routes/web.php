@@ -42,22 +42,20 @@ Route::middleware('company')->group(function(){
 // --------------------------- farmer ----------------------
 Route::middleware('farmer')->group(function(){
     // Route::get('/home', 'HomeController@index')->name('home');
-    //--------------------------- farmer ----------------------
-
-Route::group(['prefix'=>'farmer'],function(){
-    Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
-    Route::resource('farmer','farmer\FarmerController');
-    Route::resource('reg_one','farmer\RegistrationController');
-    Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
-
-    Route::resource('fprofile','farmer\FarmerProfileController');
-
     
-
-});
+     Route::group(['prefix'=>'farmer'],function(){
+        Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
+        Route::resource('farmer','farmer\FarmerController');
+        Route::resource('reg_one','farmer\RegistrationController');
+        Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
+        Route::resource('fprofile','farmer\FarmerProfileController');
+ 
+        });
 });
 
 // --------------------------- superadmin----------------------
+Route::middleware('superadmin')->group(function(){
+
 Route::group(['prefix' => 'superadmin'], function(){
     Route::get('home', 'SuperAdminController@index')->name('superadmin.index');
     Route::get('reg', 'SuperAdminController@reg')->name('superadmin.reg');
@@ -65,6 +63,8 @@ Route::group(['prefix' => 'superadmin'], function(){
     Route::get('delete/{id}', 'SuperAdminController@delete')->name('superadmin.delete');
     Route::get('download', 'SuperAdminController@download')->name('superadmin.download');
     Route::resource('profiles', 'ProfileController');
+});
+
 });
 
 //--------------------------- company ----------------------
