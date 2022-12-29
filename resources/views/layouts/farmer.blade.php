@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-       
+
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
@@ -30,7 +30,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center"
-                href="{{ route('company.index') }}">
+                href="{{ route('farmer.index') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -42,7 +42,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('company.index') }}">
+                <a class="nav-link" href="{{ route('farmer.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -50,17 +50,17 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            @if (auth()->user()->profile()->count() == 0)
+            @if (auth()->user()->farmer_profile()->count() == 0)
                 <!-- Nav Item - Profile -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('profile.index') }}">
+                    <a class="nav-link" href="{{ route('farmerprofiles.index') }}">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Profile</span></a>
                 </li>
             @else
                 <!-- Nav Item - Profile Edit -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('profile.edit', auth()->user()->id) }}">
+                    <a class="nav-link" href="{{ route('farmerprofiles.edit', auth()->user()->id) }}">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Edit Profile</span></a>
                 </li>
@@ -73,11 +73,9 @@
 
             <!-- Nav Item - Registration -->
             <li class="nav-item">
-
-                <a class="nav-link" href="{{ route('company.reg') }}">
-
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Registration</span></a>
+                    <span>Choose Plan</span></a>
             </li>
 
             <!-- Divider -->
@@ -85,24 +83,19 @@
 
             <!-- Nav Item - History -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('company.index') }}">
-
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>History</span></a>
+                    <span>Password & Security</span></a>
             </li>
 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - History -->
             <li class="nav-item">
                 <a class="nav-link" href="#">
-
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Pending Policy List</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Pending Quotations</span></a>
+                    <span>Registered Cattle</span></a>
             </li>
 
             <!-- Divider -->
@@ -154,14 +147,8 @@
         </div>
     </div>
     <!-- Logout Modal-->
-    <!-- Page level custom scripts -->
-   
 
-    <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
-
-    <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
-    <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
-    
+    <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
@@ -172,7 +159,6 @@
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 
     <!-- Page level plugins -->
-
     <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
@@ -181,50 +167,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    {{-- Sweet alert script start --}}
-    @if(session()->has('message'))
-        <script>
-           swal("Done!!","{!! Session::get('message')!!}","success",{
-              button:"OK",
-            })
-        </script>
-
-    @endif
-
-    @if(session()->has('warn'))
-        <script>
-           swal("Hey??","{!! Session::get('warn')!!}","warning",{
-              button:"OK",
-            })
-        </script>
-
-    @endif
-
-   <script type="text/javascript">
-            function confirmation(e) {
-            e.preventDefault();
-
-            var url = e.currentTarget.getAttribute('href')
-            
-            Swal.fire({
-                icon: 'warning',
-                title: 'Are you sure?',
-                text: 'This action cannot be undone!',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, recall!'
-            }).then((result) => {
-                if (result.value) {
-                    window.location.href=url;
-                }
-            })
-        }
-    </script>
-
-    
 </body>
 
 </html>

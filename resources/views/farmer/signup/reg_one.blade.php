@@ -43,6 +43,16 @@
         <div class="card-block p-2 card-block-middle mb-4">
             <h4 class="ms-4">Attachment</h4>
         </div>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+                
+            </ul>
+        </div>
+    @endif
         <form class="{{ route('reg_one.store') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="card-block p-2 card-block-down mb-4">
@@ -246,6 +256,22 @@
 <script src="{{ asset('js/reg_js/special_marks.js') }}"></script>
 <script src="{{ asset('js/reg_js/cow_with_owner.js') }}"></script>
 <script src="{{ asset('js/reg_js/pdf_upload.js') }}"></script>
+
+
+{{-- sweetalert start --}}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    @if(session()->has('msg'))
+        <script>
+           swal("Done!!","{!! Session::get('msg')!!}","success",{
+              button:"OK",
+            })
+        </script>
+
+    @endif
+{{-- sweetalert end --}}
+
 </body>
 </html>
 

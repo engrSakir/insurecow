@@ -24,13 +24,37 @@
 
                         <!--Plans-->
                         <li class="nav-item navbar-brand">
-                            <a href="#" class="nav-link">Plans</a>
+                            <a href="{{ route('farmer.choose.plan') }}" class="nav-link">Plans</a>
+                        </li>
+
+                        <!--Plans-->
+                        <li class="nav-item navbar-brand">
+                            <a href="{{ route('farmer.change.password') }}" class="nav-link">Change Password</a>
+                        </li>
+
+                        <!--Plans-->
+                        <li class="nav-item navbar-brand">
+                            <a href="{{ route('farmer.notification') }}" class="nav-link">Notifications</a>
+                        </li>
+
+                        <li class="nav-item navbar-brand">
+                            <a href="{{ route('farmer.registered.cattle') }}" class="nav-link">Registered Cattles</a>
                         </li>
 
                         <!--Features-->
-                        <li class="nav-item navbar-brand">
-                            <a href="#" class="nav-link">Features </a>
-                        </li>
+                        @if (auth()->user()->farmer_profile()->count() == 0)
+                        <!-- Nav Item - Profile -->
+                            <li class="nav-item navbar-brand">
+                                <a class="nav-link" href="{{ route('farmerprofiles.index') }}">
+                                    <span>Profile</span></a>
+                            </li>
+                        @else
+                            <!-- Nav Item - Profile Edit -->
+                            <li class="nav-item navbar-brand">
+                                <a class="nav-link" href="{{ route('farmerprofiles.edit', auth()->user()->id) }}">
+                                    <span>Edit Profile</span></a>
+                            </li>
+                        @endif
 
                         <!--Our Goals-->
                         <li class="nav-item navbar-brand">

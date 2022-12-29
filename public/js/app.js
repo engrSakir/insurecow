@@ -37456,4 +37456,9 @@ module.exports = __webpack_require__(/*! C:\Users\tahmi\Desktop\insurecow\resour
 
 /***/ })
 
+<<<<<<< HEAD
 /******/ });
+=======
+/******/ });
+
+>>>>>>> 63066e0b5dccc826863228a9868e9aaf72e4a75d

@@ -17,12 +17,13 @@ class FarmerController extends Controller
      */
     public function index()
     {
-        if(\auth()->user() == null){
-            return view('farmer.signup.index');
+        // if(\auth()->user() == null){
+        //     return view('farmer.index');
 
-        }else{
-            return "farmer page after logged in, code farmer/FarmerController";
-        }
+        // }else{
+        //     return "farmer page after logged in, code farmer/FarmerController";
+        // }
+        return view('farmer.index');
     }
 
     
@@ -115,5 +116,48 @@ class FarmerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function chooseplan()
+    {
+        return view('farmer.chooseplan');
+    }
+    public function changepassword()
+    {
+        return view('farmer.change-password');   
+    }
+
+    public function updatepassword(Request $request)
+    {   
+        request()->validate([
+            'current_password' => 'required',
+            'new_password' => 'required',
+            'verify_password' => 'required'
+        ]);
+
+        $pass = auth()->user()->password;
+
+        $current_password = request('current_password');
+        $new_password = request('new_password');
+        $confirm_password = request('verify_password');
+
+        if(\Illuminate\Support\Facades\Hash::check($current_password,$pass) && $new_password === $confirm_password){
+            auth()->user()->update([
+                'password' => Hash::make($new_password)
+            ]);
+            session()->flash('password_success', 'Password updated successfully');
+            return back();
+        }else{
+            session()->flash('password_failed', 'Password Change failed');
+            return back();
+        }
+    }
+    public function registeredcattle()
+    {
+        return view('farmer.registered-cattle');
+    }
+    public function farmernotification()
+    {
+        return view('farmer.farmer-notifcation');
     }
 }

@@ -47,6 +47,8 @@ class CompanyController extends Controller
             'phone'=>'required|unique:users',
             'email'=>'required|email',
             'adress'=>'required|max:30',
+            'agent_employee_id'=>'required',
+
         ];
         $this->validate($request,$validate);
 
@@ -57,15 +59,28 @@ class CompanyController extends Controller
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
         $user->adress=$request->adress;
-        $user->role_1=$request->role_2;
+        $user->agent_employee_id=$request->agent_employee_id;
+
+        $user->role_1=$request->role_1;
         $user->save();
         return redirect()->back()->with('message','Registration successfully complete');
     }
     function delete($id){
         $user=User::find($id);
         if($user->role_1=='s'){
-            return "don't try to delete this";
-        }else {
+            return redirect()->back()->with('warn',"Don't try to delete this !!");
+            
+        } elseif($user->role_1=='c'){
+            return redirect()->back()->with('warn',"Don't try to delete this !!");
+            
+
+        }
+       
+        elseif($user->role_1=='f'){
+            return redirect()->back()->with('warn',"Don't try to delete this !!");
+            
+        }
+        else {
         $user->delete();
         }
         return redirect()->back();

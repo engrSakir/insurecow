@@ -39,52 +39,63 @@ class CompanyProfileController extends Controller
 
 
         $company->save();
+        // return redirect()->back();
+
         return redirect()->route('company.index');
     }
 
     public function edit($id)
     {
 
-        $profile = Company::where('user_id',$id)->orderBy('id','desc')->first();
-        return view('superadmin.edit', compact('profile'));
+        $company = Company::where('user_id',$id)->orderBy('id','desc')->first();
+        return view('company.edit', compact('company'));
 
     }
 
-    public function update(Request $request,Company $profile)
+    public function update(Request $request,$id)
     {
 
-        $inputs = \request()->validate([
-            'name' => 'required',
-            'email' => 'required|unique:users',
+        $inputs = [
+            
             'website'   => 'required',
             'about'   => 'required',
             'address'   => 'required',
 
-            'image'     => 'mimes:jpeg,jpg,png',
-        ]);
+            
+        ];
+        $this->validate($request,$inputs);
+
+        $company=Company::find($id);
+        $company->website=$request->website;
+        $company->about=$request->about;
+        $company->address=$request->address;
+
 
         if (request('image')) {
-            $inputs['image'] = \request('image')->store('images');
+            $company['image'] = \request('image')->store('images');
         }else {
-            $inputs['image'] = $profile->image;
+            $company['image'] = $request->image;
         }
-
-        $profile->update([
-            'website' => $inputs['website'],
-            'address' => $inputs['address'],
-
-            'about' => $inputs['about'],
-
-            'image' => $inputs['image'],
-        ]);
-
-        $user_data = $profile->user_id;
-
-        User::findOrFail($user_data)->update([
-            'name' => $inputs['name'],
-            'email' => $inputs['email'],
-        ]);
-
+        $company->save();
         return redirect()->route('company.index');
+
+
+        // $company->update([
+        //     'website' => $inputs['website'],
+        //     'address' => $inputs['address'],
+
+        //     'about' => $inputs['about'],
+
+        //     'image' => $inputs['image'],
+        // ]);
+
+        // $user_data = $company->user_id;
+
+        // User::findOrFail($user_data)->update([
+        //     'name' => $inputs['name'],
+        //     'email' => $inputs['email'],
+        // ]);
+        // return redirect()->back();
+
     }
 }

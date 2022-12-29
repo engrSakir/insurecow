@@ -1,10 +1,4 @@
-@if(session()->has('message'))
-          <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert">x</button>
-          {{session()->get('message')}}
-          </div>
 
-        @endif
 @extends('layouts.company')
 
 @section('content')
@@ -20,6 +14,7 @@
                   @foreach ($errors->all() as $error)
                       <li>{{ $error }}</li>
                   @endforeach
+                  
               </ul>
           </div>
       @endif
@@ -52,7 +47,11 @@
                     <input type="text" name="adress" class="form-control">
                   </div>
                   <div class="mb-3">
-                    <select class="form-control" name="role_2" >
+                    <label  class="form-label">Employee ID</label>
+                    <input type="text" name="agent_employee_id" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                    <select class="form-control" name="role_1" >
                       <option selected>Open this select menu</option>
                       <option value="fa">Field Agent</option>
                       
