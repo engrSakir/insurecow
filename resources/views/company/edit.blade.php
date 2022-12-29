@@ -7,7 +7,10 @@
         <div class="container-fluid">
             <!-- Page Heading -->
             <h1 class="h3 mb-4 text-gray-800 text-center">Company Edit Profile</h1>
+
+
             <form action="{{ route('profile.update',$company->id) }}" method="POST" enctype="multipart/form-data">
+
                 {{ csrf_field() }}
                 @method('put')
                 <div class="mb-3">
