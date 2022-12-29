@@ -61,6 +61,8 @@ class RegistrationController extends Controller
         $inputs['user_id'] = auth()->user()->id;
 
         Farmer_reg_1::create($inputs);
+
+        return redirect()->route("reg_two.index");
     }
 
     /**
