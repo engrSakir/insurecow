@@ -1,10 +1,4 @@
-@if(session()->has('message'))
-          <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert">x</button>
-          {{session()->get('message')}}
-          </div>
 
-        @endif
 @extends('layouts.company')
 
 @section('content')
@@ -20,6 +14,7 @@
                   @foreach ($errors->all() as $error)
                       <li>{{ $error }}</li>
                   @endforeach
+                  
               </ul>
           </div>
       @endif

@@ -16,7 +16,7 @@
                 </ul>
             </div>
         @endif
-            <form action="{{ route('profiles.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('profile.store') }}" method="POST" enctype="multipart/form-data">
               @csrf
                 <div class="mb-3">
                     <label class="form-label">Company Name</label>

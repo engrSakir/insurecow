@@ -45,6 +45,7 @@ class RegistrationController extends Controller
             'poi' => 'required',
         ]);
 
+        // $this->validate($request,$inputs);
 
         if (request('nid')) {
             $inputs['nid'] = \request('nid')->store('images');
@@ -61,6 +62,7 @@ class RegistrationController extends Controller
         $inputs['user_id'] = auth()->user()->id;
 
         Farmer_reg_1::create($inputs);
+        return redirect()->back()->with('msg','1st step successfullly done');
     }
 
     /**

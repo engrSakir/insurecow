@@ -214,7 +214,7 @@
                                    
                                     
                                    
-                                    <td><a href="{{route('company.delete',$companys->id)}}" class="btn btn-danger" onclick="return confirm('Are You Sure to Delete This?')"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                    <td><a href="{{route('company.delete',$companys->id)}}" class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                     
                                    
 

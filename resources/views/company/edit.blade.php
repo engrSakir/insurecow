@@ -7,7 +7,10 @@
         <div class="container-fluid">
             <!-- Page Heading -->
             <h1 class="h3 mb-4 text-gray-800 text-center">Company Edit Profile</h1>
-            <form action="{{ route('profiles.update', $profile->id) }}" method="POST" enctype="multipart/form-data">
+
+
+            <form action="{{ route('profile.update',$company->id) }}" method="POST" enctype="multipart/form-data">
+
                 {{ csrf_field() }}
                 @method('put')
                 <div class="mb-3">
@@ -23,22 +26,22 @@
                 <div class="mb-3">
                     <label class="form-label">Website</label>
                     <input type="text" name="website" class="form-control" placeholder="Enter Personal Website Address"
-                        value="{{ $profile->website }}">
+                        value="{{ $company->website }}">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Address</label>
                     <input type="text" name="address" class="form-control" placeholder="Enter About"
-                        value="{{ $profile->address }}">
+                        value="{{ $company->address }}">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">About</label>
                     <input type="text" name="about" class="form-control" placeholder="Enter About"
-                        value="{{ $profile->about }}">
+                        value="{{ $company->about }}">
                 </div>
 
 
-                <img src="{{ asset('storage/' . $profile->image) }}" alt="" style="width: 200px; height: 200px">
+                <img src="{{ asset('storage/' . $company->image) }}" alt="" style="width: 200px; height: 200px">
 
                 <div class="form-control">
                     <i class="fa fa-upload" aria-hidden="true"></i>
