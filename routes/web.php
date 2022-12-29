@@ -60,9 +60,13 @@ Route::group(['prefix'=>'farmer'],function(){
     Route::resource('reg_one','farmer\RegistrationController');
     Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
     Route::resource('farmerprofiles','farmer\FarmerProfileController');
-
+    Route::get('/choose-plan', 'farmer\FarmerController@chooseplan')->name('farmer.choose.plan');
+    Route::get('/change-password', 'farmer\FarmerController@changepassword')->name('farmer.change.password');
+    Route::post('/change-password', 'farmer\FarmerController@updatepassword')->name('farmer.password.update');
+    Route::get('/registered-cattle', 'farmer\FarmerController@registeredcattle')->name('farmer.registered.cattle');
+    Route::get('/notification', 'farmer\FarmerController@farmernotification')->name('farmer.notification');
     // Route::resource('profile','farmer\FarmerProfileController');
-});
+}); 
 
 
 Route::get('log_out', function (){

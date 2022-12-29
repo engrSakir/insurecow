@@ -113,7 +113,7 @@ class FarmerProfileController extends Controller
         $farmer_profile->user_id = auth()->user()->id;
         $farmer_profile->save();
 
-        return redirect()->route('farmer.index');
+        return redirect()->back();
     }
 
     /**

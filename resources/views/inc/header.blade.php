@@ -24,7 +24,17 @@
 
                         <!--Plans-->
                         <li class="nav-item navbar-brand">
-                            <a href="#" class="nav-link">Plans</a>
+                            <a href="{{ route('farmer.choose.plan') }}" class="nav-link">Plans</a>
+                        </li>
+
+                        <!--Plans-->
+                        <li class="nav-item navbar-brand">
+                            <a href="{{ route('farmer.change.password') }}" class="nav-link">Change Password</a>
+                        </li>
+
+                        <!--Plans-->
+                        <li class="nav-item navbar-brand">
+                            <a href="{{ route('farmer.registered.cattle') }}" class="nav-link">Registered Cattles</a>
                         </li>
 
                         <!--Features-->
