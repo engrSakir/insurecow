@@ -4,6 +4,8 @@ namespace App\Http\Controllers\farmer;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Farmer_reg_2;
+use App\Medical;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -154,10 +156,49 @@ class FarmerController extends Controller
     }
     public function registeredcattle()
     {
-        return view('farmer.registered-cattle');
+        $registeredcattles = Farmer_reg_2::where('user_id', auth()->user()->id)->get();
+        return view('farmer.registered-cattle', compact('registeredcattles'));
     }
     public function farmernotification()
     {
         return view('farmer.farmer-notifcation');
     }
+    public function medicalreport()
+    {
+        return view('farmer.medical-report');
+    }
+    public function savemedicalreport(Request $request)
+    {
+        $inputs = \request()->validate([
+            'pdf_file' => 'required',
+        ]);
+
+        if (request('pdf_file')) {
+            $inputs['pdf_file'] = \request('pdf_file')->store('images');
+        }
+
+        $inputs['user_id'] = Auth::user()->id;
+        Medical::create($inputs);
+
+        return redirect()->back();
+    }
+    public function writemedicalreport()
+    {
+        return view('farmer.write-medical-report');
+    }
+    public function savewritemedicalreport(Request $request)
+    {
+        $inputs = \request()->validate([
+            'write_report' => 'required',
+        ]);
+
+        Medical::create($inputs);
+
+        return redirect()->back();
+    }
+    public function savedmedicalreport()
+    {
+        return view('farmer.saved-medical-reports');
+    }
 }
+

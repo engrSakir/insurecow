@@ -1,6 +1,5 @@
   <!--==================== FOOTER ====================-->
   <hr class="hr-style">
-  <section>
       <footer>
 
           <!-- Grid container -->
@@ -62,4 +61,3 @@
 
           </div>
       </footer>
-  </section>

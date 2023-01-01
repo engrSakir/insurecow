@@ -33,9 +33,6 @@ Route::middleware('company')->group(function(){
         Route::post('store', 'CompanyController@store')->name('company.store');
         Route::get('delete/{id}', 'CompanyController@delete')->name('company.delete');
         Route::get('download', 'CompanyController@download')->name('company.download');
-    
-    
-    
     });
 });
 
@@ -57,6 +54,11 @@ Route::middleware('farmer')->group(function(){
         Route::post('/change-password', 'farmer\FarmerController@updatepassword')->name('farmer.password.update');
         Route::get('/registered-cattle', 'farmer\FarmerController@registeredcattle')->name('farmer.registered.cattle');
         Route::get('/notification', 'farmer\FarmerController@farmernotification')->name('farmer.notification');
+        Route::get('/medical-report', 'farmer\FarmerController@medicalreport')->name('farmer.medical.report');
+        Route::post('/medical-report', 'farmer\FarmerController@savemedicalreport')->name('save.medical.report');
+        Route::get('/write-medical-report', 'farmer\FarmerController@writemedicalreport')->name('write.medical.report');
+        Route::post('/write-medical-report', 'farmer\FarmerController@savewritemedicalreport')->name('save.write.medical.report');
+        Route::get('/saved-medical-report', 'farmer\FarmerController@savedmedicalreport')->name('saved.medical.report');
  
         });
 });
@@ -74,6 +76,7 @@ Route::group(['prefix' => 'superadmin'], function(){
 });
 
 });
+
 
 
 
