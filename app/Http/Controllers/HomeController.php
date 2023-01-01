@@ -26,14 +26,14 @@ class HomeController extends Controller
     {
         if(Auth::id()){
             if(Auth::user()->role_1=='c'){
-                // return redirect()->route('home');
+                return redirect()->route('company.index');
                 // return view('home');
-                return "company";
+                // return "company";
             }
             elseif(Auth::user()->role_1=='f')
             {
                 // return view('/home');
-                return "farmer";
+                return redirect()->route('farmer.index');
             }
             elseif(Auth::user()->role_1=='b')
             {
@@ -51,10 +51,9 @@ class HomeController extends Controller
             }
             elseif(Auth::user()->role_1=='s')
             {
-                // return view('/home');
-                return "super admin";
-
-                // return redirect('/home');
+                return redirect()->route('superadmin.index');
+                
+          
             }
             elseif(Auth::user()->role_2=='fa')
             {
