@@ -47,7 +47,9 @@ Route::middleware('farmer')->group(function(){
         Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
         Route::resource('farmer','farmer\FarmerController');
         Route::resource('reg_one','farmer\RegistrationController');
-        Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
+        Route::resource('reg_two', 'farmer\FarmerReg2Controller');
+
+        // Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
         // Route::resource('fprofile','farmer\FarmerProfileController');
         Route::resource('farmerprofiles','farmer\FarmerProfileController');
         Route::get('/choose-plan', 'farmer\FarmerController@chooseplan')->name('farmer.choose.plan');
@@ -79,13 +81,14 @@ Route::group(['prefix' => 'superadmin'], function(){
 
 //--------------------------- farmer ----------------------
 
-<<<<<<< HEAD
-Route::group(['prefix'=>'farmer'],function(){
-    Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
-    Route::resource('farmer','farmer\FarmerController');
-    Route::resource('reg_one','farmer\RegistrationController');
-    Route::resource('reg_two', 'farmer\FarmerReg2Controller');
-=======
+
+// Route::group(['prefix'=>'farmer'],function(){
+//     Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
+//     Route::resource('farmer','farmer\FarmerController');
+//     Route::resource('reg_one','farmer\RegistrationController');
+//     Route::resource('reg_two', 'farmer\FarmerReg2Controller');
+// });
+
 // Route::group(['prefix'=>'farmer'],function(){
 //     Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
 //     Route::resource('reg_one','farmer\RegistrationController');
@@ -112,7 +115,7 @@ Route::group(['prefix'=>'farmer'],function(){
 // });
 
 
->>>>>>> 63066e0b5dccc826863228a9868e9aaf72e4a75d
+
 
 
 
