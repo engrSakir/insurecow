@@ -25,7 +25,7 @@ class RegistrationController extends Controller
      */
     public function create()
     {
-        return view('farmer.signup.reg_two');
+//        return view('farmer.signup.reg_two');
     }
 
     /**
@@ -62,7 +62,8 @@ class RegistrationController extends Controller
         $inputs['user_id'] = auth()->user()->id;
 
         Farmer_reg_1::create($inputs);
-        return redirect()->back()->with('msg','1st step successfullly done');
+
+        return redirect()->route("reg_two.index");
     }
 
     /**
