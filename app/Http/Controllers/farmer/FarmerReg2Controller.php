@@ -5,6 +5,7 @@ namespace App\Http\Controllers\farmer;
 use App\Farmer_reg_2;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
 
 class FarmerReg2Controller extends Controller
 {
@@ -82,7 +83,11 @@ class FarmerReg2Controller extends Controller
             $inputs['cow_with_owner'] = \request('cow_with_owner')->store('images');
         }
 
-        return $request->all();
+        $inputs['user_id'] = Auth::user()->id;
+
+        Farmer_reg_2::create($inputs);
+
+        return redirect()->back();
     }
 
     /**

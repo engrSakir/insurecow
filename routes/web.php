@@ -33,9 +33,6 @@ Route::middleware('company')->group(function(){
         Route::post('store', 'CompanyController@store')->name('company.store');
         Route::get('delete/{id}', 'CompanyController@delete')->name('company.delete');
         Route::get('download', 'CompanyController@download')->name('company.download');
-    
-    
-    
     });
 });
 
@@ -47,7 +44,8 @@ Route::middleware('farmer')->group(function(){
         Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
         Route::resource('farmer','farmer\FarmerController');
         Route::resource('reg_one','farmer\RegistrationController');
-        Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
+        Route::resource('reg_two', 'farmer\FarmerReg2Controller');
+        // Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
         // Route::resource('fprofile','farmer\FarmerProfileController');
         Route::resource('farmerprofiles','farmer\FarmerProfileController');
         Route::get('/choose-plan', 'farmer\FarmerController@chooseplan')->name('farmer.choose.plan');
@@ -55,6 +53,11 @@ Route::middleware('farmer')->group(function(){
         Route::post('/change-password', 'farmer\FarmerController@updatepassword')->name('farmer.password.update');
         Route::get('/registered-cattle', 'farmer\FarmerController@registeredcattle')->name('farmer.registered.cattle');
         Route::get('/notification', 'farmer\FarmerController@farmernotification')->name('farmer.notification');
+        Route::get('/medical-report', 'farmer\FarmerController@medicalreport')->name('farmer.medical.report');
+        Route::post('/medical-report', 'farmer\FarmerController@savemedicalreport')->name('save.medical.report');
+        Route::get('/write-medical-report', 'farmer\FarmerController@writemedicalreport')->name('write.medical.report');
+        Route::post('/write-medical-report', 'farmer\FarmerController@savewritemedicalreport')->name('save.write.medical.report');
+        Route::get('/saved-medical-report', 'farmer\FarmerController@savedmedicalreport')->name('saved.medical.report');
  
         });
 });
@@ -72,50 +75,6 @@ Route::group(['prefix' => 'superadmin'], function(){
 });
 
 });
-
-
-
-
-
-//--------------------------- farmer ----------------------
-
-<<<<<<< HEAD
-Route::group(['prefix'=>'farmer'],function(){
-    Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
-    Route::resource('farmer','farmer\FarmerController');
-    Route::resource('reg_one','farmer\RegistrationController');
-    Route::resource('reg_two', 'farmer\FarmerReg2Controller');
-=======
-// Route::group(['prefix'=>'farmer'],function(){
-//     Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
-//     Route::resource('reg_one','farmer\RegistrationController');
-//     Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
-//     Route::resource('farmerprofiles','farmer\FarmerProfileController');
-//     Route::get('/choose-plan', 'farmer\FarmerController@chooseplan')->name('farmer.choose.plan');
-//     Route::get('/change-password', 'farmer\FarmerController@changepassword')->name('farmer.change.password');
-//     Route::post('/change-password', 'farmer\FarmerController@updatepassword')->name('farmer.password.update');
-//     Route::get('/registered-cattle', 'farmer\FarmerController@registeredcattle')->name('farmer.registered.cattle');
-//     Route::get('/notification', 'farmer\FarmerController@farmernotification')->name('farmer.notification');
-//     // Route::resource('profile','farmer\FarmerProfileController');
-// }); 
-
-// Route::group(['prefix' => 'company'], function(){
-//     Route::get('home', 'CompanyController@index')->name('company.index');
-//     Route::get('reg', 'CompanyController@reg')->name('company.reg');
-//     Route::resource('profile', 'CompanyProfileController');
-//     Route::post('store', 'CompanyController@store')->name('company.store');
-//     Route::get('delete/{id}', 'CompanyController@delete')->name('company.delete');
-//     Route::get('download', 'CompanyController@download')->name('company.download');
-
-
-
-// });
-
-
->>>>>>> 63066e0b5dccc826863228a9868e9aaf72e4a75d
-
-
-
 
 Route::get('log_out', function (){
     \auth()->logout();

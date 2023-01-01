@@ -459,10 +459,10 @@
                     </div>
 
 
-                    <div class="px-4 py-5">
+                    <!-- <div class="px-4 py-5">
                         <button type="submit" class="register-button">Register</button>
 
-                    </div>
+                    </div> -->
 
 
                 </form>
@@ -559,6 +559,8 @@
 
                 window.axios.post('{{ route('reg_two.store') }}', formData).then(el => {
                     console.log(el);
+                    alert('Data added successfully!');
+                    location.reload();
                 });
             }
         }
