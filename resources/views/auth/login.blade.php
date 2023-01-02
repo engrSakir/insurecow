@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="{{asset('css/login_page.css')}}" />
 
@@ -95,84 +95,85 @@
     <!--==================== LOG IN ====================-->
 
     <section>
+       <!--Sign In Form-->
       <div class="row g-0 mt-5 mb-5">
+
+       <div class="col-lg-6">
+        <div class="card login-card p-5 h-100">
+          <div class="card-body">
+            <p class="login-text mb-4">Sign In</p>
+            <p class="p-welcome-text mb-5">Welcome To Insure Cow!</p>
+
+            <form method="POST" action="{{ route('login') }}">
+            @csrf
+              <!--User Name-->
+              <div class="mb-4">
+                <label for="email" class="form-label">Email / Phone: </label>
+                <input
+                id="email"   @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                  type="text"
+                  class="form-control fontAwesome input-form"
+                  placeholder="Enter Email or Phone"
+                  required="required"
+                />
+              </div>
+
+              <!--User Password-->
+              <div class="mb-4 password-container">
+                <label for="password" class="form-label">Password: </label>
+                <input
+                  id="password"   @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"
+                  type="password"
+                  class="form-control fontAwesome input-form"
+                  id="password"
+                  placeholder="Enter Password"
+                  required="required"
+                />
+                <i class="fa-solid fa-eye" id="eye"></i>
+
+
+              </div>
+
+
+              <!--Terms & Conditions-->
+              <div class="col-12 mb-4">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="invalidCheck2"
+                    required
+                  />
+                  <div class="d-flex justify-content-between mb-5">
+                    <label class="form-footer-text">Keep me signed in</label>
+                    <a href="../otp_page/otp_page.html" class="form-footer-text"
+                      ><label>Forgot password?</label></a
+                    >
+                   
+                  </div>
+               
+                </div>
+              </div>
+
+              <!--Log In Button-->
+              <button type="submit" class="login-button mb-4">Log In</button>
+
+              
+            </form>
+            <hr class="hr-style" />
+          </div>
+        </div>
+      </div>
         <div class="col-lg-6">
           <div class="card card-style h-100">
             <div class="card-body">
-              <img src="./images/cow2.png" class="img-fluid" alt="Cow" />
+              <img  src="./images/cow1.png" class="img-fluid" alt="Cow" />
             </div>
           </div>
         </div>
 
-        <!--Sign In Form-->
-        <div class="col-lg-6">
-          <div class="card login-card p-5 h-100">
-            <div class="card-body">
-              <p class="login-text mb-4">Sign In</p>
-              <p class="p-welcome-text mb-5">Welcome To Insure Cow!</p>
-
-              <form method="POST" action="{{ route('login') }}">
-              @csrf
-                <!--User Name-->
-                <div class="mb-4">
-                  <label for="email" class="form-label">Email / Phone: </label>
-                  <input
-                  id="email"   @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                    type="text"
-                    class="form-control fontAwesome input-form"
-                    placeholder="&#xf007;"
-                    required="required"
-                  />
-                </div>
-
-                <!--User Password-->
-                <div class="mb-4">
-                  <label for="password" class="form-label">Password: </label>
-                  <input
-                  id="password"   @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"
-                    type="password"
-                    class="form-control fontAwesome input-form"
-                    id="password"
-                    placeholder="&#xf023;"
-                    required="required"
-                  />
-                </div>
-
-                <!--Terms & Conditions-->
-                <div class="col-12 mb-4">
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      value=""
-                      id="invalidCheck2"
-                      required
-                    />
-                    <label class="form-check-label" for="invalidCheck2">
-                      I agree to platform Terms of Service and Privacy Policy
-                    </label>
-                  </div>
-                </div>
-
-                <!--Log In Button-->
-                <button type="submit" class="login-button mb-4">Log In</button>
-
-                <!--Form Footer-->
-                <div class="d-flex justify-content-between mb-5">
-                  <a href="../otp_page/otp_page.html" class="form-footer-text"
-                    >Forgot password?</a
-                  >
-                  <a
-                    href="../register_page_02/register_page_02.html"
-                    class="form-footer-text"
-                    >Register</a
-                  >
-                </div>
-              </form>
-              <hr class="hr-style" />
-            </div>
-          </div>
-        </div>
+       
       </div>
     </section>
 
@@ -237,5 +238,14 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const passwordInput = document.querySelector("#password")
+      const eye = document.querySelector("#eye")
+      eye.addEventListener("click", function(){
+      this.classList.toggle("fa-eye-slash")
+      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password"
+      passwordInput.setAttribute("type", type)
+        })
+    </script>
   </body>
 </html>

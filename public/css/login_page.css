@@ -165,3 +165,12 @@ nav .navbar-nav li a:hover {
         box-shadow: rgba(62, 135, 27, 0.25) 0px 4px 10px;
     }
 }
+
+
+  .fa-eye{
+    position: absolute;
+    left: 82%;
+    right: 62.08%;
+    top: 55.70%;
+    bottom: 41.7%;
+  }
