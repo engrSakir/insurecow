@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Farmer_reg_2;
 use App\Medical;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -143,16 +144,21 @@ class FarmerController extends Controller
         $new_password = request('new_password');
         $confirm_password = request('verify_password');
 
-        if(\Illuminate\Support\Facades\Hash::check($current_password,$pass) && $new_password === $confirm_password){
-            auth()->user()->update([
-                'password' => Hash::make($new_password)
-            ]);
-            session()->flash('password_success', 'Password updated successfully');
+        if ($new_password && $confirm_password == $current_password) {
+            session()->flash('password_failed', 'You have given old password as a new password');
             return back();
-        }else{
-            session()->flash('password_failed', 'Password Change failed');
-            return back();
-        }
+        } else {
+            if(\Illuminate\Support\Facades\Hash::check($current_password,$pass) && $new_password === $confirm_password){
+                auth()->user()->update([
+                    'password' => Hash::make($new_password)
+                ]);
+                session()->flash('password_success', 'Password updated successfully');
+                return back();
+            }else{
+                session()->flash('password_failed', 'Password Change failed');
+                return back();
+            }
+        }     
     }
     public function registeredcattle()
     {
@@ -188,11 +194,25 @@ class FarmerController extends Controller
     }
     public function savewritemedicalreport(Request $request)
     {
-        $inputs = \request()->validate([
-            'write_report' => 'required',
+        $request->validate([
+            "vaccination_date.*" => 'required',
+            "next_vaccination_date.*" => 'required',
+            "health_issue.*" => "required"          
         ]);
 
-        Medical::create($inputs);
+        $vaccination_date = $request->vaccination_date;
+        $next_vaccination_date = $request->next_vaccination_date;
+        $health_issue = $request->health_issue;
+
+        for($i=0; $i < count($vaccination_date); $i++){
+            $dataSave = [
+                'vaccination_date' => $vaccination_date[$i],
+                'next_vaccination_date' => $next_vaccination_date[$i],
+                'health_issue' => $health_issue[$i],
+                'user_id' => Auth::user()->id,
+            ];
+            DB::table('medicals')->insert($dataSave);
+        }
 
         return redirect()->back();
     }

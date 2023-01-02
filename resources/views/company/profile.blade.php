@@ -8,14 +8,14 @@
             <!-- Page Heading -->
             <h1 class="h3 mb-4 text-gray-800 text-center">Company Profile</h1>
             @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="{{ route('profile.store') }}" method="POST" enctype="multipart/form-data">
               @csrf
                 <div class="mb-3">

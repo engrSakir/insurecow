@@ -7,36 +7,33 @@
         <div class="col-lg-6" style="margin: auto">
           <div class="card login-card p-5 h-100">
             <div class="card-body">
-              <p class="p-welcome-text mb-5">Password must contain at least 1 letter, 1 number, and 1 symbol. Minimum length is 8 characters.</p>
               @if ($message = Session::get('password_success'))
-                <div class="alert alert-success alert-block">
-                    <button type="button" class="close" data-dismiss="alert">×</button>	
-                        <strong>{{ $message }}</strong>
-                </div>
+                <p class="p-welcome-text mb-5 alert alert-success">{{ $message }}</p>
+                <!-- <div class="alert alert-success alert-block">
+                    <strong>Password must contain at least 1 letter, 1 number, and 1 symbol. Minimum length is 8 characters.</strong>
+                </div> -->
               @endif
               @if ($message = Session::get('password_failed'))
-                <div class="alert alert-danger alert-block">	
-                    <strong>{{ $message }}</strong>
-                </div>
+                <p class="p-welcome-text mb-5 alert alert-danger">{{ $message }}</p>
               @endif
               <form action="{{ route('farmer.password.update') }}" method="POST">
                 @csrf  
               <!--User Name-->
                 <div class="mb-4">
                   <label for="username" class="form-label">Old Password: </label>
-                  <input type="password" class="form-control fontAwesome input-form" placeholder="" required="required" name="current_password">
+                  <input type="password" class="form-control input-form" placeholder="Enter Old Password" required="required" name="current_password">
                 </div>
 
                 <!--User Password-->
                 <div class="mb-4">
                   <label for="password" class="form-label">New Password: </label>
-                  <input type="password" class="form-control fontAwesome input-form" id="password" placeholder="" required="required" name="new_password">
+                  <input type="password" class="form-control input-form" id="password" placeholder="Enter New Password" required="required" name="new_password">
                 </div>
 
                 <!--User Password-->
                 <div class="mb-4">
                   <label for="password" class="form-label">Confirm Password: </label>
-                  <input type="password" class="form-control fontAwesome input-form" id="password" placeholder="" required="required" name="verify_password">
+                  <input type="password" class="form-control input-form" id="password" placeholder="Confirm New Password" required="required" name="verify_password">
                 </div>
 
                 <!--Log In Button-->

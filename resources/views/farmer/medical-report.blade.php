@@ -57,6 +57,7 @@
             <!-- Register button -->
             <div class="px-4 py-5">
                 <button type="submit" class="register-button">Register</button>
+                <a href="{{ route('write.medical.report') }}" class="p-2 register-button">Write Cattle Medical Report</a>
             </div>
         </form>
             

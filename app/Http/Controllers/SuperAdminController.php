@@ -52,6 +52,7 @@ class SuperAdminController extends Controller
             'name'=>'required|max:20',
             'phone'=>'required|unique:users',
             'email'=>'required|email',
+            'password' => 'required|numeric|string|uppercase|lowercase|regex:/^.+@.+$/i',
             'adress'=>'required|max:30',
         ];
         $this->validate($request,$validate);
