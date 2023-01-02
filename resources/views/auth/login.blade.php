@@ -129,7 +129,8 @@
                   placeholder="Enter Password"
                   required="required"
                 />
-                <i class="fa-solid fa-eye" id="eye"></i>
+                <i class="fas fa-eye-slash fa-eye" id="eye" ></i>
+                {{-- <i class="fa-solid fa-eye" id="eye"></i> --}}
 
 
               </div>
