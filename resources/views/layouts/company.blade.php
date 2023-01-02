@@ -50,7 +50,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            @if (auth()->user()->profile()->count() == 0)
+            @if (auth()->user()->profile()->count() == 1)
                 <!-- Nav Item - Profile -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('profile.index') }}">
