@@ -18,7 +18,7 @@ class CompanyProfileController extends Controller
         // return $request->all();
 
         $inputs = [
-            'website'   => 'required',
+            'website'   => 'required|url',
             'address'=>'required',
             'about'   => 'required',
             'image'     => 'required|mimes:jpeg,jpg,png',

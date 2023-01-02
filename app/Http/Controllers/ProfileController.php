@@ -38,7 +38,7 @@ class ProfileController extends Controller
     {
 
         $inputs = [
-            'website'   => 'required',
+            'website'   => 'required|url',
             'about'   => 'required',
             'image'     => 'required|mimes:jpeg,jpg,png',
         ];
