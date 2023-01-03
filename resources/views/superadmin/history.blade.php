@@ -12,7 +12,7 @@
                                     <th>Date</th>
                                     <th>Details</th>
                                     <th>Delete</th>
-                                    
+            
                                 </tr>
                             </thead>
                             
