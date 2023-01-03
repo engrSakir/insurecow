@@ -34,6 +34,7 @@ Route::middleware('company')->group(function(){
         Route::post('store', 'CompanyController@store')->name('company.store');
         Route::get('delete/{id}', 'CompanyController@delete')->name('company.delete');
         Route::get('download', 'CompanyController@download')->name('company.download');
+        Route::get('history', 'CompanyController@history')->name('company.history');
    
     });
 });

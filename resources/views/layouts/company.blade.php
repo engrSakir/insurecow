@@ -70,16 +70,16 @@
 
             @if (auth()->user()->profile()->count() == 1)
                 <!-- Nav Item - Profile -->
-                <li class="nav-item border-bottom border-dark {{ (request()->is('company/profiles')) ? 'active' : '' }} pt-2 pb-2">
+                <li class="nav-item border-bottom border-dark {{ (request()->is('company/profile')) ? 'active' : '' }} pt-2 pb-2">
                     <a class="nav-link text-dark" href="{{ route('profile.index') }}">
                         <i class="fas fa-fw fa-user-circle text-dark"></i>
                         <span>Profile</span></a>
                 </li>
             @else
                 <!-- Nav Item - Profile Edit -->
-                <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/{id}/edit')) ? 'active' : '' }} pt-2 pb-2">
+                <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/profile/1/edit')) ? 'active' : '' }} pt-2 pb-2">
                     <a class="nav-link text-dark" href="{{ route('profile.edit', auth()->user()->id) }}">
-                        <i class="fas fa-fw fa-file-pen-alt text-dark"></i>
+                        <i class="fas fa-fw fa-edit text-dark"></i>
                         <span>Edit Profile</span></a>
                 </li>
             @endif
@@ -100,23 +100,21 @@
             <hr class="sidebar-divider">
 
             <!-- Nav Item - History -->
-            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/index')) ? 'active' : '' }} pt-2 pb-2">
-                <a href="{{ route('company.index') }}" class="nav-link text-dark">
+            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/history')) ? 'active' : '' }} pt-2 pb-2">
+                <a href="{{ route('company.history') }}" class="nav-link text-dark">
                     <i class="fas fa-fw fa-undo-alt text-dark"></i>
                     <span>History</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/')) ? 'active' : '' }} pt-2 pb-2">
+                <a href="{{ route('company.index') }}" class="nav-link text-dark">
+                    <i class="fas fa-fw fa-undo-alt text-dark"></i>
                     <span>Pending Policy List</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/')) ? 'active' : '' }} pt-2 pb-2">
+                <a href="#" class="nav-link text-dark">
+                    <i class="fas fa-fw fa-undo-alt text-dark"></i>
                     <span>Pending Quotations</span></a>
             </li>
 
