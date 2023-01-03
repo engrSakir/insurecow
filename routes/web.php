@@ -1,5 +1,6 @@
 <?php
 
+use App\Company;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SuperAdminController;
@@ -86,3 +87,6 @@ Route::get('log_out', function (){
     return "log out";
 });
 
+Route::get('test', function(){
+    return Company::where('user_id', auth()->user()->id)->orderBy('id','desc')->first()->image;
+});
