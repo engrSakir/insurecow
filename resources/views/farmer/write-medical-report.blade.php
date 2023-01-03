@@ -13,9 +13,9 @@
 
                 <table class="table">
                     <thead class="table-dark">
-                        <th class="text-center">Vaccination Date</th>
-                        <th class="text-center">Next Vaccination Date</th>
-                        <th class="text-center">Health Issue</th>
+                        <th class="text-center">Vaccination Date <i style="color: #086343" class="fas fa-info-circle" title="Enter Your Vaccination Date"></i></th>
+                        <th class="text-center">Next Vaccination Date <i style="color: #086343" class="fas fa-info-circle" title="Enter Your New Vaccination Date"></i></th>
+                        <th class="text-center">Health Issue <i style="color: #086343" class="fas fa-info-circle" title="Enter cattle Health Issue"></i></th>
                         <th><a href="#" class="btn btn-info addRow text-center">+</a></th>
                     </thead>
                     <tbody>
@@ -57,6 +57,8 @@
     $('tbody').on('click', '.remove', function(){
         $(this).parent().parent().remove();
     });
+
+
 </script>
 
 @endsection

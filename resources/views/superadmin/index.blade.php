@@ -11,11 +11,11 @@
 
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card border-green shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: #086343;">
                             Total Agents</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($agent) }}</div>
                     </div>
@@ -29,11 +29,11 @@
 
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
+        <div class="card border-green shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                        <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: #086343;">
                             Total Companies</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($company) }}</div>
                     </div>
@@ -47,23 +47,17 @@
 
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-info shadow h-100 py-2">
+        <div class="card border-green shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">TOTAL FARMERS
+                        <div class="text-xs font-weight-bold text-uppercase mb-1"  style="color: #086343;">TOTAL FARMERS
                         </div>
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto">
                                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ count($farmer) }}</div>
                             </div>
-                            <div class="col">
-                                <div class="progress progress-sm mr-2">
-                                    <div class="progress-bar bg-info" role="progressbar"
-                                        style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                     <div class="col-auto">
@@ -76,11 +70,11 @@
 
     <!-- Pending Requests Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card border-green shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                        <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: #086343;">
                             TOTAL MEDICAL REPORTS</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{count($medical)}}</div>
                     </div>
@@ -105,7 +99,7 @@
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                <h6 class="m-0 font-weight-bold" style="color: #086343">Earnings Overview</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -136,7 +130,7 @@
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                <h6 class="m-0 font-weight-bold" style="color: #086343">Revenue Sources</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -176,7 +170,7 @@
 <!-- Content Row -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Latest Added Company</h6>
+                    <h6 class="m-0 font-weight-bold" style="color: #086343">Latest Added Company</h6>
                 </div>
             {{-- export button --}}
                 {{-- <div style="display: flex; justify-content:right ; padding:20px;">
@@ -184,8 +178,8 @@
                 </div> --}}
                 <div  style="display: flex; justify-content:right ; padding:20px;">
                 
-                    <a href="{{route('superadmin.download')}}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    <a href="{{route('superadmin.download')}}" class="d-none d-sm-inline-block btn btn-sm shadow-sm text-white" style="background: #086343;"><i
+                            class="fas fa-download fa-sm text-white"></i> Generate Report</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -207,7 +201,7 @@
                                     <td>{{$users->name}}</td>
                                     <td>{{$users->created_at}}</td>
                                     
-                                    <td><a href="#" class="btn btn-primary"><i class="fa fa-upload" aria-hidden="true"></i></a></td>
+                                    <td><a href="#" class="btn text-white" style="background: #086343;"><i class="fa fa-upload" aria-hidden="true"></i></a></td>
 
                                     <td><a href="{{route('superadmin.delete',$users->id)}}"  class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
       
