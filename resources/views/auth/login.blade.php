@@ -143,7 +143,7 @@
                     class="form-check-input"
                     type="checkbox"
                     value=""
-                    name="remember_me"
+                    type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}
                     id="invalidCheck2"
                     
                   />

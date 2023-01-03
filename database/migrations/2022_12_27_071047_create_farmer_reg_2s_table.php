@@ -35,8 +35,8 @@ class CreateFarmerReg2sTable extends Migration
             $table->string('special_mark');
             $table->string('cow_with_owner');
 
-            $table->string('agent_employee_id')->default('f');
-            $table->string('agent_name')->default('f');
+            $table->string('health')->default('f');
+            $table->string('price')->default('f');
             $table->integer('user_id');
 
             $table->timestamps();

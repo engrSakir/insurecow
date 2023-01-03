@@ -45,7 +45,7 @@ class LoginController extends Controller
     if(is_numeric($request->get('email'))){
         return ['phone'=>$request->get('email'),'password'=>$request->get('password')];
     }
-    Auth::viaRemember();
+   
 
     return $request->only($this->username(),'password');
   }

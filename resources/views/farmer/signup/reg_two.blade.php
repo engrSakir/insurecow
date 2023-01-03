@@ -390,10 +390,10 @@
 
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
-                                    <label class="form-label" for="agentName">Agent Name :</label>
+                                    <label class="form-label" for="health">Add Health :</label>
                                     <div class="col">
 
-                                        <input type="text" id="agentName" class="form-control input-style" v-model="agent_name"/>
+                                        <input type="text" id="health" class="form-control input-style" v-model="health"/>
 
 
                                         {{--                                <select class="form-select form-info form-control input-style">--}}
@@ -405,8 +405,8 @@
 
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
-                                    <label class="form-label" for="agentEmployeeId">Agent Employee ID :</label>
-                                    <input type="text" id="agentEmployeeId" class="form-control input-style" v-model="agent_employee_id"/>
+                                    <label class="form-label" for="price">Price :</label>
+                                    <input type="number" id="price" class="form-control input-style" v-model="price"/>
                                 </div>
                             </div>
 
@@ -497,8 +497,8 @@
                 age : "",
                 weight : "",
                 gender : "",
-                agent_employee_id : "",
-                agent_name : "",
+                health : "",
+                price : "",
 
                 face_of_cow: "",
                 left_side: "",
@@ -554,8 +554,8 @@
                 formData.set("special_mark", this.special_mark);
                 formData.set("cow_with_owner", this.cow_with_owner);
 
-                formData.set("agent_employee_id", this.agent_employee_id);
-                formData.set("agent_name", this.agent_name);
+                formData.set("health", this.health);
+                formData.set("price", this.price);
 
                 window.axios.post('{{ route('reg_two.store') }}', formData).then(el => {
                     console.log(el);
