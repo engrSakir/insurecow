@@ -62,7 +62,7 @@
                 </li>
             @else
                 <!-- Nav Item - Profile Edit -->
-                <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('superadmin/{id}/edit')) ? 'active' : '' }} pt-2 pb-2">
+                <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('superadmin/profiles/1/edit')) ? 'active' : '' }} pt-2 pb-2">
                     <a class="nav-link text-dark" href="{{ route('profiles.edit', auth()->user()->id) }}">
                         <i class="fas fa-fw fa-file-pen-alt text-dark"></i>
                         <span>Edit Profile</span></a>
