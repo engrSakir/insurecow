@@ -25,7 +25,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // --------------------------- company ----------------------
-Route::middleware('company')->group(function(){
+Route::middleware(['company','auth'])->group(function(){
     // Route::get('/home', 'HomeController@index')->name('home');
     Route::group(['prefix' => 'company'], function(){
         Route::get('home', 'CompanyController@index')->name('company.index');
@@ -40,7 +40,7 @@ Route::middleware('company')->group(function(){
 });
 
 // --------------------------- farmer ----------------------
-Route::middleware('farmer')->group(function(){
+Route::middleware(['farmer','auth'])->group(function(){
     // Route::get('/home', 'HomeController@index')->name('home');
     
      Route::group(['prefix'=>'farmer'],function(){
@@ -67,7 +67,7 @@ Route::middleware('farmer')->group(function(){
 });
 
 // --------------------------- superadmin----------------------
-Route::middleware('superadmin')->group(function(){
+Route::middleware(['superadmin','auth'])->group(function(){
 
 Route::group(['prefix' => 'superadmin'], function(){
     Route::get('home', 'SuperAdminController@index')->name('superadmin.index');
