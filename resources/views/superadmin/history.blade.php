@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+<h1 class="h3 mb-4 text-gray-800 text-center">History</h1>
 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -21,7 +22,7 @@
                                     <td>{{$users->name}}</td>
                                     <td>{{$users->created_at}}</td>
                                     
-                                    <td><a href="#" class="btn btn-primary"><i class="fa fa-upload" aria-hidden="true"></i></a></td>
+                                    <td><a href="#" class="btn text-white" style="background: #086343;"><i class="fa fa-upload" aria-hidden="true"></i></a></td>
 
                                     <td><a href="{{route('superadmin.delete',$users->id)}}"  class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
       
