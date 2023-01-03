@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Company;
+use App\Agent;
+use App\Farmer_reg_1;
+
+use App\Medical;
+
+
 use Illuminate\Support\Facades\Hash;
 use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -14,8 +20,12 @@ class CompanyController extends Controller
 {
     public function index()
     {
-        $company=User::all();
-        return view('company.index',compact('company'));
+        $user=User::all();
+        $agent = Agent::all();
+        $company = Company::all();
+        $farmer = Farmer_reg_1::all();
+        $medical = Medical::all();
+        return view('company.index',compact('user','agent','company','farmer','medical'));
     }
 
     function reg(){
@@ -130,5 +140,9 @@ class CompanyController extends Controller
         //
     }
 
-  
+    public function history()
+    {
+        $user=User::all();
+        return view('company.history', compact('user'));
+    }
 }
