@@ -26,24 +26,23 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion font-weight-bold" id="accordionSidebar" style="background: rgba(79, 172, 35, 0.25);">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center"
                 href="{{ route('superadmin.index') }}">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon mt-5">
+                    <img src="{{ asset('images/logo.png') }}" class="img-fluid">
                 </div>
-                <div class="sidebar-brand-text mx-3">Insurecow</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('superadmin.index') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+            <li class="nav-item border-bottom border-dark">
+                <a class="nav-link text-dark text-dark" href="{{ route('superadmin.index') }}">
+                    <i class="fas fa-fw fa-tachometer-alt text-dark"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -52,16 +51,16 @@
 
             @if (auth()->user()->profile()->count() == 0)
                 <!-- Nav Item - Profile -->
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('profiles.index') }}">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                <li class="nav-item border-bottom border-dark">
+                    <a class="nav-link text-dark" href="{{ route('profiles.index') }}">
+                        <i class="fas fa-fw fa-user-circle text-dark"></i>
                         <span>Profile</span></a>
                 </li>
             @else
                 <!-- Nav Item - Profile Edit -->
-                <li class="nav-item">
+                <li class="nav-item border-bottom border-dark text-dark">
                     <a class="nav-link" href="{{ route('profiles.edit', auth()->user()->id) }}">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <i class="fas fa-fw fa-file-pen-alt text-dark"></i>
                         <span>Edit Profile</span></a>
                 </li>
             @endif
@@ -73,8 +72,8 @@
 
             <!-- Nav Item - Registration -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('superadmin.reg') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <a class="nav-link border-bottom border-dark text-dark" href="{{ route('superadmin.reg') }}">
+                    <i class="fas fa-fw fa-user-edit text-dark"></i>
                     <span>Registration</span></a>
             </li>
 
@@ -83,8 +82,8 @@
 
             <!-- Nav Item - History -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('superadmin.index') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <a class="nav-link border-bottom border-dark text-dark" href="{{ route('superadmin.index') }}">
+                    <i class="fas fa-fw fa-undo-alt text-dark"></i>
                     <span>History</span></a>
             </li>
 
