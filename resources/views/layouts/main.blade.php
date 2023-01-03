@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
     <meta name="author" content="">
 
     <title>Insurecow</title>
@@ -25,6 +26,9 @@
         }
         .border-green {
             border-left: 0.25rem solid #086343 !important;
+        }
+        body,aside,select,option,header,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
+            cursor: url('{{ asset('images/favicon.png') }}'), auto;
         }
     </style>
     <!-- Custom styles for this template-->

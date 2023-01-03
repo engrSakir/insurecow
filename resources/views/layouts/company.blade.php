@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -19,10 +20,16 @@
         <link 
         href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" 
         rel="stylesheet">
-    <style>
-            .active {
-                background: #ffffff;
-            }
+        <style>
+        .active {
+            background: #ffffff;
+        }
+        .border-green {
+            border-left: 0.25rem solid #086343 !important;
+        }
+        body,aside,header,select,option,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
+            cursor: url('{{ asset('images/favicon.png') }}'), auto;
+        }
     </style>
     
        
