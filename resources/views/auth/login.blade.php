@@ -143,8 +143,9 @@
                     class="form-check-input"
                     type="checkbox"
                     value=""
+                    name="remember_me"
                     id="invalidCheck2"
-                    required
+                    
                   />
                   <div class="d-flex justify-content-between mb-5">
                     <label class="form-footer-text">Keep me signed in</label>
