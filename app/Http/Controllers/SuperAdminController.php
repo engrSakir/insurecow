@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Agent;
+use App\Company;
+use App\Farmer_reg_1;
+use App\Medical;
 use App\Profile;
 use Illuminate\Support\Facades\Hash;
 // use Barryvdh\DomPDF\Facade\PDF;
@@ -22,8 +26,11 @@ class SuperAdminController extends Controller
     {
         // return "test";
         $user=User::all();
-
-        return view('superadmin.index',compact('user'));
+        $agent = Agent::all();
+        $company = Company::all();
+        $farmer = Farmer_reg_1::all();
+        $medical = Medical::all();
+        return view('superadmin.index',compact('user','agent','company','farmer','medical'));
     }
     function reg(){
         return view('superadmin.reg');
