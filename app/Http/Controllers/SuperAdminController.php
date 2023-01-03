@@ -149,4 +149,10 @@ class SuperAdminController extends Controller
 
         $user->profile()->save($profile);
     }
+
+    public function history()
+    {
+        $user=User::all();
+        return view('superadmin.history', compact('user'));
+    }
 }

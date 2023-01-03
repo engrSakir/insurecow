@@ -18,9 +18,9 @@
 
                     <!--About Us-->
                     <ul class="nav navbar-nav ms-auto">
-                        <li class="nav-item navbar-brand">
+                        <!-- <li class="nav-item navbar-brand">
                             <a href="#" class="nav-link">About Us</a>
-                        </li>
+                        </li> -->
 
                         <!--Plans-->
                         <li class="nav-item navbar-brand">
@@ -44,10 +44,10 @@
                         <!--Features-->
                         @if (auth()->user()->farmer_profile()->count() == 0)
                         <!-- Nav Item - Profile -->
-                            <li class="nav-item navbar-brand">
+                            <!-- <li class="nav-item navbar-brand">
                                 <a class="nav-link" href="{{ route('farmerprofiles.index') }}">
                                     <span>Profile</span></a>
-                            </li>
+                            </li> -->
                         @else
                             <!-- Nav Item - Profile Edit -->
                             <li class="nav-item navbar-brand">
@@ -57,9 +57,9 @@
                         @endif
 
                         <!--Our Goals-->
-                        <li class="nav-item navbar-brand">
+                        <!-- <li class="nav-item navbar-brand">
                             <a href="#" class="nav-link">Our Goals</a>
-                        </li>
+                        </li> -->
 
                         <!--Contact Us-->
                         <li class="nav-item navbar-brand">
