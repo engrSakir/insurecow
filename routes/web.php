@@ -73,6 +73,7 @@ Route::group(['prefix' => 'superadmin'], function(){
     Route::post('store', 'SuperAdminController@store')->name('superadmin.store');
     Route::get('delete/{id}', 'SuperAdminController@delete')->name('superadmin.delete');
     Route::get('download', 'SuperAdminController@download')->name('superadmin.download');
+    Route::get('history', 'SuperAdminController@history')->name('superadmin.history');
     Route::resource('profiles', 'ProfileController');
 });
 

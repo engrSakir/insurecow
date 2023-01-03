@@ -16,7 +16,14 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" 
+        rel="stylesheet">
+    <style>
+        .active {
+            background: #ffffff;
+        }
+    </style>
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
@@ -27,7 +34,7 @@
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion font-weight-bold" id="accordionSidebar" style="background: rgba(79, 172, 35, 0.25);">
-
+        
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center"
                 href="{{ route('superadmin.index') }}">
@@ -36,30 +43,27 @@
                 </div>
             </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item border-bottom border-dark">
+            <li class="nav-item border-bottom border-dark {{ (request()->is('superadmin/home')) ? 'active' : '' }} mt-5 pt-2 pb-2">
                 <a class="nav-link text-dark text-dark" href="{{ route('superadmin.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt text-dark"></i>
                     <span>Dashboard</span></a>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+            
 
             @if (auth()->user()->profile()->count() == 0)
                 <!-- Nav Item - Profile -->
-                <li class="nav-item border-bottom border-dark">
+                <li class="nav-item border-bottom border-dark {{ (request()->is('superadmin/profiles')) ? 'active' : '' }} pt-2 pb-2">
                     <a class="nav-link text-dark" href="{{ route('profiles.index') }}">
                         <i class="fas fa-fw fa-user-circle text-dark"></i>
                         <span>Profile</span></a>
                 </li>
             @else
                 <!-- Nav Item - Profile Edit -->
-                <li class="nav-item border-bottom border-dark text-dark">
-                    <a class="nav-link" href="{{ route('profiles.edit', auth()->user()->id) }}">
+                <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('superadmin/{id}/edit')) ? 'active' : '' }} pt-2 pb-2">
+                    <a class="nav-link text-dark" href="{{ route('profiles.edit', auth()->user()->id) }}">
                         <i class="fas fa-fw fa-file-pen-alt text-dark"></i>
                         <span>Edit Profile</span></a>
                 </li>
@@ -67,28 +71,23 @@
 
 
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
 
             <!-- Nav Item - Registration -->
-            <li class="nav-item">
-                <a class="nav-link border-bottom border-dark text-dark" href="{{ route('superadmin.reg') }}">
+            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('superadmin/reg')) ? 'active' : '' }} pt-2 pb-2">
+                <a class="nav-link text-dark" href="{{ route('superadmin.reg') }}">
                     <i class="fas fa-fw fa-user-edit text-dark"></i>
                     <span>Registration</span></a>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+
 
             <!-- Nav Item - History -->
-            <li class="nav-item">
-                <a class="nav-link border-bottom border-dark text-dark" href="{{ route('superadmin.index') }}">
+            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('superadmin/history')) ? 'active' : '' }} pt-2 pb-2">
+                <a href="{{ route('superadmin.history') }}" class="nav-link text-dark">
                     <i class="fas fa-fw fa-undo-alt text-dark"></i>
                     <span>History</span></a>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
 
 
         </ul>
