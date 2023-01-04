@@ -98,8 +98,8 @@
        <!--Sign In Form-->
       <div class="row g-0 mt-5 mb-5">
 
-       <div class="col-lg-6">
-        <div class="card login-card p-5 h-100">
+       <div class="col-lg-6 ">
+        <div class="card login-card p-5 h-100 shadow-none">
           <div class="card-body">
             <p class="login-text mb-4">Sign In</p>
             <p class="p-welcome-text mb-5">Welcome To Insure Cow!</p>
@@ -145,25 +145,25 @@
                     value=""
                     type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}
                     id="invalidCheck2"
-                    
+
                   />
                   <div class="d-flex justify-content-between mb-5">
                     <label class="form-footer-text">Keep me signed in</label>
                     <a href="../otp_page/otp_page.html" class="form-footer-text"
                       ><label>Forgot password?</label></a
                     >
-                   
+
                   </div>
-               
+
                 </div>
               </div>
 
               <!--Log In Button-->
-              <button type="submit" class="login-button mb-4">Log In</button>
+              <button type="submit" class=" mb-4 form-control" style="background-color: #1D5C2E; color: white">Log In</button>
 
-              
+
             </form>
-            <hr class="hr-style" />
+
           </div>
         </div>
       </div>
@@ -175,7 +175,7 @@
           </div>
         </div>
 
-       
+
       </div>
     </section>
 
