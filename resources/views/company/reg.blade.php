@@ -14,7 +14,7 @@
                   @foreach ($errors->all() as $error)
                       <li>{{ $error }}</li>
                   @endforeach
-                  
+
               </ul>
           </div>
       @endif
@@ -28,7 +28,7 @@
                     <label class="form-label">Employee ID</label>
                     <input type="text" name="name" class="form-control">
                   </div> --}}
-                  
+
                   <div class="mb-3">
                     <label class="form-label">Phone</label>
                     <input type="text" name="phone" class="form-control">
@@ -37,7 +37,7 @@
                   <label class="form-label">Email address</label>
                   <input type="email" name="email" class="form-control">
                 </div>
-                
+
                 <div class="mb-3">
                   <label  class="form-label">Password</label>
                   <input type="password" name="password" class="form-control">
@@ -52,13 +52,13 @@
                   </div>
                   <div class="mb-3">
                     <select class="form-control" name="role_1" >
-                      <option selected>Open this select menu</option>
+
                       <option value="fa">Field Agent</option>
-                      
-  
+
+
                     </select><br><br>
                   </div>
-                  
+
                 <button type="submit" class="btn  form-control text-white" style="background-color:#086343 ">Submit</button>
               </form>
         </div>

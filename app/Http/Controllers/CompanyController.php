@@ -20,7 +20,7 @@ class CompanyController extends Controller
 {
     public function index()
     {
-        $user=User::all();
+        $user=User::where('role_1','fa')->where('company_id', auth()->user()->id)->get();
         $agent = Agent::all();
         $company = Company::all();
         $farmer = Farmer_reg_1::all();
@@ -70,6 +70,8 @@ class CompanyController extends Controller
         $user->password=Hash::make($request->password);
         $user->adress=$request->adress;
         $user->agent_employee_id=$request->agent_employee_id;
+        $user->company_id= auth()->user()->id;
+
 
         $user->role_1=$request->role_1;
         $user->save();
@@ -77,22 +79,9 @@ class CompanyController extends Controller
     }
     function delete($id){
         $user=User::find($id);
-        if($user->role_1=='s'){
-            return redirect()->back()->with('warn',"Don't try to delete this !!");
-            
-        } elseif($user->role_1=='c'){
-            return redirect()->back()->with('warn',"Don't try to delete this !!");
-            
 
-        }
-       
-        elseif($user->role_1=='f'){
-            return redirect()->back()->with('warn',"Don't try to delete this !!");
-            
-        }
-        else {
         $user->delete();
-        }
+
         return redirect()->back();
     }
 
@@ -142,7 +131,8 @@ class CompanyController extends Controller
 
     public function history()
     {
-        $user=User::all();
+        $user=User::where('role_1','fa')->where('company_id', auth()->user()->id)->get();
+
         return view('company.history', compact('user'));
     }
 }
