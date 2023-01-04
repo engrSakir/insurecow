@@ -99,7 +99,7 @@
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                <h6 class="m-0 font-weight-bold" style="color: #086343">Earnings Overview</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -130,7 +130,7 @@
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                <h6 class="m-0 font-weight-bold" style="color: #086343">Revenue Sources</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -173,7 +173,7 @@
             <!-- Page Heading -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Latest Added Company</h6>
+                    <h6 class="m-0 font-weight-bold" style="color: #086343">Latest Added Company</h6>
                 </div>
             {{-- export button --}}
                 {{-- <div style="display: flex; justify-content:right ; padding:20px;">
@@ -181,8 +181,8 @@
                 </div> --}}
                 <div  style="display: flex; justify-content:right ; padding:20px;">
                 
-                    <a href="{{route('superadmin.download')}}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    <a href="{{route('superadmin.download')}}" class="d-none d-sm-inline-block btn btn-sm text-white shadow-sm" style="background-color: #086343"><i
+                            class="fas fa-download fa-sm text-white-100"></i> Generate Report</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -204,7 +204,7 @@
                                     <td>{{$companys->name}}</td>
                                     <td>{{$companys->created_at}}</td>
                                     
-                                    <td><a href="#" class="btn btn-primary"><i class="fa fa-upload" aria-hidden="true"></i></a></td>
+                                    <td><a href="#" class="btn " style="background-color: #086343; color:white"><i class="fa fa-download" aria-hidden="true"></i></a></td>
                                    
                                     
                                    

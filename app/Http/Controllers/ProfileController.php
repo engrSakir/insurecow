@@ -115,7 +115,7 @@ class ProfileController extends Controller
             $profile['image'] = $request->image;
         }
         $profile->save();
-        return redirect()->route('superadmin.index');
+        return redirect()->route('superadmin.index')->with('alt','Profile Edit Succesfull');
 
 
 

@@ -34,6 +34,9 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
 </head>
 
 <body id="page-top">
@@ -191,6 +194,15 @@
         </script>
 
     @endif
+
+    @if(session()->has('alt'))
+    <script>
+       swal("Done!!","{!! Session::get('alt')!!}","success",{
+          button:"OK",
+        })
+    </script>
+
+@endif
 
    <script type="text/javascript">
             function confirmation(e) {
