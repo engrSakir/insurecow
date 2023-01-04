@@ -219,6 +219,14 @@
         </script>
 
     @endif
+    @if(session()->has('alt'))
+        <script>
+           swal("Done!!","{!! Session::get('alt')!!}","success",{
+              button:"OK",
+            })
+        </script>
+
+    @endif
 
    <script type="text/javascript">
             function confirmation(e) {

@@ -77,7 +77,7 @@ class CompanyProfileController extends Controller
             $company['image'] = $request->image;
         }
         $company->save();
-        return redirect()->route('company.index');
+        return redirect()->route('company.index')->with('alt','Profile Edit Sucessfull');
 
 
         // $company->update([
