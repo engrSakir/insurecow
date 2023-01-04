@@ -4,7 +4,7 @@
 
 <section class="mt-5 mb-4 p-4">
     <div>
-        <p class="p-greeting">Hi, Faisal.</p>
+        <p class="p-greeting">Hi, {{ Auth::user()->name }}.</p>
         <p class="p-welcome-text">Welcome to InsureCow!</p>
     </div>
 
