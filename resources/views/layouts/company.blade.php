@@ -17,8 +17,8 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-        <link 
-        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" 
+        <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
         <style>
         .active {
@@ -31,8 +31,8 @@
             cursor: url('{{ asset('images/favicon.png') }}'), auto;
         }
     </style>
-    
-       
+
+
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
@@ -43,7 +43,7 @@
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion font-weight-bold" id="accordionSidebar" style="background: rgba(79, 172, 35, 0.25);">
-        
+
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center"
@@ -59,7 +59,7 @@
                 </div>
                 @endif
 
-                
+
             </a>
 
             <!-- Nav Item - Dashboard -->
@@ -69,7 +69,7 @@
                     <span>Dashboard</span></a>
             </li>
 
-            @if (auth()->user()->profile()->count() == 0)
+            @if (auth()->user()->company()->count() == 0)
                 <!-- Nav Item - Profile -->
                 <li class="nav-item border-bottom border-dark {{ (request()->is('company/profile')) ? 'active' : '' }} pt-2 pb-2">
                     <a class="nav-link text-dark" href="{{ route('profile.index') }}">
@@ -159,13 +159,13 @@
     </div>
     <!-- Logout Modal-->
     <!-- Page level custom scripts -->
-   
+
 
     <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
 
     <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
-    
+
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
@@ -225,7 +225,7 @@
             e.preventDefault();
 
             var url = e.currentTarget.getAttribute('href')
-            
+
             Swal.fire({
                 icon: 'warning',
                 title: 'Are you sure?',
@@ -242,7 +242,7 @@
         }
     </script>
 
-    
+
 </body>
 
 </html>
