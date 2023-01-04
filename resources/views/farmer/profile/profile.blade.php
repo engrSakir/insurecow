@@ -2,7 +2,10 @@
 
 @section('content')
 <section>
-    <div class="card card-style mt-4 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="card mt-4 mb-5">
         <form class="{{ route('farmerprofiles.store') }}" method="POST">
             @csrf
             <div class="card-block p-2 card-block-top mb-4">
@@ -75,6 +78,9 @@
                 </div>
             </div>
         </form>
+    </div>
+            </div>
+        </div>
     </div>
 </section>
 
