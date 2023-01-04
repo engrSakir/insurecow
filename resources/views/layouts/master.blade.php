@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
-    
+
     <!--=============== DATATABLE CSS ===============-->
     <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css" rel="stylesheet">
     <style>
         .active {
-            background: #ffffff;
+            background: #fffffff;
         }
         .border-green {
             border-left: 0.25rem solid #086343 !important;
@@ -31,7 +31,7 @@
     </style>
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="https://insurecow.com/Field_Agent_Site/view_registered/css/view_registered.css" />
-    
+
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="{{asset('/css/register_page_02.css')}}" />
     <link rel="stylesheet" href="{{asset('/css/form_page.css')}}" />
