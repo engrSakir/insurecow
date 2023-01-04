@@ -202,7 +202,16 @@
         })
     </script>
 
-@endif
+   @endif
+
+   @if(session()->has('alrt'))
+    <script>
+       swal("Done!!","{!! Session::get('alrt')!!}","success",{
+          button:"OK",
+        })
+    </script>
+
+   @endif
 
    <script type="text/javascript">
             function confirmation(e) {

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.farmer')
 @section('content')
 <div class="container">
     <div class="row">
