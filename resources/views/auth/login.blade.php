@@ -119,7 +119,7 @@
               </div>
 
               <!--User Password-->
-              <div class="mb-4 password-container">
+              <div class="mb-4 password-container" style="position: relative">
                 <label for="password" class="form-label">Password: </label>
                 <input
                   id="password"   @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"

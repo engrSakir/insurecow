@@ -156,7 +156,7 @@ nav .navbar-nav li a:hover {
 /*=============== Media screen for tab (portrait) ===============*/
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
-    
+
     .card-style {
         display: none;
     }
@@ -169,8 +169,8 @@ nav .navbar-nav li a:hover {
 
   .fa-eye{
     position: absolute;
-    left: 82%;
-    right: 62.08%;
-    top: 57.48%;
-    bottom: 41.7%;
+    left: 90%;
+    /*right: 65.08%;*/
+    top: 62.48%;
+    /*bottom: 41.7%;*/
   }
