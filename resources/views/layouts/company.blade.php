@@ -51,11 +51,11 @@
 
                 @if(\App\Company::where('user_id',auth()->user()->id)->count() == 0)
                 <div class="sidebar-brand-icon mt-5">
-                    <img src="{{ asset('images/logo.png') }}" class="img-fluid">
+                    <img src="{{ asset('images/logo.png') }}" class="img-fluid" width="100px">
                 </div>
                 @else
                 <div class="sidebar-brand-icon mt-5">
-                    <img src="{{ asset('storage/'.\App\Company::where('user_id', auth()->user()->id)->orderBy('id','desc')->first()->image) }}" class="img-fluid">
+                    <img src="{{ asset('storage/'.\App\Company::where('user_id', auth()->user()->id)->orderBy('id','desc')->first()->image) }}" class="img-fluid" width="100px">
                 </div>
                 @endif
 
@@ -69,7 +69,7 @@
                     <span>Dashboard</span></a>
             </li>
 
-            @if (auth()->user()->profile()->count() == 1)
+            @if (auth()->user()->profile()->count() == 0)
                 <!-- Nav Item - Profile -->
                 <li class="nav-item border-bottom border-dark {{ (request()->is('company/profile')) ? 'active' : '' }} pt-2 pb-2">
                     <a class="nav-link text-dark" href="{{ route('profile.index') }}">
