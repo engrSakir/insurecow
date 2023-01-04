@@ -1,4 +1,7 @@
 @extends('layouts.farmer')
+@push('css')
+    <link rel="stylesheet" href="{{asset('css/form_page.css')}}" />
+@endpush
 
 @section('content')
 <section>
@@ -70,9 +73,9 @@
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
-                   
+
                         <button type="submit" class="register-button">Save</button>
-                    
+
                         <button type="submit" class="register-button">Cancel</button>
                     </div>
                 </div>
