@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="{{asset('/css/register_page_02.css')}}" />
     <link rel="stylesheet" href="{{asset('/css/form_page.css')}}" />
 
+
     <title>InsureCow</title>
 </head>
 

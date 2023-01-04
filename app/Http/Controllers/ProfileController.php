@@ -57,7 +57,7 @@ class ProfileController extends Controller
 
         $admin->save();
        
-        return redirect()->route('superadmin.index');
+        return redirect()->route('superadmin.index')->with('alrt','Profile Edit Successfull');
     }
 
     /**
@@ -115,7 +115,7 @@ class ProfileController extends Controller
             $profile['image'] = $request->image;
         }
         $profile->save();
-        return redirect()->route('superadmin.index')->with('alt','Profile Edit Succesfull');
+        return redirect()->route('superadmin.index')->with('alt','Profile Edit Successfull');
 
 
 

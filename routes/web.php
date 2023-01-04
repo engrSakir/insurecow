@@ -18,7 +18,7 @@ use App\Http\Controllers\CompanyController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Auth::routes();
@@ -44,10 +44,11 @@ Route::middleware(['farmer','auth'])->group(function(){
     // Route::get('/home', 'HomeController@index')->name('home');
     
      Route::group(['prefix'=>'farmer'],function(){
-        Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
+        // Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
         Route::resource('farmer','farmer\FarmerController');
         Route::resource('reg_one','farmer\RegistrationController');
         Route::resource('reg_two', 'farmer\FarmerReg2Controller');
+        Route::get('home','farmer\FarmerHomeController@index')->name('farmer.index');
 
         // Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
         // Route::resource('fprofile','farmer\FarmerProfileController');

@@ -42,7 +42,7 @@ class CompanyProfileController extends Controller
         $company->save();
         // return redirect()->back();
 
-        return redirect()->route('company.index');
+        return redirect()->route('company.index')->with('alrt','Profile Set Successfull');
     }
 
     public function edit($id)
