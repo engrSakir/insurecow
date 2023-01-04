@@ -87,7 +87,7 @@ Route::group(['prefix' => 'superadmin'], function(){
 Route::get('log_out', function (){
     \auth()->logout();
     return "log out";
-});
+})->name('log_out');
 
 Route::get('test', function(){
     return Company::where('user_id', auth()->user()->id)->orderBy('id','desc')->first()->image;
