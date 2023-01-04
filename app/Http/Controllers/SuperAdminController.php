@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Hash;
 use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Auth;
-use App\Rules\Uppercase;
-use App\Rules\Lowercase;
 
 class SuperAdminController extends Controller
 {
@@ -61,7 +59,7 @@ class SuperAdminController extends Controller
             'name'=>'required|max:20',
             'phone'=>'required|unique:users',
             'email'=>'required|email',
-            'password' => 'required|regex:/^.+@.+$/i', new Uppercase, new Lowercase,
+            'password' => 'required|min:8|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/',
             'adress'=>'required|max:30',
         ];
         $this->validate($request,$validate);
