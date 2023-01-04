@@ -69,8 +69,6 @@
 
                             <a href="{{ route('log_out') }}" class="btn signout-button">SignOut</a>
 
-                            <a href="#" class="btn signout-button">SignOut</a>
-
                         </li>
                     </ul>
 

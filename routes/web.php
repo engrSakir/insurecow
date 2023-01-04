@@ -86,7 +86,7 @@ Route::group(['prefix' => 'superadmin'], function(){
 
 Route::get('log_out', function (){
     \auth()->logout();
-    return "log out";
+    return redirect()->route('login');
 })->name('log_out');
 
 Route::get('test', function(){
