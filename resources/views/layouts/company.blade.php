@@ -62,18 +62,12 @@
                 
             </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
             <!-- Nav Item - Dashboard -->
             <li class="nav-item border-bottom border-dark {{ (request()->is('company/home')) ? 'active' : '' }} mt-5 pt-2 pb-2">
                 <a class="nav-link text-dark text-dark" href="{{ route('company.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt text-dark"></i>
                     <span>Dashboard</span></a>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
 
             @if (auth()->user()->profile()->count() == 1)
                 <!-- Nav Item - Profile -->
@@ -91,20 +85,12 @@
                 </li>
             @endif
 
-
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
             <!-- Nav Item - Registration -->
             <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/reg')) ? 'active' : '' }} pt-2 pb-2">
                 <a class="nav-link text-dark" href="{{ route('company.reg') }}">
                     <i class="fas fa-fw fa-user-edit text-dark"></i>
                     <span>Registration</span></a>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
 
             <!-- Nav Item - History -->
             <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/history')) ? 'active' : '' }} pt-2 pb-2">
@@ -115,19 +101,15 @@
 
             <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/')) ? 'active' : '' }} pt-2 pb-2">
                 <a href="{{ route('company.index') }}" class="nav-link text-dark">
-                    <i class="fas fa-fw fa-undo-alt text-dark"></i>
+                    <i class="fas fa-fw fa-clipboard text-dark"></i>
                     <span>Pending Policy List</span></a>
             </li>
 
             <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/')) ? 'active' : '' }} pt-2 pb-2">
                 <a href="#" class="nav-link text-dark">
-                    <i class="fas fa-fw fa-undo-alt text-dark"></i>
+                    <i class="fas fa-fw fa-user-clock text-dark"></i>
                     <span>Pending Quotations</span></a>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
 
         </ul>
         <!-- End of Sidebar -->

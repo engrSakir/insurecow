@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <div class="container">
     <div class="row">
@@ -19,21 +18,24 @@
               <form action="{{ route('farmer.password.update') }}" method="POST">
                 @csrf  
               <!--User Name-->
-                <div class="mb-4">
+                <div class="mb-4 password-container">
                   <label for="username" class="form-label">Old Password: </label>
-                  <input type="password" class="form-control input-form" placeholder="Enter Old Password" required="required" name="current_password">
+                  <input type="password" class="form-control input-form" placeholder="Enter Old Password" required="required" name="current_password" id="current_password">
+                  <i class="fas fa-eye fa-eye-slash" id="eye" style="position:absolute;top: 106px;left: 420px;" onclick="myFunction1()"></i>
                 </div>
 
                 <!--User Password-->
                 <div class="mb-4">
                   <label for="password" class="form-label">New Password: </label>
-                  <input type="password" class="form-control input-form" id="password" placeholder="Enter New Password" required="required" name="new_password">
+                  <input type="password" class="form-control input-form" placeholder="Enter New Password" required="required" name="new_password" id="new_password">
+                  <i class="fas fa-eye fa-eye-slash" id="eye" style="position:absolute;top: 201;left: 420px;" onclick="myFunction2()"></i>
                 </div>
 
                 <!--User Password-->
                 <div class="mb-4">
                   <label for="password" class="form-label">Confirm Password: </label>
-                  <input type="password" class="form-control input-form" id="password" placeholder="Confirm New Password" required="required" name="verify_password">
+                  <input type="password" class="form-control input-form" placeholder="Confirm New Password" required="required" name="verify_password" id="verify_password">
+                  <i class="fas fa-eye fa-eye-slash" id="eye" style="position:absolute;top: 295px;left: 420px;" onclick="myFunction3()"></i>
                 </div>
 
                 <!--Log In Button-->
@@ -52,4 +54,31 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+<script>
+function myFunction1() {
+  var x = document.getElementById("current_password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function myFunction2() {
+  var x = document.getElementById("new_password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function myFunction3() {
+  var x = document.getElementById("verify_password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
 @endsection
