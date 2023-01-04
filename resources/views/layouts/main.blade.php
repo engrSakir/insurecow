@@ -30,11 +30,12 @@
         body,aside,select,option,header,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
             cursor: url('{{ asset('images/favicon.png') }}'), auto;
         }
-    </style>
+        </style>
+    
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
 </head>

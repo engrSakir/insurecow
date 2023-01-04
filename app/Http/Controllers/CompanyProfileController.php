@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Company;
 use App\User;
+
 class CompanyProfileController extends Controller
 {
     public function index()
