@@ -1,4 +1,5 @@
   <!--==================== NAVBAR ====================-->
+
   <header>
     <div>
         <nav class="navbar navbar-expand-lg navbar-light pb-0">
@@ -28,29 +29,34 @@
                               Profile Information
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                             
-                             
-                            @if (auth()->user()->farmer_profile()->count() == 0)
-                                <li><a class="dropdown-item" href="{{route('farmerprofiles.index')}}">Profile</a></li>
-                            @else
-                                <!-- Nav Item - Profile Edit -->
-                                <li class="nav-item navbar-brand">
-                                    <a class="nav-link" href="{{ route('farmerprofiles.edit', auth()->user()->id) }}">
-                                        <span>Edit Profile</span></a>
-                                </li>
+
+
+
+                              @if (auth()->user()->farmer_profile()->count() == 0)
+
+                                    <li><a class="dropdown-item" href="{{route('farmerprofiles.index')}}">Profile</a></li>
+
+
+                               @else
+                            <!-- Nav Item - Profile Edit -->
+                            <li class="nav-item navbar-brand">
+                                <a class="nav-link" href="{{ route('farmerprofiles.edit', auth()->user()->id) }}">
+                                    <span>Edit Profile</span></a>
+                            </li>
                             @endif
-                             
-                             
-                             
-                              <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>
-                              
-                              <li><a class="dropdown-item" href="{{ route('farmer.change.password') }}">Change Password</a></li>
-                             
-                              <li><a class="dropdown-item" href="{{ route('farmer.registered.cattle') }}">Registered Cattle</a></li>
+
+                                  <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>
+
+                                  <li><a class="dropdown-item" href="{{ route('farmer.change.password') }}">Change Password</a></li>
+
+                                  <li><a class="dropdown-item" href="{{ route('farmer.registered.cattle') }}">Registered Cattle</a></li>
+
+
+
 
                             </ul>
                           </li>
-                       
+
 
                         <!--Notification-->
                         <li class="nav-item navbar-brand">
@@ -60,7 +66,11 @@
                         <!--Sign out-->
                         <li class="nav-item navbar-brand">
                             <!-- <button type="submit" class="signout-button">SignOut</button> -->
+
                             <a href="{{ route('log_out') }}" class="btn signout-button">SignOut</a>
+
+                            <a href="#" class="btn signout-button">SignOut</a>
+
                         </li>
                     </ul>
 
@@ -81,4 +91,6 @@
         </nav>
         <hr class="hr-style">
     </div>
+
     </header>
+

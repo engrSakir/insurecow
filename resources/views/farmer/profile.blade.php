@@ -1,6 +1,9 @@
 @extends('layouts.farmer')
 
+
+
 @section('content')
+
 <!-- Main Content -->
     <div id="content">
         <!-- Begin Page Content -->
@@ -30,7 +33,7 @@
                     <label class="form-label">Website</label>
                     <input type="text" name="website" class="form-control" placeholder="Enter Personal Website Address">
                   </div>
-               
+
                 <div class="mb-3">
                     <label  class="form-label">About</label>
                     <input type="text"  name="about" class="form-control" placeholder="Enter About">
@@ -39,7 +42,7 @@
                     <i class="fa fa-upload" aria-hidden="true"></i>
                    <input type="file" name="image">
                   </div><br>
-        
+
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
         </div>

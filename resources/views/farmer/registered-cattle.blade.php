@@ -1,8 +1,12 @@
 @extends('layouts.farmer')
 
 @section('content')
+    @push('css')
+        <link rel="stylesheet" href="{{asset('/css/register_page_02.css')}}" />
+
+    @endpush
 <section class="mt-4 mb-5">
-<h2 class="text-center mt-3"><b>Registered Cattles</b></h2>   
+<h2 class="text-center mt-3"><b>Registered Cattles</b></h2>
 <table id="insurecow-datatable" class="display dataTable no-footer dtr-inline" style="width: 100%;" aria-describedby="insurecow-datatable_info">
     <thead class="thead-style">
         <tr>
@@ -15,8 +19,8 @@
             <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">Action</th>
         </tr>
     </thead>
-    <tbody> 
-            @foreach($registeredcattles as $registeredcattle)    
+    <tbody>
+            @foreach($registeredcattles as $registeredcattle)
             <tr>
                 <td class="dtr-control sorting_1" tabindex="0">{{ $registeredcattle->id }}</td>
                 <td><img src="{{ url('storage/'.$registeredcattle->cow_with_owner) }}" width="50px"></td>

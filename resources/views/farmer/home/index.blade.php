@@ -1,7 +1,9 @@
 @extends('layouts.farmer')
 
+@push('css')
+    <link rel="stylesheet" href="{{asset('/css/fcss/homepage.css')}}" />
+@endpush
 @section('content')
-
 <section class="mt-5 mb-4 p-4">
     <div>
         <p class="p-greeting">Hi, {{ Auth::user()->name }}.</p>
