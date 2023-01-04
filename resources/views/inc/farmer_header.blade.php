@@ -61,7 +61,8 @@
 
                         <!--Sign out-->
                         <li class="nav-item navbar-brand">
-                            <button type="submit" class="signout-button">SignOut</button>
+                            <!-- <button type="submit" class="signout-button">SignOut</button> -->
+                            <a href="{{ Auth::logout() }}" class="btn signout-button">SignOut</a>
                         </li>
                     </ul>
 
