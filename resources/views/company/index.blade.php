@@ -190,7 +190,7 @@
                             <thead>
                                 <tr align="center">
                                     
-                                    <th>Company Name</th>
+                                    <th>Agent Name</th>
                                     <th>Date</th>
                                     <th>Details</th>
                                     <th>Delete</th>
@@ -199,16 +199,16 @@
                             </thead>
                             
                             <tbody>
-                         @foreach($company as $companys)
+                         @foreach($user as $agents)
                                 <tr align="center">
-                                    <td>{{$companys->name}}</td>
-                                    <td>{{$companys->created_at}}</td>
+                                    <td>{{$agents->name}}</td>
+                                    <td>{{$agents->created_at}}</td>
                                     
                                     <td><a href="#" class="btn " style="background-color: #086343; color:white"><i class="fa fa-download" aria-hidden="true"></i></a></td>
                                    
                                     
                                    
-                                    <td><a href="{{route('company.delete',$companys->id)}}" class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                    <td><a href="{{route('company.delete',$agents->id)}}" class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                     
                                    
 
