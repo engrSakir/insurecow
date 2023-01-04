@@ -63,7 +63,6 @@ Route::middleware(['farmer','auth'])->group(function(){
         Route::get('/write-medical-report', 'farmer\FarmerController@writemedicalreport')->name('write.medical.report');
         Route::post('/write-medical-report', 'farmer\FarmerController@savewritemedicalreport')->name('save.write.medical.report');
         Route::get('/saved-medical-report', 'farmer\FarmerController@savedmedicalreport')->name('saved.medical.report');
-        Route::get('/');
         });
 });
 
@@ -87,7 +86,7 @@ Route::group(['prefix' => 'superadmin'], function(){
 Route::get('log_out', function (){
     \auth()->logout();
     return "log out";
-});
+})->name('log_out');
 
 Route::get('test', function(){
     return Company::where('user_id', auth()->user()->id)->orderBy('id','desc')->first()->image;
