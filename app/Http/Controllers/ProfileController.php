@@ -15,7 +15,13 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('superadmin.profile');
+
+        if(Profile::where('user_id',auth()->user()->id)->orderBy('id','desc')->first() == null){
+            return view('superadmin.profile');
+        }else{
+            $profile = Profile::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+            return view('superadmin.edit', compact('profile'));
+        }
     }
 
     /**
@@ -81,7 +87,7 @@ class ProfileController extends Controller
     {
         // $profile=Profile::find($id);
 
-        $profile = Profile::where('user_id',$id)->orderBy('id','desc')->first();
+        $profile = Profile::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
         return view('superadmin.edit', compact('profile'));
 
     }

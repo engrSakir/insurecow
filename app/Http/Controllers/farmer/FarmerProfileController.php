@@ -19,7 +19,12 @@ class FarmerProfileController extends Controller
      */
     public function index()
     {
-        return view('farmer.profile.profile');
+        if(FarmerProfile::where('user_id',auth()->user()->id)->orderBy('id','desc')->first() == null){
+            return view('farmer.profile.profile');
+        }else{
+            $profile = FarmerProfile::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+            return view('farmer.edit', compact('profile'));
+        }
     }
 
     /**
@@ -63,6 +68,11 @@ class FarmerProfileController extends Controller
         $farmer_profile->zip_code = $request->zip_code;
         $farmer_profile->country = $request->country;
         $farmer_profile->user_id = auth()->user()->id;
+
+        if (request('image')) {
+            $farmer_profile['image'] = \request('image')->store('images');
+        }
+
         $farmer_profile->save();
 
         return redirect()->back();
@@ -111,6 +121,13 @@ class FarmerProfileController extends Controller
         $farmer_profile->zip_code = $request->zip_code;
         $farmer_profile->country = $request->country;
         $farmer_profile->user_id = auth()->user()->id;
+
+        if (request('image')) {
+            $farmer_profile->image = \request('image')->store('images');
+        }else {
+            $farmer_profile->image = $request->image;
+        }
+        
         $farmer_profile->save();
 
         return redirect()->back();

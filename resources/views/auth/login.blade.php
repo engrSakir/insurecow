@@ -32,7 +32,7 @@
         <nav class="navbar navbar-expand-lg navbar-light pb-0">
           <div class="container-fluid">
             <!--Navbar Logo-->
-            <a href="../../index.html" class="navbar-brand">
+            <a href="/" class="navbar-brand">
               <img src="./images/logo.png" alt="Logo" />
             </a>
 
@@ -110,25 +110,44 @@
               <div class="mb-4">
                 <label for="email" class="form-label">Email / Phone: </label>
                 <input
-                id="email"   @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
                   type="text"
-                  class="form-control fontAwesome input-form"
+
+                  class="form-control fontAwesome input-form  @error('email') is-invalid @enderror"
+
                   placeholder="Enter Email or Phone"
                   required="required"
                 />
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
               </div>
-
+                @if ($error = $errors->first('password'))
+                    <div class="alert alert-danger">
+                        {{ $error }}
+                    </div>
+                @endif
               <!--User Password-->
               <div class="mb-4 password-container" style="position: relative">
                 <label for="password" class="form-label">Password: </label>
                 <input
-                  id="password"   @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"
+                  id="password" name="password" required autocomplete="current-password"
                   type="password"
-                  class="form-control fontAwesome input-form"
+
+                  class="form-control fontAwesome input-form @error('password') is-invalid @enderror"
+
                   id="password"
                   placeholder="Enter Password"
                   required="required"
                 />
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                
+                @enderror
                 <i class="fas fa-eye-slash fa-eye" id="eye" ></i>
                 {{-- <i class="fa-solid fa-eye" id="eye"></i> --}}
 

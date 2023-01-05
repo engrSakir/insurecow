@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-12">
             <div class="card mt-4 mb-5">
-        <form class="{{ route('farmerprofiles.store') }}" method="POST">
+        <form class="{{ route('farmerprofiles.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="card-block p-2 card-block-top mb-4">
                 <h4 class="ms-4">Farmer Profile</h4>
@@ -73,10 +73,16 @@
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Image :</label>
+                            <input type="file" id="inputLastName" class="form-control input-style" name="image"/>
+                        </div>
+                    </div><hr>
+                    <div class="col-md-6 mb-4">
 
-                        <button type="submit" class="register-button">Save</button>
+                        <button type="submit" class="btn text-white" style="background: #23BB86">Save</button>
 
-                        <button type="submit" class="register-button">Cancel</button>
+                        <button type="submit" class="btn">Cancel</button>
                     </div>
                 </div>
             </div>

@@ -39,8 +39,8 @@
 
                                @else
                             <!-- Nav Item - Profile Edit -->
-                            <li class="nav-item navbar-brand">
-                                <a class="nav-link" href="{{ route('farmerprofiles.edit', auth()->user()->id) }}">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('farmerprofiles.edit', auth()->user()->id) }}">
                                     <span>Edit Profile</span></a>
                             </li>
                             @endif
