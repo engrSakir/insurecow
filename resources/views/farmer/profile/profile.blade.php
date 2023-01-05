@@ -33,13 +33,13 @@
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Email :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="email"/>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Phone :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="phone"/>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="phone" value="{{\Illuminate\Support\Facades\Auth::user()->phone}}"/>
                         </div>
                     </div>
                     <div class="mb-4">
