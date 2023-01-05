@@ -2,8 +2,8 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-lg-12 p-5">
-        <div class="col-lg-6" style="margin: auto">
+        <div class="col-lg-12">
+        <div class="col-lg-6 col-xs-12" style="margin: auto">
           <div class="card login-card p-5 h-100">
             <div class="card-body">
               @if ($message = Session::get('password_success'))
@@ -21,26 +21,26 @@
                 <div class="mb-4 password-container">
                   <label for="username" class="form-label">Old Password: </label>
                   <input type="password" class="form-control input-form" placeholder="Enter Old Password" required="required" name="current_password" id="current_password">
-                  <i class="fas fa-eye fa-eye-slash" id="eye" style="position:absolute;top: 106px;left: 420px;" onclick="myFunction1()"></i>
+                  <i class="fas fa-eye fa-eye-slash" id="eye" style="position:absolute;top: 106px;left: 440px;"></i>
                 </div>
 
                 <!--User Password-->
                 <div class="mb-4">
                   <label for="password" class="form-label">New Password: </label>
                   <input type="password" class="form-control input-form" placeholder="Enter New Password" required="required" name="new_password" id="new_password">
-                  <i class="fas fa-eye fa-eye-slash" id="eye" style="position:absolute;top: 201;left: 420px;" onclick="myFunction2()"></i>
+                  <i class="fas fa-eye fa-eye-slash" id="eye_1" style="position:absolute;top: 201;left: 440px;"></i>
                 </div>
 
                 <!--User Password-->
                 <div class="mb-4">
                   <label for="password" class="form-label">Confirm Password: </label>
                   <input type="password" class="form-control input-form" placeholder="Confirm New Password" required="required" name="verify_password" id="verify_password">
-                  <i class="fas fa-eye fa-eye-slash" id="eye" style="position:absolute;top: 295px;left: 420px;" onclick="myFunction3()"></i>
+                  <i class="fas fa-eye fa-eye-slash" id="eye_2" style="position:absolute;top: 295px;left: 440px;"></i>
                 </div>
 
                 <!--Log In Button-->
-                <button type="submit" class="btn register-button mb-4">
-                    Save
+                <button type="submit" class="btn mb-4 text-white" style="background: #23BB86">
+                    Change Password
                 </button>
                 <a type="submit" class="btn btn-default mb-4">
                     Cancel
@@ -55,30 +55,33 @@
     </div>
 </div>
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+
+
 <script>
-function myFunction1() {
-  var x = document.getElementById("current_password");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
-function myFunction2() {
-  var x = document.getElementById("new_password");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
-function myFunction3() {
-  var x = document.getElementById("verify_password");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
-</script>
+      const passwordInput = document.querySelector("#current_password")
+      const eye = document.querySelector("#eye")
+      eye.addEventListener("click", function(){
+      this.classList.toggle("fa-eye-slash")
+      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password"
+      passwordInput.setAttribute("type", type)
+        })
+    </script>
+<script>
+      const passwordInput1 = document.querySelector("#new_password")
+      const eye1 = document.querySelector("#eye_1")
+      eye1.addEventListener("click", function(){
+      this.classList.toggle("fa-eye-slash")
+      const type = passwordInput1.getAttribute("type") === "password" ? "text" : "password"
+      passwordInput1.setAttribute("type", type)
+        })
+    </script>
+<script>
+      const passwordInput2 = document.querySelector("#verify_password")
+      const eye2 = document.querySelector("#eye_2")
+      eye2.addEventListener("click", function(){
+      this.classList.toggle("fa-eye-slash")
+      const type = passwordInput2.getAttribute("type") === "password" ? "text" : "password"
+      passwordInput2.setAttribute("type", type)
+        })
+    </script>
 @endsection

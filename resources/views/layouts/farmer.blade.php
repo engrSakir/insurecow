@@ -50,6 +50,11 @@
         body,aside,select,option,header,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
             cursor: url('{{ asset('images/favicon.png') }}'), auto;
         }
+        .dropdown-item.active, .dropdown-item:active {
+            color: #fff;
+            text-decoration: none;
+            background-color: #23BB86;
+        }
     </style>
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="https://insurecow.com/Field_Agent_Site/view_registered/css/view_registered.css" />

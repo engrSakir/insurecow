@@ -9,7 +9,7 @@
                 <div class="card-body p-5">
                     <h3 class="p-2">Monthly</h3>
                     <h3 class="p-2"><b>50Tk/Month</b></h3>
-                    <a href="#" class="btn register-button">Buy Now</a>
+                    <a href="#" class="btn text-white" style="background: #086343;">Buy Now</a>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
                 <div class="card-body p-5">
                     <h3 class="p-2">Half Yearly</h3>
                     <h3 class="p-2"><b>250Tk/Month</b></h3>
-                    <a href="#" class="btn register-button">Buy Now</a>
+                    <a href="#" class="btn text-white" style="background: #086343;">Buy Now</a>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
                 <div class="card-body p-5">
                     <h3 class="p-2">Yearly</h3>
                     <h3 class="p-2"><b>450Tk/Month</b></h3>
-                    <a href="#" class="btn register-button">Buy Now</a>
+                    <a href="#" class="btn text-white" style="background: #086343;">Buy Now</a>
                 </div>
             </div>
         </div>
