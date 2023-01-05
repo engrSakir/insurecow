@@ -22,6 +22,12 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="{{asset('css/login_page.css')}}" />
 
+    <style>
+        body,aside,header,select,option,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
+            cursor: url('{{ asset('images/favicon.png') }}'), auto;
+        }
+    </style>
+
     <title>InsureCow</title>
   </head>
 
