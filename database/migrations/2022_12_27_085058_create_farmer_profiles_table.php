@@ -19,6 +19,7 @@ class CreateFarmerProfilesTable extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->string('phone');
+            $table->string('image')->nullable();
             $table->longText('address');
             $table->string('city');
             $table->string('district');
