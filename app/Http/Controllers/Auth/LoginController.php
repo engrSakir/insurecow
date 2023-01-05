@@ -41,12 +41,17 @@ class LoginController extends Controller
     }
   protected function credentials(Request $request)
   {
-    // $remember_me = $request->has('remember_me') ? true : false; 
+    // $remember_me = $request->has('remember_me') ? true : false;
+
     if(is_numeric($request->get('email'))){
         return ['phone'=>$request->get('email'),'password'=>$request->get('password')];
     }
-   
+
 
     return $request->only($this->username(),'password');
   }
+
+
+
+
 }

@@ -10,13 +10,18 @@ class CompanyProfileController extends Controller
 {
     public function index()
     {
-        return view('company.profile');
+        if(Company::where('user_id',auth()->user()->id)->orderBy('id','desc')->first() == null){
+            return view('company.profile');
+        }else{
+            $company = Company::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+            return view('company.edit', compact('company'));
+        }
     }
 
     public function store(Request $request)
     {
 
-        // return $request->all();
+//         return $request->all();
 
         $inputs = [
             'website'   => 'required|url',
@@ -48,7 +53,7 @@ class CompanyProfileController extends Controller
     public function edit($id)
     {
 
-        $company = Company::where('user_id',$id)->orderBy('id','desc')->first();
+        $company = Company::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
         return view('company.edit', compact('company'));
 
     }
@@ -57,12 +62,12 @@ class CompanyProfileController extends Controller
     {
 
         $inputs = [
-            
+
             'website'   => 'required',
             'about'   => 'required',
             'address'   => 'required',
 
-            
+
         ];
         $this->validate($request,$inputs);
 
