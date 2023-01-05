@@ -1,4 +1,6 @@
 @extends('layouts.farmer')
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{{asset('css/login_page.css')}}" />
 @section('content')
 <div class="container">
     <div class="row">
@@ -18,24 +20,24 @@
               <form action="{{ route('farmer.password.update') }}" method="POST">
                 @csrf  
               <!--User Name-->
-                <div class="mb-4 password-container">
+                <div class="mb-4 password-container" style="position: relative">
                   <label for="username" class="form-label">Old Password: </label>
                   <input type="password" class="form-control input-form" placeholder="Enter Old Password" required="required" name="current_password" id="current_password">
-                  <i class="fas fa-eye fa-eye-slash" id="eye" style="position:absolute;top: 106px;left: 440px;"></i>
+                  <i class="fas fa-eye-slash fa-eye" id="eye"></i>
                 </div>
 
                 <!--User Password-->
-                <div class="mb-4">
+                <div class="mb-4" style="position: relative">
                   <label for="password" class="form-label">New Password: </label>
                   <input type="password" class="form-control input-form" placeholder="Enter New Password" required="required" name="new_password" id="new_password">
-                  <i class="fas fa-eye fa-eye-slash" id="eye_1" style="position:absolute;top: 201;left: 440px;"></i>
+                  <i class="fas fa-eye fa-eye-slash" id="eye_1"></i>
                 </div>
 
                 <!--User Password-->
-                <div class="mb-4">
+                <div class="mb-4" style="position: relative">
                   <label for="password" class="form-label">Confirm Password: </label>
                   <input type="password" class="form-control input-form" placeholder="Confirm New Password" required="required" name="verify_password" id="verify_password">
-                  <i class="fas fa-eye fa-eye-slash" id="eye_2" style="position:absolute;top: 295px;left: 440px;"></i>
+                  <i class="fas fa-eye fa-eye-slash" id="eye_2"></i>
                 </div>
 
                 <!--Log In Button-->
