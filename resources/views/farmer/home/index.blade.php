@@ -22,7 +22,7 @@
                     <img src="{{asset('images/cow-list.png')}}" alt="Registered Cow" class="img-fluid img-card">
                     <div class="text-center p-4">
 
-                        <a href="{{ route('farmer.index') }}" class="btn card-button" style="background-color: #0f6848">Continue</a>
+                        <a href="{{ route('farmer.registered.cattle') }}" class="btn card-button" style="background-color: #0f6848">Continue</a>
 
                     </div>
                 </div>
