@@ -48,35 +48,35 @@
             <div id="navbarCollapse" class="collapse navbar-collapse">
               <!--About Us-->
               <ul class="nav navbar-nav ms-auto">
-                <li class="nav-item navbar-brand">
+                <!-- <li class="nav-item navbar-brand">
                   <a href="#" class="nav-link">About Us</a>
-                </li>
+                </li> -->
 
                 <!--Plans-->
                 <li class="nav-item navbar-brand">
-                  <a href="#" class="nav-link">Plans</a>
+                  <a href="https://insurecow.com/#we-are" class="nav-link">Who we are</a>
                 </li>
 
                 <!--Features-->
                 <li class="nav-item navbar-brand">
-                  <a href="#" class="nav-link">Features </a>
+                  <a href="#" class="nav-link">Products & services</a>
                 </li>
 
                 <!--Our Goals-->
                 <li class="nav-item navbar-brand">
-                  <a href="#" class="nav-link">Our Goals</a>
+                  <a href="https://insurecow.com/#services" class="nav-link">Our team</a>
                 </li>
 
                 <!--Contact Us-->
                 <li class="nav-item navbar-brand">
-                  <a href="#" class="nav-link">Contact Us </a>
+                  <a href="https://insurecow.com/#team" class="nav-link">Achievements</a>
                 </li>
               </ul>
 
               <!--Language-->
               <ul class="navbar-nav d-flex flex-row">
                 <li class="nav-item navbar-brand">
-                  <a href="#" class="nav-link">English</a>
+                  <a href="https://insurecow.com/#achievements" class="nav-link">English</a>
                 </li>
 
                 <div class="vr vr-style"></div>
@@ -148,10 +148,11 @@
 
                   />
                   <div class="d-flex justify-content-between mb-5">
-                    <label class="form-footer-text">Keep me signed in</label>
-                    <a href="../otp_page/otp_page.html" class="form-footer-text"
-                      ><label>Forgot password?</label></a
-                    >
+                    <label class="form-footer-text" id="invalidCheck2">Keep me signed in</label>
+                    @php
+                    $token= uniqid();
+                    @endphp
+                    <a href="{{ route('password.reset', $token) }}" class="form-footer-text"><label>Forgot password?</label></a>
 
                   </div>
 
