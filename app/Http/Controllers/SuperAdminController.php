@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Composer\Autoload\ClassLoader;
 use Illuminate\Http\Request;
 use App\User;
 use App\Agent;
@@ -27,10 +28,11 @@ class SuperAdminController extends Controller
         // return "test";
         $user=User::all();
         $agent = Agent::all();
-        $company = Company::all();
+//        $company=Company::where('user_id',\auth()->user()->id)->orderBy('id','desc')->first();
+        $company=Company::all();
         $farmer = Farmer_reg_1::all();
         $medical = Medical::all();
-        return view('superadmin.index',compact('user','agent','company','farmer','medical'));
+        return view('superadmin.index',compact('user','agent','farmer','medical','company'));
     }
     function reg(){
         return view('superadmin.reg');
@@ -81,7 +83,7 @@ class SuperAdminController extends Controller
         }else {
         $user->delete();
         }
-        
+
         return redirect()->back();
     }
 
@@ -97,7 +99,7 @@ class SuperAdminController extends Controller
      */
     public function show()
     {
-       
+
     }
 
     /**
@@ -134,7 +136,7 @@ class SuperAdminController extends Controller
         //
     }
 
-    public function saveProfile(Request $request) 
+    public function saveProfile(Request $request)
     {
         $user = User::find(Auth::user()->id);
 
