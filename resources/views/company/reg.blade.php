@@ -22,7 +22,7 @@
               @csrf
                 <div class="mb-3">
                     <label class="form-label">Full Name</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="name" class="form-control" placeholder="Enter Your Full Name">
                   </div>
                   {{-- <div class="mb-3">
                     <label class="form-label">Employee ID</label>
@@ -31,24 +31,24 @@
 
                   <div class="mb-3">
                     <label class="form-label">Phone</label>
-                    <input type="text" name="phone" class="form-control">
+                    <input type="text" name="phone" class="form-control" placeholder="Enter Your Phone">
                   </div>
                 <div class="mb-3">
                   <label class="form-label">Email address</label>
-                  <input type="email" name="email" class="form-control">
+                  <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
                 </div>
 
                 <div class="mb-3">
                   <label  class="form-label">Password</label>
-                  <input type="password" name="password" class="form-control">
+                  <input type="password" name="password" class="form-control" placeholder="Enter Your Password">
                 </div>
                 <div class="mb-3">
                     <label  class="form-label">Address</label>
-                    <input type="text" name="adress" class="form-control">
+                    <input type="text" name="adress" class="form-control" placeholder="Enter Your Address">
                   </div>
                   <div class="mb-3">
                     <label  class="form-label">Employee ID</label>
-                    <input type="text" name="agent_employee_id" class="form-control">
+                    <input type="text" name="agent_employee_id" class="form-control" placeholder="Enter Your Employee ID">
                   </div>
                   <div class="mb-3">
                     <select class="form-control" name="role_1" >

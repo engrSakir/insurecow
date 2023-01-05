@@ -45,7 +45,7 @@ class ProfileController extends Controller
         $this->validate($request,$inputs);
         $admin=new Profile();
         $admin->website=$request->website;
-        
+
         $admin->about=$request->about;
 
         $admin['user_id'] = auth()->user()->id;
@@ -56,8 +56,8 @@ class ProfileController extends Controller
 
 
         $admin->save();
-       
-        return redirect()->route('superadmin.index')->with('alrt','Profile Edit Successfull');
+
+        return redirect()->route('superadmin.index')->with('alrt','Profile Update Successfull');
     }
 
     /**
@@ -97,18 +97,18 @@ class ProfileController extends Controller
     {
 
         $inputs = [
-            
+
             'website'   => 'required',
             'about'   => 'required',
-            
+
         ];
         $this->validate($request,$inputs);
 
         $profile=Profile::find($id);
         $profile->website=$request->website;
         $profile->about=$request->about;
-        
-        
+
+
         if (request('image')) {
             $profile['image'] = \request('image')->store('images');
         }else {
@@ -132,8 +132,8 @@ class ProfileController extends Controller
         //     'name' => $inputs['name'],
         //     'email' => $inputs['email'],
         // ]);
-        
-       
+
+
     }
 
     /**
@@ -146,5 +146,5 @@ class ProfileController extends Controller
     {
         //
     }
-   
+
 }
