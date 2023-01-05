@@ -177,7 +177,7 @@
                     <a href="{{route('superadmin.download')}}" class="btn btn-success">Export Excel</a>
                 </div> --}}
                 <div  style="display: flex; justify-content:right ; padding:20px;">
-                
+
                     <a href="{{route('superadmin.download')}}" class="d-none d-sm-inline-block btn btn-sm shadow-sm text-white" style="background: #086343;"><i
                             class="fas fa-download fa-sm text-white"></i> Generate Report</a>
                 </div>
@@ -186,30 +186,30 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr align="center">
-                                    
+
                                     <th>Company Name</th>
                                     <th>Date</th>
                                     <th>Details</th>
                                     <th>Delete</th>
-                                    
+
                                 </tr>
                             </thead>
-                            
+
                             <tbody>
                          @foreach($user as $users)
                                 <tr align="center">
                                     <td>{{$users->name}}</td>
                                     <td>{{$users->created_at}}</td>
-                                    
-                                    <td><a href="#" class="btn text-white" style="background: #086343;"><i class="fa fa-upload" aria-hidden="true"></i></a></td>
+
+                                    <td><a href="#" class="btn text-white" style="background: #086343;"><i class="fa fa-download" aria-hidden="true"></i></a></td>
 
                                     <td><a href="{{route('superadmin.delete',$users->id)}}"  class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-      
-                                </tr> 
-                               
-                            @endforeach   
-                              
-    
+
+                                </tr>
+
+                            @endforeach
+
+
                             </tbody>
                         </table>
                     </div>
