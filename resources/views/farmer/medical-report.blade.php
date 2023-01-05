@@ -1,5 +1,7 @@
 @extends('layouts.farmer')
-
+@push('css')
+    <link rel="stylesheet" href="{{asset('css/form_page.css')}}" />
+@endpush
 @section('content')
 <div class="container">
     <div class="row">

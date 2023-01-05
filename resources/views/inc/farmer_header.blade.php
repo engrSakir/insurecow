@@ -50,6 +50,8 @@
                                   <li><a class="dropdown-item" href="{{ route('farmer.change.password') }}">Change Password</a></li>
 
                                   <li><a class="dropdown-item" href="{{ route('farmer.registered.cattle') }}">Registered Cattle</a></li>
+                                  <li><a class="dropdown-item" href="{{ route('farmer.medical.report') }}">Medical Report</a></li>
+                                  <li><a class="dropdown-item" href="{{ route('write.medical.report') }}">Write Medical Report</a></li>
 
 
 
