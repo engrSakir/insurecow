@@ -32,7 +32,7 @@
 
 <body class="container">
 
-@include('inc/header')
+@include('inc/farmer_header')
 
 <!--==================== FORM PAGE SECTION ====================-->
 

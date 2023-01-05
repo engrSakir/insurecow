@@ -50,7 +50,7 @@ class CompanyProfileController extends Controller
         return redirect()->route('company.index')->with('alrt','Profile Set Successfull');
     }
 
-    public function edit($id)
+    public function edit(Request $request , $id)
     {
 
         $company = Company::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
@@ -60,6 +60,7 @@ class CompanyProfileController extends Controller
 
     public function update(Request $request,$id)
     {
+
 
         $inputs = [
 
@@ -72,6 +73,7 @@ class CompanyProfileController extends Controller
         $this->validate($request,$inputs);
 
         $company=Company::find($id);
+
         $company->website=$request->website;
         $company->about=$request->about;
         $company->address=$request->address;
@@ -80,10 +82,10 @@ class CompanyProfileController extends Controller
         if (request('image')) {
             $company['image'] = \request('image')->store('images');
         }else {
-            $company['image'] = $request->image;
+            $company['image'] = $company->image;
         }
         $company->save();
-        return redirect()->route('company.index')->with('alt','Profile Edit Sucessfull');
+        return redirect()->route('company.index')->with('alt','Profile Edit successful');
 
 
         // $company->update([

@@ -31,7 +31,7 @@
 <body class="container">
 
 <!--==================== NAVBAR ====================-->
-@include('inc/header')
+@include('inc/farmer_header')
 
 
 <!--==================== FORM PAGE SECTION ====================-->
