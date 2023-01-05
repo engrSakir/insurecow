@@ -36,8 +36,10 @@
                 </div>
                 <div class="mb-3">
                   <label  class="form-label">Password</label>
-                  <input type="password" name="password" class="form-control" placeholder="Enter Your Password">
-                  <small>Password Hints: <span class="text-danger">(A-Z), (a-z), (0-9), (!@%#$^@&*)</span></small>
+
+                  <input type="password" name="password" class="form-control">
+                  <small><span style="color: black">Password Hints:</span> <span class="text-danger">(A-Z), (a-z), (0-9), (!@%#$^@&*)</span></small>
+
                 </div>
                 <div class="mb-3">
                     <label  class="form-label">Address</label>

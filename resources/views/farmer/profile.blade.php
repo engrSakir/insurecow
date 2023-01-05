@@ -33,6 +33,10 @@
                     <label class="form-label">Website</label>
                     <input type="text" name="website" class="form-control" placeholder="Enter Personal Website Address">
                   </div>
+                <div class="mb-3">
+                    <label class="form-label">Image</label>
+                    <input type="file" name="image" class="form-control">
+                  </div>
 
                 <div class="mb-3">
                     <label  class="form-label">About</label>

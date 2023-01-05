@@ -48,35 +48,35 @@
             <div id="navbarCollapse" class="collapse navbar-collapse">
               <!--About Us-->
               <ul class="nav navbar-nav ms-auto">
-                <li class="nav-item navbar-brand">
+                <!-- <li class="nav-item navbar-brand">
                   <a href="#" class="nav-link">About Us</a>
-                </li>
+                </li> -->
 
                 <!--Plans-->
                 <li class="nav-item navbar-brand">
-                  <a href="#" class="nav-link">Plans</a>
+                  <a href="https://insurecow.com/#we-are" class="nav-link">Who we are</a>
                 </li>
 
                 <!--Features-->
                 <li class="nav-item navbar-brand">
-                  <a href="#" class="nav-link">Features </a>
+                  <a href="#" class="nav-link">Products & services</a>
                 </li>
 
                 <!--Our Goals-->
                 <li class="nav-item navbar-brand">
-                  <a href="#" class="nav-link">Our Goals</a>
+                  <a href="https://insurecow.com/#services" class="nav-link">Our team</a>
                 </li>
 
                 <!--Contact Us-->
                 <li class="nav-item navbar-brand">
-                  <a href="#" class="nav-link">Contact Us </a>
+                  <a href="https://insurecow.com/#team" class="nav-link">Achievements</a>
                 </li>
               </ul>
 
               <!--Language-->
               <ul class="navbar-nav d-flex flex-row">
                 <li class="nav-item navbar-brand">
-                  <a href="#" class="nav-link">English</a>
+                  <a href="https://insurecow.com/#achievements" class="nav-link">English</a>
                 </li>
 
                 <div class="vr vr-style"></div>
@@ -110,12 +110,19 @@
               <div class="mb-4">
                 <label for="email" class="form-label">Email / Phone: </label>
                 <input
-                id="email"   @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
                   type="text"
-                  class="form-control fontAwesome input-form email"
+
+                  class="form-control fontAwesome input-form  @error('email') is-invalid @enderror"
+
                   placeholder="Enter Email or Phone"
                   required="required"
                 />
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
               </div>
                 @if ($error = $errors->first('password'))
                     <div class="alert alert-danger">
@@ -126,13 +133,21 @@
               <div class="mb-4 password-container" style="position: relative">
                 <label for="password" class="form-label">Password: </label>
                 <input
-                  id="password"   @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"
+                  id="password" name="password" required autocomplete="current-password"
                   type="password"
-                  class="form-control fontAwesome input-form password "
+
+                  class="form-control fontAwesome input-form @error('password') is-invalid @enderror"
+
                   id="password"
                   placeholder="Enter Password"
                   required="required"
                 />
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                
+                @enderror
                 <i class="fas fa-eye-slash fa-eye" id="eye" ></i>
                 {{-- <i class="fa-solid fa-eye" id="eye"></i> --}}
 
@@ -152,10 +167,11 @@
 
                   />
                   <div class="d-flex justify-content-between mb-5">
-                    <label class="form-footer-text">Keep me signed in</label>
-                    <a href="../otp_page/otp_page.html" class="form-footer-text"
-                      ><label>Forgot password?</label></a
-                    >
+                    <label class="form-footer-text" id="invalidCheck2">Keep me signed in</label>
+                    @php
+                    $token= uniqid();
+                    @endphp
+                    <a href="{{ route('password.reset', $token) }}" class="form-footer-text"><label>Forgot password?</label></a>
 
                   </div>
 
