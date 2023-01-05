@@ -21,7 +21,7 @@ class CompanyProfileController extends Controller
     public function store(Request $request)
     {
 
-        // return $request->all();
+//         return $request->all();
 
         $inputs = [
             'website'   => 'required|url',
