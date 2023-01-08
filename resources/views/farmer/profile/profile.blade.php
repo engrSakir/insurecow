@@ -33,7 +33,7 @@
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Email :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}}"/>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -63,7 +63,7 @@
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Zip Code :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="zip_code"/>
+                            <input type="number" id="inputLastName" class="form-control input-style" name="zip_code"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
