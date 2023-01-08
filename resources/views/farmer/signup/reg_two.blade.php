@@ -383,7 +383,7 @@
                     <!--PDf Attachments-->
                     {{-------------------- Field agent information ----------------------------- --}}
                     <div class="card-block p-2 card-block-middle mb-4">
-                        <h4 class="ms-4">Field Agent Information</h4>
+                        <h4 class="ms-4">Additional Info</h4>
                     </div>
                     <div class="card-block p-2 card-block-down mb-4">
                         <div class="row px-4">
@@ -405,7 +405,7 @@
 
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
-                                    <label class="form-label" for="price">Price :</label>
+                                    <label class="form-label" for="price">Buying Price :</label>
                                     <input type="number" id="price" class="form-control input-style" v-model="price"/>
                                 </div>
                             </div>
