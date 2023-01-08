@@ -47,7 +47,7 @@
                   </div>
                   <div class="mb-3">
                   <select class="form-control" name="role_1" >
-                    <option selected>Open this select menu</option>
+
                     <option value="c">Company</option>
                     <option value="n">NGO</option>
                     <option value="b">Bank</option>

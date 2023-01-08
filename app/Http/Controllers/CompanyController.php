@@ -57,7 +57,7 @@ class CompanyController extends Controller
             'phone'=>'required|unique:users',
             'email'=>'required|email',
             'adress'=>'required|max:30',
-            'agent_employee_id'=>'required',
+            'agent_employee_id'=>'required|unique:users',
 
         ];
         $this->validate($request,$validate);
