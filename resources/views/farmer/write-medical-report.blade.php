@@ -22,9 +22,9 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="date" class="form-control" name="vaccination_date[]"></td>
-                            <td><input type="date" class="form-control" name="next_vaccination_date[]"></td>
-                            <td><input type="text" class="form-control" name="health_issue[]" placeholder="Enter Health Issue"></td>
+                            <td><input type="date" class="form-control" required name="vaccination_date[]"></td>
+                            <td><input type="date" class="form-control" required name="next_vaccination_date[]"></td>
+                            <td><input type="text" class="form-control" required name="health_issue[]" placeholder="Enter Health Issue"></td>
                             <td><a href="#" class="btn btn-danger text-center">-</a></td>
                         </tr>
                     </tbody>
@@ -52,7 +52,7 @@
                     '<td><input type="text" class="form-control" name="health_issue[]" placeholder="Enter Health Issue"></td>'+
                     '<td><a href="#" class="btn btn-danger text-center remove">-</a></td>'+
                 '</tr>';
-        
+
         $('tbody').append(tr);
     }
 

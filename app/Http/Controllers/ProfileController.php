@@ -104,8 +104,9 @@ class ProfileController extends Controller
 
         $inputs = [
 
-            'website'   => 'required',
+            'website'   => 'required|url',
             'about'   => 'required',
+
 
         ];
         $this->validate($request,$inputs);

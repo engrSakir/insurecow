@@ -19,11 +19,12 @@ class FarmerProfileController extends Controller
      */
     public function index()
     {
-        if(FarmerProfile::where('user_id',auth()->user()->id)->orderBy('id','desc')->first() == null){
+        if (FarmerProfile::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first() == null) {
             return view('farmer.profile.profile');
-        }else{
-            $profile = FarmerProfile::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
-            return view('farmer.edit', compact('profile'));
+        } else {
+            $profile = FarmerProfile::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first();
+
+            return redirect()->route('farmerprofiles.edit', $profile->user_id);
         }
     }
 
@@ -40,21 +41,21 @@ class FarmerProfileController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $request->validate([
-            'first_name'   => 'required',
-            'last_name'    => 'required',
-            'email'        => 'required',
-            'phone'        => 'required',
-            'address'      => 'required',
-            'city'         => 'required',
-            'district'     => 'required',
-            'zip_code'     => 'required',
-            'country'      => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'district' => 'required',
+            'zip_code' => 'required',
+            'country' => 'required',
         ]);
 
         $farmer_profile = new FarmerProfile();
@@ -81,7 +82,7 @@ class FarmerProfileController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -92,25 +93,25 @@ class FarmerProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $profile = FarmerProfile::where('user_id',$id)->orderBy('id','desc')->first();
+        $profile = FarmerProfile::where('user_id', $id)->orderBy('id', 'desc')->firstOrfail();
         return view('farmer.edit', compact('profile'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $farmer_profile = FarmerProfile::where('user_id',$id)->orderBy('id','desc')->first();
+        $farmer_profile = FarmerProfile::find($id);
         $farmer_profile->first_name = $request->first_name;
         $farmer_profile->last_name = $request->last_name;
         $farmer_profile->email = $request->email;
@@ -124,10 +125,10 @@ class FarmerProfileController extends Controller
 
         if (request('image')) {
             $farmer_profile->image = \request('image')->store('images');
-        }else {
-            $farmer_profile->image = $request->image;
+        } else {
+            $farmer_profile->image = $farmer_profile->image;
         }
-        
+
         $farmer_profile->save();
 
         return redirect()->back();
@@ -136,7 +137,7 @@ class FarmerProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

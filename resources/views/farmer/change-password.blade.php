@@ -18,10 +18,10 @@
                 <p class="p-welcome-text mb-5 alert alert-danger">{{ $message }}</p>
               @endif
               <form action="{{ route('farmer.password.update') }}" method="POST">
-                @csrf  
+                @csrf
               <!--User Name-->
                 <div class="mb-4 password-container" style="position: relative">
-                  <label for="username" class="form-label">Old Password: </label>
+                  <label for="password" class="form-label">Old Password: </label>
                   <input type="password" class="form-control input-form" placeholder="Enter Old Password" required="required" name="current_password" id="current_password">
                   <i class="fas fa-eye-slash fa-eye" id="eye"></i>
                 </div>
