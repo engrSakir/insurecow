@@ -118,10 +118,10 @@ class ProfileController extends Controller
         if (request('image')) {
             $profile['image'] = \request('image')->store('images');
         }else {
-            $profile['image'] = $request->image;
+            $profile['image'] = $profile->image;
         }
         $profile->save();
-        return redirect()->route('superadmin.index')->with('alt','Profile Edit Successfull');
+        return redirect()->route('superadmin.index')->with('alt','Profile Edit Successful');
 
 
 

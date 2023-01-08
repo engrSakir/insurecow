@@ -26,7 +26,7 @@
                         <!--Profile-->
                         <li class="nav-item dropdown navbar-brand">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Profile Information
+                              Profile Info
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -45,20 +45,35 @@
                             </li>
                             @endif
 
-                                  <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>
-
                                   <li><a class="dropdown-item" href="{{ route('farmer.change.password') }}">Change Password</a></li>
 
-                                  <li><a class="dropdown-item" href="{{ route('farmer.registered.cattle') }}">Registered Cattle</a></li>
-                                  <li><a class="dropdown-item" href="{{ route('farmer.medical.report') }}">Medical Report</a></li>
-                                  <li><a class="dropdown-item" href="{{ route('write.medical.report') }}">Write Medical Report</a></li>
+                            </ul>
+                          </li>
+
+                        <!--Reports-->
+                        <li class="nav-item dropdown navbar-brand">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Reports
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+
+
+
+                                <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>
+
+
+
+                                <li><a class="dropdown-item" href="{{ route('farmer.registered.cattle') }}">Registered Cattle</a></li>
+                                <li><a class="dropdown-item" href="{{ route('farmer.medical.report') }}">Medical Report</a></li>
+                                <li><a class="dropdown-item" href="{{ route('write.medical.report') }}">Write Medical Report</a></li>
 
 
 
 
                             </ul>
-                          </li>
-
+                        </li>
 
                         <!--Notification-->
                         <li class="nav-item navbar-brand">
