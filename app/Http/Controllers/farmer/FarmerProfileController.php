@@ -46,7 +46,7 @@ class FarmerProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $inputs=[
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required',
@@ -56,7 +56,8 @@ class FarmerProfileController extends Controller
             'district' => 'required',
             'zip_code' => 'required',
             'country' => 'required',
-        ]);
+        ];
+        $this->validate($request,$inputs);
 
         $farmer_profile = new FarmerProfile();
         $farmer_profile->first_name = $request->first_name;
@@ -111,6 +112,18 @@ class FarmerProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $inputs=[
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'district' => 'required',
+            'zip_code' => 'required',
+            'country' => 'required',
+        ];
+        $this->validate($request,$inputs);
         $farmer_profile = FarmerProfile::find($id);
         $farmer_profile->first_name = $request->first_name;
         $farmer_profile->last_name = $request->last_name;

@@ -9,6 +9,15 @@
         <div class="row">
             <div class="col-lg-12">
             <div class="card mt-4 mb-5">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
         <form class="{{ route('farmerprofiles.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="card-block p-2 card-block-top mb-4">
