@@ -22,20 +22,19 @@ class UsersExport implements FromCollection,WithHeadings
             'Company Name',
             'Email',
             '',
-            
             'Phone',
 
             'Adress',
             'nid',
             'dob',
-            'Role_1',
             'agent_employee_id',
-            
+            'Company ID',
+            'Role_1',
             'Created_At',
             'Updated_At',
 
 
-            
+
         ];
     }
 }

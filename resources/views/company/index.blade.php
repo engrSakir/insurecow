@@ -5,7 +5,7 @@
     <div id="content">
         <!-- Begin Page Content -->
         <div class="container-fluid">
-            
+
  <!-- Content Row -->
  <div class="row">
 
@@ -168,8 +168,8 @@
 </div>
 
 <!-- Content Row -->
-            
-            
+
+
             <!-- Page Heading -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -180,8 +180,8 @@
                     <a href="{{route('superadmin.download')}}" class="btn btn-success">Export Excel</a>
                 </div> --}}
                 <div  style="display: flex; justify-content:right ; padding:20px;">
-                
-                    <a href="{{route('superadmin.download')}}" class="d-none d-sm-inline-block btn btn-sm text-white shadow-sm" style="background-color: #086343"><i
+
+                    <a href="{{route('company.download')}}" class="d-none d-sm-inline-block btn btn-sm text-white shadow-sm" style="background-color: #086343"><i
                             class="fas fa-download fa-sm text-white-100"></i> Generate Report</a>
                 </div>
                 <div class="card-body">
@@ -189,35 +189,35 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr align="center">
-                                    
+
                                     <th>Agent Name</th>
                                     <th>Date</th>
                                     <th>Details</th>
                                     <th>Delete</th>
-                                    
+
                                 </tr>
                             </thead>
-                            
+
                             <tbody>
                          @foreach($user as $agents)
                                 <tr align="center">
                                     <td>{{$agents->name}}</td>
                                     <td>{{$agents->created_at}}</td>
-                                    
-                                    <td><a href="#" class="btn " style="background-color: #086343; color:white"><i class="fa fa-download" aria-hidden="true"></i></a></td>
-                                   
-                                    
-                                   
-                                    <td><a href="{{route('company.delete',$agents->id)}}" class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                                    
-                                   
 
-                                   
-                                </tr> 
-                               
-                            @endforeach   
-                              
-    
+                                    <td><a href="#" class="btn " style="background-color: #086343; color:white"><i class="fa fa-download" aria-hidden="true"></i></a></td>
+
+
+
+                                    <td><a href="{{route('company.delete',$agents->id)}}" class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+
+
+
+
+                                </tr>
+
+                            @endforeach
+
+
                             </tbody>
                         </table>
                     </div>
