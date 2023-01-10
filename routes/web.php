@@ -69,7 +69,11 @@ Route::middleware(['farmer','auth'])->group(function(){
         Route::get('/write-medical-report', 'farmer\FarmerController@writemedicalreport')->name('write.medical.report');
         Route::post('/write-medical-report', 'farmer\FarmerController@savewritemedicalreport')->name('save.write.medical.report');
         Route::get('/saved-medical-report', 'farmer\FarmerController@savedmedicalreport')->name('saved.medical.report');
+        Route::get('/expense', 'farmer\FarmerController@expense')->name('farmer.expense');
+        Route::post('/expense', 'farmer\FarmerController@farmerexpense')->name('farmer.expense.save');
 
+        Route::resource('/expenses', 'farmer\FarmerExpenseController');
+        Route::get('expense/delete/{id}', 'farmer\FarmerExpenseController@destroy')->name('expense.destroy');
         });
 });
 

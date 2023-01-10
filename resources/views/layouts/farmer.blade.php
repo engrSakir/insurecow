@@ -61,7 +61,8 @@
 
     <!--=============== CSS ===============-->
 
-
+        
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
     @stack('css')
 
@@ -69,25 +70,11 @@
 </head>
 
 <body class="container">
-
-
-
-
     @include('inc.farmer_header')
     {{-- content --}}
     @yield('content')
     {{-- footer --}}
     @include('inc.farmer_footer')
-
-
-
-
-
-
-
-
-
-
 
     <!--==================== JavaScript Bundle with Popper ====================-->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -121,9 +108,48 @@
 
 
 
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+$(document).ready(function () {
+        var today = new Date();
+        $('#datepicker').datepicker({
+            format: 'mm-dd-yyyy',
+            autoclose:true,
+            endDate: "today",
+            maxDate: today
+        }).on('changeDate', function (ev) {
+                $(this).datepicker('hide');
+            });
 
 
+        $('#datepicker').keyup(function () {
+            if (this.value.match(/[^0-9]/g)) {
+                this.value = this.value.replace(/[^0-9^-]/g, '');
+            }
+        });
+    });
+  </script>
 
+<script>
+$(document).ready(function () {
+        var today = new Date();
+        $('#datepicker2').datepicker({
+            format: 'mm-dd-yyyy',
+            autoclose:true,
+            minDate: "today",
+            endDate: "today",
+        }).on('changeDate', function (ev) {
+                $(this).datepicker('hide');
+            });
+
+
+        $('#datepicker2').keyup(function () {
+            if (this.value.match(/[^0-9]/g)) {
+                this.value = this.value.replace(/[^0-9^-]/g, '');
+            }
+        });
+    });
+  </script>
 
 </body>
 

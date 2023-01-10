@@ -23,11 +23,14 @@ class CreateFarmerReg2sTable extends Migration
             $table->string('post');
             $table->string('nid');
             $table->string('contact');
+
+            $table->string('cattle_name');
             $table->string('cattle_color');
             $table->string('cattle_breed');
             $table->string('age');
             $table->string('weight');
             $table->string('gender');
+            $table->string('cattle_unique_id');
 
             $table->string('face_of_cow');
             $table->string('left_side');

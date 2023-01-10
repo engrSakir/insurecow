@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Farmer_reg_2;
 use App\Medical;
+use App\FarmerExpense;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -203,37 +204,72 @@ class FarmerController extends Controller
 
     public function writemedicalreport()
     {
-        return view('farmer.write-medical-report');
+        $cattle = Farmer_reg_2::where('user_id', Auth::user()->id)->get();
+        return view('farmer.write-medical-report', compact('cattle'));
     }
 
     public function savewritemedicalreport(Request $request)
     {
         $request->validate([
-            "vaccination_date.*" => 'required',
-            "next_vaccination_date.*" => 'required',
-            "health_issue.*" => "required"
+            "date" => 'required',
+            "cattle_id" => 'required|integer',
+            "disease_name" => 'required',
+            "vaccine_name" => 'required',
+            "next_vaccination_date" => 'required',
+        ], [
+            "date.required" => 'Todays date is required.',
+            "cattle_id.required" => 'Please select a cattle.',
+            "disease_name.required" => 'Please enter disease name.',
+            "vaccine_name.required" => 'Please enter vaccine name.',
+            "next_vaccination_date.required" => "Please enter next vaccination date."
         ]);
 
-        $vaccination_date = $request->vaccination_date;
-        $next_vaccination_date = $request->next_vaccination_date;
-        $health_issue = $request->health_issue;
-
-        for ($i = 0; $i < count($vaccination_date); $i++) {
-            $dataSave = [
-                'vaccination_date' => $vaccination_date[$i],
-                'next_vaccination_date' => $next_vaccination_date[$i],
-                'health_issue' => $health_issue[$i],
-                'user_id' => Auth::user()->id,
-            ];
-            DB::table('medicals')->insert($dataSave);
-        }
+        Medical::create([
+            "date" => $request->date,
+            "cattle_id" => $request->cattle_id,
+            "disease_name" => $request->disease_name,
+            "vaccine_name" => $request->vaccine_name,
+            "user_id" => Auth::user()->id,
+            "next_vaccination_date" => $request->next_vaccination_date,
+        ]);
 
         return redirect()->back();
     }
 
     public function savedmedicalreport()
     {
-        return view('farmer.saved-medical-reports');
+        $reports = Medical::all();
+        return view('farmer.saved-medical-reports', compact('reports'));
+    }
+    public function expense()
+    {
+        $cattle = Farmer_reg_2::where('user_id', Auth::user()->id)->get();
+        $expense = FarmerExpense::where('user_id', Auth::user()->id)->get();
+        return view('farmer.expense', compact('cattle', 'expense'));
+    }
+    public function farmerexpense (Request $request)
+    {
+        $request->validate([
+            "date" => 'required',
+            "cattle_id" => 'required|integer',
+            "amount" => 'required',
+            "cost_note" => 'required',
+        ], [
+            "date.required" => 'Todays date is required.',
+            "cattle_id.required" => 'Please select a cattle.',
+            "amount.required" => 'Please enter cost amount.',
+            "cost_note.required" => 'Please enter purpose of cost.',
+        ]);
+
+        FarmerExpense::create([
+            "date" => $request->date,
+            "cattle_id" => $request->cattle_id,
+            "amount" => $request->amount,
+            "cost_note" => $request->cost_note,
+            "user_id" => Auth::user()->id,
+        ]);
+
+        return redirect()->back();
     }
 }
 

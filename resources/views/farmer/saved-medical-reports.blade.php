@@ -9,29 +9,29 @@
                 <thead class="thead-style">
                     <tr>
                         <th class="sorting sorting_asc" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 47px;" aria-sort="ascending" aria-label="ID: activate to sort column descending">NO</th>
-                        <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 211px;" aria-label="Farmer Name: activate to sort column ascending">REPORTS</th>
-                        <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">Action</th>
+                        <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 211px;" aria-label="Farmer Name: activate to sort column ascending">DATE</th>
+                        <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">CATTLE NAME</th>
+                        <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">DISEASE NAME</th>
+                        <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">VACCINE NAME</th>
+                        <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">NEXT VACCINE DATE</th>
                     </tr>
                 </thead>
                 <tbody>   
+                    @foreach($reports as $repo)
                     <tr>
-                        <td class="dtr-control sorting_1" tabindex="0">1</td>
-                        <td>Here is your report of your cattle cow1,2,3,4,5,6</td>
-                        <td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $repo->date }}</td>
+                        <td>{{ $repo->cattle->cattle_name }}</td>    
+                        <td>{{ $repo->disease_name }}</td>    
+                        <td>{{ $repo->vaccine_name }}</td>    
+                        <td>{{ $repo->next_vaccination_date }}</td>    
+                    </tr>
+                    @endforeach
+                    <!-- <td>
                             <a href="#">
                                 <button class="details-button">Details</button>
                             </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dtr-control sorting_1" tabindex="0">2</td>
-                        <td>Here is your report of your cattle cow1,2,3,4,5,6</td>
-                        <td>
-                            <a href="#">
-                                <button class="details-button">Details</button>
-                            </a>
-                        </td>
-                    </tr>
+                        </td> -->
                 </tbody>
             </table>
         </div>
