@@ -55,7 +55,7 @@ class CompanyController extends Controller
         $validate=[
             'name'=>'required|max:20',
             'phone'=>'required|unique:users',
-            'email'=>'required|email',
+            'email'=>'required|unique:users',
             'adress'=>'required|max:30',
             'agent_employee_id'=>'required|unique:users',
 
