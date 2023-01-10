@@ -5,34 +5,40 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
-            <h2 class="text-center mt-3"><b>Write Here about your cattle medical report:</b></h2>
-            <form class="{{ route('save.write.medical.report') }}" method="post" enctype="multipart/form-data">
+        <div class="col-lg-4 offset-md-4">
+            <h2 class="text-center mt-3"><b>Medical Info</b></h2>
+            <form class="{{ route('save.write.medical.report') }}" method="post" enctype="multipart/form-data" id="writemedicalform">
                 {{ csrf_field() }}
-                <!-- <div class="form-group">
-                    <textarea name="write_report" placeholder="Write a brief description about your cattle medical report..." class="form-control" rows="10"></textarea>
-                </div> -->
 
-                <table class="table">
-                    <thead class="table-dark">
-                        <th class="text-center">Vaccination Date <i style="color: #086343" class="fas fa-info-circle" title="Enter Your Vaccination Date"></i></th>
-                        <th class="text-center">Next Vaccination Date <i style="color: #086343" class="fas fa-info-circle" title="Enter Your New Vaccination Date"></i></th>
-                        <th class="text-center">Health Issue <i style="color: #086343" class="fas fa-info-circle" title="Enter cattle Health Issue"></i></th>
-                        <th><a href="#" class="btn btn-info addRow text-center">+</a></th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="date" class="form-control" required name="vaccination_date[]"></td>
-                            <td><input type="date" class="form-control" required name="next_vaccination_date[]"></td>
-                            <td><input type="text" class="form-control" required name="health_issue[]" placeholder="Enter Health Issue"></td>
-                            <td><a href="#" class="btn btn-danger text-center">-</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- Register button -->
-                <div class="px-4 py-5">
-                    <button type="submit" class="register-button">Save</button>
+                <div class="card p-5" style="background: rgba(79, 172, 35, 0.25);">
+                    <div class="form-group">
+                        <label for="date">Enter Date:</label>
+                        <input type="text" class="form-control" name="date" placeholder="01/12/2023" id="datepicker">
+                    </div>
+                    <div class="form-group">
+                        <label for="cattle_id">Select Cattle:</label>
+                        <select name="cattle_id" class="form-control" name="cattle_id">
+                            <option value="">SELECT CATTLE</option>
+                            @foreach($cattle as $cat)
+                                <option value="{{ $cat->id }}">{{ $cat->cattle_name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="disease_name">Enter Disease Name:</label>
+                        <input type="text" class="form-control" name="disease_name" placeholder="Enter Disease Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="vaccine_name">Enter Vaccine Name:</label>
+                        <input type="vaccine_name" class="form-control" name="vaccine_name" placeholder="Enter Vaccine Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="next_vaccination_date">Enter Next Vaccine Date:</label>
+                        <input type="text" class="form-control" name="next_vaccination_date" placeholder="01/12/2023" id="datepicker2">
+                    </div>
+                    <div class="form-group pt-3">
+                        <button type="submit" style="display:block; background: #086343" class="btn w-100 text-white">Add</button>
+                    </div>
                 </div>
             </form>
         </div>
@@ -40,27 +46,5 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script>
-    $('.addRow').on('click', function(){
-        addRow();
-    });
-
-    function addRow(){
-        var tr = '<tr>'+
-                    '<td><input type="date" class="form-control" name="vaccination_date[]"></td>'+
-                    '<td><input type="date" class="form-control" name="next_vaccination_date[]"></td>'+
-                    '<td><input type="text" class="form-control" name="health_issue[]" placeholder="Enter Health Issue"></td>'+
-                    '<td><a href="#" class="btn btn-danger text-center remove">-</a></td>'+
-                '</tr>';
-
-        $('tbody').append(tr);
-    }
-
-    $('tbody').on('click', '.remove', function(){
-        $(this).parent().parent().remove();
-    });
-
-
-</script>
 
 @endsection

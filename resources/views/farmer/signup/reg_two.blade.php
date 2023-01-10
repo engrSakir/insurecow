@@ -156,6 +156,20 @@
 
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
+                                    <label class="form-label" for="inputSpecies">Cattle Name :</label>
+                                    <div class="col">
+                                        <input type="text" id="cattle_name" class="form-control input-style"
+                                               name="cattle_name" v-model="cattle_name"/>
+
+                                        {{--                                <select class="form-select form-info form-control input-style">--}}
+                                        {{--                                    <option value="1"></option>--}}
+                                        {{--                                </select>--}}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="form-outline">
                                     <label class="form-label" for="inputSpecies">Cattle Color :</label>
                                     <div class="col">
                                         <input type="text" id="cattle_color" class="form-control input-style"
@@ -492,6 +506,7 @@
                 post : "",
                 nid : "",
                 contact : "",
+                cattle_name : "",
                 cattle_color : "",
                 cattle_breed : "",
                 age : "",
@@ -542,6 +557,7 @@
                 formData.set("post", this.post);
                 formData.set("nid", this.nid);
                 formData.set("contact", this.contact);
+                formData.set("cattle_name", this.cattle_name);
                 formData.set("cattle_color", this.cattle_color);
                 formData.set("cattle_breed", this.cattle_breed);
                 formData.set("age", this.age);

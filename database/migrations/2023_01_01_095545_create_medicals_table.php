@@ -16,11 +16,12 @@ class CreateMedicalsTable extends Migration
     {
         Schema::create('medicals', function (Blueprint $table) {
             $table->id();
-            $table->string('vaccination_date')->nullable();
+            $table->string('date')->nullable();
+            $table->integer('cattle_id');
+            $table->string('disease_name')->nullable();
+            $table->string('vaccine_name')->nullable();
             $table->string('next_vaccination_date')->nullable();
-            $table->string('health_issue')->nullable();
             $table->string('pdf_file')->nullable();
-            // $table->longText('write_report')->nullable();
             $table->integer('user_id')->nullable();
             $table->timestamps();
         });

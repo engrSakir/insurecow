@@ -4,8 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Medical extends Model
+class FarmerExpense extends Model
 {
+    //
+
     protected $guarded = [];
 
     public function cattle()

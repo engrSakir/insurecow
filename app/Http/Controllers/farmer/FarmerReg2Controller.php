@@ -46,6 +46,7 @@ class FarmerReg2Controller extends Controller
             'post' => 'required',
             'nid' => 'required',
             'contact' => 'required',
+            'cattle_name' => 'required',
             'cattle_color' => 'required',
             'cattle_breed' => 'required',
             'age' => 'required',
@@ -57,6 +58,8 @@ class FarmerReg2Controller extends Controller
             'right_side' => 'required',
             'special_mark' => 'required',
             'cow_with_owner' => 'required',
+            'health' => 'required',
+            'price' => 'required',
 
             'agent_employee_id' => 'nullable',
             'agent_name' => 'nullable',
@@ -84,6 +87,7 @@ class FarmerReg2Controller extends Controller
         }
 
         $inputs['user_id'] = Auth::user()->id;
+        $inputs['cattle_unique_id'] = uniqid();
 
         Farmer_reg_2::create($inputs);
 
