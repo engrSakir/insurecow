@@ -122,6 +122,12 @@ class ProfileController extends Controller
             $profile['image'] = $profile->image;
         }
         $profile->save();
+        $user_data = $profile->user_id;
+
+        $user = User::findOrFail($user_data);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
         return redirect()->route('superadmin.index')->with('alt','Profile Edit Successful');
 
 

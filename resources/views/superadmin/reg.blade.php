@@ -23,27 +23,27 @@
               @csrf
                 <div class="mb-3">
                     <label class="form-label">Company Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter Your Company Name">
+                    <input type="text" name="name" class="form-control" placeholder="Enter Your Company Name" value="{{ old('name') }}" requried>
                   </div>
 
                   <div class="mb-3">
                     <label class="form-label">Phone</label>
-                    <input type="text" name="phone" class="form-control" placeholder="Enter Your Phone">
+                    <input type="text" name="phone" class="form-control" placeholder="Enter Your Phone" value="{{ old('phone') }}" requried>
                   </div>
                 <div class="mb-3">
                   <label class="form-label">Email address</label>
-                  <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
+                  <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="{{ old('email') }}" requried>
                 </div>
                 <div class="mb-3">
                   <label  class="form-label">Password</label>
 
-                  <input type="password" name="password" class="form-control">
+                  <input type="password" name="password" class="form-control" value="{{ old('password') }}" placeholder="Enter Password" requried>
                   <small><span style="color: black">Password Hints:</span> <span class="text-danger">(A-Z), (a-z), (0-9), (!@%#$^@&*)</span></small>
 
                 </div>
                 <div class="mb-3">
                     <label  class="form-label">Address</label>
-                    <input type="text" name="adress" class="form-control" placeholder="Enter Your Address">
+                    <input type="text" name="adress" class="form-control" placeholder="Enter Your Address" value="{{ old('adress') }}" requried>
                   </div>
                   <div class="mb-3">
                   <select class="form-control" name="role_1" >

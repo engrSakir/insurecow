@@ -170,7 +170,7 @@
 <!-- Content Row -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold" style="color: #086343">Latest Added Company</h6>
+                    <h6 class="m-0 font-weight-bold" style="color: #086343">Latest Added User</h6>
                 </div>
             {{-- export button --}}
                 {{-- <div style="display: flex; justify-content:right ; padding:20px;">
@@ -201,7 +201,7 @@
                                     <td>{{$users->name}}</td>
                                     <td>{{$users->created_at}}</td>
 
-                                    <td><a href="#" class="btn text-white" style="background: #086343;"><i class="fa fa-download" aria-hidden="true"></i></a></td>
+                                    <td><a href="{{route('superadmin.view',$users->id)}}" class="btn text-white" style="background: #086343;"><i class="fa fa-info-circle " aria-hidden="true"></i></a></td>
 
                                     <td><a href="{{route('superadmin.delete',$users->id)}}"  class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 

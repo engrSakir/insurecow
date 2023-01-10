@@ -10,10 +10,10 @@ class CompanyProfileController extends Controller
 {
     public function index()
     {
-        if(Company::where('user_id',auth()->user()->id)->orderBy('id','desc')->first() == null){
+        if (Company::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first() == null) {
             return view('company.profile');
-        }else{
-            $company = Company::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        } else {
+            $company = Company::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first();
             return view('company.edit', compact('company'));
         }
     }
@@ -24,17 +24,17 @@ class CompanyProfileController extends Controller
 //         return $request->all();
 
         $inputs = [
-            'website'   => 'required|url',
-            'address'=>'required',
-            'about'   => 'required',
-            'image'     => 'required|mimes:jpeg,jpg,png',
+            'website' => 'required|url',
+            'address' => 'required',
+            'about' => 'required',
+            'image' => 'required|mimes:jpeg,jpg,png',
         ];
 
-        $this->validate($request,$inputs);
-        $company=new Company();
-        $company->website=$request->website;
-        $company->address=$request->address;
-        $company->about=$request->about;
+        $this->validate($request, $inputs);
+        $company = new Company();
+        $company->website = $request->website;
+        $company->address = $request->address;
+        $company->about = $request->about;
 
 
         $company['user_id'] = auth()->user()->id;
@@ -47,63 +47,56 @@ class CompanyProfileController extends Controller
         $company->save();
         // return redirect()->back();
 
-        return redirect()->route('company.index')->with('alrt','Profile Set Successfull');
+        return redirect()->route('company.index')->with('alrt', 'Profile Set Successfull');
     }
 
-    public function edit(Request $request , $id)
+    public function edit(Request $request, $id)
     {
 
-        $company = Company::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        $company = Company::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first();
         return view('company.edit', compact('company'));
 
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
 
 
         $inputs = [
 
-            'website'   => 'required',
-            'about'   => 'required',
-            'address'   => 'required',
+
+            'website' => 'required',
+            'about' => 'required',
+            'address' => 'required',
 
 
         ];
-        $this->validate($request,$inputs);
 
-        $company=Company::find($id);
 
-        $company->website=$request->website;
-        $company->about=$request->about;
-        $company->address=$request->address;
+        $this->validate($request, $inputs);
+
+        $company = Company::find($id);
+
+
+        $company->website = $request->website;
+        $company->about = $request->about;
+        $company->address = $request->address;
 
 
         if (request('image')) {
             $company['image'] = \request('image')->store('images');
-        }else {
+        } else {
             $company['image'] = $company->image;
         }
         $company->save();
-        return redirect()->route('company.index')->with('alt','Profile Edit successful');
+        $user_data = $company->user_id;
 
+        $user = User::findOrFail($user_data);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+        return redirect()->route('company.index')->with('alt', 'Profile Edit successful');
 
-        // $company->update([
-        //     'website' => $inputs['website'],
-        //     'address' => $inputs['address'],
-
-        //     'about' => $inputs['about'],
-
-        //     'image' => $inputs['image'],
-        // ]);
-
-        // $user_data = $company->user_id;
-
-        // User::findOrFail($user_data)->update([
-        //     'name' => $inputs['name'],
-        //     'email' => $inputs['email'],
-        // ]);
-        // return redirect()->back();
 
     }
 }

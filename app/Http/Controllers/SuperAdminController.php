@@ -27,7 +27,7 @@ class SuperAdminController extends Controller
     {
         // return "test";
         $user=User::all();
-        $agent = Agent::all();
+        $agent = User::where('role_1','fa')->get();
 //        $company=Company::where('user_id',\auth()->user()->id)->orderBy('id','desc')->first();
         $company=Company::all();
         $farmer = Farmer_reg_1::all();
@@ -60,7 +60,7 @@ class SuperAdminController extends Controller
         $validate=[
             'name'=>'required|max:20',
             'phone'=>'required|unique:users',
-            'email'=>'required|email',
+            'email'=>'required|unique:users',
             'password' => 'required|min:8|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/',
             'adress'=>'required|max:30',
         ];
@@ -91,6 +91,10 @@ class SuperAdminController extends Controller
         return Excel::download(new UsersExport, 'users.xlsx');
     }
 
+    function  view(){
+        $user= User::all();
+        return view('superadmin.viewall',compact('user'));
+    }
     /**
      * Display the specified resource.
      *

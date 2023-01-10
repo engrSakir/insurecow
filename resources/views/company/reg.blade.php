@@ -22,7 +22,7 @@
               @csrf
                 <div class="mb-3">
                     <label class="form-label">Full Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter Your Full Name">
+                    <input type="text" name="name" class="form-control" placeholder="Enter Your Full Name" value="{{ old('name') }}" requried>
                   </div>
                   {{-- <div class="mb-3">
                     <label class="form-label">Employee ID</label>
@@ -31,24 +31,24 @@
 
                   <div class="mb-3">
                     <label class="form-label">Phone</label>
-                    <input type="text" name="phone" class="form-control" placeholder="Enter Your Phone">
+                    <input type="text" name="phone" class="form-control" placeholder="Enter Your Phone" value="{{ old('phone') }}" required>
                   </div>
                 <div class="mb-3">
                   <label class="form-label">Email address</label>
-                  <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
+                  <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="{{ old('email') }}" required>
                 </div>
 
                 <div class="mb-3">
                   <label  class="form-label">Password</label>
-                  <input type="password" name="password" class="form-control" placeholder="Enter Your Password">
+                  <input type="password" name="password" class="form-control" placeholder="Enter Your Password" value="{{ old('password') }}" required>
                 </div>
                 <div class="mb-3">
                     <label  class="form-label">Address</label>
-                    <input type="text" name="adress" class="form-control" placeholder="Enter Your Address">
+                    <input type="text" name="adress" class="form-control" placeholder="Enter Your Address" value="{{ old('adress') }}" required>
                   </div>
                   <div class="mb-3">
                     <label  class="form-label">Employee ID</label>
-                    <input type="text" name="agent_employee_id" class="form-control" placeholder="Enter Your Employee ID">
+                    <input type="text" name="agent_employee_id" class="form-control" placeholder="Enter Your Employee ID" value="{{ old('agent_employee_id') }}" required>
                   </div>
                   <div class="mb-3">
                     <select class="form-control" name="role_1" >

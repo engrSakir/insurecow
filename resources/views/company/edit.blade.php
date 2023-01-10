@@ -16,12 +16,12 @@
                 <div class="mb-3">
                     <label class="form-label">Full Name</label>
                     <input type="text" class="form-control" placeholder="Enter Full Name"
-                        value="{{ auth()->user()->name }}" name="name">
+                        value="{{ auth()->user()->name }}" name="name" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Email address</label>
                     <input type="email" class="form-control" placeholder="Enter Email" value="{{ auth()->user()->email }}"
-                        name="email">
+                        name="email" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Website</label>
