@@ -17,10 +17,10 @@ class ProfileController extends Controller
     {
 
         if(Profile::where('user_id',auth()->user()->id)->orderBy('id','desc')->first() == null){
-            return view('superadmin.profile');
+            return redirect()->route('profiles.index');
         }else{
             $profile = Profile::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
-            return view('superadmin.edit', compact('profile'));
+            return redirect()->route('profiles.edit',$profile);
         }
     }
 

@@ -11,10 +11,10 @@ class CompanyProfileController extends Controller
     public function index()
     {
         if (Company::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first() == null) {
-            return view('company.profile');
+            return redirect()->route('profile.index');
         } else {
             $company = Company::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first();
-            return view('company.edit', compact('company'));
+            return redirect()->route('profile.edit',$company);
         }
     }
 
