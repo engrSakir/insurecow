@@ -105,6 +105,21 @@
 
                     <span>Policy</span></a>
             </li>
+            @if (auth()->user()->count() == 0)
+                <!-- Nav Item - Profile -->
+                <li class="nav-item border-bottom border-dark {{ (request()->is('company/quotation')) ? 'active' : '' }} pt-2 pb-2">
+                    <a class="nav-link text-dark" href="{{ route('quotation.index') }}">
+                        <i class="fas fa-fw fa-user-circle text-dark"></i>
+                        <span>Quotation</span></a>
+                </li>
+            @else
+                <!-- Nav Item - Profile Edit -->
+                <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/quotation/2/edit')) ? 'active' : '' }} pt-2 pb-2">
+                    <a class="nav-link text-dark" href="{{ route('quotation.edit', auth()->user()->id) }}">
+                        <i class="fas fa-fw fa-edit text-dark"></i>
+                        <span>Edit Quotation</span></a>
+                </li>
+            @endif
 
             <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/')) ? 'active' : '' }} pt-2 pb-2">
                 <a href="{{ route('company.index') }}" class="nav-link text-dark">
@@ -225,6 +240,15 @@
     </script>
 
    @endif
+
+    @if(session()->has('qts'))
+        <script>
+            swal("Done!!","{!! Session::get('qts')!!}","success",{
+                button:"OK",
+            })
+        </script>
+
+    @endif
 
    <script type="text/javascript">
             function confirmation(e) {

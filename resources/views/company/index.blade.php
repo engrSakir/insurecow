@@ -17,7 +17,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: #086343;">
                             Total Agents</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($agent) }}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($user) }}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -173,7 +173,7 @@
             <!-- Page Heading -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold" style="color: #086343">Latest Added Company</h6>
+                    <h6 class="m-0 font-weight-bold" style="color: #086343">Latest Added Field Agent</h6>
                 </div>
             {{-- export button --}}
                 {{-- <div style="display: flex; justify-content:right ; padding:20px;">
@@ -204,7 +204,7 @@
                                     <td>{{$agents->name}}</td>
                                     <td>{{$agents->created_at}}</td>
 
-                                    <td><a href="#" class="btn " style="background-color: #086343; color:white"><i class="fa fa-download" aria-hidden="true"></i></a></td>
+                                    <td><a href="{{route('company.view',$agents->id)}}" class="btn " style="background-color: #086343; color:white"><i class="fa fa-info-circle " aria-hidden="true"></i></a></td>
 
 
 

@@ -33,9 +33,13 @@ Route::middleware(['company','auth'])->group(function(){
         Route::resource('profile', 'CompanyProfileController');
         Route::post('store', 'CompanyController@store')->name('company.store');
         Route::get('delete/{id}', 'CompanyController@delete')->name('company.delete');
+        Route::get('view/{id}', 'CompanyController@view')->name('company.view');
+
         Route::get('download', 'CompanyController@download')->name('company.download');
         Route::get('history', 'CompanyController@history')->name('company.history');
         Route::resource('policy', 'CompanyPolicyController');
+        Route::resource('quotation', 'CompanyQuotationController');
+
 
 
     });
@@ -80,6 +84,8 @@ Route::group(['prefix' => 'superadmin'], function(){
     Route::get('home', 'SuperAdminController@index')->name('superadmin.index');
     Route::get('reg', 'SuperAdminController@reg')->name('superadmin.reg');
     Route::post('store', 'SuperAdminController@store')->name('superadmin.store');
+    Route::get('view/{id}', 'SuperAdminController@view')->name('superadmin.view');
+
     Route::get('delete/{id}', 'SuperAdminController@delete')->name('superadmin.delete');
     Route::get('download', 'SuperAdminController@download')->name('superadmin.download');
     Route::get('history', 'SuperAdminController@history')->name('superadmin.history');

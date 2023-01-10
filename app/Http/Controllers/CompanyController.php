@@ -88,6 +88,11 @@ class CompanyController extends Controller
     function download(){
         return Excel::download(new UsersExport, 'users.xlsx');
     }
+
+    function  view(){
+        $user= User::where('role_1','fa')->where('company_id', auth()->user()->id)->get();
+        return view('company.viewagent',compact('user'));
+    }
     /**
      * Display the specified resource.
      *
