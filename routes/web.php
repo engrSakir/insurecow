@@ -35,6 +35,8 @@ Route::middleware(['company','auth'])->group(function(){
         Route::get('delete/{id}', 'CompanyController@delete')->name('company.delete');
         Route::get('download', 'CompanyController@download')->name('company.download');
         Route::get('history', 'CompanyController@history')->name('company.history');
+        Route::resource('policy', 'CompanyPolicyController');
+
 
     });
 });
