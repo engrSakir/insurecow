@@ -191,6 +191,10 @@ class FarmerController extends Controller
     {
         $inputs = \request()->validate([
             'pdf_file' => 'required',
+            'cattle_id'=> 'required'
+        ], [
+            'pdf_file.required' => 'Please select a PDF file.',
+            'cattle_id.required' => 'Please select a cattle.'
         ]);
 
         if (request('pdf_file')) {
