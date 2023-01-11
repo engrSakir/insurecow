@@ -66,7 +66,7 @@ class CompanyProfileController extends Controller
         $inputs = [
 
 
-            'website' => 'required',
+            'website' => 'required|url',
             'about' => 'required',
             'address' => 'required',
 

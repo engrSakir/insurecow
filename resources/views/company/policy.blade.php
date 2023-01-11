@@ -8,32 +8,37 @@
         <form action="{{ route('policy.store') }}" method="post" enctype="multipart/form-data">
 
             {{ csrf_field() }}
+            {{--            <div class="mb-3">--}}
+            {{--                <label for="exampleFormControlInput1" class="form-label">Logo</label>--}}
+            {{--                <input type="file" name="logo" class="form-control">--}}
+            {{--            </div>--}}
 
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Policy</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"  requried>{{ old('content') }}</textarea>
             </div>
 
             @error('content')
             <div class="alert alert-danger" style="margin-top: 10px">{{ $message }}</div>
             @enderror
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Corona Virus Exclusion</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="corona"></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label">Corona Exclusion</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="corona"  requried>{{ old('corona') }}</textarea>
             </div>
             @error('content')
             <div class="alert alert-danger" style="margin-top: 10px">{{ $message }}</div>
             @enderror
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Schedule</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="schedule"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="schedule" requried>{{ old('schedule') }}</textarea>
             </div>
             @error('content')
             <div class="alert alert-danger" style="margin-top: 10px">{{ $message }}</div>
             @enderror
+
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Signature</label>
-                <input type="file" name="signature" class="form-control">
+                <input type="file" name="signature" class="form-control" value="{{ old('signature') }}" requried>
             </div>
 
             @error('signature')

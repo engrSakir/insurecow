@@ -8,7 +8,15 @@
             <!-- Page Heading -->
             <h1 class="h3 mb-4 text-gray-800 text-center">Company Edit Profile</h1>
 
-
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="{{ route('profile.update',$company->id) }}" method="POST" enctype="multipart/form-data">
 
                 {{ csrf_field() }}

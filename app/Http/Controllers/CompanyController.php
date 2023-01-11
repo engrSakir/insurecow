@@ -91,8 +91,9 @@ class CompanyController extends Controller
         return Excel::download(new UsersExport, 'users.xlsx');
     }
 
-    function  view(){
-        $user= User::where('role_1','fa')->where('company_id', auth()->user()->id)->firstOrFail();
+    function  view($id){
+
+        $user= User::where('role_1','fa')->where('company_id', auth()->user()->id)->where('id', $id)->first();
         return view('company.viewagent',compact('user'));
     }
     /**
