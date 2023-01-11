@@ -15,7 +15,7 @@
 
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Policy</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" value="{{ old('content') }}" requried></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"  requried>{{ old('content') }}</textarea>
             </div>
 
             @error('content')
@@ -23,14 +23,14 @@
             @enderror
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Corona Exclusion</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="corona" value="{{ old('corona') }}" requried></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="corona"  requried>{{ old('corona') }}</textarea>
             </div>
             @error('content')
             <div class="alert alert-danger" style="margin-top: 10px">{{ $message }}</div>
             @enderror
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Schedule</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="schedule" value="{{ old('schedule') }}" requried></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="schedule" requried>{{ old('schedule') }}</textarea>
             </div>
             @error('content')
             <div class="alert alert-danger" style="margin-top: 10px">{{ $message }}</div>
