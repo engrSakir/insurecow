@@ -99,12 +99,21 @@
                     <span>History</span></a>
             </li>
 
-            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/')) ? 'active' : '' }} pt-2 pb-2">
-                <a href="{{ route('policy.index') }}" class="nav-link text-dark">
-                    <i class="fas fa-fw fa-clipboard text-dark"></i>
-
-                    <span>Policy</span></a>
-            </li>
+            @if (auth()->user()->policy()->count() == 0)
+                <!-- Nav Item - Profile -->
+                <li class="nav-item border-bottom border-dark {{ (request()->is('company/policy')) ? 'active' : '' }} pt-2 pb-2">
+                    <a class="nav-link text-dark" href="{{ route('policy.index') }}">
+                        <i class="fas fa-fw fa-user-circle text-dark"></i>
+                        <span>Policy</span></a>
+                </li>
+            @else
+                <!-- Nav Item - Profile Edit -->
+                <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/policy/edit')) ? 'active' : '' }} pt-2 pb-2">
+                    <a class="nav-link text-dark" href="{{ route('policy.edit', auth()->user()->id) }}">
+                        <i class="fas fa-fw fa-edit text-dark"></i>
+                        <span>Edit Policy</span></a>
+                </li>
+            @endif
             @if (auth()->user()->quotation()->count() == 0)
                 <!-- Nav Item - Profile -->
                 <li class="nav-item border-bottom border-dark {{ (request()->is('company/quotation')) ? 'active' : '' }} pt-2 pb-2">
@@ -114,7 +123,7 @@
                 </li>
             @else
                 <!-- Nav Item - Profile Edit -->
-                <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/quotation/2/edit')) ? 'active' : '' }} pt-2 pb-2">
+                <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/quotation/edit')) ? 'active' : '' }} pt-2 pb-2">
                     <a class="nav-link text-dark" href="{{ route('quotation.edit', auth()->user()->id) }}">
                         <i class="fas fa-fw fa-edit text-dark"></i>
                         <span>Edit Quotation</span></a>

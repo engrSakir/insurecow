@@ -27,19 +27,19 @@
                 </thead>
 
                 <tbody>
-                @foreach($user as $users)
+
                     <tr align="center">
-                        <td>{{$users->name}}</td>
-                        <td>{{$users->email}}</td>
-                        <td>{{$users->phone}}</td>
-                        <td>{{$users->adress}}</td>
-                        <td>{{$users->role_1}}</td>
+                        <td>{{$user->name}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->phone}}</td>
+                        <td>{{$user->adress}}</td>
+                        <td>{{$user->role_1}}</td>
 
 
 
 
                     </tr>
-                @endforeach
+
                 </tbody>
             </table>
         </div>

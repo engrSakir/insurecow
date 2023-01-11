@@ -27,20 +27,20 @@
                 </thead>
 
                 <tbody>
-                @foreach($user as $users)
+
                      <tr align="center">
-                         <td>{{$users->name}}</td>
-                         <td>{{$users->email}}</td>
-                         <td>{{$users->phone}}</td>
-                         <td>{{$users->adress}}</td>
+                         <td>{{$user->name}}</td>
+                         <td>{{$user->email}}</td>
+                         <td>{{$user->phone}}</td>
+                         <td>{{$user->adress}}</td>
 
                          <td>{{auth()->user()->name}}</td>
-                         <td>{{$users->agent_employee_id}}</td>
+                         <td>{{$user->agent_employee_id}}</td>
 
 
 
                      </tr>
-                @endforeach
+
                 </tbody>
             </table>
         </div>

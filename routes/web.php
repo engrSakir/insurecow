@@ -39,6 +39,9 @@ Route::middleware(['company','auth'])->group(function(){
         Route::get('history', 'CompanyController@history')->name('company.history');
         Route::resource('policy', 'CompanyPolicyController');
         Route::resource('quotation', 'CompanyQuotationController');
+        Route::get('quotation_view', 'CompanyController@viewQuotation')->name('company.quotation_view');
+        Route::get('policy_view', 'CompanyController@viewPolicy')->name('company.policy_view');
+
 
 
 

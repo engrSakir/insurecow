@@ -92,7 +92,7 @@ class SuperAdminController extends Controller
     }
 
     function  view(){
-        $user= User::all();
+        $user= User::firstOrFail();
         return view('superadmin.viewall',compact('user'));
     }
     /**

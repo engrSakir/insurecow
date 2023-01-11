@@ -17,7 +17,7 @@ class ProfileController extends Controller
     {
 
         if(Profile::where('user_id',auth()->user()->id)->orderBy('id','desc')->first() == null){
-            return redirect()->route('profiles.index');
+            return view('superadmin.profile');
         }else{
             $profile = Profile::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
             return redirect()->route('profiles.edit',$profile);

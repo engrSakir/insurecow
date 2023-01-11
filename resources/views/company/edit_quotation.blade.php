@@ -1,7 +1,11 @@
 @extends('layouts.company')
 
 @section('content')
+    <div  style="display: flex; justify-content:right ; padding:20px;">
 
+        <a href="{{route('company.quotation_view')}}" class="d-none d-sm-inline-block btn btn-sm shadow-sm text-white" style="background: #086343;"><i
+                class="fas  fa-eye fa-sm text-white"></i> View Quotation</a>
+    </div>
     <div style="padding: 20px">
 
 
@@ -14,7 +18,7 @@
             {{--            </div>--}}
 
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                <label for="exampleFormControlTextarea1" class="form-label">Quotation</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="contents" requried >{{$quotation->contents}}</textarea>
             </div>
 
