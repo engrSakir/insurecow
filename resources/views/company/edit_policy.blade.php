@@ -10,9 +10,9 @@
 
 
         <form action="{{ route('policy.update',$policy->id) }}" method="post" enctype="multipart/form-data">
-
-            {{ csrf_field() }}
             @method('put')
+            {{ csrf_field() }}
+
 
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Policy</label>
