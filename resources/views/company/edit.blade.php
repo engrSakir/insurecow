@@ -26,7 +26,7 @@
                 <div class="mb-3">
                     <label class="form-label">Website</label>
                     <input type="text" name="website" class="form-control" placeholder="Enter Personal Website Address"
-                        value="{{ $company->website }}">
+                        value="{{ $company->website }}" >
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Address</label>

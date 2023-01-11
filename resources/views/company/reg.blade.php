@@ -38,9 +38,11 @@
                   <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="{{ old('email') }}" required>
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3" style="position: relative">
                   <label  class="form-label">Password</label>
-                  <input type="password" name="password" class="form-control" placeholder="Enter Your Password" value="{{ old('password') }}" required>
+                  <input type="password" id="password" name="password" class="form-control" placeholder="Enter Your Password" value="{{ old('password') }}" required>
+                    <i class="fas fa-eye-slash fa-eye" id="eye" ></i>
+
                 </div>
                 <div class="mb-3">
                     <label  class="form-label">Address</label>

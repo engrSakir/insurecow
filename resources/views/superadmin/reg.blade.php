@@ -34,11 +34,12 @@
                   <label class="form-label">Email address</label>
                   <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="{{ old('email') }}" requried>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" style="position: relative">
                   <label  class="form-label">Password</label>
 
-                  <input type="password" name="password" class="form-control" value="{{ old('password') }}" placeholder="Enter Password" requried>
+                  <input type="password" name="password" id="password" class="form-control" value="{{ old('password') }}" placeholder="Enter Password" requried>
                   <small><span style="color: black">Password Hints:</span> <span class="text-danger">(A-Z), (a-z), (0-9), (!@%#$^@&*)</span></small>
+                    <i class="fas fa-eye-slash fa-eye" id="eye" ></i>
 
                 </div>
                 <div class="mb-3">

@@ -14,12 +14,14 @@ class CompanyPolicyController extends Controller
      */
     public function index()
     {
-        if (Policy::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first() == null) {
-//            return redirect()->route('profile.index');
+        if(Policy::where('user_id',auth()->user()->id)->orderBy('id','desc')->first() == null){
+//            return redirect()->route('quotation.index');
             return  view('company.policy');
-        } else {
-            $policy = Policy::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first();
+        }else{
+            $policy = Policy::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
             return redirect()->route('policy.edit',$policy);
+//            return view('company.edit_quotation',compact('quotation'));
+
         }
     }
 
