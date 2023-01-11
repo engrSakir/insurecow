@@ -60,4 +60,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Quotation::class);
     }
+    public function policy()
+    {
+        return $this->hasOne(Quotation::class);
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Policy;
+use App\Quotation;
 use Illuminate\Http\Request;
 use App\User;
 use App\Company;
@@ -90,7 +92,7 @@ class CompanyController extends Controller
     }
 
     function  view(){
-        $user= User::where('role_1','fa')->where('company_id', auth()->user()->id)->get();
+        $user= User::where('role_1','fa')->where('company_id', auth()->user()->id)->firstOrFail();
         return view('company.viewagent',compact('user'));
     }
     /**
@@ -139,5 +141,17 @@ class CompanyController extends Controller
         $user=User::where('role_1','fa')->where('company_id', auth()->user()->id)->get();
 
         return view('company.history', compact('user'));
+    }
+
+    function viewQuotation(){
+        $quotation=Quotation::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        return view('company.quotation_view',compact('quotation'));
+    }
+    function viewPolicy(){
+        $profile=Company::where('user_id',auth()->user()->id)->firstOrFail();
+
+
+        $policy=Policy::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        return view('company.policy_view',compact('policy','profile'));
     }
 }

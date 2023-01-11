@@ -11,7 +11,8 @@ class CompanyProfileController extends Controller
     public function index()
     {
         if (Company::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first() == null) {
-            return redirect()->route('profile.index');
+//            return redirect()->route('profile.index');
+            return  view('company.profile');
         } else {
             $company = Company::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first();
             return redirect()->route('profile.edit',$company);

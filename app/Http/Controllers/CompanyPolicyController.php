@@ -14,7 +14,13 @@ class CompanyPolicyController extends Controller
      */
     public function index()
     {
-        return view('company.policy');
+        if (Policy::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first() == null) {
+//            return redirect()->route('profile.index');
+            return  view('company.policy');
+        } else {
+            $policy = Policy::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first();
+            return redirect()->route('policy.edit',$policy);
+        }
     }
 
     /**
@@ -39,7 +45,9 @@ class CompanyPolicyController extends Controller
 
         $inputs = \request()->validate([
             'content' => 'required',
-            'signature' => 'required',
+            'corona'=>'required',
+            'schedule'=>'required',
+            'signature' => 'mimes:jpeg,bmp,png,webp',
         ]);
 
         if (request('signature')) {
@@ -75,7 +83,8 @@ class CompanyPolicyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $policy = Policy::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        return view('company.edit_policy', compact('policy'));
     }
 
     /**
@@ -87,7 +96,41 @@ class CompanyPolicyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $inputs = [
+
+            'content' => 'required',
+            'corona'=>'required',
+            'schedule'=>'required',
+            'signature' => 'mimes:jpeg,bmp,png,webp',
+
+        ];
+
+
+
+        $this->validate($request,$inputs);
+
+        $policy=Policy::find($id);
+
+        $policy->content=$request->content;
+        $policy->corona=$request->corona;
+        $policy->schedule=$request->schedule;
+
+
+
+
+        if (request('signature')) {
+            $quotation['signature'] = \request('signature')->store('images');
+        }else {
+            $quotation['signature'] = $policy->signature;
+        }
+
+
+
+
+
+
+        $policy->save();
+        return redirect()->route('company.index')->with('alt','Profile Edit successful');
     }
 
     /**
