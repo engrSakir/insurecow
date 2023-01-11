@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\FarmerExpense;
 use App\Medical;
+use File;
+use Response;
 
 class FarmerExpenseController extends Controller
 {
@@ -101,14 +103,20 @@ class FarmerExpenseController extends Controller
 
     public function medicalhistory()
     {
-        $vaccine = Medical::where('disease_name', '!=', NULL)
-                        ->where('vaccine_name', '!=', NULL)
-                        ->where('next_vaccination_date', '!=', NULL)->get();
+        $vaccine = Medical::all();
         return view('farmer.medical-history', compact('vaccine'));
     }
 
     public function confirm()
     {
         return view('farmer.confirmation');
+    }
+
+    public function viewpdf($id)
+    {
+        $medical = Medical::findOrFail($id);
+        return Response::make(file_get_contents('storage/'.$medical->pdf_file), 200, [
+            'content-type'=>'application/pdf',
+        ]);
     }
 }

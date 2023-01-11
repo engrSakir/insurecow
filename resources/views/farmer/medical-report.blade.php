@@ -36,10 +36,11 @@
                                     class="file2-upload-input"
                                     type="file"
                                     onchange="readURL2(this);"
-                                    accept="image/*"
+                                    accept="application/pdf"
                                     name="pdf_file"
                                 />
                                 <img class="img-card" src="{{ asset('images/image.png') }}"/>
+                                
                             </div>
 
                             <div class="file2-upload-content">
