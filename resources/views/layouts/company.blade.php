@@ -262,11 +262,11 @@
 
     @endif
 
-   <script type="text/javascript">
-            function confirmation(e) {
+    <script type="text/javascript">
+        function confirmation(e) {
             e.preventDefault();
 
-            var url = e.currentTarget.getId('#menu')
+            var url = e.currentTarget.getAttribute('href')
 
             Swal.fire({
                 icon: 'warning',
@@ -311,11 +311,7 @@
             // menubar: 'table',
         });
     </script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"
-    ></script>
+
     <script>
         const passwordInput = document.querySelector("#password")
         const eye = document.querySelector("#eye")
