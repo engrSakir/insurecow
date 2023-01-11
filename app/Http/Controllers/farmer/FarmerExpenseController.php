@@ -101,7 +101,9 @@ class FarmerExpenseController extends Controller
 
     public function medicalhistory()
     {
-        $vaccine = Medical::all();
+        $vaccine = Medical::where('disease_name', '!=', NULL)
+                        ->where('vaccine_name', '!=', NULL)
+                        ->where('next_vaccination_date', '!=', NULL)->get();
         return view('farmer.medical-history', compact('vaccine'));
     }
 
