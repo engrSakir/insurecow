@@ -19,7 +19,7 @@
 
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Quotation</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="contents" requried >{{$quotation->contents}}</textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="contents" requried  value="{{ old('contents') }}" >{{$quotation->contents}}</textarea>
             </div>
 
             @error('content')
