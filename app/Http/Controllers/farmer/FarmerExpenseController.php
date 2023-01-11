@@ -8,6 +8,7 @@ use App\FarmerExpense;
 use App\Medical;
 use File;
 use Response;
+use Illuminate\Support\Facades\Auth;
 
 class FarmerExpenseController extends Controller
 {
@@ -112,11 +113,15 @@ class FarmerExpenseController extends Controller
         return view('farmer.confirmation');
     }
 
-    public function viewpdf($id)
+    public function viewpdf($id, $cattle_id)
     {
-        $medical = Medical::findOrFail($id);
-        return Response::make(file_get_contents('storage/'.$medical->pdf_file), 200, [
-            'content-type'=>'application/pdf',
-        ]);
+        $medical = Medical::where('id', $id)->where('cattle_id', $cattle_id)->where('user_id', Auth::user()->id)->first();
+        if($medical)
+        {
+            return Response::make(file_get_contents('storage/'.$medical->pdf_file), 200, [
+                'content-type'=>'application/pdf',
+            ]);
+        }
+        return redirect()->back();
     }
 }

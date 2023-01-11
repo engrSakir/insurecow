@@ -30,7 +30,7 @@
                             <td>{{ $vac->next_vaccination_date }}</td>
                             <td>
                                 @if($vac->pdf_file)
-                                    <a href="{{ route('view.pdf', $vac->id) }}" class="btn" target="_blank" style="background: #086343">VIEW PDF</a>
+                                    <a href="{{ route('view.pdf', [$vac->id, $vac->cattle_id]) }}" class="btn text-white" target="_blank" style="background: #086343">VIEW PDF</a>
                                     @else
                                         No PDF Found
                                     @endif
