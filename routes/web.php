@@ -80,6 +80,7 @@ Route::middleware(['farmer','auth'])->group(function(){
         Route::get('/expense/history', 'farmer\FarmerExpenseController@history')->name('expense.history');    
         Route::get('/medical/history', 'farmer\FarmerExpenseController@medicalhistory')->name('medical.history');    
         Route::get('/farmer/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');    
+        Route::get('/view/pdf/{id}', 'farmer\FarmerExpenseController@viewpdf')->name('view.pdf');    
     });
 });
 

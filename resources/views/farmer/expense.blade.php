@@ -63,6 +63,7 @@
         </div>
         <div class="col-lg-8">
         <div class="table-responsive">
+            <a href="{{ route('expense.history') }}" class="btn text-white float-end mb-3" style="background: #086343;">Back to Expense History</a>
         <table class="table table-bordered">
             <tbody>
                 @foreach($expense as $exp)

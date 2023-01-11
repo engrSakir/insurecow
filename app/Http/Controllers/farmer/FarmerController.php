@@ -190,7 +190,11 @@ class FarmerController extends Controller
     public function savemedicalreport(Request $request)
     {
         $inputs = \request()->validate([
-            'pdf_file' => 'required',
+            'pdf_file' => 'required|mimes:pdf|max:10000',
+            'cattle_id'=> 'required'
+        ], [
+            'pdf_file.required' => 'Please select a PDF file.',
+            'cattle_id.required' => 'Please select a cattle.'
         ]);
 
         if (request('pdf_file')) {

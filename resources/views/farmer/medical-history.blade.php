@@ -16,6 +16,7 @@
                         <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">DISEASE NAME</th>
                         <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">VACCINE NAME</th>
                         <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">NEXT VACCINE DATE</th>
+                        <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">PDF MEDICAL REPORT</th>
                     </tr>
                 </thead>
                 <tbody>   
@@ -27,6 +28,14 @@
                             <td>{{ $vac->disease_name }}</td>
                             <td>{{ $vac->vaccine_name }}</td>
                             <td>{{ $vac->next_vaccination_date }}</td>
+                            <td>
+                                @if($vac->pdf_file)
+                                    <a href="{{ route('view.pdf', $vac->id) }}" class="btn" target="_blank">VIEW PDF</a>
+                                    @else
+                                        No PDF Found
+                                    @endif
+                                    
+                            </td>
                         </tr>
                         @else
                             <tr>

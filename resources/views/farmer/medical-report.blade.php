@@ -13,6 +13,15 @@
                     <strong>Password must contain at least 1 letter, 1 number, and 1 symbol. Minimum length is 8 characters.</strong>
                 </div> -->
               @endif
+              @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
               <form class="{{ route('save.medical.report') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             
@@ -27,10 +36,11 @@
                                     class="file2-upload-input"
                                     type="file"
                                     onchange="readURL2(this);"
-                                    accept="image/*"
+                                    accept="application/pdf"
                                     name="pdf_file"
                                 />
                                 <img class="img-card" src="{{ asset('images/image.png') }}"/>
+                                
                             </div>
 
                             <div class="file2-upload-content">
