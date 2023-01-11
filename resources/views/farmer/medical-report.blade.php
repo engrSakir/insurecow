@@ -45,7 +45,8 @@
                                     class="file-upload-btn mt-4"
                                     type="button"
                                     onclick="$('.file2-upload-input').trigger( 'click' )"
-                                >
+                                    style="background: #086343"
+                                    >
                                     Upload
                                 </button>
                                 <button
@@ -69,8 +70,8 @@
 
             <!-- Register button -->
             <div class="mb-3">
-                <button type="submit" class="register-button">Register</button>
-                <a href="{{ route('write.medical.report') }}" class="btn px-2 register-button">Write Report</a>
+                <button type="submit" class="register-button" style="background: #086343">Register</button>
+                <a href="{{ route('write.medical.report') }}" class="btn px-2 register-button" style="background: #086343">Write Report</a>
             </div>
         </form>
             
