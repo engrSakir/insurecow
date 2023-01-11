@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
-    
+
     <!--=============== DATATABLE CSS ===============-->
     <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css" rel="stylesheet">
@@ -51,9 +51,12 @@
             cursor: url('{{ asset('images/favicon.png') }}'), auto;
         }
         .dropdown-item.active, .dropdown-item:active {
-            color: #fff;
+            color: #fff !important;
             text-decoration: none;
-            background-color: #23BB86;
+            background-color: #086343;
+        }
+        .thead-style {
+            background: #086343 !important;
         }
     </style>
     <!--=============== CSS ===============-->
@@ -61,7 +64,7 @@
 
     <!--=============== CSS ===============-->
 
-        
+
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
     @stack('css')
@@ -147,7 +150,28 @@ $(document).ready(function () {
     });
 });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script type="text/javascript">
 
+     $('.show_confirm').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+              title: `Are you sure you want to delete this record?`,
+              text: "If you delete this, it will be gone forever.",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
+
+</script>
 
 </body>
 

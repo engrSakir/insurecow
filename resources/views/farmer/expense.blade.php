@@ -9,7 +9,13 @@
         @if ($message = Session::get('success'))
             <div class="alert alert-success alert-block">
                 
-                    <strong>{{ $message }}</strong>
+                    {{ $message }}
+            </div>
+        @endif
+        @if ($message = Session::get('notification'))
+            <div class="alert alert-success alert-block">
+                
+                    {{ $message }}
             </div>
         @endif
         <div class="col-lg-4">
@@ -84,7 +90,12 @@
                     <div style="background: #D3EAC8; padding: 20px; border-radius: 10px;">    
                         <div class="btn-group">
                         <a href="{{ route('expenses.edit', $exp->id) }}" class="btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                        <a href="{{ route('expense.destroy', $exp->id) }}" class="btn-sm btn-danger delete-expense" onclick="alert('Are you sure to delete.')"><i class="fa fa-trash"></i></a>
+                        <!-- <a href="{{ route('expense.destroy', $exp->id) }}" class="btn-sm btn-danger delete-expense" onclick="alert('Are you sure to delete.')"><i class="fa fa-trash"></i></a> -->
+                        <form method="POST" action="{{ route('expense.destroy', $exp->id) }}">
+                            @csrf
+                            <input name="_method" type="hidden" value="DELETE">
+                            <button type="submit" class="btn btn-sm btn-danger show_confirm" title='Delete'><i class="fa fa-trash"></i></button>
+                        </form>
                         </div>
                     </div>
                     </td>

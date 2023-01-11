@@ -41,10 +41,10 @@
         <section>
             <p class="heading mt-4">Registration Form</p>
 
-            <div class="card card-style mt-4 mb-5">
+            <div class="card mt-4 mb-5">
                 <form class="">
 
-                    <div class="card-block p-2 card-block-top mb-4">
+                    <div class="card-block p-2 card-block-top mb-4" style="background: #086343"> 
                         <h4 class="ms-4">Farmer Information</h4>
                     </div>
 
@@ -148,7 +148,7 @@
                         </div>
                     </div>
 
-                    <div class="card-block p-2 card-block-middle mb-4">
+                    <div class="card-block p-2 card-block-middle mb-4" style="background: #086343">
                         <h4 class="ms-4">Cattle Information</h4>
                     </div>
                     <div class="card-block p-2 card-block-down mb-4">
@@ -156,31 +156,16 @@
 
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
-                                    <label class="form-label" for="inputSpecies">Cattle Name :</label>
-                                    <div class="col">
-                                        <input type="text" id="cattle_name" class="form-control input-style"
-                                               name="cattle_name" v-model="cattle_name"/>
+                                        <label class="form-label" for="inputSpecies">Cattle Name :</label>
+                                        <div class="col">
+                                            <input type="text" id="cattle_name" class="form-control input-style"
+                                                name="cattle_name" v-model="cattle_name"/>
 
-                                        {{--                                <select class="form-select form-info form-control input-style">--}}
-                                        {{--                                    <option value="1"></option>--}}
-                                        {{--                                </select>--}}
+                                            {{--                                <select class="form-select form-info form-control input-style">--}}
+                                            {{--                                    <option value="1"></option>--}}
+                                            {{--                                </select>--}}
                                     </div>
                                 </div>
-
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="form-outline">
-                                    <label class="form-label" for="inputSpecies">Cattle Color :</label>
-                                    <div class="col">
-                                        <input type="text" id="cattle_color" class="form-control input-style"
-                                               name="cattle_color" v-model="cattle_color"/>
-
-                                        {{--                                <select class="form-select form-info form-control input-style">--}}
-                                        {{--                                    <option value="1"></option>--}}
-                                        {{--                                </select>--}}
-                                    </div>
-                                </div>
-
                             </div>
 
                             <div class="col-md-4 mb-4">
@@ -209,6 +194,19 @@
                         </div>
 
                         <div class="row px-4">
+                            <div class="col-md-4 mb-4">
+                            <div class="form-outline">
+                                    <label class="form-label" for="inputSpecies">Cattle Color :</label>
+                                    <div class="col">
+                                        <input type="text" id="cattle_color" class="form-control input-style"
+                                               name="cattle_color" v-model="cattle_color"/>
+
+                                        {{--                                <select class="form-select form-info form-control input-style">--}}
+                                        {{--                                    <option value="1"></option>--}}
+                                        {{--                                </select>--}}
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label" for="inputWeight">Weight :</label>
@@ -256,7 +254,7 @@
                         {{--                </div>--}}
                     </div>
 
-                    <div class="card-block p-2 card-block-middle mb-4">
+                    <div class="card-block p-2 card-block-middle mb-4" style="background: #086343">
                         <h4 class="ms-4">Cattle Pictures </h4>
                     </div>
 
@@ -282,7 +280,7 @@
                                     </div>
                                     <div class="image-title-wrap">
                                         <button class="file-upload-btn mt-4" type="button"
-                                                onclick="$('.file-upload-input').trigger( 'click' )">Upload
+                                                onclick="$('.file-upload-input').trigger( 'click' )" style="background: #086343">Upload
                                         </button>
                                         <button type="button" onclick="removeUpload()" class="remove-image">
                                             <i class="fa-solid fa-circle-xmark"></i></button>
@@ -308,7 +306,7 @@
                                     </div>
                                     <div class="image2-title-wrap">
                                         <button class="file-upload-btn mt-4" type="button"
-                                                onclick="$('.file2-upload-input').trigger( 'click' )">Upload
+                                                onclick="$('.file2-upload-input').trigger( 'click' )" style="background: #086343">Upload
                                         </button>
                                         <button type="button" onclick="removeUpload2()" class="remove-image">
                                             <i class="fa-solid fa-circle-xmark"></i></button>
@@ -334,7 +332,7 @@
                                     </div>
                                     <div class="image3-title-wrap">
                                         <button class="file-upload-btn mt-4" type="button"
-                                                onclick="$('.file3-upload-input').trigger( 'click' )">Upload
+                                                onclick="$('.file3-upload-input').trigger( 'click' )" style="background: #086343">Upload
                                         </button>
                                         <button type="button" onclick="removeUpload3()" class="remove-image">
                                             <i class="fa-solid fa-circle-xmark"></i></button>
@@ -359,7 +357,7 @@
                                     </div>
                                     <div class="image4-title-wrap">
                                         <button class="file-upload-btn mt-4" type="button"
-                                                onclick="$('.file4-upload-input').trigger( 'click' )">Upload
+                                                onclick="$('.file4-upload-input').trigger( 'click' )" style="background: #086343">Upload
                                         </button>
                                         <button type="button" onclick="removeUpload4()" class="remove-image">
                                             <i class="fa-solid fa-circle-xmark"></i></button>
@@ -384,7 +382,7 @@
                                     </div>
                                     <div class="image5-title-wrap">
                                         <button class="file-upload-btn mt-4" type="button"
-                                                onclick="$('.file5-upload-input').trigger( 'click' )">Upload
+                                                onclick="$('.file5-upload-input').trigger( 'click' )" style="background: #086343">Upload
                                         </button>
                                         <button type="button" onclick="removeUpload5()" class="remove-image">
                                             <i class="fa-solid fa-circle-xmark"></i></button>
@@ -396,7 +394,7 @@
 
                     <!--PDf Attachments-->
                     {{-------------------- Field agent information ----------------------------- --}}
-                    <div class="card-block p-2 card-block-middle mb-4">
+                    <div class="card-block p-2 card-block-middle mb-4" style="background: #086343">
                         <h4 class="ms-4">Additional Info</h4>
                     </div>
                     <div class="card-block p-2 card-block-down mb-4">
@@ -468,7 +466,7 @@
                     <!-- Register button -->
 
                     <div class="px-4 py-5">
-                        <button type="button" class="register-button" @click="addcow()">Add More</button>
+                        <button type="button" class="register-button" @click="addcow()" style="background: #086343">Register</button>
 
                     </div>
 

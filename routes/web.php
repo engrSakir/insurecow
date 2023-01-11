@@ -76,8 +76,11 @@ Route::middleware(['farmer','auth'])->group(function(){
         Route::post('/expense', 'farmer\FarmerController@farmerexpense')->name('farmer.expense.save');
 
         Route::resource('/expenses', 'farmer\FarmerExpenseController');
-        Route::get('expense/delete/{id}', 'farmer\FarmerExpenseController@destroy')->name('expense.destroy');
-        });
+        Route::delete('expense/delete/{id}', 'farmer\FarmerExpenseController@destroy')->name('expense.destroy');
+        Route::get('/expense/history', 'farmer\FarmerExpenseController@history')->name('expense.history');    
+        Route::get('/medical/history', 'farmer\FarmerExpenseController@medicalhistory')->name('medical.history');    
+        Route::get('/farmer/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');    
+    });
 });
 
 // --------------------------- superadmin----------------------

@@ -16,7 +16,7 @@
             <!--Cow Lists-->
             <div class="col-lg-4 col-md-6 mb-4 me-lg-5 me-md-4">
                 <div class="card card-style">
-                    <div class="p-2 card-block-top">
+                    <div class="p-2 card-block-top" style="background: #086343">
                         <h4 class="card-title">View Cow Lists </h4>
                     </div>
                     <img src="{{asset('images/cow-list.png')}}" alt="Registered Cow" class="img-fluid img-card">
@@ -31,7 +31,7 @@
             <!--Field Agent Details-->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card card-style">
-                    <div class="p-2 card-block-top">
+                    <div class="p-2 card-block-top" style="background: #086343">
                         <h4 class="card-title">Medical Report Details </h4>
                     </div>
                     <img src="{{asset('/images/field-agent.png')}}" alt="Insurance Claim" class="img-fluid  img-card">

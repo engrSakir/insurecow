@@ -5,6 +5,7 @@ namespace App\Http\Controllers\farmer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\FarmerExpense;
+use App\Medical;
 
 class FarmerExpenseController extends Controller
 {
@@ -90,5 +91,24 @@ class FarmerExpenseController extends Controller
         $expense->delete();
 
         return redirect()->back();
+    }
+
+    public function history()
+    {
+        $history = FarmerExpense::all();
+        return view('farmer.expense-history', compact('history'));
+    }
+
+    public function medicalhistory()
+    {
+        $vaccine = Medical::where('disease_name', '!=', NULL)
+                        ->where('vaccine_name', '!=', NULL)
+                        ->where('next_vaccination_date', '!=', NULL)->get();
+        return view('farmer.medical-history', compact('vaccine'));
+    }
+
+    public function confirm()
+    {
+        return view('farmer.confirmation');
     }
 }

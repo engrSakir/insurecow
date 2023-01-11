@@ -183,7 +183,8 @@ class FarmerController extends Controller
 
     public function medicalreport()
     {
-        return view('farmer.medical-report');
+        $cattle = Farmer_reg_2::where('user_id', Auth::user()->id)->get();
+        return view('farmer.medical-report', compact('cattle'));
     }
 
     public function savemedicalreport(Request $request)
@@ -197,9 +198,10 @@ class FarmerController extends Controller
         }
 
         $inputs['user_id'] = Auth::user()->id;
+        $inputs['cattle_id'] = request()->cattle_id;
         Medical::create($inputs);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Medical report uploaded successfully');
     }
 
     public function writemedicalreport()
@@ -233,7 +235,7 @@ class FarmerController extends Controller
             "next_vaccination_date" => $request->next_vaccination_date,
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Medical report created successfully!');
     }
 
     public function savedmedicalreport()
@@ -269,7 +271,8 @@ class FarmerController extends Controller
             "user_id" => Auth::user()->id,
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('notification', 'Expense created successfully!');
     }
+
 }
 
