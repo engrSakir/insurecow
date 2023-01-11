@@ -68,7 +68,9 @@
                                 <li><a class="dropdown-item" href="{{ route('farmer.registered.cattle') }}">Registered Cattle</a></li>
                                 <li><a class="dropdown-item" href="{{ route('farmer.medical.report') }}">Medical Report</a></li>
                                 <li><a class="dropdown-item" href="{{ route('write.medical.report') }}">Write Medical Report</a></li>
+                                <li><a class="dropdown-item" href="{{ route('medical.history') }}">Medical History</a></li>
                                 <li><a class="dropdown-item" href="{{ route('farmer.expense') }}">Expenses</a></li>
+                                <li><a class="dropdown-item" href="{{ route('expense.history') }}">Expense History</a></li>
 
 
 
