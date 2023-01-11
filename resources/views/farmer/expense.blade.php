@@ -18,7 +18,7 @@
             <div class="card p-5" style="background: rgba(79, 172, 35, 0.25);">
                     <div class="form-group">
                         <label for="date">Enter Date:</label>
-                        <input type="text" class="form-control @error('date') is-invalid @enderror " name="date" id="datepicker" placeholder="01/02/2023" value="{{ old('date') }}">
+                        <input type="text" class="form-control @error('date') is-invalid @enderror " name="date" id="datepicker" placeholder="01/02/2023" value="{{ old('date') }}" readonly>
                         @error('date')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -60,6 +60,7 @@
         <table class="table table-bordered">
             <tbody>
                 @foreach($expense as $exp)
+                @if(count($expense)>0)
                 <tr>
                     <td class="p-5">
                             <strong>Cattle Name </strong><br>{{ $exp->cattle->cattle_color }}
@@ -76,18 +77,23 @@
                     </td>
                     <td class="p-5">
                     <div style="background: #D3EAC8; padding: 20px; border-radius: 10px;">    
-                        <strong>Total </strong><br>{{ $exp->cattle->price + $exp->amount }}
+                        <strong>Total </strong><br>{{ (float)$exp->cattle->price + (float)$exp->amount }}
                     </div>
                     </td>
                     <td class="p-5">
                     <div style="background: #D3EAC8; padding: 20px; border-radius: 10px;">    
                         <div class="btn-group">
                         <a href="{{ route('expenses.edit', $exp->id) }}" class="btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                        <a href="{{ route('expense.destroy', $exp->id) }}" class="btn-sm btn-danger" onclick="alert('Are you sure to delete???')"><i class="fa fa-trash"></i></a>
+                        <a href="{{ route('expense.destroy', $exp->id) }}" class="btn-sm btn-danger delete-expense" onclick="alert('Are you sure to delete.')"><i class="fa fa-trash"></i></a>
                         </div>
                     </div>
                     </td>
                 </tr>
+                @else
+                    <tr>
+                        <td>No Reports Found</td>    
+                    </tr>
+                @endif
                 @endforeach
             </tbody>
         </table>

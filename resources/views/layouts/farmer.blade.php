@@ -94,7 +94,7 @@
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function () {
             $('#insurecow-datatable').DataTable();
@@ -109,47 +109,45 @@
 
 
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <script>
-$(document).ready(function () {
-        var today = new Date();
-        $('#datepicker').datepicker({
-            format: 'mm-dd-yyyy',
-            autoclose:true,
-            endDate: "today",
-            maxDate: today
-        }).on('changeDate', function (ev) {
-                $(this).datepicker('hide');
-            });
-
-
-        $('#datepicker').keyup(function () {
-            if (this.value.match(/[^0-9]/g)) {
-                this.value = this.value.replace(/[^0-9^-]/g, '');
-            }
-        });
-    });
-  </script>
-
 <script>
 $(document).ready(function () {
-        var today = new Date();
-        $('#datepicker2').datepicker({
-            format: 'mm-dd-yyyy',
-            autoclose:true,
-            minDate: "today",
-            endDate: "today",
-        }).on('changeDate', function (ev) {
-                $(this).datepicker('hide');
-            });
-
-
-        $('#datepicker2').keyup(function () {
-            if (this.value.match(/[^0-9]/g)) {
-                this.value = this.value.replace(/[^0-9^-]/g, '');
-            }
+    var today = new Date();
+    $('#datepicker').datepicker({
+        format: 'mm-dd-yyyy',
+        autoclose:true,
+        endDate: "today",
+        maxDate: today,
+        changeYear:true
+    }).on('changeDate', function (ev) {
+            $(this).datepicker('hide');
         });
+    $('#datepicker').keyup(function () {
+        if (this.value.match(/[^0-9]/g)) {
+            this.value = this.value.replace(/[^0-9^-]/g, '');
+        }
     });
-  </script>
+});
+</script>
+<script>
+$(document).ready(function () {
+    var today = new Date();
+    $('#datepicker2').datepicker({
+        format: 'mm-dd-yyyy',
+        autoclose:true,
+        minDate: "today",
+        endDate: "today",
+        changeYear:true
+    }).on('changeDate', function (ev) {
+            $(this).datepicker('hide');
+        });
+    $('#datepicker2').keyup(function () {
+        if (this.value.match(/[^0-9]/g)) {
+            this.value = this.value.replace(/[^0-9^-]/g, '');
+        }
+    });
+});
+</script>
+
 
 </body>
 

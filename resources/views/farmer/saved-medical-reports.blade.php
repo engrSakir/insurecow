@@ -18,6 +18,7 @@
                 </thead>
                 <tbody>   
                     @foreach($reports as $repo)
+                    @if(count($reports)>0)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $repo->date }}</td>
@@ -26,6 +27,11 @@
                         <td>{{ $repo->vaccine_name }}</td>    
                         <td>{{ $repo->next_vaccination_date }}</td>    
                     </tr>
+                    @else
+                        <tr>
+                            <td>No Reports Found</td>    
+                        </tr>
+                    @endif
                     @endforeach
                     <!-- <td>
                             <a href="#">

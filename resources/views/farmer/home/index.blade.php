@@ -32,7 +32,7 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card card-style">
                     <div class="p-2 card-block-top">
-                        <h4 class="card-title">Field Agent Details </h4>
+                        <h4 class="card-title">Medical Report Details </h4>
                     </div>
                     <img src="{{asset('/images/field-agent.png')}}" alt="Insurance Claim" class="img-fluid  img-card">
                     <div class="text-center p-4">
