@@ -29,7 +29,7 @@
                         <td>{{ $repo->vaccine_name }}</td>    
                         <td>{{ $repo->next_vaccination_date }}</td>  
                         <td>@if($repo->pdf_file)
-                                    <a href="{{ route('view.pdf', $repo->id) }}" class="btn" target="_blank">VIEW PDF</a>
+                                    <a href="{{ route('view.pdf', $repo->id) }}" class="btn" target="_blank" style="background: #086343">VIEW PDF</a>
                                     @else
                                         No PDF Found
                                     @endif</td>  
