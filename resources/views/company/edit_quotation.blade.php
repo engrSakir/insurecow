@@ -15,7 +15,7 @@
 
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="contents" value="{{ old('contents') }}" requried >{{$quotation->contents}}</textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="contents" requried >{{$quotation->contents}}</textarea>
             </div>
 
             @error('content')
@@ -24,7 +24,7 @@
             <img src="{{ asset('storage/' . $quotation->signature) }}" alt="" style="width: 200px; height: 200px">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Signature</label>
-                <input type="file" name="signature" class="form-control" value="{{ old('signature') }}" requried>
+                <input type="file" name="signature" class="form-control" requried>
             </div>
 
 
