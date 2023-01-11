@@ -28,18 +28,18 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Website</label>
-                    <input type="text" name="website" class="form-control" placeholder="Enter Personal Website Address">
+                    <input type="text" name="website" class="form-control" placeholder="Enter Personal Website Address" value="{{ old('website') }}">
                   </div>
-               
+
                 <div class="mb-3">
                     <label  class="form-label">About</label>
-                    <input type="text"  name="about" class="form-control" placeholder="Enter About">
+                    <input type="text"  name="about" class="form-control" placeholder="Enter About" value="{{ old('about') }}">
                   </div>
                   <div class="form-control">
                     <i class="fa fa-upload" aria-hidden="true"></i>
                    <input type="file" name="image">
                   </div><br>
-        
+
                 <button type="submit" class="btn btn-primary" style="background: #086343">Submit</button>
               </form>
         </div>

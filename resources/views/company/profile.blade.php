@@ -22,7 +22,7 @@
                     <label class="form-label">Company Name</label>
                     <input type="text" class="form-control" placeholder="Enter Full Name" value="{{ Auth::user()->name }}">
                 </div>
-                
+
                 <div class="mb-3">
                   <label class="form-label">Email address</label>
                   <input type="email" class="form-control" placeholder="Enter Email" value="{{ Auth::user()->email }}">
@@ -33,21 +33,21 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Website</label>
-                    <input type="text" name="website" class="form-control" placeholder="Enter Personal Website Address">
+                    <input type="text" name="website" class="form-control" placeholder="Enter Personal Website Address" value="{{ old('website') }}" required>
                   </div>
                   <div class="mb-3">
                     <label  class="form-label">Address</label>
-                    <input type="text"  name="address" class="form-control" placeholder="Enter About">
+                    <input type="text"  name="address" class="form-control" placeholder="Enter About" value="{{ old('address') }}" required>
                   </div>
                 <div class="mb-3">
                     <label  class="form-label">About</label>
-                    <input type="text"  name="about" class="form-control" placeholder="Enter About">
+                    <input type="text"  name="about" class="form-control" placeholder="Enter About" value="{{ old('about') }}" required>
                   </div>
                   <div class="form-control">
                     <i class="fa fa-upload" aria-hidden="true"></i>
                    <input type="file" name="image">
                   </div><br>
-        
+
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
         </div>
