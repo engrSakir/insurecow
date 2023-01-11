@@ -254,7 +254,7 @@
             function confirmation(e) {
             e.preventDefault();
 
-            var url = e.currentTarget.getAttribute('href')
+            var url = e.currentTarget.getId('#menu')
 
             Swal.fire({
                 icon: 'warning',

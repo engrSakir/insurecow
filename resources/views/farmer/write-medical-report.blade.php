@@ -13,7 +13,7 @@
                 <div class="card p-5" style="background: rgba(79, 172, 35, 0.25);">
                     <div class="form-group">
                         <label for="date">Enter Date:</label>
-                        <input type="text" class="form-control" name="date" placeholder="01/12/2023" id="datepicker">
+                        <input type="text" class="form-control" name="date" placeholder="01/12/2023" id="datepicker" readonly>
                     </div>
                     <div class="form-group">
                         <label for="cattle_id">Select Cattle:</label>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                         <label for="next_vaccination_date">Enter Next Vaccine Date:</label>
-                        <input type="text" class="form-control" name="next_vaccination_date" placeholder="01/12/2023" id="datepicker2">
+                        <input type="text" class="form-control" name="next_vaccination_date" placeholder="01/12/2023" id="datepicker2" readonly>
                     </div>
                     <div class="form-group pt-3">
                         <button type="submit" style="display:block; background: #086343" class="btn w-100 text-white">Add</button>
