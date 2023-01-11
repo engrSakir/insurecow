@@ -40,7 +40,7 @@
     <p class="heading mt-4">Registration Form</p>
 
     <div class="card card-style mt-4 mb-5">
-        <div class="card-block p-2 card-block-middle mb-4">
+        <div class="card-block p-2 card-block-middle mb-4" style="background: #086343">
             <h4 class="ms-4">Attachment</h4>
         </div>
         @if ($errors->any())
@@ -79,6 +79,7 @@
                                     class="file-upload-btn mt-4"
                                     type="button"
                                     onclick="$('.file-upload-input').trigger( 'click' )"
+                                    style="background: #086343"
                                 >
                                     Upload
                                 </button>
@@ -120,6 +121,7 @@
                                     class="file-upload-btn mt-4"
                                     type="button"
                                     onclick="$('.file2-upload-input').trigger( 'click' )"
+                                    style="background: #086343"
                                 >
                                     Upload
                                 </button>
@@ -161,6 +163,7 @@
                                     class="file-upload-btn mt-4"
                                     type="button"
                                     onclick="$('.file3-upload-input').trigger( 'click' )"
+                                    style="background: #086343"
                                 >
                                     Upload
                                 </button>
@@ -194,7 +197,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <!-- <div class="col-md-6 mb-4">
                     <div class="form-outline">
                         <label class="form-label" for="inputLastName"
                         >Period of Insurance:</label
@@ -204,7 +207,7 @@
                             <option value="1">1</option>
                         </select>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <!--PDf Attachments-->
@@ -226,7 +229,7 @@
 
             <!-- Register button -->
             <div class="px-4 py-5">
-                <button type="submit" class="register-button">Register</button>
+                <button type="submit" class="register-button" style="background: #086343">Register</button>
             </div>
         </form>
     </div>

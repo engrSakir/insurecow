@@ -65,6 +65,7 @@
 
 
 
+                                <li><a class="dropdown-item" href="{{ route('reg_one.index') }}">Register a Cattle</a></li>
                                 <li><a class="dropdown-item" href="{{ route('farmer.registered.cattle') }}">Registered Cattle</a></li>
                                 <li><a class="dropdown-item" href="{{ route('farmer.medical.report') }}">Medical Report</a></li>
                                 <li><a class="dropdown-item" href="{{ route('write.medical.report') }}">Write Medical Report</a></li>
@@ -87,7 +88,7 @@
                         <li class="nav-item navbar-brand">
                             <!-- <button type="submit" class="signout-button">SignOut</button> -->
 
-                            <a href="{{ route('log_out') }}" class="btn signout-button">SignOut</a>
+                            <a href="{{ route('log_out') }}" class="btn signout-button" style="background: #086343; color: #ffffff !important">SignOut</a>
 
                         </li>
                     </ul>

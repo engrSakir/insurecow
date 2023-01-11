@@ -76,6 +76,7 @@ Route::middleware(['farmer','auth'])->group(function(){
         Route::delete('expense/delete/{id}', 'farmer\FarmerExpenseController@destroy')->name('expense.destroy');
         Route::get('/expense/history', 'farmer\FarmerExpenseController@history')->name('expense.history');    
         Route::get('/medical/history', 'farmer\FarmerExpenseController@medicalhistory')->name('medical.history');    
+        Route::get('/farmer/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');    
     });
 });
 

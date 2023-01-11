@@ -42,7 +42,6 @@ class RegistrationController extends Controller
             'vet' => 'required',
             'chairman' => 'required',
             'issue_date' => 'required',
-            'poi' => 'required',
         ]);
 
         // $this->validate($request,$inputs);

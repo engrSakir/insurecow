@@ -9,7 +9,13 @@
         @if ($message = Session::get('success'))
             <div class="alert alert-success alert-block">
                 
-                    <strong>{{ $message }}</strong>
+                    {{ $message }}
+            </div>
+        @endif
+        @if ($message = Session::get('notification'))
+            <div class="alert alert-success alert-block">
+                
+                    {{ $message }}
             </div>
         @endif
         <div class="col-lg-4">

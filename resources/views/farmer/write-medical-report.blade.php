@@ -9,7 +9,12 @@
             <h2 class="text-center mt-3"><b>Medical Info</b></h2>
             <form class="{{ route('save.write.medical.report') }}" method="post" enctype="multipart/form-data" id="writemedicalform">
                 {{ csrf_field() }}
-
+                @if ($message = Session::get('success'))
+                <p class="p-welcome-text alert alert-success">{{ $message }}</p>
+                <!-- <div class="alert alert-success alert-block">
+                    <strong>Password must contain at least 1 letter, 1 number, and 1 symbol. Minimum length is 8 characters.</strong>
+                </div> -->
+                @endif
                 <div class="card p-5" style="background: rgba(79, 172, 35, 0.25);">
                     <div class="form-group">
                         <label for="date">Enter Date:</label>

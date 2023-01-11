@@ -104,4 +104,9 @@ class FarmerExpenseController extends Controller
         $vaccine = Medical::all();
         return view('farmer.medical-history', compact('vaccine'));
     }
+
+    public function confirm()
+    {
+        return view('farmer.confirmation');
+    }
 }

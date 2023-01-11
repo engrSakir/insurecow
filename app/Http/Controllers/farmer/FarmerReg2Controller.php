@@ -91,7 +91,9 @@ class FarmerReg2Controller extends Controller
 
         Farmer_reg_2::create($inputs);
 
-        return redirect()->back();
+        // $html = view('farmer.confirmation')->render();
+
+        // return $html;
     }
 
     /**

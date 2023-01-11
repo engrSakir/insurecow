@@ -7,8 +7,15 @@
     <div class="row">
         <div class="col-lg-12">
             <h2 class="text-center mt-3"><b>Upload Cattle Medical Report</b></h2>
-            <form class="{{ route('save.medical.report') }}" method="post" enctype="multipart/form-data">
+            @if ($message = Session::get('success'))
+                <p class="p-welcome-text alert alert-success">{{ $message }}</p>
+                <!-- <div class="alert alert-success alert-block">
+                    <strong>Password must contain at least 1 letter, 1 number, and 1 symbol. Minimum length is 8 characters.</strong>
+                </div> -->
+              @endif
+              <form class="{{ route('save.medical.report') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
+            
             <div class="card-block p-2 card-block-down mb-4">
                 <div class="row px-4 mt-4 mb-3">
                     <!-- Vet Certiicate -->
@@ -49,17 +56,21 @@
                                     <i class="fa-solid fa-circle-xmark"></i>
                                 </button>
                             </div>
+                            <select name="cattle_id" id="cattle_id" class="form-control mt-3">
+                                <option value="">SELECT CATTLE</option>
+                                @foreach($cattle as $cat)
+                                    <option value="{{ $cat->id }}">{{ $cat->cattle_name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <hr/>
-
             <!-- Register button -->
-            <div class="px-4 py-5">
+            <div class="mb-3">
                 <button type="submit" class="register-button">Register</button>
-                <a href="{{ route('write.medical.report') }}" class="px-2 register-button">Write Report</a>
+                <a href="{{ route('write.medical.report') }}" class="btn px-2 register-button">Write Report</a>
             </div>
         </form>
             
