@@ -105,7 +105,7 @@
 
                     <span>Policy</span></a>
             </li>
-            @if (auth()->user()->count() == 0)
+            @if (auth()->user()->quotation()->count() == 0)
                 <!-- Nav Item - Profile -->
                 <li class="nav-item border-bottom border-dark {{ (request()->is('company/quotation')) ? 'active' : '' }} pt-2 pb-2">
                     <a class="nav-link text-dark" href="{{ route('quotation.index') }}">

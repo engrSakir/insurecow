@@ -55,4 +55,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(FarmerProfile::class);
     }
+
+    public function quotation()
+    {
+        return $this->hasOne(Quotation::class);
+    }
 }

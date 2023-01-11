@@ -15,10 +15,13 @@ class CompanyQuotationController extends Controller
     public function index()
     {
         if(Quotation::where('user_id',auth()->user()->id)->orderBy('id','desc')->first() == null){
-            return redirect()->route('quotation.index');
+//            return redirect()->route('quotation.index');
+            return  view('company.quotation');
         }else{
             $quotation = Quotation::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
             return redirect()->route('quotation.edit',$quotation);
+//            return view('company.edit_quotation',compact('quotation'));
+
         }
 
     }
@@ -85,6 +88,7 @@ class CompanyQuotationController extends Controller
     {
         $quotation = Quotation::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
         return view('company.edit_quotation', compact('quotation'));
+//        return  redirect()->route('quotation.edit',$quotation->id);
     }
 
     /**
