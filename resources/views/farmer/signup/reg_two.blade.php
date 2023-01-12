@@ -44,7 +44,7 @@
             <div class="card mt-4 mb-5">
                 <form class="">
 
-                    <div class="card-block p-2 card-block-top mb-4" style="background: #086343"> 
+                    <div class="card-block p-2 card-block-top mb-4" style="background: #086343">
                         <h4 class="ms-4">Farmer Information</h4>
                     </div>
 
@@ -572,10 +572,12 @@
                 formData.set("price", this.price);
 
                 window.axios.post('{{ route('reg_two.store') }}', formData).then(el => {
-                    console.log(el);
+                    // console.log(el);
+                    // location.reload();
                     alert('Data added successfully!');
-                    location.reload();
+                    window.location.href = '/farmer/confirmation';
                 });
+
             }
         }
     })

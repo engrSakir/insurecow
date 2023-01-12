@@ -77,11 +77,14 @@ Route::middleware(['farmer','auth'])->group(function(){
 
         Route::resource('/expenses', 'farmer\FarmerExpenseController');
         Route::delete('expense/delete/{id}', 'farmer\FarmerExpenseController@destroy')->name('expense.destroy');
-        Route::get('/expense/history', 'farmer\FarmerExpenseController@history')->name('expense.history');    
-        Route::get('/medical/history', 'farmer\FarmerExpenseController@medicalhistory')->name('medical.history');    
-        Route::get('/farmer/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');    
-        Route::get('/view/pdf/{id}/{cattle_id}', 'farmer\FarmerExpenseController@viewpdf')->name('view.pdf');    
-    });
+        Route::get('/expense/history', 'farmer\FarmerExpenseController@history')->name('expense.history');
+        Route::get('/medical/history', 'farmer\FarmerExpenseController@medicalhistory')->name('medical.history');
+        Route::get('/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');
+        Route::get('/view/pdf/{id}/{cattle_id}', 'farmer\FarmerExpenseController@viewpdf')->name('view.pdf');
+
+        Route::get('/onboard', 'farmer\FarmerOnboardController@index')->name('onboard.index');
+        Route::post('/onboard', 'farmer\FarmerOnboardController@store')->name('onboard.store');
+     });
 });
 
 // --------------------------- superadmin----------------------

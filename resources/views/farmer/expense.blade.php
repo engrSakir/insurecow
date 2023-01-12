@@ -63,44 +63,44 @@
         </div>
         <div class="col-lg-8">
         <div class="table-responsive">
+            <table class="table table-bordered">
             <a href="{{ route('expense.history') }}" class="btn text-white float-end mb-3" style="background: #086343;">Back to Expense History</a>
-        <table class="table table-bordered">
             <tbody>
                 @foreach($expense as $exp)
                 @if(count($expense)>0)
-                <tr>
-                    <td class="p-5">
-                            <strong>Cattle Name </strong><br>{{ $exp->cattle->cattle_color }}
-                    </td>
-                    <td class="p-5">
+                    <tr>
+                        <td class="p-5">
+                                <strong>Cattle Name </strong><br>{{ $exp->cattle->cattle_color }}
+                        </td>
+                        <td class="p-5">
+                            <div style="background: #D3EAC8; padding: 20px; border-radius: 10px;">
+                                <strong>Price </strong><br>{{ $exp->cattle->price }}
+                            </div>
+                        </td>
+                        <td class="p-5">
                         <div style="background: #D3EAC8; padding: 20px; border-radius: 10px;">
-                            <strong>Price </strong><br>{{ $exp->cattle->price }}
+                            <strong>Expense </strong><br>{{ $exp->amount }}
                         </div>
-                    </td>
-                    <td class="p-5">
-                    <div style="background: #D3EAC8; padding: 20px; border-radius: 10px;">
-                        <strong>Expense </strong><br>{{ $exp->amount }}
-                    </div>
-                    </td>
-                    <td class="p-5">
-                    <div style="background: #D3EAC8; padding: 20px; border-radius: 10px;">    
-                        <strong>Total </strong><br>{{ (float)$exp->cattle->price + (float)$exp->amount }}
-                    </div>
-                    </td>
-                    <td class="p-5">
-                    <div style="background: #D3EAC8; padding: 20px; border-radius: 10px;">    
-                        <div class="btn-group">
-                        <a href="{{ route('expenses.edit', $exp->id) }}" class="btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                        <!-- <a href="{{ route('expense.destroy', $exp->id) }}" class="btn-sm btn-danger delete-expense" onclick="alert('Are you sure to delete.')"><i class="fa fa-trash"></i></a> -->
-                        <form method="POST" action="{{ route('expense.destroy', $exp->id) }}">
-                            @csrf
-                            <input name="_method" type="hidden" value="DELETE">
-                            <button type="submit" class="btn btn-sm btn-danger show_confirm" title='Delete'><i class="fa fa-trash"></i></button>
-                        </form>
+                        </td>
+                        <td class="p-5">
+                        <div style="background: #D3EAC8; padding: 20px; border-radius: 10px;">    
+                            <strong>Total </strong><br>{{ (float)$exp->cattle->price + (float)$exp->amount }}
                         </div>
-                    </div>
-                    </td>
-                </tr>
+                        </td>
+                        <td class="p-5">
+                        <div style="background: #D3EAC8; padding: 20px; border-radius: 10px;">    
+                            <div class="btn-group">
+                            <a href="{{ route('expenses.edit', $exp->id) }}" class="btn-sm btn-primary"><i class="fa fa-edit"></i></a>
+                            <!-- <a href="{{ route('expense.destroy', $exp->id) }}" class="btn-sm btn-danger delete-expense" onclick="alert('Are you sure to delete.')"><i class="fa fa-trash"></i></a> -->
+                            <form method="POST" action="{{ route('expense.destroy', $exp->id) }}">
+                                @csrf
+                                <input name="_method" type="hidden" value="DELETE">
+                                <button type="submit" class="btn btn-sm btn-danger show_confirm" title='Delete'><i class="fa fa-trash"></i></button>
+                            </form>
+                            </div>
+                        </div>
+                        </td>
+                    </tr>
                 @else
                     <tr>
                         <td>No Reports Found</td>    

@@ -120,7 +120,8 @@ $(document).ready(function () {
         autoclose:true,
         endDate: "today",
         maxDate: today,
-        changeYear:true
+        changeYear:true,
+        yearRange: "-2:+0"
     }).on('changeDate', function (ev) {
             $(this).datepicker('hide');
         });
@@ -139,7 +140,8 @@ $(document).ready(function () {
         autoclose:true,
         minDate: "today",
         endDate: "today",
-        changeYear:true
+        changeYear:true,
+        yearRange: "-2:+0"
     }).on('changeDate', function (ev) {
             $(this).datepicker('hide');
         });
@@ -163,6 +165,7 @@ $(document).ready(function () {
               icon: "warning",
               buttons: true,
               dangerMode: true,
+              yearRange: "-2:+0"
           })
           .then((willDelete) => {
             if (willDelete) {

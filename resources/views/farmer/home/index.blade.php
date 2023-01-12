@@ -14,7 +14,50 @@
         <div class="d-lg-flex d-md-flex justify-content-center">
 
             <!--Cow Lists-->
+            @if(auth()->user()->cattles()->count() == 0)
             <div class="col-lg-4 col-md-6 mb-4 me-lg-5 me-md-4">
+                <div class="card card-style">
+                    <div class="p-2 card-block-top" style="background: #086343">
+                        <h4 class="card-title">Create a Cattle </h4>
+                    </div>
+                    <img src="{{asset('images/cow-list.png')}}" alt="Registered Cow" class="img-fluid img-card">
+                    <div class="text-center p-4">
+
+                        <a href="{{ route('reg_two.index') }}" class="btn card-button" style="background-color: #0f6848">Continue</a>
+
+                    </div>
+                </div>
+            </div>
+            @else
+            <div class="col-lg-4 col-md-6 mb-4 me-lg-5 me-md-4">
+                <div class="card card-style">
+                    <div class="p-2 card-block-top" style="background: #086343">
+                        <h4 class="card-title">Create a Cattle </h4>
+                    </div>
+                    <img src="{{asset('images/cow-list.png')}}" alt="Registered Cow" class="img-fluid img-card">
+                    <div class="text-center p-4">
+
+                        <a href="{{ route('reg_two.index') }}" class="btn card-button" style="background-color: #0f6848">Continue</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--Field Agent Details-->
+            <div class="col-lg-4 col-md-6 mb-4 me-lg-5 me-md-4">
+                <div class="card card-style">
+                    <div class="p-2 card-block-top" style="background: #086343">
+                        <h4 class="card-title">Medical Report Details </h4>
+                    </div>
+                    <img src="{{asset('/images/field-agent.png')}}" alt="Insurance Claim" class="img-fluid  img-card">
+                    <div class="text-center p-4">
+                        <a href="{{ route('saved.medical.report') }}" class="btn card-button" style="background-color: #0f6848">Continue</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu -->
+            <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card card-style">
                     <div class="p-2 card-block-top" style="background: #086343">
                         <h4 class="card-title">View Cow Lists </h4>
@@ -27,19 +70,8 @@
                     </div>
                 </div>
             </div>
+            @endif
 
-            <!--Field Agent Details-->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card card-style">
-                    <div class="p-2 card-block-top" style="background: #086343">
-                        <h4 class="card-title">Medical Report Details </h4>
-                    </div>
-                    <img src="{{asset('/images/field-agent.png')}}" alt="Insurance Claim" class="img-fluid  img-card">
-                    <div class="text-center p-4">
-                        <a href="{{ route('saved.medical.report') }}" class="btn card-button" style="background-color: #0f6848">Continue</a>
-                    </div>
-                </div>
-           </div>
         </div>
     </div>
 
