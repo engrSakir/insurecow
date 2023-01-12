@@ -284,7 +284,7 @@
         }
     </script>
 
-{{--Tiny mce--}}
+    {{--Tiny mce--}}
 
     {{-------------------------------- hiding tinymce domain notification ----------------------------- --}}
 

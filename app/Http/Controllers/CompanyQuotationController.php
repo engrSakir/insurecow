@@ -47,6 +47,13 @@ class CompanyQuotationController extends Controller
         $inputs = \request()->validate([
 
             'contents' => 'required',
+            'risk'=>'required',
+            'rate'=>'required',
+            'bdt'=>'required',
+            'net_premium'=>'required',
+            'vat'=>'required',
+            'stamp_duty'=>'required',
+            'total'=>'required',
             'signature' => 'required',
 
         ]);
@@ -106,6 +113,16 @@ class CompanyQuotationController extends Controller
         $inputs = [
 
             'contents' => 'required',
+            'risk'=>'required',
+            'rate'=>'required',
+            'bdt'=>'required',
+            'net_premium'=>'required',
+            'vat'=>'required',
+            'stamp_duty'=>'required',
+            'total'=>'required',
+
+
+
             'signature' => 'mimes:jpeg,bmp,png,webp',
 
         ];
@@ -117,6 +134,20 @@ class CompanyQuotationController extends Controller
         $quotation=Quotation::find($id);
 
         $quotation->contents=$request->contents;
+        $quotation->risk=$request->risk;
+        $quotation->rate=$request->rate;
+        $quotation->bdt=$request->bdt;
+        $quotation->net_premium=$request->net_premium;
+        $quotation->vat=$request->vat;
+        $quotation->stamp_duty=$request->stamp_duty;
+        $quotation->total=$request->total;
+
+
+
+
+
+
+
 
 
         if (request('signature')) {
