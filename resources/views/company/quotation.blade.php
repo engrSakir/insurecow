@@ -45,8 +45,11 @@
                         <th>Premium Rate</th>
                         <th>Premium on BDT</th>
                         <th>Total</th>
-                        <th>Action</th>
+
+                        <th> <a href="javascript:;" class="btn btn-success addRow" >+</a></th>
+
                     </tr>
+
                     </thead>
                     <tbody class="row_container">
 
@@ -66,20 +69,11 @@
                         <td>
                             <input type="text" name="net_premium" class="form-control" placeholder="Total" id="total" style="cursor: pointer;" readonly>
                         </td>
-                        <td>
-                            <a href="javascript:0" class="btn btn-danger"><i class="fa fa-minus" onclick="$.remove();"></i></a>
-                        </td>
+
                     </tr>
                     </tbody>
                     <tbody>
-                    <tr>
-                        <td colspan="3"></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="javascript:0" class="btn btn-success addRow" onclick="addrow();"><i class="fa fa-plus"></i></a>
-                        </td>
-                    </tr>
+
                     <tr>
                         <td colspan="3"></td>
                         <td>
@@ -154,7 +148,30 @@
     integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
     crossorigin="anonymous"></script>
 
+<script>
+    $('thead').on('click','.addRow',function (){
+        var tr= ' <tr align="center">'+
+            ' <td>'+
+            ' <a href="javascript:;" class="btn btn-warning"><i class="fa fa-info-circle"></i></a>'+
+            ' </td>'+
+            '<td>'+
+            '<input type="text" name="risk" class="form-control" placeholder="Risk">'+
+            '</td>'+
+            '<td>'+
+            '<input type="text" name="rate" class="form-control" placeholder="Premium Rate" id="quantity">'+
+            '</td>'+
+            '<td>'+
+            ' <input type="text" name="bdt" class="form-control" placeholder="Premium on BDT" id="unitprice">'+
+            '</td>'+
+            '<td>'+
+            '<input type="text" name="net_premium" class="form-control" placeholder="Total" id="total" style="cursor: pointer;" readonly>'+
+            '</td>'+
+            
+            '</tr>';
+        $('tbody').append(tr)
+    })
 
+</script>
 <script type="text/javascript">
     $(document).ready(function() {
 
@@ -203,3 +220,4 @@
     });
 
 </script>
+

@@ -47,7 +47,7 @@
             <td></td>
             <td>{{$quotation->total}} Tk</td>
         </tr>
-      
+
 
         </tbody>
     </table>
