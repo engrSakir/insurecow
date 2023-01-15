@@ -22,6 +22,7 @@
         href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
         <style>
+
         .active {
             background: #ffffff;
         }
@@ -37,7 +38,7 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js" integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body id="page-top">
@@ -284,7 +285,7 @@
         }
     </script>
 
-{{--Tiny mce--}}
+    {{--Tiny mce--}}
 
     {{-------------------------------- hiding tinymce domain notification ----------------------------- --}}
 

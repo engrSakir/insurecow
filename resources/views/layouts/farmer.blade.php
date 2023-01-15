@@ -174,8 +174,16 @@ $(document).ready(function () {
           });
       });
 
-</script>
 
+</script>
+    @if(session()->has('send'))
+        <script>
+            swal("Done!!","{!! Session::get('send')!!}","success",{
+                button:"OK",
+            })
+        </script>
+
+    @endif
 </body>
 
 </html>

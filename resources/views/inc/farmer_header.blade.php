@@ -72,7 +72,12 @@
                         <li class="nav-item navbar-brand">
                             <a href="{{ route('farmer.notification') }}" class="nav-link">Notification</a>
                         </li>
+                        <li class="nav-item navbar-brand">
+                            <!-- <button type="submit" class="signout-button">SignOut</button> -->
 
+                            <a href="{{route('send.index')}}" class="btn signout-button" style="background: #086343; color: #ffffff !important">Request</a>
+
+                        </li>
                         <!--Sign out-->
                         <!-- <li class="nav-item navbar-brand"> -->
                             <!-- <button type="submit" class="signout-button">SignOut</button> -->

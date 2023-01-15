@@ -91,6 +91,11 @@
                     <span>Registration</span></a>
             </li>
 
+            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('superadmin/request')) ? 'active' : '' }} pt-2 pb-2">
+                <a href="{{route('superadmin.company_request')}}" class="nav-link text-dark">
+                    <i class="fas fa-business-time text-dark"></i>
+                    <span>Company Request</span></a>
+            </li>
 
 
             <!-- Nav Item - History -->

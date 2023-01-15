@@ -10,6 +10,7 @@ use App\Company;
 use App\Farmer_reg_1;
 use App\Medical;
 use App\Profile;
+use App\Send;
 use Illuminate\Support\Facades\Hash;
 // use Barryvdh\DomPDF\Facade\PDF;
 use App\Exports\UsersExport;
@@ -94,6 +95,12 @@ class SuperAdminController extends Controller
     function  view(){
         $user= User::firstOrFail();
         return view('superadmin.viewall',compact('user'));
+    }
+
+
+    function companyRequest(){
+        $send=Send::all();
+        return view('superadmin.company_request',compact('send'));
     }
     /**
      * Display the specified resource.
