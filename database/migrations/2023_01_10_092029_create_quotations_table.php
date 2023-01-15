@@ -23,6 +23,8 @@ class CreateQuotationsTable extends Migration
 
             $table->string('net_premium')->nullable();
             $table->string('vat')->nullable();
+            $table->string('vats')->nullable();
+
             $table->string('stamp_duty')->nullable();
             $table->string('total');
 

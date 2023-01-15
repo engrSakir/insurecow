@@ -1,6 +1,7 @@
 <?php
 
 use App\Company;
+use App\Quotation;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SuperAdminController;
@@ -25,9 +26,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // --------------------------- company ----------------------
-Route::middleware(['company','auth'])->group(function(){
+Route::middleware(['company', 'auth'])->group(function () {
     // Route::get('/home', 'HomeController@index')->name('home');
-    Route::group(['prefix' => 'company'], function(){
+    Route::group(['prefix' => 'company'], function () {
         Route::get('home', 'CompanyController@index')->name('company.index');
         Route::get('reg', 'CompanyController@reg')->name('company.reg');
         Route::resource('profile', 'CompanyProfileController');
@@ -38,30 +39,39 @@ Route::middleware(['company','auth'])->group(function(){
         Route::get('download', 'CompanyController@download')->name('company.download');
         Route::get('history', 'CompanyController@history')->name('company.history');
         Route::resource('policy', 'CompanyPolicyController');
+
         Route::resource('quotation', 'CompanyQuotationController');
+
+//   -------------------------------------- quotation get ajax data ----------------------------------------
+
+        Route::get('get_quotation_data', function () {
+            $quotation = Quotation::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first();
+            return response()->json($quotation,200);
+        })->name('get_quotation_data');
+
+//   -------------------------------------- quotation get ajax data ----------------------------------------
+
         Route::get('quotation_view', 'CompanyController@viewQuotation')->name('company.quotation_view');
         Route::get('policy_view', 'CompanyController@viewPolicy')->name('company.policy_view');
-
-
 
 
     });
 });
 
 // --------------------------- farmer ----------------------
-Route::middleware(['farmer','auth'])->group(function(){
+Route::middleware(['farmer', 'auth'])->group(function () {
     // Route::get('/home', 'HomeController@index')->name('home');
 
-     Route::group(['prefix'=>'farmer'],function(){
+    Route::group(['prefix' => 'farmer'], function () {
         // Route::get('home', 'farmer\FarmerController@index')->name('farmer.index');
-        Route::resource('farmer','farmer\FarmerController');
-        Route::resource('reg_one','farmer\RegistrationController');
+        Route::resource('farmer', 'farmer\FarmerController');
+        Route::resource('reg_one', 'farmer\RegistrationController');
         Route::resource('reg_two', 'farmer\FarmerReg2Controller');
-        Route::get('home','farmer\FarmerHomeController@index')->name('farmer.index');
+        Route::get('home', 'farmer\FarmerHomeController@index')->name('farmer.index');
 
         // Route::get('reg_two', 'farmer\RegistrationController@create')->name('farmer.reg_two');
         // Route::resource('fprofile','farmer\FarmerProfileController');
-        Route::resource('farmerprofiles','farmer\FarmerProfileController');
+        Route::resource('farmerprofiles', 'farmer\FarmerProfileController');
         Route::get('/choose-plan', 'farmer\FarmerController@chooseplan')->name('farmer.choose.plan');
         Route::get('/change-password', 'farmer\FarmerController@changepassword')->name('farmer.change.password');
         Route::post('/change-password', 'farmer\FarmerController@updatepassword')->name('farmer.password.update');
@@ -77,37 +87,40 @@ Route::middleware(['farmer','auth'])->group(function(){
 
         Route::resource('/expenses', 'farmer\FarmerExpenseController');
         Route::delete('expense/delete/{id}', 'farmer\FarmerExpenseController@destroy')->name('expense.destroy');
-        Route::get('/expense/history', 'farmer\FarmerExpenseController@history')->name('expense.history');    
-        Route::get('/medical/history', 'farmer\FarmerExpenseController@medicalhistory')->name('medical.history');    
-        Route::get('/farmer/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');    
-        Route::get('/view/pdf/{id}/{cattle_id}', 'farmer\FarmerExpenseController@viewpdf')->name('view.pdf');    
+        Route::get('/expense/history', 'farmer\FarmerExpenseController@history')->name('expense.history');
+        Route::get('/medical/history', 'farmer\FarmerExpenseController@medicalhistory')->name('medical.history');
+        Route::get('/farmer/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');
+        Route::get('/view/pdf/{id}/{cattle_id}', 'farmer\FarmerExpenseController@viewpdf')->name('view.pdf');
+        Route::resource('send', 'farmer\SendRequestController');
+
     });
 });
 
 // --------------------------- superadmin----------------------
-Route::middleware(['superadmin','auth'])->group(function(){
+Route::middleware(['superadmin', 'auth'])->group(function () {
 
-Route::group(['prefix' => 'superadmin'], function(){
-    Route::get('home', 'SuperAdminController@index')->name('superadmin.index');
-    Route::get('reg', 'SuperAdminController@reg')->name('superadmin.reg');
-    Route::post('store', 'SuperAdminController@store')->name('superadmin.store');
-    Route::get('view/{id}', 'SuperAdminController@view')->name('superadmin.view');
+    Route::group(['prefix' => 'superadmin'], function () {
+        Route::get('home', 'SuperAdminController@index')->name('superadmin.index');
+        Route::get('reg', 'SuperAdminController@reg')->name('superadmin.reg');
+        Route::post('store', 'SuperAdminController@store')->name('superadmin.store');
+        Route::get('view/{id}', 'SuperAdminController@view')->name('superadmin.view');
 
-    Route::get('delete/{id}', 'SuperAdminController@delete')->name('superadmin.delete');
-    Route::get('download', 'SuperAdminController@download')->name('superadmin.download');
-    Route::get('history', 'SuperAdminController@history')->name('superadmin.history');
-    Route::resource('profiles', 'ProfileController');
+        Route::get('delete/{id}', 'SuperAdminController@delete')->name('superadmin.delete');
+        Route::get('download', 'SuperAdminController@download')->name('superadmin.download');
+        Route::get('history', 'SuperAdminController@history')->name('superadmin.history');
+        Route::resource('profiles', 'ProfileController');
+        Route::get('company_request', 'SuperAdminController@companyRequest')->name('superadmin.company_request');
+
+    });
+
 });
 
-});
 
-
-
-Route::get('log_out', function (){
+Route::get('log_out', function () {
     \auth()->logout();
     return redirect()->route('login');
 })->name('log_out');
 
-Route::get('test', function(){
-    return Company::where('user_id', auth()->user()->id)->orderBy('id','desc')->first()->image;
+Route::get('test', function () {
+    return Company::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first()->image;
 });
