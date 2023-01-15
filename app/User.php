@@ -46,6 +46,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class);
     }
+    public function cattles()
+    {
+        return $this->hasMany(Farmer_reg_2::class);
+    }
     public function company()
     {
         return $this->hasOne(Company::class);

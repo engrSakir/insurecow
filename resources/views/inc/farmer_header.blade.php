@@ -29,15 +29,9 @@
                               Profile Info
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-
-
-                              @if (auth()->user()->farmer_profile()->count() == 0)
-
-                                    <li><a class="dropdown-item" href="{{route('farmerprofiles.index')}}">Profile</a></li>
-
-
-                               @else
+                                @if (auth()->user()->farmer_profile()->count() == 0)
+                                    <li><a class="dropdown-item" href="{{route('farmerprofiles.index')}}">Profile</a></li>   
+                                @else
                             <!-- Nav Item - Profile Edit -->
                             <li>
                                 <a class="dropdown-item" href="{{ route('farmerprofiles.edit', auth()->user()->id) }}">
@@ -46,7 +40,8 @@
                             @endif
 
                                   <li><a class="dropdown-item" href="{{ route('farmer.change.password') }}">Change Password</a></li>
-
+                                <li><a class="dropdown-item" href="{{ route('farmer.expense') }}">Expenses</a></li>
+                                <li><a class="dropdown-item" href="{{ route('expense.history') }}">Expense History</a></li>
                             </ul>
                           </li>
 
@@ -70,12 +65,6 @@
                                 <li><a class="dropdown-item" href="{{ route('farmer.medical.report') }}">Upload Medical Report</a></li>
                                 <li><a class="dropdown-item" href="{{ route('write.medical.report') }}">Write Medical Report</a></li>
                                 <li><a class="dropdown-item" href="{{ route('medical.history') }}">Medical History</a></li>
-                                <li><a class="dropdown-item" href="{{ route('farmer.expense') }}">Expenses</a></li>
-                                <li><a class="dropdown-item" href="{{ route('expense.history') }}">Expense History</a></li>
-
-
-
-
                             </ul>
                         </li>
 
@@ -90,12 +79,22 @@
 
                         </li>
                         <!--Sign out-->
-                        <li class="nav-item navbar-brand">
+                        <!-- <li class="nav-item navbar-brand"> -->
                             <!-- <button type="submit" class="signout-button">SignOut</button> -->
+                            <!-- <a href="{{ route('log_out') }}" class="btn signout-button" style="background: #086343; color: #ffffff !important">SignOut</a>
+                        </li> -->
+                        
 
-                            <a href="{{ route('log_out') }}" class="btn signout-button" style="background: #086343; color: #ffffff !important">SignOut</a>
-
-                        </li>
+                        <li class="nav-item dropdown navbar-brand">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              {{ Auth::user()->name }}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @if (auth()->user()->farmer_profile()->count() == 0)
+                                    <li><a class="dropdown-item" href="{{ route('log_out') }}">Sign Out</a></li>   
+                                @endif
+                            </ul>
+                          </li>
                     </ul>
 
                     <!--Language-->
