@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\farmer;
+namespace App\Http\Controllers\farmer\request_quotations;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Farmer_reg_2;
+use Auth;
+use App\Pending;
 
-class FarmerOnboardController extends Controller
+class PendingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,7 @@ class FarmerOnboardController extends Controller
      */
     public function index()
     {
-        $cattle = Farmer_reg_2::where('user_id', Auth::user()->id)->get();
-        return view('farmer.onboard.index', compact('cattle'));
+        //
     }
 
     /**
@@ -38,8 +37,21 @@ class FarmerOnboardController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->all();
-        return view('farmer.onboard.insurance_results');
+        $data = [
+            'cattle_id' => $request->cattle_id,
+            'user_id' => Auth::user()->id,
+            'buying_price' => $request->buying_price,
+            'insurance_period' => $request->insurance_period,
+            'accidental_mortality'=> $request->accidental_mortality,
+            'additionalcoverages' => json_encode($request->additionalcoverages)
+        ];
+        return view('farmer.onboard.insurance_results', compact('data'));
+    }
+
+    public function saveInsurance(Request $request)
+    {
+        Pending::create($request->all());
+        return redirect()->route('onboard.index')->with('not', 'Your information has been saved.');
     }
 
     /**
@@ -48,9 +60,9 @@ class FarmerOnboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        return view('farmer.onboard.insurance_details');
+        //
     }
 
     /**

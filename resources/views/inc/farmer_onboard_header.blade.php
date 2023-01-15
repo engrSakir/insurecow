@@ -46,15 +46,21 @@
 
                     <!--Language-->
                     <ul class="navbar-nav d-flex flex-row ms-end">
-                        <li class="nav-item navbar-brand">
-                            <a href="#" class="btn" style="background: #d9d9d9">SIGN IN</a>
-                        </li>
+                        @if(auth()->user())
+                            <li class="nav-item navbar-brand">
+                                <a href="{{ route('log_out') }}" class="btn" style="background: #d9d9d9">SIGN OUT</a>
+                            </li>
+                        @else
+                            <li class="nav-item navbar-brand">
+                                <a href="#" class="btn" style="background: #d9d9d9">SIGN IN</a>
+                            </li>
 
-                        <div class="vr vr-style"></div>
+                            <div class="vr vr-style"></div>
 
-                        <li class="nav-item navbar-brand ms-2">
-                            <a href="#" class="btn" style="background: #226034; color: #fff !important;">SIGN UP</a>
-                        </li>
+                            <li class="nav-item navbar-brand ms-2">
+                                <a href="#" class="btn" style="background: #226034; color: #fff !important;">SIGN UP</a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>

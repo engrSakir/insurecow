@@ -83,8 +83,13 @@ Route::middleware(['farmer','auth'])->group(function(){
         Route::get('/view/pdf/{id}/{cattle_id}', 'farmer\FarmerExpenseController@viewpdf')->name('view.pdf');
 
         Route::get('/onboard', 'farmer\FarmerOnboardController@index')->name('onboard.index');
-        Route::post('/onboard', 'farmer\FarmerOnboardController@store')->name('onboard.store');
-     });
+        Route::get('/onboard/insurance/companies', 'farmer\FarmerOnboardController@store')->name('onboard.store');
+
+        Route::get('/insurance/details', 'farmer\FarmerOnboardController@show')->name('onboard.show');
+        
+        Route::get('/insurance/send', 'farmer\request_quotations\PendingController@store')->name('insurance.store');
+        Route::get('/insurance/save', 'farmer\request_quotations\PendingController@saveInsurance')->name('insurance.save');
+    });
 });
 
 // --------------------------- superadmin----------------------
