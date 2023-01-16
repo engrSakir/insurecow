@@ -36,18 +36,27 @@ class CompanyPackageController extends Controller
     public function store(Request $request)
     {
         $inputs=[
+            'name'=>'required',
             'price_range'=>'required',
             'insurance_period'=>'required',
             'coverage'=>'required',
             'premium_amount'=>'required',
+            'lowest'=>'required',
+            'highest'=>'required',
+
 
         ];
         $this->validate($request,$inputs);
         $package=new Package();
+        $package->name=$request->name;
         $package->price_range=$request->price_range;
         $package->insurance_period=$request->insurance_period;
         $package->coverage=$request->coverage;
         $package->premium_amount=$request->premium_amount;
+        $package->lowest=$request->lowest;
+        $package->highest=$request->highest;
+
+
         $package['user_id'] = auth()->user()->id;
         $package->save();
         return redirect()->back()->with('pkg','Package added successfully');

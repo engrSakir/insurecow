@@ -5,9 +5,9 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-8 " style="margin: auto;  width: 50%;padding: 10px;">
+            <div class="col-lg-8 " style="margin: auto;  width: 50%;padding: 5px;">
 
-                <h4 class="text-center mt-3"><b> Fill Your Details</b></h4>
+                <h4 class="text-center mt-3 p-3"><b><u>Create Your Insurance Packages</u></b></h4>
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -21,6 +21,10 @@
                     {{ csrf_field() }}
 
                     <div class="card p-5" style="background: rgba(199, 248, 201, 1)">
+                        <div class="form-group">
+                            <label for="next_vaccination_date">Package Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Enter Package Name">
+                        </div>
                         <div class="form-group">
                             <label for="date">Select Price Range: </label>
 
@@ -62,6 +66,14 @@
                         <div class="form-group">
                             <label for="next_vaccination_date">Enter Premium Amount</label>
                             <input type="text" name="premium_amount" class="form-control" placeholder="Enter Premium Amount">
+                        </div>
+                        <div class="form-group">
+                            <label for="next_vaccination_date">Enter Lowest Amount</label>
+                            <input type="number" name="lowest" class="form-control" placeholder="Enter Lowest Amount">
+                        </div>
+                        <div class="form-group">
+                            <label for="next_vaccination_date">Enter Highest Amount</label>
+                            <input type="number" name="highest" class="form-control" placeholder="Enter Highest Amount">
                         </div>
                         <div class="form-group pt-3">
                             <button type="submit" style="display:block; background: #086343" class="btn w-100 text-white">Create Package</button>

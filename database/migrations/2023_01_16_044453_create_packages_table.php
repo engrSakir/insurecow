@@ -15,10 +15,14 @@ class CreatePackagesTable extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('price_range');
             $table->string('insurance_period');
             $table->string('coverage');
             $table->string('premium_amount');
+            $table->string('lowest');
+            $table->string('highest');
+
             $table->integer('user_id');
 
 
