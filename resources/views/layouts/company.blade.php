@@ -147,6 +147,12 @@
                     <span>Pending Quotations</span></a>
             </li>
 
+            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/')) ? 'active' : '' }} pt-2 pb-2">
+                <a href="{{route('package.index')}}" class="nav-link text-dark">
+                    <i class="fas fa-fw fa-box-open text-dark"></i>
+                    <span> Create Packages</span></a>
+            </li>
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -257,6 +263,14 @@
     @if(session()->has('qts'))
         <script>
             swal("Done!!","{!! Session::get('qts')!!}","success",{
+                button:"OK",
+            })
+        </script>
+
+    @endif
+    @if(session()->has('pkg'))
+        <script>
+            swal("Done!!","{!! Session::get('pkg')!!}","success",{
                 button:"OK",
             })
         </script>
