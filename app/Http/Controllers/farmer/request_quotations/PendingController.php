@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\Pending;
+use App\Package;
 
 class PendingController extends Controller
 {
@@ -45,7 +46,13 @@ class PendingController extends Controller
             'accidental_mortality'=> $request->accidental_mortality,
             'additionalcoverages' => json_encode($request->additionalcoverages)
         ];
-        return view('farmer.onboard.insurance_results', compact('data'));
+
+        $pakages = Package::where('coverage', $request->accidental_mortality)
+                            ->where('insurance_period', $request->insurance_period)
+                            ->where('price_range', $request->buying_price)
+                            ->get();
+
+        return view('farmer.onboard.insurance_results', compact('data', 'pakages'));
     }
 
     public function saveInsurance(Request $request)

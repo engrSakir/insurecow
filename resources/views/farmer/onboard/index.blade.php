@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-section">
                             <label for="">What is The Buying Price of Your Cattle?</label>
-                            <input min="50000" max="500000" type="number" class="form-control mb-3" name="buying_price" required>
+                            <input min="10000" max="100000" type="number" class="form-control mb-3" name="buying_price" required>
 
                             <label for="">Enter Insurance Period</label>
                             <input min="1" max="5" type="number" class="form-control mt-3" name="insurance_period" required>
