@@ -56,6 +56,9 @@ Route::middleware(['company', 'auth'])->group(function () {
 
         Route::resource('package', 'CompanyPackageController');
 
+        //--------------------------Pending Quotation-------------------------------
+        Route::get('pending','CompanyPendingQuotationController@index')->name('company.pending_quotation');
+
 
 
     });

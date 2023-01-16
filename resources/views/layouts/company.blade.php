@@ -141,13 +141,13 @@
                     <span>Pending Policy List</span></a>
             </li>
 
-            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/')) ? 'active' : '' }} pt-2 pb-2">
-                <a href="#" class="nav-link text-dark">
+            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/pending_quotation')) ? 'active' : '' }} pt-2 pb-2">
+                <a href="{{route('company.pending_quotation')}}" class="nav-link text-dark">
                     <i class="fas fa-fw fa-user-clock text-dark"></i>
                     <span>Pending Quotations</span></a>
             </li>
 
-            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/')) ? 'active' : '' }} pt-2 pb-2">
+            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/package')) ? 'active' : '' }} pt-2 pb-2">
                 <a href="{{route('package.index')}}" class="nav-link text-dark">
                     <i class="fas fa-fw fa-box-open text-dark"></i>
                     <span> Create Packages</span></a>
