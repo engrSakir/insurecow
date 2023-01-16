@@ -17,9 +17,8 @@ class CreateQuotationsTable extends Migration
             $table->id();
             $table->string('logo')->nullable();
             $table->longText('contents');
-            $table->string('risk')->nullable();
-            $table->string('rate')->nullable();
-            $table->string('bdt')->nullable();
+            $table->longText('risk')->nullable();
+
 
             $table->string('net_premium')->nullable();
             $table->string('vat')->nullable();
