@@ -69,9 +69,9 @@
                         </li>
 
                         <!--Notification-->
-                        <li class="nav-item navbar-brand">
+                        <!-- <li class="nav-item navbar-brand">
                             <a href="{{ route('farmer.notification') }}" class="nav-link">Notification</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item navbar-brand">
                             <!-- <button type="submit" class="signout-button">SignOut</button> -->
 

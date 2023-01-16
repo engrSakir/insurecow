@@ -3,9 +3,9 @@
 <div class="container">
         <div class="row">
             <div class="col-md-12 mt-5">
-                <div class="card p-5" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%);
-border: 1px solid #000000;">
-<a href="#" class="float-start mb-3 p-3 text-dark" style="width: 150px; background: linear-gradient(268.09deg, #C5EAD5 24.79%, #FFFFFF 99.54%);border-radius: 20px;"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
+                <div class="card p-5" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border: 1px solid #000000;">
+                    <a href="{{ route('onboard.index') }}" class="float-start mb-3 p-3 text-dark" style="width: 150px; background: linear-gradient(268.09deg, #C5EAD5 24.79%, #FFFFFF 99.54%);border-radius: 20px;"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
+                    
                     <div style="background: linear-gradient(101.16deg, #FFFFFF 0.38%, rgba(179, 255, 143, 0.25) 81.93%);border: 1px solid #000000;box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.25), 2px 2px 10px rgba(0, 0, 0, 0.25);border-radius: 10px;">    
                         <div class="text-box" style="display: inline-block">
                         <img src="https://www.shutterstock.com/image-photo/focused-woman-wearing-headphones-using-260nw-1395298487.jpg" class="float-start img-fluid" width="200px" style="object-fit: cover;">
