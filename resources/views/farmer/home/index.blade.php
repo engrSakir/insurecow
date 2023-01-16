@@ -5,80 +5,46 @@
 @endpush
 @section('content')
 <section class="mt-5 mb-4 p-4">
-    <div>
-        <p class="p-greeting">Hi, {{ Auth::user()->name }}.</p>
-        <p class="p-welcome-text">Welcome to InsureCow!</p>
-    </div>
 
     <div class="row mt-5">
         <div class="d-lg-flex d-md-flex justify-content-center">
 
             <!--Cow Lists-->
             @if(auth()->user()->cattles()->count() == 0)
-            <div class="col-lg-4 col-md-6 mb-4 me-lg-5 me-md-4">
-                <div class="card card-style">
-                    <div class="p-2 card-block-top" style="background: #086343">
-                        <h4 class="card-title">Create a Cattle </h4>
-                    </div>
-                    <img src="{{asset('images/cow-list.png')}}" alt="Registered Cow" class="img-fluid img-card">
-                    <div class="text-center p-4">
-
-                        <a href="{{ route('reg_two.index') }}" class="btn card-button" style="background-color: #0f6848">Continue</a>
-
-                    </div>
+            <div class="col-lg-8">
+                <div>
+                    <h1 class="p-greeting" style="font-weight: bold">Welcome Mr. {{ Auth::user()->name }} to InsureCow ! ! !</h1>
+                    <p align="center">Here is some option for you.</p>
+                    <center><a href="{{ route('reg_two.index') }}" class="btn w-50 text-white text-center mt-5" style="background-color: #0f6848">Register Your Cattle</a></center>
                 </div>
+            </div>
+            <div class="col-lg-4">
+                <img src="{{ asset('images/welcome.png') }}" alt="" class="img-fluid rounded">
             </div>
             @else
-            <div class="col-lg-4 col-md-6 mb-4 me-lg-5 me-md-4">
-                <div class="card card-style">
-                    <div class="p-2 card-block-top" style="background: #086343">
-                        <h4 class="card-title">Create a Cattle </h4>
-                    </div>
-                    <img src="{{asset('images/cow-list.png')}}" alt="Registered Cow" class="img-fluid img-card">
-                    <div class="text-center p-4">
 
-                        <a href="{{ route('reg_two.index') }}" class="btn card-button" style="background-color: #0f6848">Continue</a>
-
-                    </div>
+            <div class="col-lg-8">
+                <div>
+                    <h1 class="p-greeting" style="font-weight: bold">Welcome Mr. {{ Auth::user()->name }} to InsureCow ! ! !</h1>
+                    <p align="center" class="mb-5">Here is some option for you.</p>
+                    <center>
+                        <a href="{{ route('farmer.registered.cattle') }}" class="btn w-50 text-center mt-5" style="background-color: #ffffff; border: 1px solid #226034;">View Registered Cattle</a>
+                        <a href="{{ route('saved.medical.report') }}" class="btn w-50 text-white text-center mt-2" style="background-color: #0f6848">Register Your Cattle</a>
+                        <!-- <a href="{{ route('reg_two.index') }}" class="btn w-50 text-white text-center mt-5" style="background-color: #0f6848">Register Your Cattle</a> -->
+                    </center>
                 </div>
             </div>
 
-            <!--Field Agent Details-->
-            <div class="col-lg-4 col-md-6 mb-4 me-lg-5 me-md-4">
-                <div class="card card-style">
-                    <div class="p-2 card-block-top" style="background: #086343">
-                        <h4 class="card-title">Medical Report Details </h4>
-                    </div>
-                    <img src="{{asset('/images/field-agent.png')}}" alt="Insurance Claim" class="img-fluid  img-card">
-                    <div class="text-center p-4">
-                        <a href="{{ route('saved.medical.report') }}" class="btn card-button" style="background-color: #0f6848">Continue</a>
-                    </div>
-                </div>
+            <div class="col-lg-4">
+                <img src="{{ asset('images/welcome.png') }}" alt="" class="img-fluid rounded">
             </div>
-
-            <!-- Menu -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card card-style">
-                    <div class="p-2 card-block-top" style="background: #086343">
-                        <h4 class="card-title">View Cow Lists </h4>
-                    </div>
-                    <img src="{{asset('images/cow-list.png')}}" alt="Registered Cow" class="img-fluid img-card">
-                    <div class="text-center p-4">
-
-                        <a href="{{ route('farmer.registered.cattle') }}" class="btn card-button" style="background-color: #0f6848">Continue</a>
-
-                    </div>
-                </div>
-            </div>
+            
             @endif
 
         </div>
     </div>
 
+
+
 </section>
-
-
-
-
-
 @endsection
