@@ -58,6 +58,8 @@ Route::middleware(['company', 'auth'])->group(function () {
 
         //--------------------------Pending Quotation-------------------------------
         Route::get('pending','CompanyPendingQuotationController@index')->name('company.pending_quotation');
+        Route::get('/approved/{id}','CompanyPendingQuotationController@approved')->name('company.approved');
+        Route::get('/canceled/{id}','CompanyPendingQuotationController@canceled')->name('company.canceled');
 
 
 
