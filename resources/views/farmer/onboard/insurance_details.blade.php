@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 mt-5">
-            <a href="#" class="float-start mb-3 p-3 text-dark" style="background: linear-gradient(268.09deg, #C5EAD5 24.79%, #FFFFFF 99.54%);border-radius: 20px;"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
+            <a href="{{ route('farmer.index') }}" class="float-start mb-3 p-3 text-dark" style="background: linear-gradient(268.09deg, #C5EAD5 24.79%, #FFFFFF 99.54%);border-radius: 20px;"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
             <img src="https://thumbs.dreamstime.com/z/health-protection-shield-logo-design-vector-template-medical-insurance-company-170953383.jpg" alt="" class="img-fluid">
             <center>
                 <span class="text-center mt-3">COVERAGE</span><br>

@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <a href="#" class="float-start w-25 p-3 mt-3 text-dark" style="background: linear-gradient(268.09deg, #C5EAD5 24.79%, #FFFFFF 99.54%);border-radius: 20px;"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
+        <a href="{{ route('farmer.index') }}" class="float-start w-25 p-3 mt-3 text-dark" style="background: linear-gradient(268.09deg, #C5EAD5 24.79%, #FFFFFF 99.54%);border-radius: 20px;"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
             @if( Session::has( 'not' ))
             <div class="alert text-white mt-5" style="background: #226034">
                 {{ Session::get( 'not' ) }}
