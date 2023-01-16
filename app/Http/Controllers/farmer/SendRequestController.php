@@ -38,8 +38,8 @@ class SendRequestController extends Controller
     {
         $inputs=[
             'name'=>'required',
-            'email'=>'required|unique:sends',
-            'phone'=>'required|unique:sends',
+            'email'=>'required',
+            'phone'=>'required',
             'company'=>'required',
         ];
         $this->validate($request,$inputs);

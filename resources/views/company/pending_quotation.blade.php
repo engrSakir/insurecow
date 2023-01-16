@@ -12,7 +12,7 @@
                     <th>Buying Price</th>
                     <th>Insurance period</th>
                     <th>Accidental Mortality</th>
-                    <th>Additional Coverage</th>
+{{--                    <th>Additional Coverage</th>--}}
                     <th>Status</th>
                     <th>Action</th>
 
@@ -22,16 +22,19 @@
 
                 <tbody>
                 @foreach($show as $shows)
-                    <tr align="center">
+                    <tr align="center" >
                         <td>{{$shows->buying_price}}</td>
                         <td>{{$shows->insurance_period}}</td>
                         <td>{{$shows->accidental_mortality}}</td>
-                        <td>{{ $shows->additionalcoverages }}</td>
+{{--                        <td>{{ $shows->additionalcoverages }}</td>--}}
                         <td>{{$shows->status}}</td>
 
-                        <td><a href="{{route('company.approved',$shows->id)}}" class="btn text-white" style="background: #086343;"><i class="fa fa-check " aria-hidden="true"></i></a>
+                        <td>
+                            <a href="{{route('company.approved',$shows->id)}}" class="btn text-white" style="background-color: #0f6848;
+                            px"><i class="fa fa-check" ></i></a>
 
-                        <a href="{{route('company.canceled',$shows->id)}}"  class="btn btn-danger" ><i class="fa fa-times" aria-hidden="true"></i></a></td>
+                            <a href="{{route('company.canceled',$shows->id)}}"  class="btn btn-danger" style=""><i class="fa fa-times"></i></a>
+                        </td>
 
                     </tr>
 
