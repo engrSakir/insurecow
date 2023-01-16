@@ -9,7 +9,10 @@
                     <div style="background: linear-gradient(101.16deg, #FFFFFF 0.38%, rgba(179, 255, 143, 0.25) 81.93%);border: 1px solid #000000;box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.25), 2px 2px 10px rgba(0, 0, 0, 0.25);border-radius: 10px;" class="mb-2">    
                         <center>
                         <div class="text-box ml-5" style="display: inline-block">
-                        <img src="{{ asset('storage/' . $pakage->company->image) }}" class="img-fluid" width="200px">
+                        <?php
+                            $image = App\Company::where('user_id', $pakage->user_id)->first();
+                        ?>
+                        <img src="{{ asset('storage/' . $image->image) }}" class="img-fluid" width="200px">
                         </div>
                         <div class="text-box" style="display: inline-block">
                             <span style="margin-left: 10px; color: #7B7B7B">Plan Name</span><br>

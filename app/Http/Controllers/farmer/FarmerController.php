@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Farmer_reg_2;
 use App\Medical;
+use App\Pending;
 use App\FarmerExpense;
 use DB;
 use Illuminate\Http\Request;
@@ -276,6 +277,16 @@ class FarmerController extends Controller
         ]);
 
         return redirect()->back()->with('notification', 'Expense created successfully!');
+    }
+
+    public function showregisteredcattle($id)
+    {
+        $registeredcattle = Farmer_reg_2::findOrFail($id);
+        $pending = Pending::where('cattle_id', $id)->first();
+        $medicals = Medical::where('cattle_id', $id)->get();
+
+        return view('farmer.show-registered-cattle', compact('registeredcattle', 'pending', 'medicals'));
+        
     }
 
 }

@@ -82,6 +82,9 @@ Route::middleware(['farmer', 'auth'])->group(function () {
         Route::get('/change-password', 'farmer\FarmerController@changepassword')->name('farmer.change.password');
         Route::post('/change-password', 'farmer\FarmerController@updatepassword')->name('farmer.password.update');
         Route::get('/registered-cattle', 'farmer\FarmerController@registeredcattle')->name('farmer.registered.cattle');
+
+        Route::get('/show-registered-cattle/{id}', 'farmer\FarmerController@showregisteredcattle')->name('show.farmer.registered.cattle');
+        
         Route::get('/notification', 'farmer\FarmerController@farmernotification')->name('farmer.notification');
         Route::get('/medical-report', 'farmer\FarmerController@medicalreport')->name('farmer.medical.report');
         Route::post('/medical-report', 'farmer\FarmerController@savemedicalreport')->name('save.medical.report');
