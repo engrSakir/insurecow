@@ -14,6 +14,7 @@ class CompanyPackageController extends Controller
      */
     public function index()
     {
+
         return view('company.package');
     }
 
@@ -24,7 +25,8 @@ class CompanyPackageController extends Controller
      */
     public function create()
     {
-        //
+        $show=Package::where('user_id',auth()->user()->id)->get();
+        return  view('company.view_package',compact('show'));
     }
 
     /**
@@ -105,6 +107,6 @@ class CompanyPackageController extends Controller
      */
     public function destroy($id)
     {
-        //
+       
     }
 }

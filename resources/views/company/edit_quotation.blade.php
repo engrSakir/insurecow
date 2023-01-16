@@ -217,6 +217,7 @@
 
                     axios.post("{{ route('quotation.update',$quotation->id) }}", formData).then(el => {
                         console.log(el);
+                        location.reload();
                     });
                 },
 
