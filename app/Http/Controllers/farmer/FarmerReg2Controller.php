@@ -90,12 +90,7 @@ class FarmerReg2Controller extends Controller
         $inputs['cattle_unique_id'] = uniqid();
 
         Farmer_reg_2::create($inputs);
-
-        // $html = view('farmer.confirmation')->render();
-
-        // return $html;
-//
-//        return redirect('confirmation', compact(''));
+        
     }
 
     /**

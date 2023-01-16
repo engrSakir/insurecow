@@ -58,13 +58,19 @@
 
                                 <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>
 
-
-
-                                <li><a class="dropdown-item" href="{{ route('reg_one.index') }}">Register a Cattle</a></li>
-                                <li><a class="dropdown-item" href="{{ route('farmer.registered.cattle') }}">Registered Cattle</a></li>
                                 <li><a class="dropdown-item" href="{{ route('farmer.medical.report') }}">Upload Medical Report</a></li>
                                 <li><a class="dropdown-item" href="{{ route('write.medical.report') }}">Write Medical Report</a></li>
                                 <li><a class="dropdown-item" href="{{ route('medical.history') }}">Medical History</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown navbar-brand">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Cattles
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ route('reg_one.index') }}">Register a Cattle</a></li>
+                                <li><a class="dropdown-item" href="{{ route('farmer.registered.cattle') }}">Registered Cattles</a></li>
                             </ul>
                         </li>
 
@@ -87,12 +93,17 @@
 
                         <li class="nav-item dropdown navbar-brand">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              {{ Auth::user()->name }}
+                                @php
+                                  $profile = App\FarmerProfile::where('user_id', Auth::user()->id)->first();
+                                @endphp
+                              @if($profile)
+                                <img src="{{ asset('/storage/'.$profile->image) }}" class="img-fluid" width="20px">
+                              @else
+                                <img src="{{ asset('/images/profile.jpeg') }}" class="img-fluid" width="20px">
+                              @endif
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                @if (auth()->user()->farmer_profile()->count() == 0)
                                     <li><a class="dropdown-item" href="{{ route('log_out') }}">Sign Out</a></li>   
-                                @endif
                             </ul>
                           </li>
                     </ul>

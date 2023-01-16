@@ -218,7 +218,11 @@
                 <p>Issuing Date : {{ $registeredcattle->created_at }}</p>
               </div>
               <div class="col-lg-5">
+                @if($pending)
                 <p>Period of Insurance : {{ $pending->insurance_period }} Years</p>
+                @else
+                <p>No Insurance found for this Cattle</p>
+                @endif
               </div>
             </div>
 
