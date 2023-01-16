@@ -571,13 +571,14 @@
                 formData.set("health", this.health);
                 formData.set("price", this.price);
 
+
                 window.axios.post('{{ route('reg_two.store') }}', formData).then(el => {
                     // console.log(el);
                     // location.reload();
                     alert('Data added successfully!');
                     window.location.href = '/farmer/confirmation';
                 });
-
+            
             }
         }
     })

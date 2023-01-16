@@ -12,7 +12,12 @@
                         <?php
                             $image = App\Company::where('user_id', $pakage->user_id)->first();
                         ?>
-                        <img src="{{ asset('storage/' . $image->image) }}" class="img-fluid" width="200px">
+                        @if($image)
+                            <img src="{{ asset('storage/' . $image->image) }}" class="img-fluid" width="200px">
+                        @else
+                            <img src="https://www.ncenet.com/wp-content/uploads/2020/04/No-image-found.jpg" alt="">
+                        @endif
+                        
                         </div>
                         <div class="text-box" style="display: inline-block">
                             <span style="margin-left: 10px; color: #7B7B7B">Plan Name</span><br>

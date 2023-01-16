@@ -20,16 +20,16 @@
                     <form action="{{ route('insurance.store') }}" method="get" class="employee-form">
                         @csrf
                         <div class="form-section">
-                            <select name="cattle_id" class="form-control mb-3 text-center" required>
+                            <select name="cattle_id" class="form-control mb-3 text-center" id="cattle" required>
                                     <option value="">Select Your Cattle</option>
                                 @foreach($cattle as $cat)
-                                    <option value="{{ $cat->id }}">{{ $cat->cattle_name }}</option>
+                                    <option value="{{ $cat->id }}" data-price="{{ $cat->price }}">{{ $cat->cattle_name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-section">
                             <label for="">What is The Buying Price of Your Cattle?</label>
-                            <input min="10000" max="100000" type="number" class="form-control mb-3" name="buying_price" required>
+                            <input min="10000" max="100000" type="number" class="form-control mb-3" name="buying_price" id="price" required>
 
                             <label for="">Enter Insurance Period</label>
                             <input min="1" max="5" type="number" class="form-control mt-3" name="insurance_period" required>

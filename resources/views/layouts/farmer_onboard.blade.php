@@ -172,6 +172,13 @@
         });
 
     </script>
+    <script>
+        $(function () {
+            $('#cattle').change(function () {
+                $('#price').val($('#cattle option:selected').attr('data-price'));
+            });
+        });
+    </script>
 </body>
 
 </html>
