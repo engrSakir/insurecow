@@ -16,7 +16,7 @@
             <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 211px;" aria-label="Farmer Name: activate to sort column ascending">Owner Last Name</th>
             <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 211px;" aria-label="Farmer Name: activate to sort column ascending">Cattle Weight</th>
             <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 150px;" aria-label="Thana: activate to sort column ascending">Cattle Color</th>
-            <!-- <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">Action</th> -->
+            <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -28,11 +28,9 @@
                 <td>{{ $registeredcattle->lastname }}</td>
                 <td>{{ $registeredcattle->weight }}</td>
                 <td>{{ $registeredcattle->cattle_color }}</td>
-                <!-- <td>
-                    <a href="#">
-                        <button class="details-button">Details</button>
-                    </a>
-                </td> -->
+                <td>
+                    <a href="{{ route('show.farmer.registered.cattle', $registeredcattle->id) }}" class="btn text-white" style="background: #086343">Details</a>    
+                </td>
             </tr>
             @endforeach
         </tbody>

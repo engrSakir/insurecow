@@ -8,8 +8,4 @@ class Package extends Model
 {
     protected $guarded=[];
 
-    public function company()
-    {
-        return $this->belongsTo(Company::class, 'user_id', 'id');
-    }
 }
