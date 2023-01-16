@@ -47,9 +47,11 @@ class PendingController extends Controller
             'additionalcoverages' => json_encode($request->additionalcoverages)
         ];
 
-        $pakages = Package::where('coverage', $request->accidental_mortality)
-                            ->where('insurance_period', $request->insurance_period)
-                            ->where('price_range', $request->buying_price)
+        $pakages = Package::orWhere('coverage', $request->accidental_mortality)
+                            ->orWhere('coverage', $request->additionalcoverages)
+                            ->orWhere('insurance_period', $request->insurance_period)
+                            ->orWhere('lowest', $request->buying_price)
+                            ->orWhere('highest', $request->buying_price)
                             ->get();
 
         return view('farmer.onboard.insurance_results', compact('data', 'pakages'));

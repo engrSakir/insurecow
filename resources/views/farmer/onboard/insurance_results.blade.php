@@ -6,17 +6,18 @@
                 <div class="card p-5" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border: 1px solid #000000;">
                     <a href="{{ route('onboard.index') }}" class="float-start mb-3 p-3 text-dark" style="width: 150px; background: linear-gradient(268.09deg, #C5EAD5 24.79%, #FFFFFF 99.54%);border-radius: 20px;"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
                     @foreach($pakages as $pakage)
-                    <div style="background: linear-gradient(101.16deg, #FFFFFF 0.38%, rgba(179, 255, 143, 0.25) 81.93%);border: 1px solid #000000;box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.25), 2px 2px 10px rgba(0, 0, 0, 0.25);border-radius: 10px;">    
-                        <div class="text-box" style="display: inline-block">
-                        <img src="https://www.shutterstock.com/image-photo/focused-woman-wearing-headphones-using-260nw-1395298487.jpg" class="float-start img-fluid" width="200px" style="object-fit: cover;">
+                    <div style="background: linear-gradient(101.16deg, #FFFFFF 0.38%, rgba(179, 255, 143, 0.25) 81.93%);border: 1px solid #000000;box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.25), 2px 2px 10px rgba(0, 0, 0, 0.25);border-radius: 10px;" class="mb-2">    
+                        <center>
+                        <div class="text-box ml-5" style="display: inline-block">
+                        <img src="{{ asset('storage/' . $pakage->company->image) }}" class="img-fluid" width="200px">
                         </div>
                         <div class="text-box" style="display: inline-block">
                             <span style="margin-left: 10px; color: #7B7B7B">Plan Name</span><br>
-                            <span style="margin-left: 10px">{{$pakage->id}}</span>
+                            <span style="margin-left: 10px">{{$pakage->name}}</span>
                         </div>
                         <div class="text-box" style="display: inline-block">
                             <span style="margin-left: 10px; color: #7B7B7B">Insurance Period</span><br>
-                            <span style="margin-left: 10px">{{$pakage->insurance_period}}</span>
+                            <span style="margin-left: 10px">{{$pakage->insurance_period}} Year</span>
                         </div>
                         <div class="text-box" style="display: inline-block">
                             <span style="margin-left: 10px; color: #7B7B7B">Coverage</span><br>
@@ -37,6 +38,7 @@
                                 <button type="submit" class="btn w-100 text-white" style="background: #082E13">Request Now</button>
                             </form>
                         </div>
+                        </center>
                     </div>
                     @endforeach
                 </div>
