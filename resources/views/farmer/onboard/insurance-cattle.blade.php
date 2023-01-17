@@ -20,16 +20,13 @@
                     <form action="{{ route('insurance.store') }}" method="get" class="employee-form">
                         @csrf
                         <div class="form-section">
-                            <select name="cattle_id" class="form-control mb-3 text-center" id="cattle" required>
-                                    <option value="">Select Your Cattle</option>
-                                @foreach($cattle as $cat)
-                                    <option value="{{ $cat->id }}" data-price="{{ $cat->price }}">{{ $cat->cattle_name }}</option>
-                                @endforeach
+                            <select name="cattle_id" class="form-control mb-3 text-center" id="cattle" required>    
+                                <option value="{{ $cattle->id }}" data-price="{{ $cattle->price }}">{{ $cattle->cattle_name }}</option>
                             </select>
                         </div>
                         <div class="form-section">
                             <label for="">What is The Buying Price of Your Cattle?</label>
-                            <input min="10000" max="1000000" type="number" class="form-control mb-3" id="price" name="buying_price" required>
+                            <input min="10000" max="1000000" type="number" class="form-control mb-3" value="{{ $cattle->price }}" name="buying_price" id="price" required>
 
                             <label for="">Enter Insurance Period</label>
                             <input min="1" max="5" type="number" class="form-control mt-3" name="insurance_period" required>
@@ -44,13 +41,13 @@
                             </div>
                             <h3>Additional Coverages</h3>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="floodcyclonecoverage" name="additionalcoverages[]" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" value="floodcyclonecoverage" name="additionalcoverages[]" id="flexCheckDefault" required>
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Flood Cyclone Coverage
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="earthquakecoverage" name="additionalcoverages[]" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" value="earthquakecoverage" name="additionalcoverages[]" id="flexCheckDefault" required>
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Earthquake Coverage
                                 </label>

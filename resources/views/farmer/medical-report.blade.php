@@ -4,7 +4,7 @@
 @endpush
 @section('content')
 <div class="container">
-    <div class="row">
+    <div class="row" style="background: #D7ECCB; border: 1px solid #000000; border-radius: 10px;">
         <div class="col-lg-12">
             <h2 class="text-center mt-3"><b>Upload Cattle Medical Report</b></h2>
             @if ($message = Session::get('success'))
@@ -25,8 +25,8 @@
               <form class="{{ route('save.medical.report') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             
-            <div class="card-block p-2 card-block-down mb-4">
-                <div class="row px-4 mt-4 mb-3">
+            <div class="card-block p-2 card-block-down mb-4"  style="background: #D7ECCB;">
+                <div class="row px-4 mt-4 mb-3" style="background: #D7ECCB;">
                     <!-- Vet Certiicate -->
                     <div class="col-md-4 mb-5" style="margin: auto;">
                         <p>Upload Cattle Medical Report:</p>

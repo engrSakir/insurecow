@@ -38,6 +38,7 @@ class PendingController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request->all();
         $data = [
             'cattle_id' => $request->cattle_id,
             'user_id' => Auth::user()->id,

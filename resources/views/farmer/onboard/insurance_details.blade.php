@@ -4,22 +4,38 @@
     <div class="row">
         <div class="col-md-4 mt-5">
             <a href="{{ route('farmer.index') }}" class="float-start mb-3 p-3 text-dark" style="background: linear-gradient(268.09deg, #C5EAD5 24.79%, #FFFFFF 99.54%);border-radius: 20px;"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
-            <img src="https://thumbs.dreamstime.com/z/health-protection-shield-logo-design-vector-template-medical-insurance-company-170953383.jpg" alt="" class="img-fluid">
+            
+            @if($company)
+                <img src="{{ asset('storage/'.$company->image) }}" alt="" class="img-fluid">
+            @else
+                <img src="https://www.ncenet.com/wp-content/uploads/2020/04/No-image-found.jpg" alt="" class="img-fluid">
+            @endif
             <center>
                 <span class="text-center mt-3">COVERAGE</span><br>
-                <span class="text-center mt-3">BDT. 5 Lakhs</span>
+                <span class="text-center mt-3">{{ $pakage->coverage }}</span>
             </center>
-            <a href="#" class="btn w-100 btn-danger mt-3">Request Now</a>
+            <!-- <a href="#" class="btn w-100 btn-danger mt-3">Request Now</a> -->
+            <form action="{{ route('insurance.save') }}" method="get">
+                @csrf
+                <input type="hidden" name="cattle_id" value="{{ $cattle_id }}">
+                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                <input type="hidden" name="buying_price" value="{{ $buying_price }}">
+                <input type="hidden" name="insurance_period" value="{{ $insurance_period }}">
+                <input type="hidden" name="accidental_mortality" value="{{ $accidental_mortality }}">
+                <input type="hidden" name="additionalcoverages" value="{{ $additionalcoverages }}">
+                <input type="hidden" name="company_id" value="{{ $pakage->user_id }}">
+                <button type="submit" class="btn w-100 text-white mt-2" style="background: #39B54E">Request Now</button>
+            </form>
             <div class="table-reponsive mt-3">
             <table class="table">
             <tbody>
                 <tr>
                     <th><strong>Insurance Provider</strong></th>
-                    <td>Health Protect</td>
+                    <td>{{ $user->name }}</td>
                 </tr>
                 <tr>
                     <th><strong>Policy Duration</strong></th>
-                    <td>1 year</td>
+                    <td>{{ $pakage->insurance_period }} year</td>
                 </tr>
                 <tr>
                     <th><strong>Number of Cattle Covered</strong></th>

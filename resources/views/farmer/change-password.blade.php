@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-lg-12">
         <div class="col-lg-6 col-xs-12" style="margin: auto">
-          <div class="card login-card p-5 h-100">
+          <div class="card login-card p-5 h-100" style="background: #D7ECCB;">
             <div class="card-body">
               @if ($message = Session::get('password_success'))
                 <p class="p-welcome-text mb-5 alert alert-success">{{ $message }}</p>
@@ -41,7 +41,7 @@
                 </div>
 
                 <!--Log In Button-->
-                <button type="submit" class="btn mb-4 text-white" style="background: #23BB86">
+                <button type="submit" class="btn mb-4 text-white" style="background: #086343;">
                     Change Password
                 </button>
                 <a type="submit" class="btn btn-default mb-4">

@@ -31,15 +31,14 @@
     <title>InsureCow</title>
   </head>
 
-  <body class="container">
-    <!--==================== NAVBAR ====================-->
+  <body>
     <header>
       <div>
-        <nav class="navbar navbar-expand-lg navbar-light pb-0">
+        <nav class="navbar navbar-expand-lg navbar-light pb-0" style="background: #D7ECCB;">
           <div class="container-fluid">
             <!--Navbar Logo-->
             <a href="/" class="navbar-brand">
-              <img src="./images/logo.png" alt="Logo" />
+              <img src="{{ asset('/images/logo.png') }}" alt="Logo" />
             </a>
 
             <button
@@ -53,29 +52,36 @@
 
             <div id="navbarCollapse" class="collapse navbar-collapse">
               <!--About Us-->
-              <ul class="nav navbar-nav ms-auto">
+              <ul class="nav navbar-nav mx-auto">
                 <!-- <li class="nav-item navbar-brand">
                   <a href="#" class="nav-link">About Us</a>
                 </li> -->
 
                 <!--Plans-->
                 <li class="nav-item navbar-brand">
-                  <a href="https://insurecow.com/#we-are" class="nav-link">Who we are</a>
+                  <a href="{{ url('/') }}" class="nav-link">Home</a>
                 </li>
 
-                <!--Features-->
-                <li class="nav-item navbar-brand">
-                  <a href="#" class="nav-link">Products & services</a>
-                </li>
+                <!--Reports-->
+                <li class="nav-item dropdown navbar-brand">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Our Services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Cattle Insurance Service</a></li>
+                                <li><a class="dropdown-item" href="#">Farmer Expense Calculator</a></li>
+                                <li><a class="dropdown-item" href="#">Cattle Medical Report Generate</a></li>
+                            </ul>
+                        </li>
 
                 <!--Our Goals-->
                 <li class="nav-item navbar-brand">
-                  <a href="https://insurecow.com/#services" class="nav-link">Our team</a>
+                  <a href="#" class="nav-link">About Us</a>
                 </li>
 
                 <!--Contact Us-->
                 <li class="nav-item navbar-brand">
-                  <a href="https://insurecow.com/#team" class="nav-link">Achievements</a>
+                  <a href="#" class="nav-link">Blog</a>
                 </li>
               </ul>
 
@@ -97,6 +103,8 @@
         <hr class="hr-style" />
       </div>
     </header>
+        <div class="container">
+              <!--==================== NAVBAR ====================-->
 
     <!--==================== LOG IN ====================-->
 
@@ -189,14 +197,15 @@
 
 
             </form>
-            <!-- Don’t have an account? <a href="{{ route('register') }}" style="text-decoration: none; color: #1D5C2E">Sign Up</a> -->
+            Don’t have an account? <a href="{{ route('register') }}" style="text-decoration: none; color: #1D5C2E">Sign Up</a>
           </div>
         </div>
       </div>
         <div class="col-lg-6">
           <div class="card card-style h-100">
             <div class="card-body">
-              <img  src="./images/cow1.png" class="img-fluid" alt="Cow" />
+              <img  src="{{ asset('/images/122.png') }}" class="img-fluid" alt="Cow" style="position: relative" />
+              <img  src="{{ asset('/images/133.png') }}" class="img-fluid" alt="Cow" style="position: absolute; right: 100px; top: 80px" />
             </div>
           </div>
         </div>
@@ -207,58 +216,59 @@
 
     <!--==================== FOOTER ====================-->
     <hr class="hr-style" />
-    <section>
-      <footer>
-        <!-- Grid container -->
-        <div class="container p-4">
-          <!--Grid row-->
-          <div class="row">
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-12 mb-4 mb-md-4">
-              <div>
-                <img src="./images/logo.png" />
-              </div>
-              <p>
-                InsureCow is a cattle wellbeing monitoring and insurance
-                platform that is playing a significant role in protecting and
-                ensuring the asset value of large cattle for livestock farmers.
-              </p>
+  </div>
+  <section>
+    <footer>
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-12 mb-4 mb-md-4">
+            <div>
+              <img src="{{ asset('/images/logo.png') }}" />
             </div>
+            <p>
+              InsureCow is a cattle wellbeing monitoring and insurance
+              platform that is playing a significant role in protecting and
+              ensuring the asset value of large cattle for livestock farmers.
+            </p>
+          </div>
 
-            <!--Grid column-->
-            <div class="col-lg-2 col-md-12 mt-lg-4 mb-4 mb-md-4 offset-lg-1">
-              <div>
-                <h5 class="mb-4">Language</h5>
-                <ul class="list-unstyled mb-0">
-                  <li class="mb-2">
-                    <a href="#" class="language-footer">English</a>
-                  </li>
-                  <li class="mb-2">
-                    <a href="#" class="language-footer">Bangla</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-12 mt-lg-4 mb-4 mb-md-0 offset-lg-1">
-              <div>
-                <h5 class="mb-4">Contact Us</h5>
-                <ul class="list-unstyled mb-0">
-                  <li class="mb-2">Phone : +880 1672 838306</li>
-                  <li class="mb-2">E-mail : inquiry@insurecow.com</li>
-                  <li class="mb-2">
-                    Suite 201, Navana DH Tower, 6 Panthapath Lane
-                  </li>
-                </ul>
-              </div>
+          <!--Grid column-->
+          <div class="col-lg-2 col-md-12 mt-lg-4 mb-4 mb-md-4 offset-lg-1">
+            <div>
+              <h5 class="mb-4">Language</h5>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2">
+                  <a href="#" class="language-footer">English</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="language-footer">Bangla</a>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <p>Insure Cow © 2021 All Right Reserved</p>
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-12 mt-lg-4 mb-4 mb-md-0 offset-lg-1">
+            <div>
+              <h5 class="mb-4">Contact Us</h5>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2">Phone : +880 1672 838306</li>
+                <li class="mb-2">E-mail : inquiry@insurecow.com</li>
+                <li class="mb-2">
+                  Suite 201, Navana DH Tower, 6 Panthapath Lane
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </footer>
-    </section>
+
+        <p>Insure Cow © 2021 All Right Reserved</p>
+      </div>
+    </footer>
+  </section>
 
     <!--==================== JavaScript Bundle with Popper ====================-->
     <script

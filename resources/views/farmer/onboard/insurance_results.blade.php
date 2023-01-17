@@ -29,10 +29,10 @@
                         </div>
                         <div class="text-box" style="display: inline-block">
                             <span style="margin-left: 10px; color: #7B7B7B">Coverage</span><br>
-                            <span style="margin-left: 10px; margin-right: 10px">{{$pakage->price_range}}</span>
+                            <span style="margin-left: 10px; margin-right: 10px">{{$pakage->coverage}}</span>
                         </div>
                         <div class="text-box p-5" style="display: inline-block">
-                            <a href="{{ route('onboard.show') }}" class="btn w-100 mb-2" style="background: #d9d9d9">Details</a><br>
+                            <a href="{{ route('onboard.show', [$pakage->id, $data['cattle_id'], $data['buying_price'], $data['insurance_period'], $data['accidental_mortality'], $data['additionalcoverages']]) }}" class="btn w-100 mb-2" style="background: #d9d9d9">Details</a><br>
                             <!-- <a href="" class="btn w-100 text-white"  style="background: #082E13">Request Now</a> -->
                             <form action="{{ route('insurance.save') }}" method="get">
                                 @csrf

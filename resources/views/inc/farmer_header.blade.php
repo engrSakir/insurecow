@@ -2,7 +2,7 @@
 
   <header>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-light pb-0">
+        <nav class="navbar navbar-expand-lg navbar-light pb-0" style="background: linear-gradient(180deg, #226034 -72.33%, rgba(34, 96, 52, 0) 109.17%);">
             <div class="container-fluid">
 
                 <!--Navbar Logo-->
@@ -38,8 +38,8 @@
                                     <span>Edit Profile</span></a>
                             </li>
                             @endif
-
-                                  <li><a class="dropdown-item" href="{{ route('farmer.change.password') }}">Change Password</a></li>
+                                <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>    
+                                <li><a class="dropdown-item" href="{{ route('farmer.change.password') }}">Change Password</a></li>
                                 <li><a class="dropdown-item" href="{{ route('farmer.expense') }}">Expenses</a></li>
                                 <li><a class="dropdown-item" href="{{ route('expense.history') }}">Expense History</a></li>
                             </ul>
@@ -51,13 +51,6 @@
                                 Reports
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-
-
-
-
-                                <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>
-
                                 <li><a class="dropdown-item" href="{{ route('farmer.medical.report') }}">Upload Medical Report</a></li>
                                 <li><a class="dropdown-item" href="{{ route('write.medical.report') }}">Write Medical Report</a></li>
                                 <li><a class="dropdown-item" href="{{ route('medical.history') }}">Medical History</a></li>
@@ -99,7 +92,7 @@
                               @if($profile)
                                 <img src="{{ asset('/storage/'.$profile->image) }}" class="img-fluid" width="20px">
                               @else
-                                <img src="{{ asset('/images/profile.jpeg') }}" class="img-fluid" width="20px">
+                                <img src="{{ asset('/images/profile.png') }}" class="img-fluid" width="20px">
                               @endif
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

@@ -28,9 +28,9 @@
                     <h1 class="p-greeting" style="font-weight: bold">Welcome Mr. {{ Auth::user()->name }} to InsureCow ! ! !</h1>
                     <p align="center" class="mb-5">Here is some option for you.</p>
                     <center>
-                        <a href="{{ route('farmer.registered.cattle') }}" class="btn w-50 text-center mt-5" style="background-color: #ffffff; border: 1px solid #226034;">View Registered Cattle</a>
-                        <a href="{{ route('saved.medical.report') }}" class="btn w-50 text-white text-center mt-2" style="background-color: #0f6848">Register Your Cattle</a>
-                        <!-- <a href="{{ route('reg_two.index') }}" class="btn w-50 text-white text-center mt-5" style="background-color: #0f6848">Register Your Cattle</a> -->
+                        <a href="{{ route('farmer.registered.cattle') }}" class="btn w-50 text-center mt-4" style="background-color: #ffffff; border: 1px solid #226034;">View registered cattle</a>
+                        <a href="{{ route('saved.medical.report') }}" class="btn w-50 text-white text-center mt-2" style="background-color: #0f6848">Register your cattle</a>
+                        <a href="{{ route('onboard.index') }}" class="btn w-50 text-white text-center mt-2" style="background-color: #0f6848">Create Insurance for your cattle</a>
                     </center>
                 </div>
             </div>

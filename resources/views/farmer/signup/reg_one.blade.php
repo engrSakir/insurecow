@@ -30,16 +30,17 @@
     <title>InsureCow</title>
 </head>
 
-<body class="container">
+<body style="background: #D7ECCB;">
 
 @include('inc/farmer_header')
 
 <!--==================== FORM PAGE SECTION ====================-->
 
+<div class="container">
 <section>
     <p class="heading mt-4">Registration Form</p>
 
-    <div class="card card-style mt-4 mb-5">
+    <div class="card card-style mt-4 mb-5" style="background: #D7ECCB;">
         <div class="card-block p-2 card-block-middle mb-4" style="background: #086343">
             <h4 class="ms-4">Attachment</h4>
         </div>
@@ -52,12 +53,12 @@
             </ul>
         </div>
     @endif
-        <form class="{{ route('reg_one.store') }}" method="post" enctype="multipart/form-data">
+        <form class="{{ route('reg_one.store') }}" method="post" enctype="multipart/form-data" style="background: #D7ECCB;">
             {{ csrf_field() }}
-            <div class="card-block p-2 card-block-down mb-4">
-                <div class="row px-4 mt-4 mb-3">
+            <div class="card-block p-2 card-block-down mb-4" style="background: #D7ECCB;">
+                <div class="row px-4 mt-4 mb-3" style="background: #D7ECCB;">
                     <!-- Owner NID : -->
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-5" style="background: #D7ECCB;">
                         <p>Owner NID :</p>
                         <div class="file-upload">
                             <div class="image-upload-wrap">
@@ -95,7 +96,7 @@
                     </div>
 
                     <!-- Vet Certiicate -->
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-5" style="background: #D7ECCB;">
                         <p>Vet Certificate:</p>
                         <div class="file-upload">
                             <div class="image2-upload-wrap">
@@ -137,7 +138,7 @@
                     </div>
 
                     <!-- Chairman Certificate -->
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-5" style="background: #D7ECCB;">
                         <p>Chairman Certificate :</p>
                         <div class="file-upload">
                             <div class="image3-upload-wrap">
@@ -183,7 +184,7 @@
             <hr/>
 
             <div class="row px-4">
-                <div class="col-md-6 mb-4">
+                <!-- <div class="col-md-6 mb-4">
                     <div class="form-outline">
                         <label class="form-label" for="inputFirstName"
                         >Issuing Date</label
@@ -195,7 +196,7 @@
                             name="issue_date"
                         />
                     </div>
-                </div>
+                </div> -->
 
                 <!-- <div class="col-md-6 mb-4">
                     <div class="form-outline">
@@ -234,6 +235,7 @@
         </form>
     </div>
 </section>
+</div>
 
 <!--==================== FOOTER ====================-->
 <hr class="hr-style"/>
