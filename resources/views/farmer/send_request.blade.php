@@ -1,12 +1,12 @@
 @extends('layouts.farmer')
 @section('content')
     <div class=" justify-content-center text-center" style="  padding: 25px;">
-        <h2 style="color: #1b1e21"><u>Send Request Us</u></h2>
+        <h2 style="color: #1b1e21; font-family: 'Roboto Slab', serif; "><u>Let’s Level Up Your Brand Together</u></h2>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-4 offset-md-4">
-                <h4 class="text-center mt-3"><b> Fill Your Details</b></h4>
+                <h4 class="text-center mt-3" style="font-family: 'Roboto Slab', serif;"><b> Fill Your Details</b></h4>
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>

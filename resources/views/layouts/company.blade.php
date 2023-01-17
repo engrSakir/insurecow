@@ -155,7 +155,7 @@
             <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('company/view_package')) ? 'active' : '' }} pt-2 pb-2">
                 <a href="{{route('package.create')}}" class="nav-link text-dark">
                     <i class="fas  fa-fw fa-box-open   text-dark"></i>
-                    <span> Packages View</span></a>
+                    <span> Packages List</span></a>
             </li>
 
         </ul>

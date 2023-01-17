@@ -7,44 +7,46 @@
     </div>
 
 <div style="padding: 20px">
-    <table class="table">
+    <table class="table table-bordered border-white" style="border:1px;">
         <thead>
-        <tr>
+        <tr align="center">
 
-            <th scope="col">Risk</th>
-            <th scope="col">Premium Rate</th>
-            <th scope="col">Premium on BDT</th>
+            <th>Risk</th>
+            <th>Premium Rate</th>
+            <th>Premium on BDT</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
+        @foreach(json_decode($quotation->risk) as $quots)
+        <tr align="center">
 
-            <td>{{$quotation->risk}}</td>
-            <td>{{$quotation->rate}}</td>
-            <td>{{$quotation->bdt}}</td>
+            <td >{{ $quots->risk }}</td>
+            <td>{{ $quots->premium}}</td>
+            <td>{{$quots->bdt }} Tk</td>
+
+
+
         </tr>
-        <tr>
+        @endforeach
+        </tbody>
+        <tbody>
+        <tr align="center">
 
-            <td>Net Premium</td>
+            <th>Net Premium</th>
             <td></td>
             <td>{{$quotation->net_premium}} Tk</td>
         </tr>
-        <tr>
+        <tr align="center">
 
-            <td>Vat</td>
+            <th>Vat</th>
             <td>{{$quotation->vat}}%</td>
-            <td>120 Tk</td>
+            <td>{{$quotation->vats}} Tk</td>
         </tr>
-        <tr>
 
-            <td>Stamp Duty</td>
-            <td></td>
-            <td>{{$quotation->stamp_duty}} Tk</td>
-        </tr>
-        <tr>
+        <tr align="center">
 
-            <td>Total Payable</td>
-            <td></td>
+            <th>Total Payable</th>
+            <td>=</td>
             <td>{{$quotation->total}} Tk</td>
         </tr>
 

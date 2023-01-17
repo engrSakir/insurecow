@@ -84,7 +84,8 @@ class CompanyPackageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $package= Package::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        return view('company.package_edit',compact('package'));
     }
 
     /**
@@ -96,9 +97,40 @@ class CompanyPackageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $inputs=[
+            'name'=>'required',
+            'price_range'=>'required',
+            'insurance_period'=>'required',
+            'coverage'=>'required',
+            'premium_amount'=>'required',
+            'lowest'=>'required',
+            'highest'=>'required',
+
+
+        ];
+        $this->validate($request,$inputs);
+        $package=Package::find($id);
+        $package->name=$request->name;
+        $package->price_range=$request->price_range;
+        $package->insurance_period=$request->insurance_period;
+        $package->coverage=$request->coverage;
+        $package->premium_amount=$request->premium_amount;
+        $package->lowest=$request->lowest;
+        $package->highest=$request->highest;
+
+
+        $package['user_id'] = auth()->user()->id;
+        $package->save();
+        return redirect()->route('package.create')->with('pkg','Package added successfully');
     }
 
+    function deletePackage($id){
+        $package=Package::find($id);
+
+        $package->delete();
+
+        return redirect()->back();
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -107,6 +139,6 @@ class CompanyPackageController extends Controller
      */
     public function destroy($id)
     {
-       
+
     }
 }

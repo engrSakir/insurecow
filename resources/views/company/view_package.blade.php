@@ -13,6 +13,8 @@
                     <th>Insurance Period</th>
                     <th>Coverage</th>
                     <th>Premium Amount</th>
+                    <th>Lowest Amount</th>
+                    <th>Highest Amount</th>
 
                     <th>Action</th>
 
@@ -28,13 +30,15 @@
                         <td>{{$shows->insurance_period}}</td>
                         <td>{{$shows->coverage}}</td>
                         <td>{{$shows->premium_amount}}</td>
+                        <td>{{$shows->lowest}}</td>
+                        <td>{{$shows->highest}}</td>
 
 
 
                         <td class="col-md-2">
-                            <a href="" class="btn text-white" style="background: #086343;"><i class="fa fa-edit " aria-hidden="true"></i></a>
+                            <a href="{{route('package.edit',$shows->id)}}" class="btn text-white" style="background: #086343;"><i class="fa fa-edit " aria-hidden="true"></i></a>
 
-                            <a href=""  class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <a href="{{route('company.deletePackage',$shows->id)}}"  class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </td>
 
                     </tr>
