@@ -92,8 +92,9 @@ class SuperAdminController extends Controller
         return Excel::download(new UsersExport, 'users.xlsx');
     }
 
-    function  view(){
-        $user= User::firstOrFail();
+    function  view($id){
+        $user= User::where('id', $id)->first();
+
         return view('superadmin.viewall',compact('user'));
     }
 

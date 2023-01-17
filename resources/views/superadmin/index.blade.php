@@ -187,7 +187,7 @@
                             <thead>
                                 <tr align="center">
 
-                                    <th>Company Name</th>
+                                    <th>User Name</th>
                                     <th>Date</th>
                                     <th>Details</th>
                                     <th>Delete</th>

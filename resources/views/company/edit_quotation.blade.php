@@ -1,7 +1,11 @@
 @extends('layouts.company')
 
 @section('content')
+    <div  style="display: flex; justify-content:right ; padding:20px;">
 
+        <a href="{{route('company.quotation_view')}}" class="d-none d-sm-inline-block btn btn-sm text-white shadow-sm" style="background-color: #086343"><i
+                class="fa fa-eye  text-white-100" aria-hidden="true"></i> View Quotation </a>
+    </div>
     <div id="app">
         <div>
             <div style="padding: 20px">
@@ -49,18 +53,19 @@
                             <p>Add Value</p>
 
                             <form>
-                                <input type="text" ref="risk" name="risk" placeholder="risk"/> <br/>
-                                <input type="text" ref="premium" name="rate" placeholder="Rate"/> <br/>
+                                <input type="text" class="form-control" ref="risk" name="risk" placeholder="risk"/> <br/>
+                                <input type="text" class="form-control" ref="premium" name="rate" placeholder="Rate"/> <br/>
                                 <input
                                     type="text"
                                     ref="bdt"
                                     name="bdt"
                                     placeholder="bdt"
+                                    class="form-control"
 
                                 />
                                 <br/>
                                 <!-- <input type="number" ref="vat" placeholder="vat" /> <br /><br /> -->
-                                <button type="button" v-on:click="add()">Add</button>
+                                <button type="button" v-on:click="add()" class="btn" style="background-color: #0f6848;color: #FFFFFF">Add</button>
                             </form>
                         </div>
 
@@ -127,13 +132,13 @@
                             <td align="center">@{{ item.bdt }}</td>
                             <!-- <td align="center">@{{ item.vat }}</td> -->
                             <td align="center">
-                                <button v-on:click="edit(index, $event)" class="edit-btn">
+                                <button v-on:click="edit(index, $event)" class="edit-btn btn btn-sm" style="color: #FFFFFF;background-color: #0f6848;line-height: 0.8;font-size: 15px;">
                                     Edit
                                 </button>
                             </td>
 
                             <td align="center">
-                                <button v-on:click="remove(index , $event)">Remove</button>
+                                <button v-on:click="remove(index , $event)" class="btn btn-sm" style="background-color: red;color: #FFFFFF;line-height: 0.8;font-size: 15px;">Remove</button>
                             </td>
                         </tr>
                     </table>
@@ -155,9 +160,10 @@
                     <p>With vat : @{{ withVatMethod() < 0 ? 0 : withVatMethod() }}</p>
                     <p>Total with vat: @{{ totalWithVatMethod() }}</p>
                     <div></div>
-                    <button type="button" class="btn btn-success" v-on:click="submitData($event)">Submit</button>
+                    <button type="button" class="btn " v-on:click="submitData($event)" style="background-color: #0f6848;color: #FFFFFF">Submit</button>
 
             </div>
+
         </div>
 
 

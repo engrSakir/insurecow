@@ -54,7 +54,10 @@ Route::middleware(['company', 'auth'])->group(function () {
         Route::get('quotation_view', 'CompanyController@viewQuotation')->name('company.quotation_view');
         Route::get('policy_view', 'CompanyController@viewPolicy')->name('company.policy_view');
 
+//----------------------------------------Company Package---------------------------------------------------
         Route::resource('package', 'CompanyPackageController');
+        Route::get('deletePackage/{id}', 'CompanyPackageController@deletePackage')->name('company.deletePackage');
+
 
         //--------------------------Pending Quotation-------------------------------
         Route::get('pending','CompanyPendingQuotationController@index')->name('company.pending_quotation');

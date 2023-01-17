@@ -5,7 +5,7 @@
 
     <div  style="display: flex; justify-content:right ; padding:20px;">
 
-        <a href="{{route('superadmin.index')}}" class="d-none d-sm-inline-block btn btn-sm text-white shadow-sm" style="background-color: #086343"><i
+        <a href="{{route('superadmin.history')}}" class="d-none d-sm-inline-block btn btn-sm text-white shadow-sm" style="background-color: #086343"><i
                 class="fas fa-arrow-left fa-sm text-white-100"></i> Go Back</a>
     </div>
 
