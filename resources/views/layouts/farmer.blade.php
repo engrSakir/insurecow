@@ -72,10 +72,13 @@
     <title>InsureCow</title>
 </head>
 
-<body class="container">
+<body  style="background: linear-gradient(346.96deg, #C3EAD6 14.97%, #D7ECCB 90.96%);">
     @include('inc.farmer_header')
     {{-- content --}}
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
+    </div>
     {{-- footer --}}
     @include('inc.farmer_footer')
 

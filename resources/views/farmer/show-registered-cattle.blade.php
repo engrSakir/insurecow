@@ -69,7 +69,7 @@
 
             /* Middle Content */
             .main-section {
-            margin-bottom: 4rem;
+            /* margin-bottom: 4rem; */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -176,19 +176,18 @@
     <section>
       <div class="main-section">
         <div class="cow-img">
-          <img src="{{ url('storage/'.$registeredcattle->cow_with_owner) }}" alt="" />
+          <img src="{{ url('storage/'.$registeredcattle->cow_with_owner) }}" alt="" class="img-fluid" width="300px" />
           <p class="text-center">Cow with Owner</p>
         </div>
       </div>
-
       <div class="cow-details">
         <form>
           <div class="information">
             <div class="card-header row">Cow Details Information</div>
 
-            <div style="background-color: #f9f6f6" class="row d-flex owner">
+            <div style="background: #D0ECCF" class="row d-flex owner">
               <div class="col-lg-5">
-                <p>Owner Name : {{ $registeredcattle->firstname }}</p>
+                <p>Owner Name : {{ $registeredcattle->firstname }} {{ $registeredcattle->lastname }}</p>
                 <p>Post : {{ $registeredcattle->post }}</p>
               </div>
               <div class="col-lg-5">
@@ -251,8 +250,9 @@
                   <thead>
                     <tr>
                       <th scope="col">Disease</th>
-                      <th scope="col">Details</th>
+                      <th scope="col">Vaccine Name</th>
                       <th scope="col">Issue Date</th>
+                      <th scope="col">Next Vaccination Date</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -260,8 +260,9 @@
                       @foreach($medicals as $medical)
                       <tr>
                         <td scope="row">{{ $medical->disease_name }}</td>
-                        <td>Demo Text</td>
+                        <td>{{ $medical->vaccine_name }}</td>
                         <td>{{ $medical->date }}</td>
+                        <td>{{ $medical->next_vaccination_date }}</td>
                       </tr>
                       @endforeach
                       @else
@@ -271,6 +272,9 @@
                       @endif
                   </tbody>
                 </table>
+                @if(!$pending)
+                  <a href="{{ route('onboard.single', $registeredcattle->id) }}" class="btn text-white text-center mb-3" style="background-color: #0f6848; margin-left: 15px; margin-bottom: 10px">Create Insurance for this cattle</a>
+                @endif
               </div>
               <!-- Table -->
             </div>

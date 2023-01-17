@@ -41,7 +41,6 @@ class RegistrationController extends Controller
             'nid' => 'required',
             'vet' => 'required',
             'chairman' => 'required',
-            'issue_date' => 'required',
         ]);
 
         // $this->validate($request,$inputs);

@@ -18,7 +18,6 @@ class CreateFarmerReg1sTable extends Migration
             $table->string('nid');
             $table->string('vet');
             $table->string('chairman')->nullable();
-            $table->date('issue_date');
             $table->string('user_id');
 
             $table->timestamps();

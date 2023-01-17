@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Farmer_reg_2;
+use App\Package;  
+use App\Company;  
+use App\User;  
 
 class FarmerOnboardController extends Controller
 {
@@ -48,9 +51,13 @@ class FarmerOnboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id, $cattle_id, $buying_price, $insurance_period, $accidental_mortality, $additionalcoverages)
     {
-        return view('farmer.onboard.insurance_details');
+        // return request()->all();
+        $pakage = Package::findOrFail($id);
+        $company = Company::where('user_id', $pakage->user_id)->first();
+        $user = User::where('id', $company->user_id)->first();
+        return view('farmer.onboard.insurance_details', compact('pakage', 'company', 'user', 'cattle_id', 'buying_price', 'insurance_period', 'accidental_mortality', 'additionalcoverages'));
     }
 
     /**
@@ -85,5 +92,11 @@ class FarmerOnboardController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function single($id)
+    {
+        $cattle = Farmer_reg_2::findOrFail($id);
+        return view('farmer.onboard.insurance-cattle', compact('cattle'));
     }
 }

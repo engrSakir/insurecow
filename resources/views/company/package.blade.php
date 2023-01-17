@@ -57,9 +57,9 @@
                         <div class="form-group">
                             <label for="vaccine_name">Select Coverage:</label>
                             <select class="form-control" name="coverage" >
-                                <option value="Accidental/ Diseases Mortality">Accidental/ Diseases Mortality</option>
-                                <option value="Flood Cyclone Coverage">Flood Cyclone Coverage</option>
-                                <option value="Earthquake Coverage">Earthquake Coverage</option>
+                                <option value="accidental_diseases_mortality">Accidental/Diseases Mortality</option>
+                                <option value="flood_cyclone_coverage">Flood Cyclone Coverage</option>
+                                <option value="earthquake_coverage">Earthquake Coverage</option>
 
                             </select>
                         </div>

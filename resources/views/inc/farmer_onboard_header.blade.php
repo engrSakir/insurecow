@@ -34,13 +34,65 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item navbar-brand">
-                            <a href="#" class="nav-link">About Us</a>
+                                                <!--Profile-->
+                                                <li class="nav-item dropdown navbar-brand">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Profile Info
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @if (auth()->user()->farmer_profile()->count() == 0)
+                                    <li><a class="dropdown-item" href="{{route('farmerprofiles.index')}}">Profile</a></li>   
+                                @else
+                            <!-- Nav Item - Profile Edit -->
+                            <li>
+                                <a class="dropdown-item" href="{{ route('farmerprofiles.edit', auth()->user()->id) }}">
+                                    <span>Edit Profile</span></a>
+                            </li>
+                            @endif
+                                <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>    
+                                <li><a class="dropdown-item" href="{{ route('farmer.change.password') }}">Change Password</a></li>
+                                <li><a class="dropdown-item" href="{{ route('farmer.expense') }}">Expenses</a></li>
+                                <li><a class="dropdown-item" href="{{ route('expense.history') }}">Expense History</a></li>
+                            </ul>
+                          </li>
+
+                        <!--Reports-->
+                        <li class="nav-item dropdown navbar-brand">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Reports
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ route('farmer.medical.report') }}">Upload Medical Report</a></li>
+                                <li><a class="dropdown-item" href="{{ route('write.medical.report') }}">Write Medical Report</a></li>
+                                <li><a class="dropdown-item" href="{{ route('medical.history') }}">Medical History</a></li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item navbar-brand">
-                            <a href="#" class="nav-link">Blog</a>
+                        <li class="nav-item dropdown navbar-brand">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Cattles
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ route('reg_one.index') }}">Register a Cattle</a></li>
+                                <li><a class="dropdown-item" href="{{ route('farmer.registered.cattle') }}">Registered Cattles</a></li>
+                            </ul>
                         </li>
+
+                        <li class="nav-item dropdown navbar-brand">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                @php
+                                  $profile = App\FarmerProfile::where('user_id', Auth::user()->id)->first();
+                                @endphp
+                              @if($profile)
+                                <img src="{{ asset('/storage/'.$profile->image) }}" class="img-fluid" width="20px">
+                              @else
+                                <img src="{{ asset('/images/profile.png') }}" class="img-fluid" width="20px">
+                              @endif
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('log_out') }}">Sign Out</a></li>   
+                            </ul>
+                          </li>
 
                     </ul>
 
@@ -62,6 +114,19 @@
                             </li>
                         @endif
                     </ul>
+
+                    <!--Language-->
+                    <!-- <ul class="navbar-nav d-flex flex-row">
+                        <li class="nav-item navbar-brand">
+                            <a href="#" class="nav-link">English</a>
+                        </li>
+
+                        <div class="vr vr-style"></div>
+
+                        <li class="nav-item navbar-brand ms-2">
+                            <a href="#" class="nav-link">বাংলা </a>
+                        </li>
+                    </ul> -->
                 </div>
             </div>
         </nav>

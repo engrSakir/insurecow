@@ -19,7 +19,7 @@ use App\Http\Controllers\CompanyController;
 */
 
 Route::get('/', function () {
-    return redirect()->route('login');
+    return redirect()->route('farmer.login');
 });
 
 Auth::routes();
@@ -67,6 +67,7 @@ Route::middleware(['company', 'auth'])->group(function () {
 });
 
 // --------------------------- farmer ----------------------
+Route::get('/farmer/login', function() { return view('auth.farmer-login'); })->name('farmer.login')->middleware('guest');
 Route::middleware(['farmer', 'auth'])->group(function () {
     // Route::get('/home', 'HomeController@index')->name('home');
 
@@ -102,10 +103,11 @@ Route::middleware(['farmer', 'auth'])->group(function () {
         Route::get('/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');
         Route::get('/view/pdf/{id}/{cattle_id}', 'farmer\FarmerExpenseController@viewpdf')->name('view.pdf');
 
-        Route::get('/onboard', 'farmer\FarmerOnboardController@index')->name('onboard.index');
-        Route::get('/onboard/insurance/companies', 'farmer\FarmerOnboardController@store')->name('onboard.store');
+        Route::get('/create/insurance', 'farmer\FarmerOnboardController@index')->name('onboard.index');
+        Route::get('/create/insurance/single/{id}', 'farmer\FarmerOnboardController@single')->name('onboard.single');
+        Route::get('/insurance/companies', 'farmer\FarmerOnboardController@store')->name('onboard.store');
 
-        Route::get('/insurance/details', 'farmer\FarmerOnboardController@show')->name('onboard.show');
+        Route::get('/insurance/details/{id}/{cattle_id}/{buying_price?}/{insurance_period}/{accidental_mortality}/{additionalcoverages}', 'farmer\FarmerOnboardController@show')->name('onboard.show');
 
         Route::get('/insurance/send', 'farmer\request_quotations\PendingController@store')->name('insurance.store');
         Route::get('/insurance/save', 'farmer\request_quotations\PendingController@saveInsurance')->name('insurance.save');
@@ -140,7 +142,7 @@ Route::middleware(['superadmin', 'auth'])->group(function () {
 
 Route::get('log_out', function () {
     \auth()->logout();
-    return redirect()->route('login');
+    return redirect()->route('farmer.login');
 })->name('log_out');
 
 Route::get('test', function () {

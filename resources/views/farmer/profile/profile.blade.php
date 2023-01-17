@@ -18,12 +18,12 @@
                         </ul>
                     </div>
                 @endif
-        <form class="{{ route('farmerprofiles.store') }}" method="POST" enctype="multipart/form-data">
+        <form class="{{ route('farmerprofiles.store') }}" method="POST" enctype="multipart/form-data"  style="background: #D7ECCB;">
             @csrf
             <div class="card-block p-2 card-block-top mb-4">
                 <h4 class="ms-4">Farmer Profile</h4>
             </div>
-            <div class="card-block p-2 card-block-down">
+            <div class="card-block p-2 card-block-down"  style="background: #D7ECCB;">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row px-4">
                     <div class="col-md-6 mb-4">
@@ -89,7 +89,7 @@
                     </div><hr>
                     <div class="col-md-6 mb-4">
 
-                        <button type="submit" class="btn text-white" style="background: #23BB86">Save</button>
+                        <button type="submit" class="btn text-white" style="background: #086343;">Save</button>
 
                         <button type="submit" class="btn">Cancel</button>
                     </div>
