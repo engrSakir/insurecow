@@ -178,7 +178,7 @@ class CompanyPackageController extends Controller
         }else{
             abort(404);
         }
-        if ($request->coverage=='Accidental/Diseases Mortality'){
+        if ($request->coverage=='Accidental/ Diseases Mortality'){
             $package->coverage='accidental_diseases_mortality';
         }elseif($request->coverage=='Flood Cyclone Coverage'){
             $package->coverage='flood_cyclone_coverage';
