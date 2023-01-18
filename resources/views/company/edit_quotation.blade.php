@@ -1,17 +1,16 @@
 @extends('layouts.company')
 
 @section('content')
-    <div  style="display: flex; justify-content:right ; padding:20px;">
 
-        <a href="{{route('company.quotation_view')}}" class="d-none d-sm-inline-block btn btn-sm text-white shadow-sm" style="background-color: #086343"><i
-                class="fa fa-eye  text-white-100" aria-hidden="true"></i> View Quotation </a>
-    </div>
-    <div id="app">
-        <div>
-            <div style="padding: 20px">
+           <div  style="display: flex; justify-content:right ; padding:20px;">
 
-
-                <form>
+                 <a href="{{route('company.quotation_view')}}" class="d-none d-sm-inline-block btn btn-sm text-white shadow-sm" style="background-color: #086343"><i
+                  class="fa fa-eye  text-white-100" aria-hidden="true"></i> View Quotation </a>
+           </div>
+           <div id="app">
+               <div>
+                   <div style="padding: 20px">
+                       <form>
 
 
                     {{--            <div class="mb-3">--}}
@@ -162,9 +161,7 @@
                     <div></div>
                     <button type="button" class="btn " v-on:click="submitData($event)" style="background-color: #0f6848;color: #FFFFFF">Submit</button>
 
-            </div>
 
-        </div>
 
 
         </form>
@@ -195,9 +192,9 @@
 
                     this.contents = el.data.contents;
                     this.totalValue = JSON.parse(el.data.risk);
-                    this.total = el.data.net_premium;
-                    this.vat = el.data.vat;
-                    this.withVat = el.data.vats;
+                    this.total = Number(el.data.net_premium);
+                    this.vat = Number(el.data.vat);
+                    this.withVat = Number(el.data.vats);
 
                 });
             },

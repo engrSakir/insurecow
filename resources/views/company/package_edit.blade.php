@@ -29,11 +29,11 @@
                             <label for="date">Select Price Range: </label>
 
                             <select class="form-control" name="price_range" value="{{$package->price_range}}">
-                                <option value="10,000 - 50,000 BDT">10,000 - 50,000 BDT</option>
-                                <option value="50,001 - 1,00,000 BDT">50,001 - 1,00,000 BDT</option>
-                                <option value="1,00,001 - 1,50,000 BDT">1,00,001 - 1,50,000 BDT</option>
-                                <option value="1,50,001 - 2,00,000 BDT">1,50,001 - 2,00,000 BDT</option>
-                                <option value="2,00,001 - 10,00,000 BDT">2,00,001 - 10,00,000 BDT</option>
+                                <option>10,000 - 50,000 BDT</option>
+                                <option>50,001 - 1,00,000 BDT</option>
+                                <option>1,00,001 - 1,50,000 BDT</option>
+                                <option>1,50,001 - 2,00,000 BDT</option>
+                                <option>2,00,001 - 10,00,000 BDT</option>
 
 
 
@@ -44,11 +44,11 @@
                         <div class="form-group">
                             <label for="disease_name">Select Insurance Period:</label>
                             <select class="form-control" name="insurance_period" value="{{$package->insurance_period}}" >
-                                <option value="1">1 Year</option>
-                                <option value="2">2 Years</option>
-                                <option value="3">3 Years</option>
-                                <option value="4">4 Years</option>
-                                <option value="5">5 Years</option>
+                                <option>1 Year</option>
+                                <option>2 Years</option>
+                                <option>3 Years</option>
+                                <option>4 Years</option>
+                                <option>5 Years</option>
 
 
 
@@ -57,9 +57,9 @@
                         <div class="form-group">
                             <label for="vaccine_name">Select Coverage:</label>
                             <select class="form-control" name="coverage" value="{{$package->coverage}}" >
-                                <option value="Accidental/ Diseases Mortality">Accidental/ Diseases Mortality</option>
-                                <option value="Flood Cyclone Coverage">Flood Cyclone Coverage</option>
-                                <option value="Earthquake Coverage">Earthquake Coverage</option>
+                                <option>Accidental/ Diseases Mortality</option>
+                                <option>Flood Cyclone Coverage</option>
+                                <option>Earthquake Coverage</option>
 
                             </select>
                         </div>

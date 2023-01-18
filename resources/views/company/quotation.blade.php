@@ -157,8 +157,7 @@
                     <div></div>
                     <button type="button" class="btn btn-success" v-on:click="submitData($event)">Submit</button>
 
-            </div>
-        </div>
+
 
 
         </form>

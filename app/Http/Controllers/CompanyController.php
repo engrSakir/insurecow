@@ -75,7 +75,11 @@ class CompanyController extends Controller
         $user->company_id= auth()->user()->id;
 
 
-        $user->role_1=$request->role_1;
+        if ($request->role_1=='Field Agent'){
+            $user->role_1='fa';
+        }else{
+            abort(404);
+        }
         $user->save();
         return redirect()->back()->with('message','Registration successfully complete');
     }

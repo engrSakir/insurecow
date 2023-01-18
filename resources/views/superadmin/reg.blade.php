@@ -49,10 +49,10 @@
                   <div class="mb-3">
                   <select class="form-control" name="role_1" >
 
-                    <option value="c">Company</option>
-                    <option value="n">NGO</option>
-                    <option value="b">Bank</option>
-                    <option value="m">MFI</option>
+                    <option>Company</option>
+                    <option>NGO</option>
+                    <option>Bank</option>
+                    <option>MFI</option>
 
                   </select><br><br>
                 </div>

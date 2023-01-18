@@ -103,7 +103,8 @@ class ProfileController extends Controller
     {
 
         $inputs = [
-
+            'name'=>'required',
+            'email'=>'required',
             'website'   => 'required|url',
             'about'   => 'required',
 
