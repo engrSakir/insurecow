@@ -52,12 +52,26 @@ class FarmerOnboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id, $cattle_id, $buying_price, $insurance_period, $accidental_mortality, $additionalcoverages)
+    public function show(Request $request, $id)
     {
+        // return $request->all();
+        $cattle_id = $request->cattle_id;
+        $buying_price = $request->buying_price;
+        $insurance_period = $request->insurance_period;
+        $accidental_mortality = $request->accidental_mortality;
+        $additionalcoverages = $request->additionalcoverages;
+
         $pakage = Package::findOrFail($id);
         $company = Company::where('user_id', $pakage->user_id)->first();
         $user = User::where('id', $company->user_id)->first();
-        return view('farmer.onboard.insurance_details', compact('pakage', 'company', 'user', 'cattle_id', 'buying_price', 'insurance_period', 'accidental_mortality', 'additionalcoverages'));
+        return view('farmer.onboard.insurance_details', compact('pakage', 
+        'company', 
+        'user', 
+        'cattle_id', 
+        'buying_price', 
+        'insurance_period', 
+        'accidental_mortality', 
+        'additionalcoverages'));
     }
 
     /**

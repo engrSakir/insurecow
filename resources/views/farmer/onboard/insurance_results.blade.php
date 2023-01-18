@@ -37,9 +37,31 @@
                             <span style="margin-left: 10px; margin-right: 10px">{{$pakage->coverage}}</span>
                         </div>
                         <div class="text-box p-5" style="display: inline-block">
-                            <a href="{{ route('onboard.show', [$pakage->id, $data['cattle_id'], $data['buying_price'], $data['insurance_period'], $data['accidental_mortality'], $data['additionalcoverages']]) }}" class="btn w-100 mb-2" style="background: #d9d9d9">Details</a><br>
+                            <!-- <a href="{{ route('onboard.show', 
+                                [$pakage->id, 
+                                $data['cattle_id'], 
+                                $data['buying_price'], 
+                                $data['insurance_period'], 
+                                $data['accidental_mortality'], 
+                                $data['additionalcoverages']]) 
+                            }}" 
+                            class="btn w-100 mb-2" 
+                            style="background: #d9d9d9">
+                            Details</a> -->
+                            <form action="{{ route('onboard.show', $pakage->id) }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="cattle_id" value="{{ $data['cattle_id'] }}">
+                                <input type="hidden" name="user_id" value="{{ $data['user_id'] }}">
+                                <input type="hidden" name="buying_price" value="{{ $data['buying_price'] }}">
+                                <input type="hidden" name="insurance_period" value="{{ $data['insurance_period'] }}">
+                                <input type="hidden" name="accidental_mortality" value="{{ $data['accidental_mortality'] }}">
+                                <input type="hidden" name="additionalcoverages" value="{{ $data['additionalcoverages'] }}">
+                                <input type="hidden" name="company_id" value="{{ $pakage->user_id }}">
+                                <button type="submit" class="btn w-100 mb-2" style="background: #d9d9d9">Details</button>
+                            </form>
+                            <br>
                             <!-- <a href="" class="btn w-100 text-white"  style="background: #082E13">Request Now</a> -->
-                            <form action="{{ route('insurance.save') }}" method="get">
+                            <form action="{{ route('insurance.save') }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="cattle_id" value="{{ $data['cattle_id'] }}">
                                 <input type="hidden" name="user_id" value="{{ $data['user_id'] }}">

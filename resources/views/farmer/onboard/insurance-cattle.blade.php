@@ -22,7 +22,7 @@
                         <label class="nav-link step2 border ml-2 text-white">Step Three</label>
                     </div>
 
-                    <form action="{{ route('insurance.store') }}" method="get" class="employee-form">
+                    <form action="{{ route('insurance.store') }}" method="POST">
                         @csrf
                         <div class="form-section">
                             <select name="cattle_id" class="form-control mb-3 text-center" id="cattle" required>    
