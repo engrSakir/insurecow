@@ -22,7 +22,7 @@
               @csrf
                 <div class="mb-3">
                     <label class="form-label">Full Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter Your Full Name" value="{{ old('name') }}" requried>
+                    <input type="text" name="name" class="form-control" placeholder="Enter Your Full Name" value="{{ old('name') }}" required>
                   </div>
                   {{-- <div class="mb-3">
                     <label class="form-label">Employee ID</label>
@@ -55,13 +55,13 @@
                   <div class="mb-3">
                     <select class="form-control" name="role_1" >
 
-                      <option value="fa">Field Agent</option>
+                      <option>Field Agent</option>
 
 
-                    </select><br><br>
+                    </select>
                   </div>
 
-                <button type="submit" class="btn  form-control text-white" style="background-color:#086343 ">Submit</button>
+                <button type="submit" class="btn   text-white" style="background-color:#086343 ">Submit</button>
               </form>
         </div>
         <!-- /.container-fluid -->

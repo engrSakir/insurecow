@@ -51,8 +51,45 @@ class CompanyPackageController extends Controller
         $this->validate($request,$inputs);
         $package=new Package();
         $package->name=$request->name;
-        $package->price_range=$request->price_range;
-        $package->insurance_period=$request->insurance_period;
+        if ($request->price_range=='10,000 - 50,000 BDT'){
+            $package->price_range='10,000 - 50,000 BDT';
+        }elseif ($request->price_range=='50,001 - 1,00,000 BDT'){
+            $package->price_range='50,001 - 1,00,000 BDT';
+        }elseif ($request->price_range=='1,00,001 - 1,50,000 BDT'){
+            $package->price_range='1,00,001 - 1,50,000 BDT';
+        }elseif ($request->price_range=='1,50,001 - 2,00,000 BDT'){
+            $package->price_range='1,50,001 - 2,00,000 BDT';
+        }
+        elseif ($request->price_range=='2,00,001 - 10,00,000 BDT'){
+            $package->price_range='2,00,001 - 10,00,000 BDT';
+        }else{
+            abort(404);
+        }
+        if ($request->insurance_period=='1 Year'){
+            $package->insurance_period='1';
+        } elseif ($request->insurance_period=='2 Year'){
+            $package->insurance_period='2';
+        }
+        elseif ($request->insurance_period=='3 Year'){
+            $package->insurance_period='3';
+        }
+        elseif ($request->insurance_period=='4 Year'){
+            $package->insurance_period='4';
+        }
+        elseif ($request->insurance_period=='5 Year'){
+            $package->insurance_period='5';
+        }else{
+            abort(404);
+        }
+        if ($request->coverage=='Accidental/Diseases Mortality'){
+            $package->coverage='accidental_diseases_mortality';
+        }elseif($request->coverage=='Flood Cyclone Coverage'){
+            $package->coverage='flood_cyclone_coverage';
+        }elseif($request->coverage=='Earthquake Coverage'){
+            $package->coverage='earthquake_coverage';
+        }else{
+            abort(404);
+        }
         $package->coverage=$request->coverage;
         $package->premium_amount=$request->premium_amount;
         $package->lowest=$request->lowest;
@@ -111,9 +148,45 @@ class CompanyPackageController extends Controller
         $this->validate($request,$inputs);
         $package=Package::find($id);
         $package->name=$request->name;
-        $package->price_range=$request->price_range;
-        $package->insurance_period=$request->insurance_period;
-        $package->coverage=$request->coverage;
+        if ($request->price_range=='10,000 - 50,000 BDT'){
+            $package->price_range='10,000 - 50,000 BDT';
+        }elseif ($request->price_range=='50,001 - 1,00,000 BDT'){
+            $package->price_range='50,001 - 1,00,000 BDT';
+        }elseif ($request->price_range=='1,00,001 - 1,50,000 BDT'){
+            $package->price_range='1,00,001 - 1,50,000 BDT';
+        }elseif ($request->price_range=='1,50,001 - 2,00,000 BDT'){
+            $package->price_range='1,50,001 - 2,00,000 BDT';
+        }
+        elseif ($request->price_range=='2,00,001 - 10,00,000 BDT'){
+            $package->price_range='2,00,001 - 10,00,000 BDT';
+        }else{
+            abort(404);
+        }
+        if ($request->insurance_period=='1 Year'){
+            $package->insurance_period='1';
+        } elseif ($request->insurance_period=='2 Year'){
+            $package->insurance_period='2';
+        }
+        elseif ($request->insurance_period=='3 Year'){
+            $package->insurance_period='3';
+        }
+        elseif ($request->insurance_period=='4 Year'){
+            $package->insurance_period='4';
+        }
+        elseif ($request->insurance_period=='5 Year'){
+            $package->insurance_period='5';
+        }else{
+            abort(404);
+        }
+        if ($request->coverage=='Accidental/Diseases Mortality'){
+            $package->coverage='accidental_diseases_mortality';
+        }elseif($request->coverage=='Flood Cyclone Coverage'){
+            $package->coverage='flood_cyclone_coverage';
+        }elseif($request->coverage=='Earthquake Coverage'){
+            $package->coverage='earthquake_coverage';
+        }else{
+            abort(404);
+        }
         $package->premium_amount=$request->premium_amount;
         $package->lowest=$request->lowest;
         $package->highest=$request->highest;

@@ -49,7 +49,7 @@ class CompanyPolicyController extends Controller
             'content' => 'required',
             'corona'=>'required',
             'schedule'=>'required',
-            'signature' => 'mimes:jpeg,bmp,png,webp',
+            'signature' => 'required|mimes:jpeg,bmp,png,webp',
         ]);
 
         if (request('signature')) {
@@ -121,9 +121,9 @@ class CompanyPolicyController extends Controller
 
 
         if (request('signature')) {
-            $quotation['signature'] = \request('signature')->store('images');
+            $policy['signature'] = \request('signature')->store('images');
         }else {
-            $quotation['signature'] = $policy->signature;
+            $policy['signature'] = $policy->signature;
         }
 
 

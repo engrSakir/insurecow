@@ -20,16 +20,16 @@
               @csrf
                 <div class="mb-3">
                     <label class="form-label">Company Name</label>
-                    <input type="text" class="form-control" placeholder="Enter Full Name" value="{{ Auth::user()->name }}">
+                    <input type="text" class="form-control" placeholder="Enter Full Name" value="{{ Auth::user()->name }}" required>
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label">Email address</label>
-                  <input type="email" class="form-control" placeholder="Enter Email" value="{{ Auth::user()->email }}">
+                  <input type="email" class="form-control" placeholder="Enter Email" value="{{ Auth::user()->email }}" required>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Phone</label>
-                  <input type="text" class="form-control" placeholder="Enter Email" value="{{ Auth::user()->phone }}">
+                  <input type="text" class="form-control" placeholder="Enter Email" value="{{ Auth::user()->phone }}" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Website</label>

@@ -73,7 +73,19 @@ class SuperAdminController extends Controller
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
         $user->adress=$request->adress;
-        $user->role_1=$request->role_1;
+        if ($request->role_1=='Company'){
+            $user->role_1='c';
+        }
+         elseif ($request->role_1=='Bank'){
+             $user->role_1='b';
+        }elseif ($request->role_1=='NGO'){
+            $user->role_1='n';
+        }elseif($request->role_1=='MFI'){
+           $user->role_1='m';
+        } else{
+            abort(404);
+        }
+
         $user->save();
         return redirect()->back()->with('message','Registration successfully complete !!');
     }
