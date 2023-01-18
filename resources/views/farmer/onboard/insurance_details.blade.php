@@ -2,7 +2,13 @@
 @section('content')
 <div class="container">
     <div class="row">
+        @if( Session::has( 'nothing' ))
+                <div class="alert text-white mt-5" style="background: #226034">
+                    {{ Session::get( 'nothing' ) }}
+                </div>
+            @endif
         <div class="col-md-4 mt-5">
+            
             <a href="{{ route('farmer.index') }}" class="float-start mb-3 p-3 text-dark" style="background: linear-gradient(268.09deg, #C5EAD5 24.79%, #FFFFFF 99.54%);border-radius: 20px;"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
             
             @if($company)
