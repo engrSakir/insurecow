@@ -3,6 +3,11 @@
 <div class="container">
         <div class="row">
             <div class="col-md-12 mt-5">
+            @if( Session::has( 'nothing' ))
+            <div class="alert text-white mt-5" style="background: #226034">
+                {{ Session::get( 'nothing' ) }}
+            </div>
+            @endif
                 <div class="card p-5" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border: 1px solid #000000;">
                     <a href="{{ route('onboard.index') }}" class="float-start mb-3 p-3 text-dark" style="width: 150px; background: linear-gradient(268.09deg, #C5EAD5 24.79%, #FFFFFF 99.54%);border-radius: 20px;"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
                     @foreach($pakages as $pakage)

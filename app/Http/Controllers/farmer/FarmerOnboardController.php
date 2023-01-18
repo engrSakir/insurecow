@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Farmer_reg_2;
 use App\Package;  
 use App\Company;  
+use App\Pending;  
 use App\User;  
 
 class FarmerOnboardController extends Controller
@@ -53,7 +54,6 @@ class FarmerOnboardController extends Controller
      */
     public function show($id, $cattle_id, $buying_price, $insurance_period, $accidental_mortality, $additionalcoverages)
     {
-        // return request()->all();
         $pakage = Package::findOrFail($id);
         $company = Company::where('user_id', $pakage->user_id)->first();
         $user = User::where('id', $company->user_id)->first();
@@ -97,6 +97,10 @@ class FarmerOnboardController extends Controller
     public function single($id)
     {
         $cattle = Farmer_reg_2::findOrFail($id);
-        return view('farmer.onboard.insurance-cattle', compact('cattle'));
+        $pending = Pending::where('cattle_id', $id)->first();
+        if (!$pending) {
+            return view('farmer.onboard.insurance-cattle', compact('cattle'));
+        }
+        return redirect()->back()->with('pending', 'This cattle already has a Insurance.');
     }
 }
