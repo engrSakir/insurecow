@@ -160,7 +160,7 @@
                                 class="form-control fontAwesome input-form  @error('email') is-invalid @enderror"
 
                                 placeholder="Enter Email"
-                                required="required"
+                                required
                             />
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -186,7 +186,7 @@
 
                                 id="password"
                                 placeholder="Enter Password"
-                                required="required"
+                                required
                             />
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -201,14 +201,14 @@
                         <div class="mb-4 password-container" style="position: relative">
                             <label for="password" class="form-label">Confirm Password: </label>
                             <input
-                                id="password" name="password_confirmation" required autocomplete="current-password"
+                                id="password" name="password_confirmation"  autocomplete="current-password"
                                 type="password"
 
                                 class="form-control fontAwesome input-form @error('password_confirmation') is-invalid @enderror"
 
                                 id="password1"
                                 placeholder="Enter Confirm Password"
-                                required="required"
+                                required
                             />
                             @error('password_confirmation')
                             <span class="invalid-feedback" role="alert">
