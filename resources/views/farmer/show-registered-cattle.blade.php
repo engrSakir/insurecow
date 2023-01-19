@@ -201,7 +201,9 @@
               class="row d-flex species"
             >
               <div class="col-lg-5">
+                <p>Cattle Name : {{ $registeredcattle->cattle_name }}</p>
                 <p>Cattle Species : {{ $registeredcattle->cattle_breed }}</p>
+                <p>Cattle Price : {{ $registeredcattle->price }} BDT</p>
                 <p>Age : {{ $registeredcattle->age }} year</p>
                 <p>Gender : {{ $registeredcattle->gender }}</p>
               </div>

@@ -22,13 +22,15 @@ class InsuranceController extends Controller
             'user_id' => 'required'
         ]);
 
-        $pending = Pending::where('cattle_id', '=', $request->cattle_id)
-                        ->where('buying_price', '=', $request->buying_price)
-                        ->where('insurance_period', '=', $request->insurance_period)
-                        ->where('accidental_mortality', '=', $request->accidental_mortality)
-                        ->where('company_id', '=', $request->company_id)
-                        ->where('user_id', '=', $request->user_id)
-                        ->first();
+        // $pending = Pending::where('cattle_id', '=', $request->cattle_id)
+        //                 ->where('buying_price', '=', $request->buying_price)
+        //                 ->where('insurance_period', '=', $request->insurance_period)
+        //                 ->where('accidental_mortality', '=', $request->accidental_mortality)
+        //                 ->where('company_id', '=', $request->company_id)
+        //                 ->where('user_id', '=', $request->user_id)
+        //                 ->first();
+        
+        $pending = Pending::where('cattle_id', '=', $request->cattle_id)->first();
 
         if (!$pending) {
             Pending::create($request->all());
