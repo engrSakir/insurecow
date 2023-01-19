@@ -19,6 +19,10 @@
     <link href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css" rel="stylesheet">
     <style>
+        html:focus{
+            background-color: transparent;
+            border: 0px solid transparent;
+        }
         .active {
             background: #ffffff;
         }

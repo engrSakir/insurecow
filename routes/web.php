@@ -106,14 +106,24 @@ Route::middleware(['farmer', 'auth'])->group(function () {
         Route::get('/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');
         Route::get('/view/pdf/{id}/{cattle_id}', 'farmer\FarmerExpenseController@viewpdf')->name('view.pdf');
 
+
+
+        //Insurance create from multiple cattle list
         Route::get('/create/insurance', 'farmer\FarmerOnboardController@index')->name('onboard.index');
+        
+        //Insurance create from single cattle list
         Route::get('/create/insurance/single/{id}', 'farmer\FarmerOnboardController@single')->name('onboard.single');
+        
+        //Insurance create from single cattle list
         Route::get('/insurance/companies', 'farmer\FarmerOnboardController@store')->name('onboard.store');
+        
+        Route::post('/insurance/details/{id}', 'farmer\FarmerOnboardController@show')->name('onboard.show');
+        Route::post('/insurance/send', 'farmer\request_quotations\PendingController@store')->name('insurance.store');
+        Route::post('/insurance/single/save', 'farmer\request_quotations\InsuranceController@saveInsurance')->name('insurance.single.save');
 
-        Route::get('/insurance/details/{id}/{cattle_id}/{buying_price?}/{insurance_period}/{accidental_mortality}/{additionalcoverages}', 'farmer\FarmerOnboardController@show')->name('onboard.show');
 
-        Route::get('/insurance/send', 'farmer\request_quotations\PendingController@store')->name('insurance.store');
-        Route::get('/insurance/save', 'farmer\request_quotations\PendingController@saveInsurance')->name('insurance.save');
+
+
 
         Route::get('/farmer/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');
         Route::get('/view/pdf/{id}/{cattle_id}', 'farmer\FarmerExpenseController@viewpdf')->name('view.pdf');
