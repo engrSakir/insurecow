@@ -57,11 +57,11 @@
                                 <input type="hidden" name="accidental_mortality" value="{{ $data['accidental_mortality'] }}">
                                 <input type="hidden" name="additionalcoverages" value="{{ $data['additionalcoverages'] }}">
                                 <input type="hidden" name="company_id" value="{{ $pakage->user_id }}">
-                                <button type="submit" class="btn w-100 mb-2" style="background: #d9d9d9">Details</button>
+                                <button type="submit" class="btn w-100" style="background: #d9d9d9">Details</button>
                             </form>
                             <br>
                             <!-- <a href="" class="btn w-100 text-white"  style="background: #082E13">Request Now</a> -->
-                            <form action="{{ route('insurance.save') }}" method="POST">
+                            <form action="{{ route('insurance.single.save') }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="cattle_id" value="{{ $data['cattle_id'] }}">
                                 <input type="hidden" name="user_id" value="{{ $data['user_id'] }}">

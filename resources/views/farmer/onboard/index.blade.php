@@ -13,6 +13,11 @@
                 {{ Session::get( 'buying_price' ) }}
             </div>
             @endif
+            @if( Session::has( 'nothing' ))
+            <div class="alert text-white mt-5" style="background: #226034">
+                {{ Session::get( 'nothing' ) }}
+            </div>
+            @endif
             <div class="col-md-8 offset-2 mt-5">
                 <div class="card p-5" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border: 1px solid #000000;">
                     <h2 class="text-center" >Select Your Cattle</h2>
@@ -22,7 +27,7 @@
                         <label class="nav-link step2 border ml-2 text-white">Step Three</label>
                     </div>
 
-                    <form action="{{ route('insurance.store') }}" method="POST" class="employee-form">
+                    <form action="{{ route('insurance.store') }}" method="POST" class="employee-form">  
                         @csrf
                         <div class="form-section">
                             <select name="cattle_id" class="form-control mb-3 text-center" id="cattle" required>
@@ -68,7 +73,6 @@
                             <button type="button" class="next btn float-end text-white" style="background: #226034">Next &gt;</button>
                             <button type="submit" class="btn float-end text-white" style="background: #226034">Submit</button>
                         </div>
-
                     </form>
                 </div>
             </div>

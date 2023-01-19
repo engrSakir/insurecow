@@ -21,7 +21,7 @@
                 <span class="text-center mt-3">{{ $pakage->coverage }}</span>
             </center>
             <!-- <a href="#" class="btn w-100 btn-danger mt-3">Request Now</a> -->
-            <form action="{{ route('insurance.save') }}" method="POST">
+            <form action="{{ route('insurance.single.save') }}" method="POST">
                 @csrf
                 <input type="hidden" name="cattle_id" value="{{ $cattle_id }}">
                 <input type="hidden" name="user_id" value="{{ $user->id }}">
