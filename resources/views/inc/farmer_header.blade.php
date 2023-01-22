@@ -30,7 +30,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @if (auth()->user()->farmer_profile()->count() == 0)
-                                    <li><a class="dropdown-item" href="{{route('farmerprofiles.index')}}">Profile</a></li>   
+                                    <li><a class="dropdown-item" href="{{route('farmerprofiles.index')}}">Profile</a></li>
                                 @else
                             <!-- Nav Item - Profile Edit -->
                             <li>
@@ -38,7 +38,7 @@
                                     <span>Edit Profile</span></a>
                             </li>
                             @endif
-                                <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>    
+                                <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>
                                 <li><a class="dropdown-item" href="{{ route('farmer.change.password') }}">Change Password</a></li>
                                 <li><a class="dropdown-item" href="{{ route('farmer.expense') }}">Expenses</a></li>
                                 <li><a class="dropdown-item" href="{{ route('expense.history') }}">Expense History</a></li>
@@ -82,7 +82,7 @@
                             <!-- <button type="submit" class="signout-button">SignOut</button> -->
                             <!-- <a href="{{ route('log_out') }}" class="btn signout-button" style="background: #086343; color: #ffffff !important">SignOut</a>
                         </li> -->
-                        
+
 
                         <li class="nav-item dropdown navbar-brand">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -96,9 +96,9 @@
                               @endif
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{{ route('log_out') }}">Sign Out</a></li>   
+                                    <li><a class="dropdown-item" href="{{ route('log_out') }}">Sign Out</a></li>
                             </ul>
-                          </li>
+                        </li>
                     </ul>
 
                     <!--Language-->

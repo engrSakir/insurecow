@@ -20,7 +20,7 @@
                 <form action="{{route('package.store')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
-                    <div class="card p-5" style="background: rgba(199, 248, 201, 1)">
+                    <div class="card p-5" style="background: linear-gradient(rgba(199, 248, 201, 1),rgba(221, 237, 199, 1))">
                         <div class="form-group">
                             <label for="next_vaccination_date">Package Name</label>
                             <input type="text" name="name" class="form-control" placeholder="Enter Package Name">

@@ -1,0 +1,154 @@
+.ctext{
+    width: 150px;
+    height: 26px;
+    left: 1219px;
+    top: 211px;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+
+    color: #FFFFFF;
+}
+.para{
+
+    width: 146px;
+    height: 16px;
+    left: 1219px;
+    top: 246px;
+
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #D6D6D6;
+}
+
+.feed{
+    width: 51px;
+    height: 13px;
+    left: 1227px;
+    top: 289px;
+
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 13px;
+
+    color: #D6D6D6;
+
+}
+.sixteen{
+    width: 17px;
+    height: 13px;
+    left: 1227px;
+    top: 307px;
+
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 13px;
+
+    color: #FFFFFF;
+
+
+}
+.medical{
+    width: 67px;
+    height: 13px;
+    left: 1227px;
+    top: 325px;
+
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 13px;
+
+    color: #D6D6D6;
+}
+.twenty{
+    width: 19px;
+    height: 13px;
+    left: 1227px;
+    top: 343px;
+
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 13px;
+
+    color: #FFFFFF;
+}
+.Affiliate{
+    width: 39px;
+    height: 13px;
+    left: 1227px;
+    top: 361px;
+
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 13px;
+
+    color: #D6D6D6;
+
+}
+.shape{
+    box-sizing: border-box;
+
+
+    width: 100px;
+    height: 100px;
+    left: 1329.64px;
+    top: 402.24px;
+
+    border: 1px solid #FFFFFF;
+    transform: rotate(-105deg);
+}
+.shapes{
+    width: 100px;
+    height: 100px;
+    left: 1400.36px;
+    top: 279.76px;
+
+    border: 2px solid #FFFFFF;
+    transform: rotate(75deg);
+}
+.new{
+    width: 229px;
+    height: 510px;
+    left: 1201px;
+    top: 479px;
+
+    background: #F1F1F1;
+    border-radius: 5px;
+}
+.cattle{
+    width: 32px;
+    height: 26px;
+    left: 499px;
+    top: 269px;
+
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+
+    color: #000000;
+}
+.icon{
+    left: 76.53%;
+    right: 21.04%;
+    top: 23.15%;
+    bottom: 74.32%;
+
+    background: #000000;
+}

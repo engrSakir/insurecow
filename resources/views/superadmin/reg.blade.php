@@ -54,7 +54,7 @@
                     <option>Bank</option>
                     <option>MFI</option>
 
-                  </select><br><br>
+                  </select>
                 </div>
                 <button type="submit" class="btn btn-primary" style="background: #086343">Submit</button>
               </form>
