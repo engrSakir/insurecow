@@ -50,7 +50,7 @@
                     <input type="file" name="image">
                 </div><br>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn " style="background-color: #0f6848; color: #FFFFFF">Submit</button>
             </form>
         </div>
         <!-- /.container-fluid -->

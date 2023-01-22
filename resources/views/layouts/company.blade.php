@@ -46,7 +46,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion font-weight-bold" id="accordionSidebar" style="background: rgba(79, 172, 35, 0.25);">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion font-weight-bold" id="accordionSidebar" style="background: linear-gradient(rgba(199, 248, 201, 1),rgba(221, 237, 199, 1));">
 
 
             <!-- Sidebar - Brand -->

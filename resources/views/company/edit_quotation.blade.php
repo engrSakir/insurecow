@@ -131,7 +131,7 @@
                             <td align="center">@{{ item.bdt }}</td>
                             <!-- <td align="center">@{{ item.vat }}</td> -->
                             <td align="center">
-                                <button v-on:click="edit(index, $event)" class="edit-btn btn btn-sm" style="color: #FFFFFF;background-color: #0f6848;line-height: 0.8;font-size: 15px;">
+                                <button v-on:click="edit(index, $event)" class="edit-btn btn btn-sm" style="color: #FFFFFF;background-color: #1b4b72;line-height: 0.8;font-size: 15px;">
                                     Edit
                                 </button>
                             </td>

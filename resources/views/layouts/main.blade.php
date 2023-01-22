@@ -45,11 +45,11 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion font-weight-bold" id="accordionSidebar" style="background: rgba(79, 172, 35, 0.25);">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion font-weight-bold" id="accordionSidebar" style="background: linear-gradient(rgba(199, 248, 201, 1),rgba(221, 237, 199, 1));">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center"
-                href="{{ route('superadmin.index') }}">
+
+            <a href="{{ route('superadmin.index') }}" class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-icon mt-5">
                     <img src="{{ asset('images/logo.png') }}" class="img-fluid">
                 </div>
@@ -91,7 +91,7 @@
                     <span>Registration</span></a>
             </li>
 
-            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('superadmin/request')) ? 'active' : '' }} pt-2 pb-2">
+            <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('superadmin/company_request')) ? 'active' : '' }} pt-2 pb-2">
                 <a href="{{route('superadmin.company_request')}}" class="nav-link text-dark">
                     <i class="fas fa-business-time text-dark"></i>
                     <span>Company Request</span></a>
