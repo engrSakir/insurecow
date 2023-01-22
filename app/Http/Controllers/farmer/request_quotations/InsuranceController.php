@@ -11,8 +11,6 @@ class InsuranceController extends Controller
 {
     public function saveInsurance (Request $request)
     {
-
-        // return $request->all();
         $request->validate([
             'cattle_id' => 'required|integer',
             'buying_price' => 'required|numeric',
@@ -21,14 +19,6 @@ class InsuranceController extends Controller
             'company_id' => 'required',
             'user_id' => 'required'
         ]);
-
-        // $pending = Pending::where('cattle_id', '=', $request->cattle_id)
-        //                 ->where('buying_price', '=', $request->buying_price)
-        //                 ->where('insurance_period', '=', $request->insurance_period)
-        //                 ->where('accidental_mortality', '=', $request->accidental_mortality)
-        //                 ->where('company_id', '=', $request->company_id)
-        //                 ->where('user_id', '=', $request->user_id)
-        //                 ->first();
         
         $pending = Pending::where('cattle_id', '=', $request->cattle_id)->first();
 
