@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap");
 
 * {
   font-family: "Roboto Slab";
@@ -11,3 +11,83 @@
 }
 
 /* --------------- nabar ---------------  */
+
+/* --------------- section -2 : left side --------------- */
+
+.left-side {
+  padding: 60px;
+}
+
+.or-span {
+  margin: 0 10px;
+  color: #7b7b7b;
+}
+
+.buy-insurance {
+  font-size: 35px;
+}
+
+/* --------------- section -2 : left side --------------- */
+
+/* --------------- section -2 : right side --------------- */
+
+/* --------------- section -2 : right side --------------- */
+
+/* --------------- section -2 : services --------------- */
+
+.services {
+  padding: 60px;
+}
+
+.services-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.services-box-style {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 12px 40px;
+}
+
+.services-img {
+  display: flex;
+  justify-content: center;
+}
+
+.services-p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* --------------- section -2 : services --------------- */
+
+/* --------------- section -3 : why choose our service --------------- */
+
+.third-section {
+  padding-top: 6%;
+}
+
+.third-section_title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.third-section_p {
+  text-align: center;
+}
+
+.third-section_item_title {
+  margin-top: 10px;
+  text-align: center;
+  color: #0d1c11;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.third-section_item_p {
+  text-align: center;
+}
+
+/* --------------- section -3 : why choose our service --------------- */
