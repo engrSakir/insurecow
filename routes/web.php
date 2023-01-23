@@ -149,7 +149,6 @@ Route::middleware(['superadmin', 'auth'])->group(function () {
 
 Route::group(['prefix' => 'fdashboard'], function () {
     Route::get('home', 'FarmerDashboardController@index')->name('fdashboard.index');
-    //Calender for farmer
     Route::get('calendar', 'farmer\CalenderController@index')->name('fdashboard.calender');
     Route::post('calendar/create', 'farmer\CalenderController@create');
     Route::post('calendar/update', 'farmer\CalenderController@update');
