@@ -2,7 +2,7 @@
 
   <header>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-light pb-0" style="background: linear-gradient(180deg, #226034 -72.33%, rgba(34, 96, 52, 0) 109.17%);">
+        <nav class="navbar navbar-expand-lg navbar-light pb-0" style="background: #D7ECCB;">
             <div class="container-fluid">
 
                 <!--Navbar Logo-->

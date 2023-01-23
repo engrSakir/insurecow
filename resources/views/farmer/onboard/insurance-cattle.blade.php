@@ -22,7 +22,7 @@
                         <label class="nav-link step2 border ml-2 text-white">Step Three</label>
                     </div>
 
-                    <form action="{{ route('insurance.single.save') }}" method="POST">
+                    <form action="{{ route('insurance.store') }}" method="POST" class="employee-form">
                         @csrf
                         <div class="form-section">
                             <select name="cattle_id" class="form-control mb-3 text-center" id="cattle" required>    
@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-section">
                             <label for="">What is The Buying Price of Your Cattle?</label>
-                            <input min="10000" max="1000000" type="number" class="form-control mb-3" value="{{ $cattle->price }}" name="buying_price" id="price" required>
+                            <input min="10000" max="1000000" type="number" class="form-control mb-3" value="{{ $cattle->price }}" name="buying_price" id="price" >
 
                             <label for="">Enter Insurance Period</label>
                             <input min="1" max="5" type="number" class="form-control mt-3" name="insurance_period" required>

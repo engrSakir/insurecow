@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Farmer_reg_2;
+use Auth;
 class FarmerDashboardController extends Controller
 {
     /**
@@ -14,6 +15,12 @@ class FarmerDashboardController extends Controller
     public function index()
     {
         return view('fdashboard.index');
+    }
+
+    public function cattle()
+    {
+        $registeredcattles = Farmer_reg_2::where('user_id', Auth::user()->id)->get();
+        return view('fdashboard.cattle', compact('registeredcattles'));
     }
 
     /**

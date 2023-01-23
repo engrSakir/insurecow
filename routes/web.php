@@ -122,13 +122,6 @@ Route::middleware(['farmer', 'auth'])->group(function () {
         Route::post('/insurance/send', 'farmer\request_quotations\PendingController@store')->name('insurance.store');
         Route::post('/insurance/single/save', 'farmer\request_quotations\InsuranceController@saveInsurance')->name('insurance.single.save');
 
-
-        //Calender for Farmer
-        Route::get('calendar', 'farmer\CalenderController@index');
-        Route::post('calendar/create', 'farmer\CalenderController@create');
-        Route::post('calendar/update', 'farmer\CalenderController@update');
-        Route::post('calendar/delete', 'farmer\CalenderController@destroy');
-
         Route::get('/farmer/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');
         Route::get('/view/pdf/{id}/{cattle_id}', 'farmer\FarmerExpenseController@viewpdf')->name('view.pdf');
         Route::resource('send', 'farmer\SendRequestController');
@@ -154,10 +147,14 @@ Route::middleware(['superadmin', 'auth'])->group(function () {
 
 });
 
+
 Route::group(['prefix' => 'fdashboard'], function () {
     Route::get('home', 'FarmerDashboardController@index')->name('fdashboard.index');
-    Route::get('calender', 'farmer\CalenderController@index')->name('fdashboard.calender');
-
+    Route::get('cattles', 'FarmerDashboardController@cattle')->name('fdashboard.cattle');
+    Route::get('calendar', 'farmer\CalenderController@index')->name('fdashboard.calender');
+    Route::post('calendar/create', 'farmer\CalenderController@create');
+    Route::post('calendar/update', 'farmer\CalenderController@update');
+    Route::post('calendar/delete', 'farmer\CalenderController@destroy');
 });
 
 

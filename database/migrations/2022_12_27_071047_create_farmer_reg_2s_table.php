@@ -15,8 +15,8 @@ class CreateFarmerReg2sTable extends Migration
     {
         Schema::create('farmer_reg_2s', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
+            $table->string('farmname')->nullable();
+            $table->string('farmername');
             $table->string('division');
             $table->string('district');
             $table->string('thana');

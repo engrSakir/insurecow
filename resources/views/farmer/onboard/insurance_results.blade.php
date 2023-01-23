@@ -76,6 +76,9 @@
                         </center>
                     </div>
                     @endforeach
+                    @if($pakages->count() == 0)
+                        <h3 class="text-center p-5 text-white rounded" style="background: #0f6848">No Insurance Companies Found</h3>
+                    @endif
                 </div>
             </div>
         </div>
