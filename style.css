@@ -113,7 +113,6 @@
 
 /* --------------- section -4 : Team members --------------- */
 
-
 /* --------------- section -7 : Partners --------------- */
 
 .partners {
@@ -132,6 +131,22 @@
 }
 
 /* --------------- section -7 : Partners --------------- */
+
+.contact-text {
+  margin-left: 10px;
+}
+
+.contact-with-us-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+  font-size: 14px;
+}
 
 /* --------------------------------------------- media screen for tab ( portrait ) ------------------------------------------- */
 
@@ -187,44 +202,39 @@
 }
 
 /* --------------------------------------------------------------------------- end - media screen for 1366 x 768 desktop screens */
-=======
-.contact{
+
+.contact {
   width: 531px;
-height: 120px;
-left: 318px;
-top: 6423px;
+  height: 120px;
+  left: 318px;
+  top: 6423px;
 
-font-family: 'Roboto Slab';
-font-style: normal;
-font-weight: 600;
-font-size: 40px;;
-line-height: 60px;
-/* or 115% */
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  /* or 115% */
 
-
-color: #0D1C11;
-
+  color: #0d1c11;
 }
-.phone{
+.phone {
   width: 198px;
-height: 59px;
-left: 391.96px;
-top: 6603px;
+  height: 59px;
+  left: 391.96px;
+  top: 6603px;
 
-font-family: 'Roboto Slab';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 29px;
-/* or 162% */
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+  /* or 162% */
 
+  color: #0d1c11;
 
-color: #0D1C11;
-
-opacity: 0.8;
+  opacity: 0.8;
 }
-.img{
+.img {
   background-image: url("images/shape.png");
- 
 }
-
