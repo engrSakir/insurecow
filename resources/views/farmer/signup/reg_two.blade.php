@@ -28,7 +28,7 @@
     <title>InsureCow</title>
 </head>
 
-<body class="container">
+<body style="background: linear-gradient(90deg, rgba(195,234,214,1) 0%, rgba(215,236,203,1) 35%);"> 
 
 <!--==================== NAVBAR ====================-->
 @include('inc/farmer_header')
@@ -36,34 +36,35 @@
 
 <!--==================== FORM PAGE SECTION ====================-->
 
+<div class="container" style="linear-gradient(#C3EAD6 14.97%, #D7ECCB 90.96%);">
 <div id="app">
     <div>
         <section>
             <p class="heading mt-4">Registration Form</p>
 
             <div class="card mt-4 mb-5">
-                <form class="">
+                <form class="" style="background: #D7ECCB;">
 
                     <div class="card-block p-2 card-block-top mb-4" style="background: #086343">
                         <h4 class="ms-4">Farmer Information</h4>
                     </div>
 
-                    <div class="card-block p-2 card-block-down">
+                    <div class="card-block p-2 card-block-down" style="background: #D7ECCB;">
 
                         <!-- 2 column grid layout with text inputs for the first and last names -->
                         <div class="row px-4">
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <label class="form-label" for="inputFirstName">First name :</label>
-                                    <input type="text" id="firstname" class="form-control input-style"
-                                           name="firstname" v-model="firstname"/>
+                                    <label class="form-label" for="inputFirstName">Farm name :</label>
+                                    <input placeholder="Enter Farm Name" type="text" id="farmname" class="form-control input-style"
+                                           name="farmname" v-model="farmname"/>
                                 </div>
                             </div>
 
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <label class="form-label" for="inputLastName">Last name :</label>
-                                    <input type="text" id="lastname" class="form-control input-style" name="lastname" v-model="lastname"/>
+                                    <label class="form-label" for="inputLastName">Farmer name :</label>
+                                    <input placeholder="Enter Farmer Name" type="text" id="farmername" class="form-control input-style" name="farmername" v-model="farmername"/>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +76,7 @@
                                     <label class="form-label" for="inputDivision">Division :</label>
 
                                     <div class="col">
-                                        <input type="text" id="division" class="form-control input-style"
+                                        <input placeholder="Select Division" type="text" id="division" class="form-control input-style"
                                                name="division" v-model="division"/>
                                         {{--                                <select class="form-select form-info form-control input-style">--}}
                                         {{--                                    <option value="1"></option>--}}
@@ -88,7 +89,7 @@
                                 <div class="form-outline">
                                     <label class="form-label" for="inputDistrict">District :</label>
                                     <div class="col">
-                                        <input type="text" id="district" class="form-control input-style"
+                                        <input placeholder="Select District" type="text" id="district" class="form-control input-style"
                                                name="district" v-model="district"/>
 
                                         {{--                                <select class="form-select form-info form-control input-style">--}}
@@ -105,7 +106,7 @@
                                 <div class="form-outline">
                                     <label class="form-label" for="inputThana">Thana :</label>
                                     <div class="col">
-                                        <input type="text" id="thana" class="form-control input-style" name="thana" v-model="thana"/>
+                                        <input placeholder="Select Thana" type="text" id="thana" class="form-control input-style" name="thana" v-model="thana"/>
 
                                         {{--                                <select class="form-select form-info form-control input-style">--}}
                                         {{--                                    <option value="1"></option>--}}
@@ -119,7 +120,7 @@
                                     <label class="form-label" for="inputPost">Post :</label>
                                     <div class="col">
 
-                                        <input type="text" id="post" class="form-control input-style" name="post" v-model="post"/>
+                                        <input placeholder="Select Post Office" type="text" id="post" class="form-control input-style" name="post" v-model="post"/>
 
 
                                         {{--                                <select class="form-select form-info form-control input-style">--}}
@@ -135,14 +136,14 @@
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label" for="inputNID">NID Number :</label>
-                                    <input type="text" id="nid" class="form-control input-style" name="nid" v-model="nid"/>
+                                    <input placeholder="Enter Farmer NID Number" type="text" id="nid" class="form-control input-style" name="nid" v-model="nid"/>
                                 </div>
                             </div>
 
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label" for="inputContact">Contact Number :</label>
-                                    <input type="text" id="contact" class="form-control input-style" name="contact" v-model="contact"/>
+                                    <input placeholder="Enter Contact Number" type="text" id="contact" class="form-control input-style" name="contact" v-model="contact"/>
                                 </div>
                             </div>
                         </div>
@@ -151,14 +152,14 @@
                     <div class="card-block p-2 card-block-middle mb-4" style="background: #086343">
                         <h4 class="ms-4">Cattle Information</h4>
                     </div>
-                    <div class="card-block p-2 card-block-down mb-4">
+                    <div class="card-block p-2 card-block-down mb-4" style="background: #D7ECCB;">
                         <div class="row px-4">
 
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
                                         <label class="form-label" for="inputSpecies">Cattle Name :</label>
                                         <div class="col">
-                                            <input type="text" id="cattle_name" class="form-control input-style"
+                                            <input placeholder="Enter Cattle Name" type="text" id="cattle_name" class="form-control input-style"
                                                 name="cattle_name" v-model="cattle_name"/>
 
                                             {{--                                <select class="form-select form-info form-control input-style">--}}
@@ -173,7 +174,7 @@
                                     <label class="form-label" for="inputBreed">Cattle Breed :</label>
                                     <div class="col">
 
-                                        <input type="text" id="cattle_breed" class="form-control input-style"
+                                        <input placeholder="Select Cattle Bread" type="text" id="cattle_breed" class="form-control input-style"
                                                name="cattle_breed" v-model="cattle_breed"/>
 
 
@@ -187,7 +188,7 @@
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label" for="inputAge">Age :</label>
-                                    <input type="text" id="age" class="form-control input-style" name="age" v-model="age"/>
+                                    <input placeholder="Enter Cattle Age" type="text" id="age" class="form-control input-style" name="age" v-model="age"/>
                                 </div>
                             </div>
 
@@ -198,7 +199,7 @@
                             <div class="form-outline">
                                     <label class="form-label" for="inputSpecies">Cattle Color :</label>
                                     <div class="col">
-                                        <input type="text" id="cattle_color" class="form-control input-style"
+                                        <input placeholder="Select Cattle Color" type="text" id="cattle_color" class="form-control input-style"
                                                name="cattle_color" v-model="cattle_color"/>
 
                                         {{--                                <select class="form-select form-info form-control input-style">--}}
@@ -210,7 +211,7 @@
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label" for="inputWeight">Weight :</label>
-                                    <input type="text" id="weight" class="form-control input-style" name="weight" v-model="weight"/>
+                                    <input placeholder="Enter Cattle Weight" type="text" id="weight" class="form-control input-style" name="weight" v-model="weight"/>
                                 </div>
                             </div>
 
@@ -220,6 +221,7 @@
                                     <div class="col">
                                         <select class="form-select form-info form-control input-style" name="gender"
                                                 id="gender" v-model="gender">
+                                                <option value="">Select Cattle Gender</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                         </select>
@@ -258,13 +260,13 @@
                         <h4 class="ms-4">Cattle Pictures </h4>
                     </div>
 
-                    <div class="card-block p-2 card-block-down mb-4">
+                    <div class="card-block p-2 card-block-down mb-4" style="background: #D7ECCB;">
 
                         <div class="row px-4 mt-4 mb-3">
 
                             <!--Face of cow-->
                             <div class="col-md-4 mb-5">
-                                <p>Face of cow :</p>
+                                <p>Muzzle of Cow : </p>
                                 <div class="file-upload">
 
                                     <div class="image-upload-wrap">
@@ -397,10 +399,10 @@
                     <div class="card-block p-2 card-block-middle mb-4" style="background: #086343">
                         <h4 class="ms-4">Additional Info</h4>
                     </div>
-                    <div class="card-block p-2 card-block-down mb-4">
+                    <div class="card-block p-2 card-block-down mb-4" style="background: #D7ECCB;">
                         <div class="row px-4">
 
-                            <div class="col-md-4 mb-4">
+                            <!-- <div class="col-md-4 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label" for="health">Add Health :</label>
                                     <div class="col">
@@ -413,12 +415,12 @@
                                         {{--                                </select>--}}
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
-                                    <label class="form-label" for="price">Buying Price :</label>
-                                    <input type="number" id="price" class="form-control input-style" v-model="price"/>
+                                    <label class="form-label" for="price">Current Price: </label>
+                                    <input placeholder="Enter Current Price" type="number" id="price" class="form-control input-style" v-model="price"/>
                                 </div>
                             </div>
 
@@ -452,7 +454,7 @@
                     </div>
 
 
-                    <div class="px-4 mb-4">
+                    <div class="px-4 mb-4" style="background: #D7ECCB;">
 
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
@@ -465,7 +467,7 @@
 
                     <!-- Register button -->
 
-                    <div class="px-4 py-5">
+                    <div class="px-4 py-5" style="background: #D7ECCB;">
                         <button type="button" class="register-button" @click="addcow()" style="background: #086343">Register</button>
 
                     </div>
@@ -483,6 +485,7 @@
         </section>
     </div>
 </div>
+</div>
 
 
 <!--==================== FOOTER ====================-->
@@ -496,8 +499,8 @@
         el: '#app',
         data() {
             return {
-                firstname : "",
-                lastname : "",
+                farmname : "",
+                farmername : "",
                 division : "",
                 district : "",
                 thana : "",
@@ -510,7 +513,7 @@
                 age : "",
                 weight : "",
                 gender : "",
-                health : "",
+                // health : "",
                 price : "",
 
                 face_of_cow: "",
@@ -547,8 +550,8 @@
 
             addcow() {
                 const formData = new FormData();
-                formData.set("firstname", this.firstname);
-                formData.set("lastname", this.lastname);
+                formData.set("farmname", this.farmname);
+                formData.set("farmername", this.farmername);
                 formData.set("division", this.division);
                 formData.set("district", this.district);
                 formData.set("thana", this.thana);
@@ -568,7 +571,7 @@
                 formData.set("special_mark", this.special_mark);
                 formData.set("cow_with_owner", this.cow_with_owner);
 
-                formData.set("health", this.health);
+                // formData.set("health", this.health);
                 formData.set("price", this.price);
 
 

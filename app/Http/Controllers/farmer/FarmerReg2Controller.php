@@ -38,8 +38,8 @@ class FarmerReg2Controller extends Controller
     public function store(Request $request)
     {
         $inputs = \request()->validate([
-            'firstname' => 'required',
-            'lastname' => 'required',
+            'farmname' => 'required',
+            'farmername' => 'required',
             'division' => 'required',
             'district' => 'required',
             'thana' => 'required',
@@ -58,7 +58,6 @@ class FarmerReg2Controller extends Controller
             'right_side' => 'required',
             'special_mark' => 'required',
             'cow_with_owner' => 'required',
-            'health' => 'required',
             'price' => 'required',
 
             'agent_employee_id' => 'nullable',
