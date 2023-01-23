@@ -113,6 +113,7 @@
 
 /* --------------- section -4 : Team members --------------- */
 
+
 /* --------------- section -7 : Partners --------------- */
 
 .partners {
@@ -186,3 +187,44 @@
 }
 
 /* --------------------------------------------------------------------------- end - media screen for 1366 x 768 desktop screens */
+=======
+.contact{
+  width: 531px;
+height: 120px;
+left: 318px;
+top: 6423px;
+
+font-family: 'Roboto Slab';
+font-style: normal;
+font-weight: 600;
+font-size: 40px;;
+line-height: 60px;
+/* or 115% */
+
+
+color: #0D1C11;
+
+}
+.phone{
+  width: 198px;
+height: 59px;
+left: 391.96px;
+top: 6603px;
+
+font-family: 'Roboto Slab';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 29px;
+/* or 162% */
+
+
+color: #0D1C11;
+
+opacity: 0.8;
+}
+.img{
+  background-image: url("images/shape.png");
+ 
+}
+
