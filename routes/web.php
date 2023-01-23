@@ -19,7 +19,8 @@ use App\Http\Controllers\CompanyController;
 */
 
 Route::get('/', function () {
-    return redirect()->route('farmer.login');
+    return view('landing');
+//    return redirect()->route('farmer.login');
 });
 
 Auth::routes();
