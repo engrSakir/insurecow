@@ -45,6 +45,12 @@
   justify-content: space-between;
 }
 
+.services-1-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .services-box-style {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -90,6 +96,10 @@
   text-align: center;
 }
 
+.partner-services {
+  padding: 60px;
+}
+
 /* --------------- section -3 : why choose our service --------------- */
 
 /* --------------- section -4 : Team members --------------- */
@@ -102,6 +112,82 @@
 }
 
 /* --------------- section -4 : Team members --------------- */
+
+
+/* --------------- section -7 : Partners --------------- */
+
+.partners {
+  width: 70%;
+  margin-bottom: 20px;
+  display: block;
+  margin: auto;
+}
+
+.partners-img {
+  margin-bottom: 15px;
+}
+
+.partner-services {
+  padding: 60px;
+}
+
+/* --------------- section -7 : Partners --------------- */
+
+/* --------------------------------------------- media screen for tab ( portrait ) ------------------------------------------- */
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+}
+
+/* ------------------------------------------------------------------------------------ end - media screen for tab ( portrait )  */
+
+/* ------------------------------------------ media screen for tab (landscape) ------------------------------------------------- */
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* For landscape layouts only */
+}
+
+/* -------------------------------------------------------------------------------------- end - media screen for tab (landscape) */
+
+/* --------------------------------------------- media screen for tab (pro) portrait ------------------------------------------- */
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+}
+
+/* ---------------------------------------------------------------------------------- end - media screen for tab (pro) portrait */
+
+/* ---------------------------------------------- media screen for tab ( pro ) landscape --------------------------------------- */
+
+@media only screen and (min-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+}
+
+/* ------------------------------------------------------------------------------- end - media screen for tab ( pro ) landscape  */
+
+/* ------------------------------------------------------- media screen for mobile devices ------------------------------------- */
+@media only screen and (max-width: 600px) {
+  .services-row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .services-1-row {
+    display: block;
+    justify-content: center;
+  }
+
+  .partner-services {
+    padding: 0px;
+  }
+}
+
+/* --------------------------------------------------------------------------------------  end - media screen for mobile devices */
+
+/* ---------------------------------------- media screen for 1366 x 768 desktop screens ---------------------------------------- */
+
+@media only screen and (device-width: 1366px) and (device-height: 768px) {
+}
+
+/* --------------------------------------------------------------------------- end - media screen for 1366 x 768 desktop screens */
+=======
 .contact{
   width: 531px;
 height: 120px;
@@ -141,3 +227,4 @@ opacity: 0.8;
   background-image: url("images/shape.png");
  
 }
+
