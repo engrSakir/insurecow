@@ -27,6 +27,26 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="{{ asset('css/form_page.css') }}"/>
 
+    <style>
+        .active {
+            background: #ffffff;
+        }
+        .border-green {
+            border-left: 0.25rem solid #086343 !important;
+        }
+        body,aside,select,option,header,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
+            cursor: url('{{ asset('images/favicon.png') }}'), auto;
+        }
+        .dropdown-item.active, .dropdown-item:active {
+            color: #fff !important;
+            text-decoration: none;
+            background-color: #086343;
+        }
+        .thead-style {
+            background: #086343 !important;
+        }
+    </style>
+
     <title>InsureCow</title>
 </head>
 
