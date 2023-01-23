@@ -243,18 +243,8 @@
     }
 </script>
 
-{{-- Sweet alert script end --}}
 
 
-<script>
-    const passwordInput = document.querySelector("#password")
-    const eye = document.querySelector("#eye")
-    eye.addEventListener("click", function(){
-        this.classList.toggle("fa-eye-slash")
-        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password"
-        passwordInput.setAttribute("type", type)
-    })
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
     var xValues = ["1", "2", "3", "4", "5","6","7","8"];
@@ -291,7 +281,7 @@ $(document).ready(function () {
     });
     var calendar = $('#calendar').fullCalendar({
       editable: true,
-      events: SITEURL + "/farmer/calendar",
+      events: SITEURL + "/fdashboard/calendar",
       displayEventTime: true,
       editable: true,
       eventRender: function (event, element, view) {
@@ -309,7 +299,7 @@ $(document).ready(function () {
           var start = $.fullCalendar.formatDate(start, "YYYY-MM-DD HH:mm:ss");
           var end = $.fullCalendar.formatDate(end, "YYYY-MM-DD HH:mm:ss");
           $.ajax({
-            url: SITEURL + "/farmer/calendar/create",
+            url: SITEURL + "/fdashboard/calendar/create",
             data: 'title=' + title + '&start=' + start + '&end=' + end,
             type: "POST",
             success: function (data) {
@@ -332,7 +322,7 @@ $(document).ready(function () {
       var start = $.fullCalendar.formatDate(event.start, "YYYY-MM-DD HH:mm:ss");
       var end = $.fullCalendar.formatDate(event.end, "YYYY-MM-DD HH:mm:ss");
       $.ajax({
-        url: SITEURL + '/farmer/calendar/update',
+        url: SITEURL + '/fdashboard/calendar/update',
         data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
         type: "POST",
         success: function (response) {
@@ -345,7 +335,7 @@ $(document).ready(function () {
       if (deleteMsg) {
         $.ajax({
           type: "POST",
-          url: SITEURL + '/farmer/calendar/delete',
+          url: SITEURL + '/fdashboard/calendar/delete',
           data: "&id=" + event.id,
           success: function (response) {
             if(parseInt(response) > 0) {
