@@ -20,7 +20,7 @@ class CalenderController extends Controller
                         ->get(['id','title','start', 'end']);
          return response()->json($data);
         }
-        return view('farmer.calender.index');
+        return view('fdashboard.calender');
     }
     
    

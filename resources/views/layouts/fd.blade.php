@@ -12,6 +12,7 @@
 
     <title>Insurecow</title>
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
@@ -35,7 +36,13 @@
             cursor: url('{{ asset('images/favicon.png') }}'), auto;
         }
     </style>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" />
+    <style>
+      .fc-unthemed td.fc-today { background: #1D5C2C; color: #ffffff; }
+      .fc-event, .fc-event-dot { background: #1D5C2C; border: 1px solid #1D5C2C; color: #ffffff !important; }
+      .fc-time { display: none; }
+      .alert-insurecow { background: #1D5C2C; color: #ffffff; }
+    </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
@@ -62,7 +69,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item border-bottom border-dark {{ (request()->is('superadmin/home')) ? 'active' : '' }} mt-5 pt-2 pb-2">
-            <a class="nav-link text-dark text-dark" href="">
+            <a class="nav-link text-dark text-dark" href="#">
                 <i class="fas fa-fw fa-tachometer-alt text-dark"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -76,13 +83,13 @@
 
         <!-- Nav Item - Registration -->
         <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('fdashboard/reg')) ? 'active' : '' }} pt-2 pb-2">
-            <a class="nav-link text-dark" href="">
+            <a class="nav-link text-dark" href="#">
                 <i class="fas fa-fw  fa-cow text-dark"></i>
                 <span>Cattle</span></a>
         </li>
 
         <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('fdashboard/company_request')) ? 'active' : '' }} pt-2 pb-2">
-            <a href="" class="nav-link text-dark">
+            <a href="#" class="nav-link text-dark">
                 <i class="fas fa-fw fa-chart-line text-dark" aria-hidden="true"></i>
                 <span>Financial</span></a>
         </li>
@@ -90,12 +97,12 @@
 
         <!-- Nav Item - History -->
         <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('fdashboard/history')) ? 'active' : '' }} pt-2 pb-2">
-            <a href="" class="nav-link text-dark">
+            <a href="{{ route('fdashboard.calender') }}" class="nav-link text-dark">
                 <i class="fas fa-fw fa-calendar text-dark"></i>
                 <span>Calendar</span></a>
         </li>
         <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('fdashboard/history')) ? 'active' : '' }} pt-2 pb-2">
-            <a href="" class="nav-link text-dark">
+            <a href="#" class="nav-link text-dark">
                 <i class="fas fa-fw fa-file text-dark"></i>
                 <span>Reports</span></a>
         </li>
@@ -272,6 +279,90 @@
         }
     });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
+<script>
+$(document).ready(function () {
+    var SITEURL = "{{url('/')}}";
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+    var calendar = $('#calendar').fullCalendar({
+      editable: true,
+      events: SITEURL + "/farmer/calendar",
+      displayEventTime: true,
+      editable: true,
+      eventRender: function (event, element, view) {
+        if (event.allDay === 'true') {
+          event.allDay = true;
+        } else {
+          event.allDay = false;
+        }
+      },
+      selectable: true,
+      selectHelper: true,
+      select: function (start, end, allDay) {
+        var title = prompt('Event Title:');
+        if (title) {
+          var start = $.fullCalendar.formatDate(start, "YYYY-MM-DD HH:mm:ss");
+          var end = $.fullCalendar.formatDate(end, "YYYY-MM-DD HH:mm:ss");
+          $.ajax({
+            url: SITEURL + "/farmer/calendar/create",
+            data: 'title=' + title + '&start=' + start + '&end=' + end,
+            type: "POST",
+            success: function (data) {
+              displayMessage("Added Successfully");
+            }
+          });
+          calendar.fullCalendar('renderEvent',
+          {
+            title: title,
+            start: start,
+            end: end,
+            allDay: false
+          },
+          true
+        );
+      }
+      calendar.fullCalendar('unselect');
+    },
+    eventDrop: function (event, delta) {
+      var start = $.fullCalendar.formatDate(event.start, "YYYY-MM-DD HH:mm:ss");
+      var end = $.fullCalendar.formatDate(event.end, "YYYY-MM-DD HH:mm:ss");
+      $.ajax({
+        url: SITEURL + '/farmer/calendar/update',
+        data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
+        type: "POST",
+        success: function (response) {
+          displayMessage("Updated Successfully");
+        }
+      });
+    },
+    eventClick: function (event) {
+      var deleteMsg = confirm("Do you really want to delete?");
+      if (deleteMsg) {
+        $.ajax({
+          type: "POST",
+          url: SITEURL + '/farmer/calendar/delete',
+          data: "&id=" + event.id,
+          success: function (response) {
+            if(parseInt(response) > 0) {
+              $('#calendar').fullCalendar('removeEvents', event.id);
+              displayMessage("Deleted Successfully");
+            }
+          }
+        });
+      }
+    }
+  });
+});
+function displayMessage(message) {
+  $(".response").html("<div class='alert alert-insurecow'>"+message+"</div>");
+  setInterval(function() { $(".success").fadeOut(); }, 1000);
+}
+</script> 
 </body>
 
 </html>
