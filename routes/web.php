@@ -155,6 +155,7 @@ Route::middleware(['superadmin', 'auth'])->group(function () {
 
 Route::group(['prefix' => 'fdashboard'], function () {
     Route::get('home', 'FarmerDashboardController@index')->name('fdashboard.index');
+    Route::get('calender', 'farmer\CalenderController@index')->name('fdashboard.calender');
 
 });
 
