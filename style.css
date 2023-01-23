@@ -192,6 +192,27 @@
   .partner-services {
     padding: 0px;
   }
+
+  .right-side-mobile {
+    display: none;
+  }
+
+  .contact-us-mobile-button-alignment {
+    margin-top: 10px;
+  }
+
+  .services {
+    padding: 30px;
+  }
+
+  .partner-services {
+    padding: 30px;
+  }
+
+  .footer-img-mobile-state {
+    display: block;
+    margin: auto;
+  }
 }
 
 /* --------------------------------------------------------------------------------------  end - media screen for mobile devices */
@@ -202,7 +223,6 @@
 }
 
 /* --------------------------------------------------------------------------- end - media screen for 1366 x 768 desktop screens */
-
 
 .contact {
   width: 531px;
