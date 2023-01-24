@@ -24,10 +24,15 @@
             integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
+            <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <title>InsureCow</title>
 
     <style>
+        html, body {
+            font-family: 'Roboto Slab', serif !important;
+        }
         .active {
             background: #ffffff;
         }
