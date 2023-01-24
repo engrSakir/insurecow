@@ -23,6 +23,11 @@ class FarmerDashboardController extends Controller
         return view('fdashboard.cattle', compact('registeredcattles'));
     }
 
+    public function financial()
+    {
+        return view('fdashboard.financial');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

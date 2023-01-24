@@ -82,13 +82,13 @@
 
         <!-- Nav Item - Registration -->
         <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('fdashboard/reg')) ? 'active' : '' }} pt-2 pb-2">
-            <a class="nav-link text-dark" href="#">
+            <a class="nav-link text-dark" href="{{ route('fdashboard.cattle') }}">
                 <i class="fas fa-fw  fa-cow text-dark"></i>
                 <span>Cattle</span></a>
         </li>
 
         <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('fdashboard/company_request')) ? 'active' : '' }} pt-2 pb-2">
-            <a href="#" class="nav-link text-dark">
+            <a href="{{ route('fdashboard.financial') }}" class="nav-link text-dark">
                 <i class="fas fa-fw fa-chart-line text-dark" aria-hidden="true"></i>
                 <span>Financial</span></a>
         </li>

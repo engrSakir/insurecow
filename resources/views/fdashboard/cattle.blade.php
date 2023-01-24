@@ -300,7 +300,7 @@ nav .navbar-nav li a:hover {
     .right-card {
         box-shadow: rgba(62, 135, 27, 0.25) 0px 4px 10px;
     }
-}08
+}
 </style>
 @section('content')
     <!-- Main Content -->
@@ -309,8 +309,8 @@ nav .navbar-nav li a:hover {
         <div class="container-fluid">
             <!-- DataTales Example -->
             <!-- Content Row -->
+            <h3>Cattle</h3>
             <div class="row">
-
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-3 col-md-6">
                     <div class="card" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
@@ -380,31 +380,9 @@ nav .navbar-nav li a:hover {
 
                 <!-- Pending Requests Card Example -->
                 <div class="col-xl-3 col-md-6">
-                    <div class="card" style="height: 260px; width:231px;background: #000000;border-radius: 5px; ">
+                    <div class="card">
                         <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-uppercase mb-1 ctext" style="">
-                                        Monthly Profits</div>
-
-                                    <div>
-                                        <p class="para">Total Profit Growth of 16%</p>
-                                        <ul>
-                                        <li class="feed">Feed Costs</li>
-                                        <p class="sixteen">16%</p>
-                                            <li class="medical">Medical Costs</li>
-                                            <p class="twenty">20%</p>
-                                            <li class="Affiliate"> Affiliate</li>
-                                            <p class="sixteen">12%</p>
-
-
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
+                            <img src="{{ asset('images/pie.png') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -413,7 +391,7 @@ nav .navbar-nav li a:hover {
 
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4" style="position: relative; top: -70px">
+                <div class="col-xl-3 col-md-6 mb-4" style="position: relative; top: -20px">
                     <div class="card" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
@@ -434,7 +412,7 @@ nav .navbar-nav li a:hover {
                 </div>
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4" style="position: relative; top: -70px">
+                <div class="col-xl-3 col-md-6 mb-4" style="position: relative; top: -20px">
                     <div class="card" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
@@ -455,7 +433,7 @@ nav .navbar-nav li a:hover {
                 </div>
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4" style="position: relative; top: -70px">
+                <div class="col-xl-3 col-md-6 mb-4" style="position: relative; top: -20px">
                     <div class="card" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
