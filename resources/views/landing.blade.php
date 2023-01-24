@@ -143,6 +143,8 @@
                               <span class="font-size">{{ Auth::user()->name }}</span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+
                                 <li><a class="dropdown-item" href="{{ route('log_out') }}">Sign Out</a></li>
                             </ul>
                         </li>

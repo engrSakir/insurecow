@@ -20,7 +20,7 @@
                 @endif
         <form class="{{ route('farmerprofiles.store') }}" method="POST" enctype="multipart/form-data"  style="background: #D7ECCB;">
             @csrf
-            <div class="card-block p-2 card-block-top mb-4">
+            <div class="card-block p-2 card-block-top mb-4" style="background-color: #0f6848">
                 <h4 class="ms-4">Farmer Profile</h4>
             </div>
             <div class="card-block p-2 card-block-down"  style="background: #D7ECCB;">
@@ -29,14 +29,14 @@
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputFirstName">First name :</label>
-                            <input type="text" id="inputFirstName" class="form-control input-style" name="first_name" />
+                            <input type="text" id="inputFirstName" class="form-control input-style" name="first_name" placeholder="First Name"/>
                         </div>
                     </div>
 
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Last name :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="last_name" />
+                            <input type="text" id="inputLastName" class="form-control input-style" name="last_name" placeholder="Last Name" />
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -54,31 +54,31 @@
                     <div class="mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Address :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="address"/>
+                            <input type="text" id="inputLastName" class="form-control input-style" placeholder="Address" name="address"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">City :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="city"/>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="city" placeholder="City"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">District :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="district"/>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="district" placeholder="District"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Zip Code :</label>
-                            <input type="number" id="inputLastName" class="form-control input-style" name="zip_code"/>
+                            <input type="number" id="inputLastName" class="form-control input-style" name="zip_code" placeholder="Zip Code"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Country :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="country"/>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="country" placeholder="Country"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -87,6 +87,7 @@
                             <input type="file" id="inputLastName" class="form-control input-style" name="image"/>
                         </div>
                     </div><hr>
+                    <br>
                     <div class="col-md-6 mb-4">
 
                         <button type="submit" class="btn text-white" style="background: #086343;">Save</button>
