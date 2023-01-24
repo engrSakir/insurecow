@@ -55,11 +55,11 @@
 
                 @if(\App\Company::where('user_id',auth()->user()->id)->count() == 0)
                 <div class="sidebar-brand-icon mt-5">
-                    <img src="{{ asset('images/logo.png') }}" class="img-fluid" width="100px">
+                    <img src="{{ asset('images/logo.png') }}" class="img-fluid" width="100px" alt="company">
                 </div>
                 @else
                 <div class="sidebar-brand-icon mt-5">
-                    <img src="{{ asset('storage/'.\App\Company::where('user_id', auth()->user()->id)->orderBy('id','desc')->first()->image) }}" class="img-fluid" width="100px">
+                    <img src="{{ asset('storage/'.\App\Company::where('user_id', auth()->user()->id)->orderBy('id','desc')->first()->image) }}" class="img-fluid" width="100px" alt="nothing">
                 </div>
                 @endif
 

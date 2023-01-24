@@ -1,307 +1,5 @@
 @extends('layouts.fd')
-<style>
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
 
-/*=============== BASE ===============*/
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
-
-html body {
-    font-family: "Poppins", sans-serif;
-    color: #082E13;
-}
-
-.hr-style {
-    margin: 0;
-    background: #2F673F;
-}
-
-/*=============== NAVBAR ===============*/
-
-nav .navbar-nav li a {
-    font-size: 18px;
-    color: #082E13 !important;
-}
-
-nav .navbar-nav li a:hover {
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 2px;
-    text-decoration-color: #1D5C2E;
-}
-
-.navbar-light .navbar-toggler {
-    border-color: #fff;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-}
-
-.vr-style {
-    color: #2F673F;
-    margin-top: 14px;
-    height: 30px;
-}
-
-.signout-button {
-    width: 140px;
-    background: #23BB86;
-    color: #fff;
-    font-size: 18px;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 0px;
-}
-
-/*=============== DATATABLE ===============*/
-
-table.dataTable {
-    box-shadow: rgba(79, 172, 35, 0.67) 0px 4px 8px;
-    border-radius: 4px;
-    border: none !important;
-}
-
-.dataTables_wrapper>div {
-    margin: 25px;
-}
-
-th,
-td {
-    padding-left: 10px !important;
-    border: none !important;
-}
-
-.thead-style {
-    background-color: #23BB86;
-    color: #fff;
-}
-
-table tbody tr:nth-child(2n+1) {
-    background-color: #f8f7f5 !important;
-}
-
-/* Action Button */
-.details-button {
-    width: 100px;
-    background: #23BB86;
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 0px;
-}
-
-/* Pagination */
-.dataTables_wrapper .dataTables_paginate .paginate_button.current,
-.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-    background: none !important;
-    background-color: #C7F8C9 !important;
-    border: none;
-    color: #082E13 !important;
-}
-
-.paginate_button.current:hover {
-    background: none !important;
-    background-color: #C7F8C9 !important;
-    background-color: none !important;
-    border: none;
-    color: #082E13 !important;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-    color: #082E13 !important;
-    background: none !important;
-    border: none;
-    background-color: #C7F8C9 !important;
-}
-
-/*=============== FOOTER ===============*/
-
-.language-footer {
-    text-decoration: none;
-    color: #082E13;
-}
-
-.language-footer:hover {
-    color: #082E13;
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 2px;
-    text-decoration-color: #1D5C2E;
-}
-
-/*=============== Media screen for mobile devices ===============*/
-
-@media only screen and (max-width: 600px) {
-
-    /* Navbar */
-    .signout-button {
-        width: 120px;
-        padding: 6px 0px;
-    }
-}
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
-
-/*=============== BASE ===============*/
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
-
-html body {
-    font-family: "Poppins", sans-serif;
-    color: #082E13;
-}
-
-.hr-style {
-    margin: 0;
-    background: #2F673F;
-}
-
-.fontAwesome {
-    font-family: Helvetica, 'FontAwesome', sans-serif;
-}
-
-/*=============== NAVBAR ===============*/
-
-nav .navbar-nav li a {
-    font-size: 18px;
-    color: #082E13 !important;
-}
-
-nav .navbar-nav li a:hover {
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 2px;
-    text-decoration-color: #1D5C2E;
-}
-
-.navbar-light .navbar-toggler {
-    border-color: #fff;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-}
-
-.vr-style {
-    color: #2F673F;
-    margin-top: 14px;
-    height: 30px;
-}
-
-.signout-button {
-    width: 140px;
-    background: #23BB86;
-    color: #fff;
-    font-size: 18px;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 0px;
-}
-
-/*=============== REGISTER ===============*/
-
-/* Image Card */
-.card-style {
-    background-color: #EFFFF080;
-    border-radius: 10px;
-    border: none;
-}
-
-/* Right Card */
-.right-card {
-    background-color: #FDFCFC;
-    border-radius: 10px;
-    border: none;
-    box-shadow: rgba(79, 172, 35, 0.67) 0px 4px 8px;
-}
-
-.heading-text {
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.subheading-text {
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.input-form {
-    border-radius: 10px;
-}
-
-/* Register Button*/
-.register-button {
-    width: 12rem;
-    background: #23BB86;
-    color: #fff;
-    font-size: 18px;
-    text-align: center;
-    border: none;
-    border-radius: 50px;
-    padding: 5px 0px;
-    margin-bottom: 80px;
-}
-
-/*=============== FOOTER ===============*/
-
-.language-footer {
-    text-decoration: none;
-    color: #082E13;
-}
-
-.language-footer:hover {
-    color: #082E13;
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 2px;
-    text-decoration-color: #1D5C2E;
-}
-
-/*=============== Media screen for mobile devices ===============*/
-
-@media only screen and (max-width: 600px) {
-
-    /* Navbar */
-    .signout-button {
-        width: 120px;
-        padding: 6px 0px;
-    }
-
-    .card-style {
-        display: none;
-    }
-
-    .right-card {
-        box-shadow: rgba(62, 135, 27, 0.25) 0px 4px 10px;
-    }
-}
-
-/*=============== Media screen for tab (portrait) ===============*/
-
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
-
-    .card-style {
-        display: none;
-    }
-
-    .right-card {
-        box-shadow: rgba(62, 135, 27, 0.25) 0px 4px 10px;
-    }
-}
-</style>
 @section('content')
     <!-- Main Content -->
     <div id="content">
@@ -462,41 +160,61 @@ nav .navbar-nav li a:hover {
 
             <!-- Content Row -->
 
-            <div class="row">
-                <div class="col-lg-12">
-                <table id="insurecow-datatable" class="display dataTable no-footer dtr-inline" style="width: 100%;" aria-describedby="insurecow-datatable_info">
-    <thead class="thead-style">
-        <tr>
-            <th class="sorting sorting_asc" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 47px;" aria-sort="ascending" aria-label="ID: activate to sort column descending">ID</th>
-            <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 211px;" aria-label="Farmer Name: activate to sort column ascending">Owner Image</th>
-            <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 211px;" aria-label="Farmer Name: activate to sort column ascending">Farm Name</th>
-            <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 211px;" aria-label="Farmer Name: activate to sort column ascending">Farmer Name</th>
-            <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 211px;" aria-label="Farmer Name: activate to sort column ascending">Cattle Weight</th>
-            <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 150px;" aria-label="Thana: activate to sort column ascending">Cattle Color</th>
-            <th class="sorting" tabindex="0" aria-controls="insurecow-datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Action: activate to sort column ascending">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-            @foreach($registeredcattles as $registeredcattle)
-            <tr>
-                <td class="dtr-control sorting_1" tabindex="0">{{ $registeredcattle->id }}</td>
-                <td><img src="{{ url('storage/'.$registeredcattle->cow_with_owner) }}" width="50px"></td>
-                <td>{{ $registeredcattle->farmname }}</td>
-                <td>{{ $registeredcattle->farmername }}</td>
-                <td>{{ $registeredcattle->weight }}</td>
-                <td>{{ $registeredcattle->cattle_color }}</td>
-                <td>
-                    <a href="{{ route('show.farmer.registered.cattle', $registeredcattle->id) }}" class="btn text-white" style="background: #086343">Details</a>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+
+
+
+        <!-- /.container-fluid -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold" style="color: #086343">Latest Added User</h6>
+            </div>
+            {{-- export button --}}
+            {{-- <div style="display: flex; justify-content:right ; padding:20px;">
+                <a href="{{route('superadmin.download')}}" class="btn btn-success">Export Excel</a>
+            </div> --}}
+            <div  style="display: flex; justify-content:right ; padding:20px;">
+
+                <a href="#" class="d-none d-sm-inline-block btn btn-sm shadow-sm text-white" style="background: #086343;"><i
+                        class="fas fa-download fa-sm text-white"></i> Generate Report</a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead style="background-color: #0f6848;color: #FFFFFF">
+                        <tr align="center">
+
+                            <th>ID</th>
+                            <th>Cattle Name</th>
+                            <th>Cattle Color</th>
+                            <th>Gender</th>
+                            <th>Action</th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        <tr align="center">
+                            <td>hfgdhfg</td>
+                            <td>hfgh</td>
+                            <td>hfgh</td>
+                            <td>hfgh</td>
+
+                            <td><a href="" class="btn text-white" style="background: #086343;"><i class="fa fa-info-circle " aria-hidden="true"></i></a>
+
+                            <a href=""  class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+
+                        </tr>
+
+
+
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
         </div>
-        <!-- /.container-fluid -->
+    </div>
     </div>
     <!-- End of Main Content -->
 @endsection
