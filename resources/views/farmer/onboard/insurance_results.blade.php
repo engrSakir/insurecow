@@ -18,9 +18,9 @@
                             $image = App\Company::where('user_id', $pakage->user_id)->first();
                         ?>
                         @if($image)
-                            <img src="{{ asset('storage/' . $image->image) }}" class="img-fluid" width="200px">
+                            <img src="{{ asset('storage/' . $image->image) }}" class="img-fluid mb-3" width="200px">
                         @else
-                            <img src="https://www.ncenet.com/wp-content/uploads/2020/04/No-image-found.jpg" alt="">
+                            <img src="https://www.ncenet.com/wp-content/uploads/2020/04/No-image-found.jpg" class="img-fluid mb-3" width="200px">
                         @endif
 
                         </div>
@@ -37,17 +37,6 @@
                             <span style="margin-left: 10px; margin-right: 10px">{{$pakage->coverage}}</span>
                         </div>
                         <div class="text-box p-5" style="display: inline-block">
-                            <!-- <a href="{{ route('onboard.show',
-                                [$pakage->id,
-                                $data['cattle_id'],
-                                $data['buying_price'],
-                                $data['insurance_period'],
-                                $data['accidental_mortality'],
-                                $data['additionalcoverages']])
-                            }}"
-                            class="btn w-100 mb-2"
-                            style="background: #d9d9d9">
-                            Details</a> -->
                             <form action="{{ route('onboard.show', $pakage->id) }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="cattle_id" value="{{ $data['cattle_id'] }}">
@@ -60,7 +49,6 @@
                                 <button type="submit" class="btn w-100" style="background: #d9d9d9">Details</button>
                             </form>
                             <br>
-                            <!-- <a href="" class="btn w-100 text-white"  style="background: #082E13">Request Now</a> -->
                             <form action="{{ route('insurance.single.save') }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="cattle_id" value="{{ $data['cattle_id'] }}">

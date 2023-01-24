@@ -1,0 +1,50 @@
+        html, body {
+            font-family: 'Roboto Slab', serif !important;
+        }
+        html:focus{
+            background-color: transparent;
+            border: 0px solid transparent;
+        }
+        .active {
+            background: #ffffff;
+        }
+        .border-green {
+            border-left: 0.25rem solid #086343 !important;
+        }
+        body,aside,select,option,header,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
+            cursor: url('{{ asset('images/favicon.png') }}'), auto;
+        }
+        @media only screen and (max-width: 320px) {
+            .homepage {
+                display:none;
+            }
+            .p-greeting {
+                text-align: justify;
+            }
+        }
+        @media only screen and (max-width: 778px) {
+            .homepage {
+                display:none;
+            }
+            .p-greeting {
+                text-align: justify;
+            }
+        }
+
+        .active {
+            background: #ffffff;
+        }
+        .border-green {
+            border-left: 0.25rem solid #086343 !important;
+        }
+        body,aside,select,option,header,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
+            cursor: url('{{ asset('images/favicon.png') }}'), auto;
+        }
+        .dropdown-item.active, .dropdown-item:active {
+            color: #fff !important;
+            text-decoration: none;
+            background-color: #086343;
+        }
+        .thead-style {
+            background: #086343 !important;
+        }
