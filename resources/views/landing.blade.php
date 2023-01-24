@@ -126,8 +126,8 @@
                     </li>
                 </ul>
 
-                <a href="{{asset('farmer/login')}}" class="btn mr-sm-2 btn-light">Sign in</a>
-                <a href="{{asset('log_out')}}" class="btn btn-success">Sign Up</a>
+                <a href="{{route('farmer.login')}}" class="btn mr-sm-2 btn-light">Sign in</a>
+                <a href="{{route('register')}}" class="btn btn-success">Sign Up</a>
             </div>
         </nav>
 
