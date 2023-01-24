@@ -67,6 +67,8 @@ Route::middleware(['company', 'auth'])->group(function () {
 
 
 
+
+
     });
 });
 
@@ -125,6 +127,17 @@ Route::middleware(['farmer', 'auth'])->group(function () {
         Route::get('/farmer/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');
         Route::get('/view/pdf/{id}/{cattle_id}', 'farmer\FarmerExpenseController@viewpdf')->name('view.pdf');
         Route::resource('send', 'farmer\SendRequestController');
+
+//-------------------------------------------Farmer Dashboard------------------------------------
+
+        Route::get('fdashboard', 'FarmerDashboardController@index')->name('fdashboard.index');
+        Route::get('cattles', 'FarmerDashboardController@cattle')->name('fdashboard.cattle');
+        Route::get('calendar', 'farmer\CalenderController@index')->name('fdashboard.calender');
+        Route::post('calendar/create', 'farmer\CalenderController@create');
+        Route::post('calendar/update', 'farmer\CalenderController@update');
+        Route::post('calendar/delete', 'farmer\CalenderController@destroy');
+
+        //--------------------------------------------------------------------Farmer Dashboard End------------------------
     });
 });
 
@@ -157,6 +170,7 @@ Route::group(['prefix' => 'fdashboard'], function () {
     Route::post('calendar/update', 'farmer\CalenderController@update');
     Route::post('calendar/delete', 'farmer\CalenderController@destroy');
 });
+
 
 
 Route::get('log_out', function () {

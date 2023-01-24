@@ -59,7 +59,7 @@
 
         <!-- Sidebar - Brand -->
 
-        <a href="{{route('fdashboard.index')}}" class="sidebar-brand d-flex align-items-center justify-content-center">
+        <a href="{{route('farmer.index')}}" class="sidebar-brand d-flex align-items-center justify-content-center">
             <div class="sidebar-brand-icon mt-5">
                 <img src="{{ asset('images/logo.png') }}" class="img-fluid">
             </div>
@@ -67,22 +67,17 @@
 
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item border-bottom border-dark {{ (request()->is('fdashboard/home')) ? 'active' : '' }} mt-5 pt-2 pb-2">
+        <li class="nav-item border-bottom border-dark {{ (request()->is('fdashboard/fdashboard')) ? 'active' : '' }} mt-5 pt-2 pb-2">
             <a class="nav-link text-dark text-dark" href="{{route('fdashboard.index')}}">
                 <i class="fas fa-fw fa-tachometer-alt text-dark"></i>
                 <span>Dashboard</span></a>
         </li>
 
-
-
-
-
-
-
-
         <!-- Nav Item - Registration -->
+
         <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('fdashboard/reg')) ? 'active' : '' }} pt-2 pb-2">
             <a class="nav-link text-dark" href="{{ route('fdashboard.cattle') }}">
+
                 <i class="fas fa-fw  fa-cow text-dark"></i>
                 <span>Cattle</span></a>
         </li>

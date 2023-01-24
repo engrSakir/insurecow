@@ -292,7 +292,7 @@ nav .navbar-nav li a:hover {
 /*=============== Media screen for tab (portrait) ===============*/
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
-    
+
     .card-style {
         display: none;
     }
@@ -486,7 +486,7 @@ nav .navbar-nav li a:hover {
                 <td>{{ $registeredcattle->weight }}</td>
                 <td>{{ $registeredcattle->cattle_color }}</td>
                 <td>
-                    <a href="{{ route('show.farmer.registered.cattle', $registeredcattle->id) }}" class="btn text-white" style="background: #086343">Details</a>    
+                    <a href="{{ route('show.farmer.registered.cattle', $registeredcattle->id) }}" class="btn text-white" style="background: #086343">Details</a>
                 </td>
             </tr>
             @endforeach

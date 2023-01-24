@@ -74,7 +74,7 @@
                         <li class="nav-item navbar-brand">
                             <!-- <button type="submit" class="signout-button">SignOut</button> -->
 
-                            <a href="{{route('send.index')}}" class="btn signout-button" style="background: #086343; color: #ffffff !important">Request</a>
+                            <a href="{{route('fdashboard.index')}}" class="btn signout-button" style="background: #086343; color: #ffffff !important">Farm Manage</a>
 
                         </li>
                         <!--Sign out-->
