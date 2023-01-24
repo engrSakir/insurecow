@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,14 +29,11 @@
         body,aside,select,option,header,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
             cursor: url('{{ asset('images/favicon.png') }}'), auto;
         }
-        </style>
+    </style>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-
-
-
 </head>
 
 <body id="page-top">
@@ -159,7 +155,7 @@
 
     <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
-<!-- Bootstrap core JavaScript-->
+    <!-- Bootstrap core JavaScript-->
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -198,7 +194,6 @@
               button:"OK",
             })
         </script>
-
     @endif
 
     @if(session()->has('alt'))
@@ -207,7 +202,6 @@
           button:"OK",
         })
     </script>
-
    @endif
 
    @if(session()->has('alrt'))
@@ -216,7 +210,6 @@
           button:"OK",
         })
     </script>
-
    @endif
 
    <script type="text/javascript">

@@ -36,7 +36,7 @@
             </div>
 
             <div class="col-lg-4">
-                <img src="{{ asset('images/welcome.png') }}" alt="" class="img-fluid rounded">
+                <img src="{{ asset('images/welcome.png') }}" alt="" class="img-fluid rounded homepage" style="box-shadow: 0 10px 50px #000000;">
             </div>
             
             @endif

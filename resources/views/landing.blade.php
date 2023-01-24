@@ -36,6 +36,9 @@
     />
     <link
         rel="stylesheet"
+        href="{{ asset('/css/landing_styles.css') }}"
+    <link
+        rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link
@@ -126,8 +129,27 @@
                     </li>
                 </ul>
 
-                <a href="{{route('farmer.login')}}" class="btn mr-sm-2 btn-light">Sign in</a>
-                <a href="{{route('register')}}" class="btn btn-success">Sign Up</a>
+                @if(auth()->user())
+                <li class="nav-item dropdown navbar-brand">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                @php
+                                  $profile = App\FarmerProfile::where('user_id', Auth::user()->id)->first();
+                                @endphp
+                              @if($profile)
+                                <img src="{{ asset('/storage/'.$profile->image) }}" class="img-fluid bs-img" width="20px">
+                              @else
+                                <img src="{{ asset('/images/profile.png') }}" class="img-fluid bs-img" width="20px">
+                              @endif
+                              <span class="font-size">{{ Auth::user()->name }}</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ route('log_out') }}">Sign Out</a></li>
+                            </ul>
+                        </li>
+                @else
+                    <a href="{{route('farmer.login')}}" class="btn mr-sm-2 btn-light">Sign in</a>
+                    <a href="{{route('register')}}" class="btn btn-success">Sign Up</a>
+                @endif
             </div>
         </nav>
 
