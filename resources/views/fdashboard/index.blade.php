@@ -85,19 +85,31 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-uppercase mb-1 ctext" style="">
                                         Monthly Profits</div>
+                                    <p class="para">Total Profit Growth of 16%</p>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-7 ">
+                                                <ul class="ul">
+                                                    <li class="feed">Feed Costs</li>
+                                                    <p class="sixteen">16%</p>
+                                                    <li class="medical">Medical Costs</li>
+                                                    <p class="twenty">20%</p>
+                                                    <li class="Affiliate"> Affiliate</li>
+                                                    <p class="sixteen">12%</p>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4">
 
-                                    <div>
-                                        <p class="para">Total Profit Growth of 16%</p>
-                                        <ul>
-                                        <li class="feed">Feed Costs</li>
-                                        <p class="sixteen">16%</p>
-                                            <li class="medical">Medical Costs</li>
-                                            <p class="twenty">20%</p>
-                                            <li class="Affiliate"> Affiliate</li>
-                                            <p class="sixteen">12%</p>
+
+                                                <img class="img" src="{{asset('images/Component.png')}}" alt="component">
 
 
-                                        </ul>
+
+
+                                            </div>
+                                        </div>
+
+
 
                                     </div>
 
@@ -225,19 +237,21 @@
                 </div> --}}
                 <div  style="display: flex; justify-content:right ; padding:20px;">
 
-                    <a href="" class="d-none d-sm-inline-block btn btn-sm shadow-sm text-white" style="background: #086343;"><i
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm shadow-sm text-white" style="background: #086343;"><i
                             class="fas fa-download fa-sm text-white"></i> Generate Report</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
+                            <thead style="background-color:#0f6848; color: #FFFFFF ">
                             <tr align="center">
 
-                                <th>User Name</th>
+
                                 <th>Date</th>
-                                <th>Details</th>
-                                <th>Delete</th>
+                                <th>Cattle Name</th>
+                                <th>Cattle Id</th>
+                                <th>Gender</th>
+                                <th>Action</th>
 
                             </tr>
                             </thead>
@@ -245,14 +259,17 @@
                             <tbody>
 
                                 <tr align="center">
-                                    <td></td>
-                                    <td></td>
+                                    <td>hfgdhfg</td>
+                                    <td>hfgh</td>
+                                    <td>hfgh</td>
+                                    <td>hfgh</td>
 
-                                    <td><a href="" class="btn text-white" style="background: #086343;"><i class="fa fa-info-circle " aria-hidden="true"></i></a></td>
+                                    <td><a href="" class="btn text-white" style="background: #086343;"><i class="fa fa-info-circle " aria-hidden="true"></i></a>
 
-                                    <td><a href=""  class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                    <a href=""  class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 
                                 </tr>
+
 
 
 

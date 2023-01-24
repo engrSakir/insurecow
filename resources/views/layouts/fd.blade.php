@@ -150,13 +150,11 @@
 <!-- Logout Modal-->
 <!-- Page level custom scripts -->
 
-
 <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
 
 <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
 <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
-<!-- Bootstrap core JavaScript-->
-<!-- Bootstrap core JavaScript-->
+
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
@@ -167,29 +165,12 @@
 <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 
 <!-- Page level plugins -->
+
 <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
 <!-- Page level custom scripts -->
 <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
-
-<!-- Custom scripts for all pages-->
-<!---- -->
-
-    <!--=============== DATATABLE JS ===============-->
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        $(document).ready(function () {
-            $('#insurecow-datatable').DataTable();
-        });
-
-        $('#insurecow-datatable').DataTable({
-            responsive: true
-        });
-    </script>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -211,7 +192,6 @@
     </script>
 
 @endif
-
 @if(session()->has('alt'))
     <script>
         swal("Done!!","{!! Session::get('alt')!!}","success",{
@@ -220,10 +200,26 @@
     </script>
 
 @endif
-
 @if(session()->has('alrt'))
     <script>
         swal("Done!!","{!! Session::get('alrt')!!}","success",{
+            button:"OK",
+        })
+    </script>
+
+@endif
+
+@if(session()->has('qts'))
+    <script>
+        swal("Done!!","{!! Session::get('qts')!!}","success",{
+            button:"OK",
+        })
+    </script>
+
+@endif
+@if(session()->has('pkg'))
+    <script>
+        swal("Done!!","{!! Session::get('pkg')!!}","success",{
             button:"OK",
         })
     </script>
@@ -253,6 +249,7 @@
 </script>
 
 
+{{--calenedar with bar--}}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
@@ -362,6 +359,7 @@ function displayMessage(message) {
   setInterval(function() { $(".success").fadeOut(); }, 1000);
 }
 </script>
+<script src></script>
 </body>
 
 </html>

@@ -133,6 +133,8 @@ Route::middleware(['farmer', 'auth'])->group(function () {
         Route::get('fdashboard', 'FarmerDashboardController@index')->name('fdashboard.index');
         Route::get('cattles', 'FarmerDashboardController@cattle')->name('fdashboard.cattle');
         Route::get('calendar', 'farmer\CalenderController@index')->name('fdashboard.calender');
+        Route::get('financial', 'FarmerDashboardController@financial')->name('fdashboard.financial');
+
         Route::post('calendar/create', 'farmer\CalenderController@create');
         Route::post('calendar/update', 'farmer\CalenderController@update');
         Route::post('calendar/delete', 'farmer\CalenderController@destroy');
@@ -161,15 +163,15 @@ Route::middleware(['superadmin', 'auth'])->group(function () {
 });
 
 
-Route::group(['prefix' => 'fdashboard'], function () {
-    Route::get('home', 'FarmerDashboardController@index')->name('fdashboard.index');
-    Route::get('cattles', 'FarmerDashboardController@cattle')->name('fdashboard.cattle');
-    Route::get('financial', 'FarmerDashboardController@financial')->name('fdashboard.financial');
-    Route::get('calendar', 'farmer\CalenderController@index')->name('fdashboard.calender');
-    Route::post('calendar/create', 'farmer\CalenderController@create');
-    Route::post('calendar/update', 'farmer\CalenderController@update');
-    Route::post('calendar/delete', 'farmer\CalenderController@destroy');
-});
+//Route::group(['prefix' => 'fdashboard'], function () {
+//    Route::get('home', 'FarmerDashboardController@index')->name('fdashboard.index');
+//    Route::get('cattles', 'FarmerDashboardController@cattle')->name('fdashboard.cattle');
+//    Route::get('financial', 'FarmerDashboardController@financial')->name('fdashboard.financial');
+//    Route::get('calendar', 'farmer\CalenderController@index')->name('fdashboard.calender');
+//    Route::post('calendar/create', 'farmer\CalenderController@create');
+//    Route::post('calendar/update', 'farmer\CalenderController@update');
+//    Route::post('calendar/delete', 'farmer\CalenderController@destroy');
+//});
 
 
 

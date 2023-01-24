@@ -71,6 +71,7 @@ class CompanyProfileController extends Controller
             'address' => 'required',
 
 
+
         ];
 
 
