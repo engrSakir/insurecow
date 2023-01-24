@@ -43,7 +43,7 @@
                           <h5 class="mb-4">Contact Us</h5>
                           <ul class="list-unstyled mb-0">
                               <li class="mb-2">
-                                  Phone : +880 1755680807 
+                                  Phone : +880 1755680807
                               </li>
                               <li class="mb-2">
                                   E-mail : inquiry@insurecow.com

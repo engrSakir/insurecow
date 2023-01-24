@@ -11,19 +11,19 @@
 
             <!--Cow Lists-->
             @if(auth()->user()->cattles()->count() == 0)
-            <div class="col-lg-8">
+            <div class="col-lg-7">
                 <div>
                     <h1 class="p-greeting" style="font-weight: bold">Welcome Mr. {{ Auth::user()->name }} to InsureCow ! ! !</h1>
                     <p align="center">Here is some option for you.</p>
                     <center><a href="{{ route('reg_one.index') }}" class="btn w-50 text-white text-center mt-5 mb-5" style="background-color: #0f6848">Register Your Cattle</a></center>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <img src="{{ asset('images/welcome.png') }}" alt="" class="img-fluid rounded">
+            <div class="col-lg-5">
+                <img src="{{ asset('images/Group.png') }}" alt="" class="img-fluid rounded">
             </div>
             @else
 
-            <div class="col-lg-8">
+            <div class="col-lg-7">
                 <div>
                     <h1 class="p-greeting" style="font-weight: bold">Welcome Mr. {{ Auth::user()->name }} to InsureCow ! ! !</h1>
                     <p align="center" class="mb-5">Here is some option for you.</p>
@@ -35,10 +35,10 @@
                 </div>
             </div>
 
-            <div class="col-lg-4">
-                <img src="{{ asset('images/welcome.png') }}" alt="" class="img-fluid rounded homepage" style="box-shadow: 0 10px 50px #000000;">
+            <div class="col-lg-5">
+                <img src="{{ asset('images/Group.png') }}" alt="" class="img-fluid rounded homepage" style="box-shadow: 0 10px 50px #000000;">
             </div>
-            
+
             @endif
 
         </div>
