@@ -35,7 +35,9 @@
         body,aside,select,option,header,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
             cursor: url('{{ asset('images/favicon.png') }}'), auto;
         }
+        
     </style>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" />
     <style>
       .fc-unthemed td.fc-today { background: #1D5C2C; color: #ffffff; }
@@ -47,8 +49,7 @@
     <link rel="stylesheet" href="{{asset('/css/register_page_02.css')}}" />
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-
-</head>
+</head> 
 
 <body id="page-top">
 <!-- Page Wrapper -->
@@ -226,6 +227,46 @@
 
 @endif
 
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+    $(document).ready(function () {
+        var today = new Date();
+        $('#datepicker').datepicker({
+            format: 'mm-dd-yyyy',
+            autoclose:true,
+            endDate: "today",
+            changeYear:true,
+            yearRange: "-2:+0"
+        }).on('changeDate', function (ev) {
+                $(this).datepicker('hide');
+            });
+        $('#datepicker').keyup(function () {
+            if (this.value.match(/[^0-9]/g)) {
+                this.value = this.value.replace(/[^0-9^-]/g, '');
+            }
+        });
+    });
+    </script>
+        <script>
+    $(document).ready(function () {
+        var today = new Date();
+        $('#datepicker2').datepicker({
+            format: 'mm-dd-yyyy',
+            autoclose:true,
+            endDate: "today",
+            changeYear:true,
+            yearRange: "-2:+0"
+        }).on('changeDate', function (ev) {
+                $(this).datepicker('hide');
+            });
+        $('#datepicker').keyup(function () {
+            if (this.value.match(/[^0-9]/g)) {
+                this.value = this.value.replace(/[^0-9^-]/g, '');
+            }
+        });
+    });
+    </script>
+
 <script type="text/javascript">
     function confirmation(e) {
         e.preventDefault();
@@ -287,7 +328,7 @@ $(document).ready(function () {
     });
     var calendar = $('#calendar').fullCalendar({
       editable: true,
-      events: SITEURL + "/fdashboard/calendar",
+      events: SITEURL + "/farmer/calendar",
       displayEventTime: true,
       editable: true,
       eventRender: function (event, element, view) {
@@ -305,7 +346,7 @@ $(document).ready(function () {
           var start = $.fullCalendar.formatDate(start, "YYYY-MM-DD HH:mm:ss");
           var end = $.fullCalendar.formatDate(end, "YYYY-MM-DD HH:mm:ss");
           $.ajax({
-            url: SITEURL + "/fdashboard/calendar/create",
+            url: SITEURL + "/farmer/calendar/create",
             data: 'title=' + title + '&start=' + start + '&end=' + end,
             type: "POST",
             success: function (data) {
@@ -328,7 +369,7 @@ $(document).ready(function () {
       var start = $.fullCalendar.formatDate(event.start, "YYYY-MM-DD HH:mm:ss");
       var end = $.fullCalendar.formatDate(event.end, "YYYY-MM-DD HH:mm:ss");
       $.ajax({
-        url: SITEURL + '/fdashboard/calendar/update',
+        url: SITEURL + '/farmer/calendar/update',
         data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
         type: "POST",
         success: function (response) {
@@ -341,7 +382,7 @@ $(document).ready(function () {
       if (deleteMsg) {
         $.ajax({
           type: "POST",
-          url: SITEURL + '/fdashboard/calendar/delete',
+          url: SITEURL + '/farmer/calendar/delete',
           data: "&id=" + event.id,
           success: function (response) {
             if(parseInt(response) > 0) {

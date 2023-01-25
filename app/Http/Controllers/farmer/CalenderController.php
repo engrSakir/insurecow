@@ -5,6 +5,7 @@ namespace App\Http\Controllers\farmer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Event;
+use Carbon\Carbon;
 
 class CalenderController extends Controller
 {
@@ -34,6 +35,31 @@ class CalenderController extends Controller
         $event = Event::insert($insertArr);   
         return response()->json($event);
     }
+
+
+    public function new(Request $request)
+    {  
+        $this->validate($request, [
+            'title' => 'required',
+            'start' => 'required',
+            'end' => 'required',
+        ]);
+
+            $start =  Carbon::createFromFormat('m/d/Y', $request->start)->format('Y-m-d');
+            $end =  Carbon::createFromFormat('m/d/Y', $request->end)->format('Y-m-d');
+            
+            $event = new Event();   
+            $event->title = $request->title;   
+            $event->start = $start;   
+            $event->end = $end; 
+            $event->save();  
+            return redirect()->back();
+
+
+        
+    }
+
+    
      
     public function update(Request $request)
     {   
@@ -47,8 +73,7 @@ class CalenderController extends Controller
  
     public function destroy(Request $request)
     {
-        $event = Event::where('id',$request->id)->delete();
-   
+        $event = Event::where('id',$request->id)->delete();   
         return response()->json($event);
     }
 }
