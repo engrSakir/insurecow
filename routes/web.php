@@ -139,6 +139,8 @@ Route::middleware(['farmer', 'auth'])->group(function () {
         Route::post('calendar/update', 'farmer\CalenderController@update');
         Route::post('calendar/delete', 'farmer\CalenderController@destroy');
 
+        Route::post('task/save', 'farmer\CalenderController@new')->name('task.save');
+
         //--------------------------------------------------------------------Farmer Dashboard End------------------------
     });
 });
