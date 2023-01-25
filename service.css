@@ -14,123 +14,11 @@
 
 /* --------------- section -2 : left side --------------- */
 
-.left-side {
-  padding: 60px;
-}
-
-.or-span {
-  margin: 0 10px;
-  color: #7b7b7b;
-}
-
 .buy-insurance {
   font-size: 35px;
 }
 
 /* --------------- section -2 : left side --------------- */
-
-/* --------------- section -2 : right side --------------- */
-
-/* --------------- section -2 : right side --------------- */
-
-/* --------------- section -2 : services --------------- */
-
-.services {
-  padding: 60px;
-}
-
-.services-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.services-1-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.services-box-style {
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  padding: 12px 40px;
-}
-
-.services-img {
-  display: flex;
-  justify-content: center;
-}
-
-.services-p {
-  margin-top: 10px;
-  text-align: center;
-}
-
-/* --------------- section -2 : services --------------- */
-
-/* --------------- section -3 : why choose our service --------------- */
-
-.third-section {
-  padding-top: 6%;
-}
-
-.third-section_title {
-  text-align: center;
-  font-weight: bold;
-}
-
-.third-section_p {
-  text-align: center;
-}
-
-.third-section_item_title {
-  margin-top: 10px;
-  text-align: center;
-  color: #0d1c11;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.third-section_item_p {
-  text-align: center;
-}
-
-.partner-services {
-  padding: 60px;
-}
-
-/* --------------- section -3 : why choose our service --------------- */
-
-/* --------------- section -4 : Team members --------------- */
-
-.team-members-box-padding {
-  background: linear-gradient(140.42deg, #c5ead5 21.42%, #ddedc7 96.29%);
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  padding: 15px 15px 30px 15px;
-}
-
-/* --------------- section -4 : Team members --------------- */
-
-/* --------------- section -7 : Partners --------------- */
-
-.partners {
-  width: 70%;
-  margin-bottom: 20px;
-  display: block;
-  margin: auto;
-}
-
-.partners-img {
-  margin-bottom: 15px;
-}
-
-.partner-services {
-  padding: 60px;
-}
-
-/* --------------- section -7 : Partners --------------- */
 
 .contact-text {
   margin-left: 10px;
@@ -152,6 +40,27 @@
 
 .services-padding {
   padding: 60px 70px;
+}
+
+.grid-services-style {
+  padding: 35px 30px;
+}
+
+.grid-services-style:hover {
+  background: #ddedc7;
+  transition: 0.5s ease-in-out;
+}
+
+.individual_service_title {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.individual_service_p {
+  margin-top: 14px;
+  color: #666666;
+  font-size: 14px;
 }
 
 /* -------------------------------------- Services Section --------------------------------------  */
@@ -187,36 +96,6 @@
 
 /* ------------------------------------------------------- media screen for mobile devices ------------------------------------- */
 @media only screen and (max-width: 600px) {
-  .services-row {
-    display: flex;
-    justify-content: center;
-  }
-
-  .services-1-row {
-    display: block;
-    justify-content: center;
-  }
-
-  .partner-services {
-    padding: 0px;
-  }
-
-  .right-side-mobile {
-    display: none;
-  }
-
-  .contact-us-mobile-button-alignment {
-    margin-top: 10px;
-  }
-
-  .services {
-    padding: 30px;
-  }
-
-  .partner-services {
-    padding: 30px;
-  }
-
   .footer-img-mobile-state {
     display: block;
     margin: auto;
