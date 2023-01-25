@@ -152,7 +152,7 @@
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                
+
                 @enderror
                 <i class="fas fa-eye-slash fa-eye" id="eye" ></i>
                 {{-- <i class="fa-solid fa-eye" id="eye"></i> --}}
@@ -186,6 +186,8 @@
 
               <!--Log In Button-->
               <button type="submit" class=" mb-4 form-control" style="background-color: #1D5C2E; color: white">Log In</button>
+                <button type="#" class=" mb-4 form-control" style="background-color: #ffff; color: #000000;font-weight: 600"><i class="fab fa-google fa-x"></i> Continue with Google</button>
+
 
 
             </form>

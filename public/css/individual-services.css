@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap");
+
+* {
+  font-family: "Roboto Slab";
+}
+
+/* --------------- nabar ---------------  */
+
+.nav-font {
+  color: #515151;
+}
+
+/* --------------- nabar ---------------  */
+
+.individual-insurance-section {
+  background: linear-gradient(337.59deg, #ffffff 16.89%, #d7eccb 160.63%);
+}
+
+.individual-insurance {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.individual-right-side-p {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.individual-our-services {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.individual-our-services_p_div {
+  background-color: #086343;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+.individual-our-services_p_div_2 {
+  background-color: #086343;
+  color: white;
+  padding: 8px 10px;
+}
+
+.individual-our-services-options {
+  margin: 14px 35px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  align-items: center;
+  border: 0.5px solid #7c7c7c;
+  border-radius: 5px;
+}
+
+.individual-our-services-options-contact {
+  display: flex;
+
+  margin: 14px 35px;
+  padding: 4px 15px;
+  background-color: white;
+  color: black;
+  align-items: center;
+  border: 0.5px solid #7c7c7c;
+  border-radius: 5px;
+}
+
+.individual-our-services-options:hover {
+  color: white;
+  background-color: #23bb86;
+}
+
+.contact-text {
+  margin-left: 10px;
+}
+
+.contact-with-us-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.entire-left-side-margin {
+  margin: 50px;
+}
+
+.entire-right-side-margin {
+  margin: 54px 0;
+}
+
+/* --------------------------------------------- media screen for tab ( portrait ) ------------------------------------------- */
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+}
+
+/* ------------------------------------------------------------------------------------ end - media screen for tab ( portrait )  */
+
+/* ------------------------------------------ media screen for tab (landscape) ------------------------------------------------- */
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* For landscape layouts only */
+}
+
+/* -------------------------------------------------------------------------------------- end - media screen for tab (landscape) */
+
+/* --------------------------------------------- media screen for tab (pro) portrait ------------------------------------------- */
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+}
+
+/* ---------------------------------------------------------------------------------- end - media screen for tab (pro) portrait */
+
+/* ---------------------------------------------- media screen for tab ( pro ) landscape --------------------------------------- */
+
+@media only screen and (min-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+}
+
+/* ------------------------------------------------------------------------------- end - media screen for tab ( pro ) landscape  */
+
+/* ------------------------------------------------------- media screen for mobile devices ------------------------------------- */
+@media only screen and (max-width: 600px) {
+  .footer-img-mobile-state {
+    display: block;
+    margin: auto;
+  }
+
+  .entire-left-side-margin {
+    margin-top: 30px;
+  }
+
+  .entire-right-side-margin {
+    margin: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------------------  end - media screen for mobile devices */
+
+/* ---------------------------------------- media screen for 1366 x 768 desktop screens ---------------------------------------- */
+
+@media only screen and (device-width: 1366px) and (device-height: 768px) {
+}
+
+/* --------------------------------------------------------------------------- end - media screen for 1366 x 768 desktop screens */
+
+.contact {
+  width: 531px;
+  height: 120px;
+  left: 318px;
+  top: 6423px;
+
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  /* or 115% */
+
+  color: #0d1c11;
+}
+.phone {
+  width: 198px;
+  height: 59px;
+  left: 391.96px;
+  top: 6603px;
+
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+  /* or 162% */
+
+  color: #0d1c11;
+
+  opacity: 0.8;
+}
+.img {
+  background-image: url("images/shape.png");
+}
