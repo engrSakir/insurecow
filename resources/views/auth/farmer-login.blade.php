@@ -41,7 +41,7 @@
               class="navbar navbar-expand-lg navbar-light"
               style="background-color: #d7eccb"
           >
-              <img src="{{asset('landing/logo.png')}}" alt="" />
+              <a href="{{url('/')}}"><img src="{{asset('landing/logo.png')}}" alt="" /></a>
               <button
                   class="navbar-toggler"
                   type="button"
@@ -57,7 +57,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav m-auto">
                       <li class="nav-item active">
-                          <a class="nav-link nav-font" href="#"
+                          <a class="nav-link nav-font" href="{{url('/')}}"
                           >Home <span class="sr-only">(current)</span></a
                           >
                       </li>
@@ -109,7 +109,7 @@
                       </li>
                   @else
                       <a href="{{route('farmer.login')}}" class="btn mr-sm-2 btn-light">Sign in</a>
-                      <a href="{{route('register')}}" class="btn btn-success">Sign Up</a>
+                      <a href="{{route('register')}}" class="btn" style="background-color: #0f6848;color: #FFFFFF">Sign Up</a>
                   @endif
               </div>
           </nav>
@@ -208,6 +208,7 @@
 
               <!--Log In Button-->
               <button type="submit" class=" mb-4 form-control" style="background-color: #1D5C2E; color: white">Log In</button>
+                <button type="#" class=" mb-4 form-control" style="background-color: #ffff; color: #000000;font-weight: 600"><i class="fab fa-google fa-x"></i> Continue with Google</button>
 
 
             </form>
@@ -302,8 +303,8 @@
                                   d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"
                               ></path>
                           </svg>
-                          Suite 201, Navana DH Tower ,<br />
-                          6 Panthapath Lane
+                          Suite 201, Navana DH Tower
+
                       </p>
                       <p class="flex items-center justify-center md:justify-start mb-4">
                           <svg

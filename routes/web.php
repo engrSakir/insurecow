@@ -126,7 +126,6 @@ Route::middleware(['farmer', 'auth'])->group(function () {
 
         Route::get('/farmer/confirmation', 'farmer\FarmerExpenseController@confirm')->name('confirm');
         Route::get('/view/pdf/{id}/{cattle_id}', 'farmer\FarmerExpenseController@viewpdf')->name('view.pdf');
-        Route::resource('send', 'farmer\SendRequestController');
 
 //-------------------------------------------Farmer Dashboard------------------------------------
 
@@ -172,8 +171,13 @@ Route::middleware(['superadmin', 'auth'])->group(function () {
 //    Route::post('calendar/update', 'farmer\CalenderController@update');
 //    Route::post('calendar/delete', 'farmer\CalenderController@destroy');
 //});
+//===============================Landing Page Start ===========================================//
+Route::resource('send', 'farmer\SendRequestController');
+Route::get('service','LandingController@service');
+Route::get('individual_service','LandingController@individual_service');
 
 
+//===============================Landing Page end ===========================================//
 
 Route::get('log_out', function () {
     \auth()->logout();

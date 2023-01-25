@@ -36,7 +36,7 @@
     />
     <link
         rel="stylesheet"
-        href="{{ asset('/css/landing_styles.css') }}"
+        href="{{ asset('/css/landing_styles.css') }}">
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -56,6 +56,12 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
     />
+
+    <style>
+        body,aside,header,select,option,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
+            cursor: url('{{ asset('images/favicon.png') }}'), auto;
+        }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script>
         tailwind.config = {
@@ -96,7 +102,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item active">
-                        <a class="nav-link nav-font" href="#"
+                        <a class="nav-link nav-font" href="#z"
                         >Home <span class="sr-only">(current)</span></a
                         >
                     </li>
@@ -104,7 +110,7 @@
                     <li class="nav-item dropdown">
                         <a
                             class="nav-link dropdown-toggle"
-                            href="#"
+                            href=""
                             id="navbarDropdown"
                             role="button"
                             data-toggle="dropdown"
@@ -114,12 +120,12 @@
                             Our Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <!-- 
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
+
+                                <a class="dropdown-item" href="{{url('service')}}">Services</a>
+                                <a class="dropdown-item" href="{{url('individual_service')}}">Individual Service</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a> 
-                            -->
+                                <a class="dropdown-item" href="#">Something else here</a>
+
                         </div>
                     </li>
                     <li class="nav-item nav-font">
@@ -152,7 +158,7 @@
                         </li>
                 @else
                     <a href="{{route('farmer.login')}}" class="btn mr-sm-2 btn-light">Sign in</a>
-                    <a href="{{route('register')}}" class="btn btn-success">Sign Up</a>
+                    <a href="{{route('register')}}" class="btn " style="background-color: #0f6848;color: #FFFFFF">Sign Up</a>
                 @endif
             </div>
         </nav>
@@ -171,7 +177,7 @@
             <div class="left-side">
                 <br />
                 <span class="buy-insurance">
-              Buy Insurance for your cattle in a Smart Way, with One Click
+                    Buy <span style="font-weight: 600;color: #0f6848">Insurance </span>for your cattle in a Smart Way, with One Click
             </span>
                 <br /><br />
                 <p>
@@ -180,10 +186,10 @@
                 </p>
                 <br />
                 <div>
-                    <button class="btn btn-success">Get a Quote</button>
+                    <a href="{{route('send.index')}}" class="btn " style="background-color: #0f6848; color: #FFFFFF">Get a Quote</a>
                     <span class="or-span">Or</span>
 
-                    <button class="btn btn-light contact-us-mobile-button-alignment">
+                    <button class="btn btn-light contact-us-mobile-button-alignment" style="border: #0f6848;border-style: inset;">
                         Contact Us
                     </button>
                 </div>
@@ -274,7 +280,7 @@
         <!-- ----------------------------------- why choose our service ----------------------------------- -->
 
         <div>
-            <h4 class="third-section_title">Why Choose Our Services?</h4>
+            <h4 class="third-section_title" style="font-size: 30px;">Why Choose Our Services?</h4>
             <br />
             <p class="third-section_p">
                 You can customise your insurance policy and choose to safeguard
@@ -336,7 +342,7 @@
         <!-- ------------------- find your best insurance company ----------------------- -->
 
         <div>
-            <h4 class="third-section_title">Find Your Best Insurance Company</h4>
+            <h4 class="third-section_title" style="font-size: 30px;">Find Your Best Insurance Company</h4>
             <br />
             <p class="third-section_p">
                 You can customise your insurance policy and choose to safeguard
@@ -419,9 +425,7 @@
 
 <!-- --------------------------------------------- forth point one container --------------------------------------------- -->
 
-<section class="third-section">
-    <div></div>
-</section>
+
 
 <!-- --------------------------------------------- forth point one container --------------------------------------------- -->
 
@@ -432,7 +436,7 @@
         <!-- ------------------- Team Members ----------------------- -->
 
         <div>
-            <h4 class="third-section_title">Team Members</h4>
+            <h4 class="third-section_title" style="font-size: 30px;">Team Members</h4>
             <br />
             <p class="third-section_p">Here is our team members</p>
         </div>
@@ -595,7 +599,7 @@
 <!-- --------------------------------------------- fifth container --------------------------------------------- -->
 <div>
     <div class="mx-auto text-center">
-        <h4 class="third-section_title">Clients Testimonials</h4>
+        <h4 class="third-section_title" style="font-size: 30px;">Clients Testimonials</h4>
         <p class="mt-4 text-dark-500">
             Here are some reviews given by our honorable clients, who are
             <br />benefited with our services.
@@ -727,7 +731,7 @@
                                     class="object-cover w-16 h-16 rounded-full"
                                 />
                                 <div class="ml-4 text-sm font-bold">
-                                    <p class="">Rafin Mia</p>
+                                    <p class="">Mukim Brothers</p>
                                 </div>
                             </div>
 
@@ -773,7 +777,7 @@
         <!-- ------------------- latest update and news ----------------------- -->
 
         <div>
-            <h4 class="third-section_title">Latest Update & News</h4>
+            <h4 class="third-section_title" style="font-size: 30px;">Latest Update & News</h4>
             <br />
             <p class="third-section_p">
                 Here is The latest news and updates about InsureCow
@@ -842,7 +846,7 @@
     style="background: linear-gradient(180deg, #c5ead5 0%, #f6ffed 100%)"
 >
     <div>
-        <h4 class="third-section_title">Our Partners</h4>
+        <h4 class="third-section_title" style="font-size: 30px;">Our Partners</h4>
         <br />
         <div class="partner-services">
             <div class="services-row">
@@ -1079,8 +1083,8 @@
                                 d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"
                             ></path>
                         </svg>
-                        Suite 201, Navana DH Tower ,<br />
-                        6 Panthapath Lane
+                        Suite 201, Navana DH Tower
+
                     </p>
                     <p class="flex items-center justify-center md:justify-start mb-4">
                         <svg

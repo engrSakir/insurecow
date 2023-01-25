@@ -1,114 +1,24 @@
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!--==================== BOOTSTRAP ====================-->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-        crossorigin="anonymous"
-    />
-
-    <!--==================== FONT AWESOME ====================-->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <!--=============== CSS ===============-->
+@extends('layouts.landlayouts')
+@push('css')
     <link rel="stylesheet" href="{{asset('css/login_page.css')}}" />
+@endpush
+<style>
+    body,aside,header,select,option,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
+        cursor: url('{{ asset('images/favicon.png') }}'), auto;
+    }
+</style>
+@section('content')
 
-    <style>
-        body,aside,header,select,option,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
-            cursor: url('{{ asset('images/favicon.png') }}'), auto;
-        }
-    </style>
-
-    <title>InsureCow</title>
-</head>
-
-<body class="container">
-<!--==================== NAVBAR ====================-->
-<header>
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-light pb-0">
-            <div class="container-fluid">
-                <!--Navbar Logo-->
-                <a href="/" class="navbar-brand">
-                    <img src="./images/logo.png" alt="Logo" />
-                </a>
-
-                <button
-                    type="button"
-                    class="navbar-toggler"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div id="navbarCollapse" class="collapse navbar-collapse">
-                    <!--About Us-->
-                    <ul class="nav navbar-nav ms-auto">
-                        <!-- <li class="nav-item navbar-brand">
-                          <a href="#" class="nav-link">About Us</a>
-                        </li> -->
-
-                        <!--Plans-->
-                        <li class="nav-item navbar-brand">
-                            <a href="https://insurecow.com/#we-are" class="nav-link">Who we are</a>
-                        </li>
-
-                        <!--Features-->
-                        <li class="nav-item navbar-brand">
-                            <a href="#" class="nav-link">Products & services</a>
-                        </li>
-
-                        <!--Our Goals-->
-                        <li class="nav-item navbar-brand">
-                            <a href="https://insurecow.com/#services" class="nav-link">Our team</a>
-                        </li>
-
-                        <!--Contact Us-->
-                        <li class="nav-item navbar-brand">
-                            <a href="https://insurecow.com/#team" class="nav-link">Achievements</a>
-                        </li>
-                    </ul>
-
-                    <!--Language-->
-                    <ul class="navbar-nav d-flex flex-row">
-                        <li class="nav-item navbar-brand">
-                            <a href="https://insurecow.com/#achievements" class="nav-link">English</a>
-                        </li>
-
-                        <div class="vr vr-style"></div>
-
-                        <li class="nav-item navbar-brand ms-2">
-                            <a href="#" class="nav-link">বাংলা </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <hr class="hr-style" />
-    </div>
-</header>
-
-<!--==================== LOG IN ====================-->
 
 <section>
     <!--Sign In Form-->
-    <div class="row g-0 mt-5 mb-5">
+    <div class="row g-0 mt-5 mb-5" style="margin: 0; padding: 0">
 
         <div class="col-lg-6 ">
-            <div class="card login-card p-5 h-100 shadow-none">
-                <div class="card-body">
-                    <p class="login-text">Sign Up</p>
-                    <p class="p-welcome-text mb-4">Welcome To Insure Cow!</p>
+            <div class="p-5 h-100 shadow-none">
+
+                    <p class="login-text text-center" style="font-family: 'Roboto Slab';font-weight: 700;font-size: 26px;line-height: 34px; color: #082E13;">Sign Up</p>
+                    <p class="p-welcome-text mb-4 text-center para" style="">Welcome To Insure Cow!</p>
 
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -245,18 +155,20 @@
 
                         <!--Log In Button-->
                         <button type="submit" class=" mb-4 form-control" style="background-color: #1D5C2E; color: white">Sign Up</button>
+                        <button type="#" class=" mb-4 form-control" style="background-color: #ffff; color: #000000;font-weight: 600"><i class="fab fa-google fa-x"></i> Continue with Google</button>
+
                         <span>Already have an account? <a href="{{ route('login') }}">Login</a></span>
 
                     </form>
 
-                </div>
+
             </div>
         </div>
         <div class="col-lg-6">
             <div class="card card-style h-100">
-                <div class="card-body">
+
                     <img  src="./images/12.png" class="img-fluid" alt="Cow" />
-                </div>
+
             </div>
         </div>
 
@@ -266,58 +178,7 @@
 
 <!--==================== FOOTER ====================-->
 <hr class="hr-style" />
-<section>
-    <footer>
-        <!-- Grid container -->
-        <div class="container p-4">
-            <!--Grid row-->
-            <div class="row">
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-12 mb-4 mb-md-4">
-                    <div>
-                        <img src="./images/logo.png" />
-                    </div>
-                    <p>
-                        InsureCow is a cattle wellbeing monitoring and insurance
-                        platform that is playing a significant role in protecting and
-                        ensuring the asset value of large cattle for livestock farmers.
-                    </p>
-                </div>
 
-                <!--Grid column-->
-                <div class="col-lg-2 col-md-12 mt-lg-4 mb-4 mb-md-4 offset-lg-1">
-                    <div>
-                        <h5 class="mb-4">Language</h5>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2">
-                                <a href="#" class="language-footer">English</a>
-                            </li>
-                            <li class="mb-2">
-                                <a href="#" class="language-footer">Bangla</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-12 mt-lg-4 mb-4 mb-md-0 offset-lg-1">
-                    <div>
-                        <h5 class="mb-4">Contact Us</h5>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2">Phone : +880 1672 838306</li>
-                            <li class="mb-2">E-mail : inquiry@insurecow.com</li>
-                            <li class="mb-2">
-                                Suite 201, Navana DH Tower, 6 Panthapath Lane
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <p>Insure Cow © 2021 All Right Reserved</p>
-        </div>
-    </footer>
-</section>
 
 <!--==================== JavaScript Bundle with Popper ====================-->
 <script
@@ -343,5 +204,5 @@
         passwordInput1.setAttribute("type", type)
     })
 </script>
-</body>
-</html>
+
+@endsection
