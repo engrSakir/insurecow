@@ -17,10 +17,10 @@
             <div class="row">
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-3 col-md-6">
-                    <div class="card" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
+                    <div class="card mb-3 mt-2" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
+                                <div class="col">
                                     <div class="text-xl font-weight-bold text-uppercase mb-1" style="color:black ;">
                                         Total Value</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
@@ -38,7 +38,7 @@
 
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-3 col-md-6">
-                    <div class="card" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
+                    <div class="card mb-3" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
@@ -59,7 +59,7 @@
 
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-3 col-md-6">
-                    <div class="card" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
+                    <div class="card mb-3" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
@@ -84,7 +84,7 @@
 
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-3 col-md-6">
-                    <div class="card" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
+                    <div class="card mb-3" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
@@ -112,8 +112,8 @@
 
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4" style="margin-top: 40px">
-                    <div class="card" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card mb-3" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
@@ -133,7 +133,7 @@
                 </div>
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4" style="margin-top: 40px">
+                <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
@@ -154,7 +154,7 @@
                 </div>
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-8 mb-4" style="margin-top: 40px">
+                <div class="col-xl-3 col-md-8 mb-4">
                     <div class="card" style="height: 180px; width: 520px; color:black ;background: #F8F9FC">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">

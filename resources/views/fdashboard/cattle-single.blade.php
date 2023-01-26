@@ -1,0 +1,59 @@
+@extends('layouts.fd')
+
+@section('content')
+    <!-- Main Content -->
+    <div id="content">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+            <!-- Content Row -->
+            <h3>Cattle</h3>
+            <center>
+                <img src="{{ asset('storage/'.$registeredcattle->face_of_cow) }}" class="img-fluid mb-5">
+            </center>
+            <section>
+
+      <h4 class="text-center text-white p-2" style="background: #226034">Cow Details Information</h4>
+      <div class="cow-details  mt-2">
+        <form>
+          <div class="information">
+            <div class="row d-flex owner mt-2">
+              <div class="col-lg-5">
+                <p>Cattle Name : {{ $registeredcattle->cattle_name }}</p>
+                <p>Age : {{ $registeredcattle->age }}</p>
+                <p>Gender : {{ $registeredcattle->gender }}</p>
+              </div>
+              <div class="col-lg-5">
+                <p>Cattle Breed : {{ $registeredcattle->cattle_breed }}</p>
+                <p>Weight : {{ $registeredcattle->weight }}</p>
+                <p>Cattle Color : {{ $registeredcattle->cattle_color }}</p>
+              </div>
+            </div>
+
+            <div
+              style="background: #D9D9D9; border-bottom: 1px solid #2f673f"
+              class="row d-flex species p-2 rounded mb-3"
+            >
+              <div class="col-lg-5">
+                <p>Price : {{ $registeredcattle->price }}</p>
+                <p>Medical Expense : {{ $registeredcattle->cattle_breed }}</p>
+                <p>Profitable Selling Price : {{ $registeredcattle->gender }}</p>
+              </div>
+              <div class="col-lg-5">
+                <p>Feed Expense : {{ $registeredcattle->cattle_breed }}</p>
+                <p>Total Expense: {{ $registeredcattle->weight }} Kg</p>
+              </div>
+            </div>
+
+            <div class="row d-flex issue-date">
+              <div class="col-lg-5">
+                <p>Issuing Date : {{ $registeredcattle->created_at }}</p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+        </div>
+    </div>
+    <!-- End of Main Content -->
+@endsection
