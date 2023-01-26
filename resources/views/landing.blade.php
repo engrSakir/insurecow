@@ -124,12 +124,12 @@
                                 <a class="dropdown-item" href="{{url('service')}}">Services</a>
                                 <a class="dropdown-item" href="{{url('individual_service')}}">Individual Service</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+{{--                                <a class="dropdown-item" href="#">Something else here</a>--}}
 
                         </div>
                     </li>
                     <li class="nav-item nav-font">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="{{url('about')}}">About Us</a>
                     </li>
 
                     <li class="nav-item nav-font">
@@ -212,7 +212,7 @@
                         <img src="{{asset('landing/cow.png')}}" alt="" class="img-fluid" />
                     </div>
                     <div>
-                        <p class="services-p">Cattle Insurance</p>
+                        <a href="{{route('onboard.index')}}"><p class="services-p">Cattle Insurance</p></a>
                     </div>
                 </div>
                 <br />

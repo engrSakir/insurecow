@@ -180,6 +180,8 @@ Route::middleware(['superadmin', 'auth'])->group(function () {
 Route::resource('send', 'farmer\SendRequestController');
 Route::get('service','LandingController@service');
 Route::get('individual_service','LandingController@individual_service');
+Route::get('about','LandingController@about');
+
 
 
 //===============================Landing Page end ===========================================//

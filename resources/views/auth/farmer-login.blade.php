@@ -82,7 +82,8 @@
                           </div>
                       </li>
                       <li class="nav-item nav-font">
-                          <a class="nav-link" href="#">About Us</a>
+                          <a class="nav-link" href="{{url('about')}}">About Us</a>
+
                       </li>
 
                       <li class="nav-item nav-font">
@@ -118,9 +119,6 @@
       </div>
   </section>
      <div class="container" >
-              <!--==================== NAVBAR ====================-->
-
-    <!--==================== LOG IN ====================-->
 
     <section >
        <!--Sign In Form-->

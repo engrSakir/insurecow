@@ -38,24 +38,26 @@
                                     <span>Edit Profile</span></a>
                             </li>
                             @endif
-                                <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>
+{{--                                <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>--}}
                                 <li><a class="dropdown-item" href="{{ route('farmer.change.password') }}">Change Password</a></li>
-                                <li><a class="dropdown-item" href="{{ route('farmer.expense') }}">Expenses</a></li>
-                                <li><a class="dropdown-item" href="{{ route('expense.history') }}">Expense History</a></li>
+                                    <li><a class="dropdown-item" href="#">Farm Address</a></li>
+
+{{--                                <li><a class="dropdown-item" href="{{ route('farmer.expense') }}">Expenses</a></li>--}}
+{{--                                <li><a class="dropdown-item" href="{{ route('expense.history') }}">Expense History</a></li>--}}
                             </ul>
                           </li>
 
                         <!--Reports-->
-                        <li class="nav-item dropdown navbar-brand">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Reports
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ route('farmer.medical.report') }}">Upload Medical Report</a></li>
-                                <li><a class="dropdown-item" href="{{ route('write.medical.report') }}">Write Medical Report</a></li>
-                                <li><a class="dropdown-item" href="{{ route('medical.history') }}">Medical History</a></li>
-                            </ul>
-                        </li>
+{{--                        <li class="nav-item dropdown navbar-brand">--}}
+{{--                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--}}
+{{--                                Reports--}}
+{{--                            </a>--}}
+{{--                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+{{--                                <li><a class="dropdown-item" href="{{ route('farmer.medical.report') }}">Upload Medical Report</a></li>--}}
+{{--                                <li><a class="dropdown-item" href="{{ route('write.medical.report') }}">Write Medical Report</a></li>--}}
+{{--                                <li><a class="dropdown-item" href="{{ route('medical.history') }}">Medical History</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
 
                         <li class="nav-item dropdown navbar-brand">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -74,7 +76,7 @@
                         <li class="nav-item navbar-brand">
                             <!-- <button type="submit" class="signout-button">SignOut</button> -->
 
-                            <a href="{{route('fdashboard.index')}}" class="btn signout-button" style="background: #086343; color: #ffffff !important">Farm Manage</a>
+                            <a href="{{route('fdashboard.index')}}" class="btn signout-button" style="background: #086343; color: #ffffff !important">Manage Farm</a>
 
                         </li>
                         <!--Sign out-->
