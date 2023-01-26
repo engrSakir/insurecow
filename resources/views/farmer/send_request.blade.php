@@ -112,16 +112,17 @@
                             Our Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <!--
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
+
+                                <a class="dropdown-item" href="{{url('service')}}">Services</a>
+                                <a class="dropdown-item" href="{{url('individual_service')}}">Individual Service</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            -->
+
+
                         </div>
                     </li>
                     <li class="nav-item nav-font">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="{{url('about')}}">About Us</a>
+
                     </li>
 
                     <li class="nav-item nav-font">
@@ -159,53 +160,78 @@
         <!-- ------------------------------------------ Navbar ------------------------------------------ -->
     </div>
 </section>
-    <div class=" justify-content-center text-center" style="  padding: 25px; font-size: 40px;">
-        <h2 style="color: #1b1e21; font-family: 'Roboto Slab', serif; "><u>Let’s Level Up Your Brand Together</u></h2>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 offset-md-4">
-                <h4 class="text-center mt-3" style="font-family: 'Roboto Slab', serif; font-size: 20px;"><b> Fill Your Details</b></h4>
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-                <form  action="{{route('send.store')}}" method="post" enctype="multipart/form-data" style="">
-                    {{ csrf_field() }}
 
-                    <div class="card p-5" style="background: rgba(79, 172, 35, 0.25);">
-                        <div class="form-group">
-                            <label for="date">Name*</label>
-                            <input type="text" class="form-control" name="name" placeholder="Enter Your Name" value="{{ old('name') }}">
-                        </div>
 
-                        <div class="form-group">
-                            <label for="disease_name">Email*</label>
-                            <input type="email" class="form-control" name="email" placeholder="Enter Email Address" value="{{ old('email') }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="vaccine_name">Phone*</label>
-                            <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number" value="{{ old('phone') }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="next_vaccination_date">Company Name*</label>
-                            <input type="text" class="form-control" name="company" placeholder="Enter Company Name" value="{{ old('company') }}">
-                        </div>
-                        <div class="form-group pt-3">
-                            <button type="submit" style="display:block; background: #086343" class="btn w-100 text-white">Send A Request --></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-<br><br>
+
+
+
+
+
+
 <section>
+
+    <section >
+        <!--Sign In Form-->
+        <div class="row g-0 mt-5 mb-5">
+
+            <div class="col-lg-6">
+                <div class=" h-100 shadow-none">
+                    <div class="card-body">
+
+                        <h2 class="text-center" style="font-size: 30px;color: #1b1e21; font-family: 'Roboto Slab', serif; "><u>Let’s Level Up Your Brand Together</u></h2>
+
+                        <h4 class="text-center mt-3" style="font-family: 'Roboto Slab', serif; font-size: 20px;"><b> Fill Your Details</b></h4>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <form  action="{{route('send.store')}}" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+
+                            <div class="card p-5" style="background: rgba(79, 172, 35, 0.25);">
+                                <div class="form-group">
+                                    <label for="date">Name*</label>
+                                    <input type="text" class="form-control" name="name" placeholder="Enter Your Name" value="{{ old('name') }}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="disease_name">Email*</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Enter Email Address" value="{{ old('email') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="vaccine_name">Phone*</label>
+                                    <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number" value="{{ old('phone') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="next_vaccination_date">Company Name*</label>
+                                    <input type="text" class="form-control" name="company" placeholder="Enter Company Name" value="{{ old('company') }}">
+                                </div>
+                                <div class="form-group pt-3">
+                                    <button type="submit" style="display:block; background: #086343" class="btn w-100 text-white">Send A Request --></button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 p-lg-4">
+                <div class="p-lg-4 h-100">
+                    <div class="card-body">
+                        <img src="{{ asset('/images/pc.png') }}" class="img-fluid" alt="Cow" style="position: relative;" />
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
     <footer
         class="text-center lg:text-left bg-gray-100 text-gray-600"
         style="background: linear-gradient(180deg, #c5ead5 0%, #dbedc9 100%)"

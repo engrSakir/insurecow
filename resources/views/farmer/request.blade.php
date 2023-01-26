@@ -112,16 +112,16 @@
                             Our Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <!--
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="{{url('service')}}">Services</a>
+                            <a class="dropdown-item" href="{{url('individual_service')}}">Individual Service</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            -->
+
+
                         </div>
                     </li>
                     <li class="nav-item nav-font">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="{{url('about')}}">About Us</a>
+
                     </li>
 
                     <li class="nav-item nav-font">
@@ -159,18 +159,45 @@
         <!-- ------------------------------------------ Navbar ------------------------------------------ -->
     </div>
 </section>
-    <div class=" justify-content-center text-center" style="padding: 10px;font-size: 40px;">
-        <h2>Grow Your Business With InsureCow</h2>
-    </div>
-    <div class=" justify-content-center text-center" style="font-size: 24px;">
-        <p>One Sure way to move Up in business</p>
-    </div>
-    <div class=" justify-content-center text-center" style="padding: 15px;">
-        <a href="{{route('send.create')}}" class="btn" style="background-color: #0f6848; color: #ffffff; ">Send Request</a>
-    </div>
+
 
 
     <section>
+
+
+        <section >
+            <!--Sign In Form-->
+            <div class="row g-0 mt-5 mb-5">
+
+                <div class="col-lg-6">
+                    <div class="p-5 h-100 shadow-none">
+                        <div class="card-body  p-5">
+
+                            <div class="text-center p-1" style="font-size: 24px;">
+                                <h2>Grow Your Business With InsureCow</h2>
+                            </div>
+                            <div class="text-center" style="font-size: 19px;">
+                                <p>One Sure way to move Up in business</p>
+                            </div>
+                            <div class=" justify-content-center text-center" style="padding: 15px;">
+                                <a href="{{route('send.create')}}" class="btn" style="background-color: #0f6848; color: #ffffff; ">Send Request</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="h-100">
+                        <div class="card-body">
+                            <img  src="{{ asset('/images/pc.png') }}" class="img-fluid" alt="Cow" style="position: relative;width: 713px;" />
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
         <footer
             class="text-center lg:text-left bg-gray-100 text-gray-600"
             style="background: linear-gradient(180deg, #c5ead5 0%, #dbedc9 100%)"

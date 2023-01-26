@@ -44,12 +44,13 @@
                             <a class="dropdown-item" href="{{url('service')}}">Services</a>
                                 <a class="dropdown-item" href="{{url('individual_service')}}">Individual Service</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+{{--                                <a class="dropdown-item" href="#"></a>--}}
 
                         </div>
                     </li>
                     <li class="nav-item nav-font">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="{{url('about')}}">About Us</a>
+
                     </li>
 
                     <li class="nav-item nav-font">

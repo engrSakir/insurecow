@@ -12,4 +12,8 @@ class LandingController extends Controller
     function individual_service(){
         return view('individual_service');
     }
+    function about(){
+        return view('about');
+
+    }
 }
