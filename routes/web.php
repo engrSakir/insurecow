@@ -133,6 +133,9 @@ Route::middleware(['farmer', 'auth'])->group(function () {
         Route::get('cattles', 'FarmerDashboardController@cattle')->name('fdashboard.cattle');
         Route::get('calendar', 'farmer\CalenderController@index')->name('fdashboard.calender');
         Route::get('financial', 'FarmerDashboardController@financial')->name('fdashboard.financial');
+        Route::get('report', 'FarmerDashboardController@report')->name('fdashboard.report');
+        Route::get('report/{id}', 'FarmerDashboardController@reportShow')->name('fdashboard.report.show');
+        Route::get('report/cattle/{id}', 'FarmerDashboardController@reportCattle')->name('fdashboard.report.cattle');
 
         Route::post('calendar/create', 'farmer\CalenderController@create');
         Route::post('calendar/update', 'farmer\CalenderController@update');

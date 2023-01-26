@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Farmer_reg_2;
+use App\Medical;
 use Auth;
 class FarmerDashboardController extends Controller
 {
@@ -26,6 +27,26 @@ class FarmerDashboardController extends Controller
     public function financial()
     {
         return view('fdashboard.financial');
+    }
+
+    public function report()
+    {
+        $registeredcattles = Medical::where('user_id', auth()->user()->id)->get();
+        return view('fdashboard.report', compact('registeredcattles'));
+    }
+
+    public function reportShow($id)
+    {
+        $cattle = Farmer_reg_2::findOrFail($id);
+        $medicals = Medical::where('user_id', auth()->user()->id)->get();
+        return view('fdashboard.report-single', compact('cattle', 'medicals'));
+    }
+
+
+    public function reportCattle($id)
+    {
+        $registeredcattle = Farmer_reg_2::findOrFail($id);
+        return view('fdashboard.cattle-single', compact('registeredcattle'));
     }
 
     /**

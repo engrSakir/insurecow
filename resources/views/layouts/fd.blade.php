@@ -35,6 +35,14 @@
         body,aside,select,option,header,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
             cursor: url('{{ asset('images/favicon.png') }}'), auto;
         }
+
+        /* @media only screen and (max-width: 320px) {
+            .generate-report {
+                display: inline-block; 
+            }
+        } */
+
+        
         
     </style>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -46,9 +54,13 @@
       .alert-insurecow { background: #1D5C2C; color: #ffffff; }
     </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('/css/register_page_02.css')}}" />
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('/css/register_page_02.css')}}" />
+    <!--=============== DATATABLE CSS ===============-->
+    <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css" rel="stylesheet">
 </head> 
 
 <body id="page-top">
@@ -97,7 +109,7 @@
                 <span>Calendar</span></a>
         </li>
         <li class="nav-item border-bottom border-dark text-dark {{ (request()->is('fdashboard/history')) ? 'active' : '' }} pt-2 pb-2">
-            <a href="#" class="nav-link text-dark">
+            <a href="{{ route('fdashboard.report') }}" class="nav-link text-dark">
                 <i class="fas fa-fw fa-file text-dark"></i>
                 <span>Reports</span></a>
         </li>
@@ -400,7 +412,19 @@ function displayMessage(message) {
   setInterval(function() { $(".success").fadeOut(); }, 1000);
 }
 </script>
-<script src></script>
+<!--=============== DATATABLE JS ===============-->
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>   
+<script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function () {
+        $('#insurecow-datatable').DataTable();
+    });
+    $('#insurecow-datatable').DataTable({
+        responsive: true
+    });
+</script>
 </body>
 
 </html>
