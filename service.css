@@ -4,6 +4,10 @@
   font-family: "Roboto Slab";
 }
 
+.about-section {
+  background: linear-gradient(337.59deg, #ffffff 16.89%, #d7eccb 160.63%);
+}
+
 /* --------------- nabar ---------------  */
 
 .nav-font {
@@ -65,6 +69,65 @@
 
 /* -------------------------------------- Services Section --------------------------------------  */
 
+/* -------------------------------------- About Section --------------------------------------  */
+
+.about-section-wrapper {
+  padding: 60px;
+}
+
+.about_img_div {
+  display: flex;
+  justify-content: center;
+}
+
+.about_image_title {
+  text-align: center;
+
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+  padding-top: 10px;
+  text-align: center;
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  color: #226034;
+}
+
+.about_image_title_h1 {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+  padding-top: 10px;
+  text-align: center;
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  color: #226034;
+}
+
+.about_image_title_p {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  /* or 24px */
+
+  text-align: justify;
+
+  /* Text/Body Text */
+
+  color: #666666;
+  padding-top: 15px;
+}
+
+/* -------------------------------------- About Section --------------------------------------  */
+
 /* --------------------------------------------- media screen for tab ( portrait ) ------------------------------------------- */
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
@@ -99,6 +162,10 @@
   .footer-img-mobile-state {
     display: block;
     margin: auto;
+  }
+
+  .about-second-section-mobile-spacing {
+    margin-top: 20px;
   }
 }
 
