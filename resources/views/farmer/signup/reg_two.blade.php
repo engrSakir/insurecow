@@ -161,7 +161,7 @@
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label" for="inputNID">NID Number :</label>
-                                    <input placeholder="Enter Farmer NID Number" type="text" id="nid" class="form-control input-style" name="nid" v-model="nid"/>
+                                    <input placeholder="Enter Farmer NID Number" type="number" min="10" max="13" id="nid" class="form-control input-style" name="nid" v-model="nid"/>
                                 </div>
                             </div>
 
@@ -213,7 +213,7 @@
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label" for="inputAge">Age :</label>
-                                    <input placeholder="Enter Cattle Age" type="text" id="age" class="form-control input-style" name="age" v-model="age"/>
+                                    <input placeholder="Enter Cattle Age" min="1" type="number" id="age" class="form-control input-style" name="age" v-model="age"/>
                                 </div>
                             </div>
 
@@ -236,7 +236,7 @@
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label" for="inputWeight">Weight :</label>
-                                    <input placeholder="Enter Cattle Weight" type="text" id="weight" class="form-control input-style" name="weight" v-model="weight"/>
+                                    <input placeholder="Enter Cattle Weight" min="" type="number" id="weight" class="form-control input-style" name="weight" v-model="weight"/>
                                 </div>
                             </div>
 

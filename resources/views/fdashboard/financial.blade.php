@@ -8,12 +8,12 @@
             <!-- DataTales Example -->
             <!-- Content Row -->
             <h3>Financial 
-                <a href="#" class="btn float-right text-dark dropdown-toggle" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border-radius: 5px;" data-toggle="dropdown">Add New Report -
-                    
-                </a> <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a href="#" class="btn float-right text-dark dropdown-toggle" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border-radius: 5px;" data-toggle="dropdown">Add New Report</a> 
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter">Add New Income</a></li>
                         <li><a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter1">Add New Expense</a></li>
-                    </ul><a href="" class="btn float-right text-dark"><img src="{{ asset('/images/Vector.png') }}" class="img-fluid float-right"></a> </h3>
+                    </ul>
+                <a href="" class="btn float-right text-dark"><img src="{{ asset('/images/Vector.png') }}" class="img-fluid float-right"></a> </h3>
             <div class="row">
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-3 col-md-6">
@@ -277,10 +277,10 @@
 
             </div>
 
-            <h3>Summary</h3>
+            <h3>   </h3>
                  
             <div class="row">
-                <div class="col-lg-9 p-3" style="background: #F0F0F0;border-right: 28px solid #F8F9FC;">
+                <div class="col-lg-9 p-3 mb-3" style="background: #F0F0F0;border-right: 25px solid #F8F9FC;">
                 <div class="card">
                     
                     <div class="table-responsive" style="background: #F0F0F0;">
@@ -317,7 +317,7 @@
                         
                     </div>
                 </div>
-                <div class="col-lg-3 p-3" style="background: #F0F0F0;"> 
+                <div class="col-lg-3 p-3" style="background: #F0F0F0;border-right: 25px solid #F8F9FC;"> 
                     <h5>Recent History<a href="#" class="btn" style="float: right; color: #000000;">See All</a></h5>
                     <div class="table-responsive">
                         <table class="table">

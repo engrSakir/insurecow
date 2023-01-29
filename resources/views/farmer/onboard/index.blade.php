@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-        <a href="{{ route('farmer.index') }}" class="float-start w-25 p-3 mt-3 text-dark" style="background: linear-gradient(268.09deg, #C5EAD5 24.79%, #FFFFFF 99.54%);border-radius: 20px;"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
+            <a href="{{ route('farmer.index') }}" class="float-start w-25 p-3 mt-3 text-dark" style="background: linear-gradient(268.09deg, #C5EAD5 24.79%, #FFFFFF 99.54%);border-radius: 20px;"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
             @if( Session::has( 'not' ))
             <div class="alert text-white mt-5" style="background: #226034">
                 {{ Session::get( 'not' ) }}
@@ -18,7 +18,7 @@
                 {{ Session::get( 'nothing' ) }}
             </div>
             @endif
-            <div class="col-md-8 offset-2 mt-5">
+            <div class="col-lg-8 offset-lg-2 mt-3">    
                 <div class="card p-5" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border: 1px solid #000000;">
                     <h2 class="text-center" >Select Your Cattle</h2>
                     <div class="nav nav-fill my-3">
@@ -45,14 +45,14 @@
                             <input min="1" max="5" type="number" class="form-control mt-3" name="insurance_period" required>
                         </div>
                         <div class="form-section">
-                            <h3>What Coverages Do You Want For Your Cattle?</h3>
-                            <div class="form-check">
+                            <h3><strong>What Coverages Do You Want For Your Cattle?</strong></h3>
+                            <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" value="accidental_diseases_mortality" name="accidental_mortality" id="flexCheckDefault" required>
                                 <label class="form-check-label" for="flexCheckDefault">
-                                    Accidental/ Diseases Mortality
+                                    Accidental / Diseases Mortality
                                 </label>
                             </div>
-                            <h3>Additional Coverages</h3>
+                            <h3><strong>Additional Coverages</strong></h3>
                             <div class="form-check">
                             <!--  -->
                                 <input class="form-check-input" type="checkbox" value="floodcyclonecoverage" name="additionalcoverages[]" id="flexCheckDefault">

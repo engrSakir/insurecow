@@ -81,10 +81,10 @@
         <form class="{{ route('reg_one.store') }}" method="post" enctype="multipart/form-data" style="background: #D7ECCB;">
             {{ csrf_field() }}
             <div class="card-block p-2 card-block-down mb-4" style="background: #D7ECCB;">
-                <div class="row px-4 mt-4 mb-3" style="background: #D7ECCB;">
+                <div class="row px-4 mt-4 mb-3">
                     <!-- Owner NID : -->
                     <div class="col-md-4 mb-5" style="background: #D7ECCB;">
-                        <p>Owner NID :</p>
+                        <p>NID Front:</p>
                         <div class="file-upload">
                             <div class="image-upload-wrap">
                                 <input
@@ -92,7 +92,7 @@
                                     type="file"
                                     onchange="readURL(this);"
                                     accept="image/*"
-                                    name="nid"
+                                    name="nid_front"
                                 />
                                 <img class="img-card" src="{{ asset('images/image.png') }}"/>
                             </div>
@@ -122,7 +122,7 @@
 
                     <!-- Vet Certiicate -->
                     <div class="col-md-4 mb-5" style="background: #D7ECCB;">
-                        <p>Vet Certificate:</p>
+                        <p>NID Back:</p>
                         <div class="file-upload">
                             <div class="image2-upload-wrap">
                                 <input
@@ -130,7 +130,7 @@
                                     type="file"
                                     onchange="readURL2(this);"
                                     accept="image/*"
-                                    name="vet"
+                                    name="nid_back"
                                 />
                                 <img class="img-card" src="{{ asset('images/image.png') }}"/>
                             </div>
@@ -208,33 +208,6 @@
 
             <hr/>
 
-            <div class="row px-4">
-                <!-- <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                        <label class="form-label" for="inputFirstName"
-                        >Issuing Date</label
-                        >
-                        <input
-                            type="date"
-                            id="inputFirstName"
-                            class="form-control input-style"
-                            name="issue_date"
-                        />
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                        <label class="form-label" for="inputLastName"
-                        >Period of Insurance:</label
-                        >
-
-                        <select name="poi" id="" class="form-control input-style">
-                            <option value="1">1</option>
-                        </select>
-                    </div>
-                </div> -->
-            </div>
 
             <!--PDf Attachments-->
 

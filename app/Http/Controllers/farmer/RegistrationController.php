@@ -38,19 +38,18 @@ class RegistrationController extends Controller
     {
 
         $inputs = \request()->validate([
-            'nid' => 'required',
-            'vet' => 'required',
+            'nid_front' => 'required',
+            'nid_back' => 'required',
             'chairman' => 'required',
         ]);
 
-        // $this->validate($request,$inputs);
 
-        if (request('nid')) {
-            $inputs['nid'] = \request('nid')->store('images');
+        if (request('nid_front')) {
+            $inputs['nid_front'] = \request('nid_front')->store('images');
         }
 
-        if (request('vet')) {
-            $inputs['vet'] = \request('vet')->store('images');
+        if (request('nid_back')) {
+            $inputs['nid_back'] = \request('nid_back')->store('images');
         }
 
         if (request('chairman')) {

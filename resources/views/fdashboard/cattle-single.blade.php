@@ -6,7 +6,8 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
             <!-- Content Row -->
-            <h3>Cattle</h3>
+            <h3>Cattle    <a class="btn float-right text-dark" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border-radius: 5px;">New Report
+                          <a href="#" class="btn float-right text-dark"><img src="{{ asset('/images/Vector.png') }}" class="img-fluid float-right"></a></h3>
             <center>
                 <img src="{{ asset('storage/'.$registeredcattle->face_of_cow) }}" class="img-fluid mb-5">
             </center>
@@ -49,6 +50,18 @@
                 <p>Issuing Date : {{ $registeredcattle->created_at }}</p>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-lg-6">
+                Vet Certificate : <br>
+                
+              </div>
+              <div class="col-lg-6">
+                Chairman Certificate : <br>
+                <img src="{{ asset('storage/' . $certificate->chairman) }}" class="img-fluid">
+              </div>
+            </div>  
+
           </div>
         </form>
       </div>

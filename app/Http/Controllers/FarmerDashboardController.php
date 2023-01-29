@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Farmer_reg_1;
 use App\Farmer_reg_2;
 use App\Medical;
 use Auth;
@@ -46,7 +47,8 @@ class FarmerDashboardController extends Controller
     public function reportCattle($id)
     {
         $registeredcattle = Farmer_reg_2::findOrFail($id);
-        return view('fdashboard.cattle-single', compact('registeredcattle'));
+        $certificate = Farmer_reg_1::where('user_id', auth()->user()->id)->first();
+        return view('fdashboard.cattle-single', compact('registeredcattle', 'certificate'));
     }
 
     /**

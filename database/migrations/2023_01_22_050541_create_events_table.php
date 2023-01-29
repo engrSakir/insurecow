@@ -17,7 +17,11 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('title');
             $table->dateTime('start');
-            $table->dateTime('end');  
+            $table->integer('cattle_id')->nullable();
+            $table->string('category')->nullable();
+            $table->string('priority')->nullable();
+            $table->dateTime('end')->nullable();  
+            $table->longText('details')->nullable();  
             $table->timestamps();
         });
     }

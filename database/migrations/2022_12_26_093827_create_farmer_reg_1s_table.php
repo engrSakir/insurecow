@@ -15,8 +15,8 @@ class CreateFarmerReg1sTable extends Migration
     {
         Schema::create('farmer_reg_1s', function (Blueprint $table) {
             $table->id();
-            $table->string('nid');
-            $table->string('vet');
+            $table->string('nid_front');
+            $table->string('nid_back');
             $table->string('chairman')->nullable();
             $table->string('user_id');
 
