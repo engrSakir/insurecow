@@ -8,6 +8,8 @@
     @stack('css')
     @stack('csss')
     @stack('acss')
+    @stack('otp')
+
 
 
     <link

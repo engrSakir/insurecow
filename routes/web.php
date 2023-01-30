@@ -196,3 +196,15 @@ Route::get('log_out', function () {
 Route::get('test', function () {
     return Company::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first()->image;
 });
+
+
+//=================================OTP==========================================================
+
+
+    Route::get('otp/login','OtpController@login')->name('otp.login');
+    Route::post('otp/generate','OtpController@generate')->name('otp.generate');
+    Route::get('otp/verification/{user_id}','OtpController@verification')->name('otp.verification');
+    Route::post('otp/login','OtpController@loginwithotp')->name('otp.getlogin');
+
+
+
