@@ -14,7 +14,18 @@
                         <li><a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter1">Add New Expense</a></li>
                     </ul>
                 <a href="" class="btn float-right text-dark"><img src="{{ asset('/images/Vector.png') }}" class="img-fluid float-right"></a> </h3>
-            <div class="row">
+                
+                @if( Session::has( 'success' ))
+                <div class="alert text-white mt-5" style="background: #226034">
+                    {{ Session::get( 'success' ) }}
+                </div>
+                @endif
+                @if( Session::has( 'notification' ))
+                <div class="alert text-white mt-5" style="background: #226034">
+                    {{ Session::get( 'notification' ) }}
+                </div>
+                @endif
+                <div class="row">
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-3 col-md-6">
                     <div class="card mb-3 mt-2" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
@@ -185,7 +196,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="POST">
+                            <form action="{{ route('income.save') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="">Date:</label>
@@ -231,7 +242,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="POST">
+                            <form action="{{ route('farmer.expense.save') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="">Date:</label>
@@ -250,11 +261,11 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="">SELECT FOOD:</label>
-                                    <select name="category_id" class="form-control">
-                                        <option value="">SELECT FOOD</option>
-                                        <option value="1">GRASS</option>
-                                        <option value="2">RICE</option>
+                                    <label for="">SELECT EXPENSE CATEGORY:</label>
+                                    <select name="category" class="form-control">
+                                        <option value="">SELECT EXPENSE CATEGORY</option>
+                                        <option value="medical">MEDICAL</option>
+                                        <option value="food">FOOD</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

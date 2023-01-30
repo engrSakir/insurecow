@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFarmerExpensesTable extends Migration
+class CreateFarmerIncomesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateFarmerExpensesTable extends Migration
      */
     public function up()
     {
-        Schema::create('farmer_expenses', function (Blueprint $table) {
+        Schema::create('farmer_incomes', function (Blueprint $table) {
             $table->id();
             $table->string('date');
             $table->string('amount');
             $table->integer('cattle_id');
-            $table->string('category');
-            $table->string('invoice');
-            $table->longText('comment');
             $table->integer('user_id');
+            $table->string('invoice');
+            $table->string('comment');
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreateFarmerExpensesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('farmer_expenses');
+        Schema::dropIfExists('farmer_incomes');
     }
 }

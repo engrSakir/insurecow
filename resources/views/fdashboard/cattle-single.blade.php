@@ -12,10 +12,9 @@
                 <img src="{{ asset('storage/'.$registeredcattle->face_of_cow) }}" class="img-fluid mb-5">
             </center>
             <section>
-
-      <h4 class="text-center text-white p-2" style="background: #226034">Cow Details Information</h4>
-      <div class="cow-details  mt-2">
-        <form>
+              
+              <h4 class="text-center text-white p-2" style="background: #226034">Cow Details Information</h4>
+              <div class="cow-details  mt-2">
           <div class="information">
             <div class="row d-flex owner mt-2">
               <div class="col-lg-5">
@@ -35,13 +34,14 @@
               class="row d-flex species p-2 rounded mb-3"
             >
               <div class="col-lg-5">
-                <p>Price : {{ $registeredcattle->price }}</p>
-                <p>Medical Expense : {{ $registeredcattle->cattle_breed }}</p>
-                <p>Profitable Selling Price : {{ $registeredcattle->gender }}</p>
+                <p>Price : {{ $registeredcattle->price }} Taka</p>
+                <p>Medical Expense : {{ $expenses }} Taka</p>
+                <p>Total Expense (with cattle price): {{ $registeredcattle->price + $expenses + $expensesfood }} Taka</p>
               </div>
               <div class="col-lg-5">
-                <p>Feed Expense : {{ $registeredcattle->cattle_breed }}</p>
-                <p>Total Expense: {{ $registeredcattle->weight }} Kg</p>
+                <p>Feed Expense : {{ $expensesfood }} Taka</p>
+                <p>Total Expense: {{ $expenses + $expensesfood }} Taka</p>  
+                <p class="font-weight-bold">Profitable Selling Price : {{ $registeredcattle->price + $expenses + $expensesfood + $totalprofit }} Taka</p>
               </div>
             </div>
 
@@ -63,7 +63,6 @@
             </div>  
 
           </div>
-        </form>
       </div>
     </section>
         </div>

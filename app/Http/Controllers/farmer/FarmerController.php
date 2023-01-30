@@ -258,21 +258,27 @@ class FarmerController extends Controller
     {
         $request->validate([
             "date" => 'required',
-            "cattle_id" => 'required|integer',
             "amount" => 'required',
-            "cost_note" => 'required',
+            "cattle_id" => 'required|integer',
+            "category" => 'required',
+            "invoice" => 'required',
+            "comment" => 'required',
         ], [
             "date.required" => 'Todays date is required.',
-            "cattle_id.required" => 'Please select a cattle.',
             "amount.required" => 'Please enter cost amount.',
-            "cost_note.required" => 'Please enter purpose of cost.',
+            "cattle_id.required" => 'Please select a cattle.',
+            "category.required" => 'Please select a category.',
+            "invoice.required" => 'Please select a invoice.',
+            "comment.required" => 'Please enter purpose of cost.',
         ]);
 
         FarmerExpense::create([
             "date" => $request->date,
-            "cattle_id" => $request->cattle_id,
             "amount" => $request->amount,
-            "cost_note" => $request->cost_note,
+            "cattle_id" => $request->cattle_id,
+            "category" => $request->category,
+            "invoice" => $request->invoice,
+            "comment" => $request->comment,
             "user_id" => Auth::user()->id,
         ]);
 

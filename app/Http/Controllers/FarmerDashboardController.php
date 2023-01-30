@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Farmer_reg_1;
 use App\Farmer_reg_2;
 use App\Medical;
+use App\FarmerExpense;
 use Auth;
 class FarmerDashboardController extends Controller
 {
@@ -48,7 +49,10 @@ class FarmerDashboardController extends Controller
     {
         $registeredcattle = Farmer_reg_2::findOrFail($id);
         $certificate = Farmer_reg_1::where('user_id', auth()->user()->id)->first();
-        return view('fdashboard.cattle-single', compact('registeredcattle', 'certificate'));
+        $expenses = FarmerExpense::where('category', '=', 'medical')->where('cattle_id', $id)->get()->sum('amount');
+        $expensesfood = FarmerExpense::where('category', '=', 'food')->where('cattle_id', $id)->get()->sum('amount');
+        $totalprofit = ($registeredcattle->price + $expenses + $expensesfood * 40) / 100;
+        return view('fdashboard.cattle-single', compact('registeredcattle', 'certificate', 'expenses', 'expensesfood', 'totalprofit'));
     }
 
     /**
