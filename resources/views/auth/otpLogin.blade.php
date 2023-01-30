@@ -174,8 +174,7 @@
             <div class="col-lg-6">
                 <div class="card card-style h-100">
                     <div class="card-body">
-                        <img  src="{{ asset('/images/122.png') }}" class="img-fluid" alt="Cow" style="position: relative" />
-                        <img  src="{{ asset('/images/133.png') }}" class="img-fluid" alt="Cow" style="position: absolute; right: 100px; top: 80px" />
+                        <img src="{{ asset('/images/login_back.png') }}" class="img-fluid" alt="Cow" />
                     </div>
                 </div>
             </div>
