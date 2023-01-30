@@ -8,13 +8,24 @@
             <!-- DataTales Example -->
             <!-- Content Row -->
             <h3>Financial 
-                <a href="#" class="btn float-right text-dark dropdown-toggle" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border-radius: 5px;" data-toggle="dropdown">Add New Report -
-                    
-                </a> <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a href="#" class="btn float-right text-dark dropdown-toggle" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border-radius: 5px;" data-toggle="dropdown">Add New Report</a> 
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter">Add New Income</a></li>
                         <li><a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter1">Add New Expense</a></li>
-                    </ul><a href="" class="btn float-right text-dark"><img src="{{ asset('/images/Vector.png') }}" class="img-fluid float-right"></a> </h3>
-            <div class="row">
+                    </ul>
+                <a href="" class="btn float-right text-dark"><img src="{{ asset('/images/Vector.png') }}" class="img-fluid float-right"></a> </h3>
+                
+                @if( Session::has( 'success' ))
+                <div class="alert text-white mt-5" style="background: #226034">
+                    {{ Session::get( 'success' ) }}
+                </div>
+                @endif
+                @if( Session::has( 'notification' ))
+                <div class="alert text-white mt-5" style="background: #226034">
+                    {{ Session::get( 'notification' ) }}
+                </div>
+                @endif
+                <div class="row">
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-3 col-md-6">
                     <div class="card mb-3 mt-2" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
@@ -185,7 +196,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="POST">
+                            <form action="{{ route('income.save') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="">Date:</label>
@@ -199,8 +210,9 @@
                                     <label for="">Cattle:</label>
                                     <select name="cattle_id" class="form-control">
                                         <option value="">SELECT CATTLE</option>
-                                        <option value="1">Lalu</option>
-                                        <option value="2">Kalu</option>
+                                        @foreach($cattles as $cattle)
+                                            <option value="{{ $cattle->id }}">{{ $cattle->cattle_name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -231,7 +243,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="POST">
+                            <form action="{{ route('farmer.expense.save') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="">Date:</label>
@@ -245,16 +257,17 @@
                                     <label for="">Cattle:</label>
                                     <select name="cattle_id" class="form-control">
                                         <option value="">SELECT CATTLE</option>
-                                        <option value="1">Lalu</option>
-                                        <option value="2">Kalu</option>
+                                        @foreach($cattles as $cattle)
+                                            <option value="{{ $cattle->id }}">{{ $cattle->cattle_name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="">SELECT FOOD:</label>
-                                    <select name="category_id" class="form-control">
-                                        <option value="">SELECT FOOD</option>
-                                        <option value="1">GRASS</option>
-                                        <option value="2">RICE</option>
+                                    <label for="">SELECT EXPENSE CATEGORY:</label>
+                                    <select name="category" class="form-control">
+                                        <option value="">SELECT EXPENSE CATEGORY</option>
+                                        <option value="medical">MEDICAL</option>
+                                        <option value="food">FOOD</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -277,10 +290,10 @@
 
             </div>
 
-            <h3>Summary</h3>
+            <h3>   </h3>
                  
             <div class="row">
-                <div class="col-lg-9 p-3" style="background: #F0F0F0;border-right: 28px solid #F8F9FC;">
+                <div class="col-lg-9 p-3 mb-3" style="background: #F0F0F0;border-right: 25px solid #F8F9FC;">
                 <div class="card">
                     
                     <div class="table-responsive" style="background: #F0F0F0;">
@@ -317,7 +330,7 @@
                         
                     </div>
                 </div>
-                <div class="col-lg-3 p-3" style="background: #F0F0F0;"> 
+                <div class="col-lg-3 p-3" style="background: #F0F0F0;border-right: 25px solid #F8F9FC;"> 
                     <h5>Recent History<a href="#" class="btn" style="float: right; color: #000000;">See All</a></h5>
                     <div class="table-responsive">
                         <table class="table">

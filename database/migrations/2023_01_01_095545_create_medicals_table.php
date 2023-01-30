@@ -22,6 +22,7 @@ class CreateMedicalsTable extends Migration
             $table->string('vaccine_name')->nullable();
             $table->string('next_vaccination_date')->nullable();
             $table->string('pdf_file')->nullable();
+            $table->string('details')->nullable();
             $table->integer('user_id')->nullable();
             $table->timestamps();
         });

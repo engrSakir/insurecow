@@ -19,8 +19,8 @@ use App\Http\Controllers\CompanyController;
 */
 
 Route::get('/', function () {
-    return view('landing');
-//    return redirect()->route('farmer.login');
+    // return view('landing');
+   return redirect()->route('farmer.login');
 });
 
 Auth::routes();
@@ -142,6 +142,8 @@ Route::middleware(['farmer', 'auth'])->group(function () {
         Route::post('calendar/delete', 'farmer\CalenderController@destroy');
 
         Route::post('task/save', 'farmer\CalenderController@new')->name('task.save');
+        Route::post('income/save', 'farmer\FarmerIncomeController@new')->name('income.save');
+        Route::post('report/save', 'farmer\FarmerController@saveReport')->name('report.save');
 
         //--------------------------------------------------------------------Farmer Dashboard End------------------------
     });

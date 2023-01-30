@@ -4,7 +4,7 @@
 <div id="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-9 mb-3">
                 <div class="response"></div>
                 <div id='calendar'></div>  
             </div>
@@ -54,7 +54,7 @@
                 <label for="">Start Date:</label>
                 <input type="text" class="form-control @error('date') is-invalid @enderror " name="start" id="datepicker" placeholder="01/02/2023" readonly required>
             </div>
-            <!-- <div class="form-group">
+            <div class="form-group">
                 <label for="">Cattle:</label>
                 <select name="cattle_id" class="form-control">
                     <option value="">SELECT CATTLE</option>
@@ -64,29 +64,28 @@
             </div>
             <div class="form-group">
                 <label for="">SELECT FOOD:</label>
-                <select name="category_id" class="form-control">
-                    <option value="">SELECT FOOD</option>
-                    <option value="1">GRASS</option>
-                    <option value="2">RICE</option>
+                <select name="category" class="form-control">
+                    <option value="">SELECT CATEGORY</option>
+                    <option value="medical">MEDICAL</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="">Priority:</label>
-                <select name="category_id" class="form-control">
+                <select name="priority" class="form-control">
                     <option value="">SELECT Priority</option>
                     <option value="high">HIGH</option>
                     <option value="medium">MEDIUM</option>
                     <option value="low">LOW</option>
                 </select>
-            </div> -->
+            </div>
             <div class="form-group">
                 <label for="">End Date:</label>
                 <input type="text" class="form-control @error('date') is-invalid @enderror " name="end" id="datepicker2" placeholder="01/02/2023" readonly required>
             </div>
-            <!-- <div class="form-group">
+            <div class="form-group">
                 <label for="">Details:</label>
                 <textarea name="details" class="form-control" id="" rows="2"></textarea>
-            </div> -->
+            </div>
             <div class="form-group float-right">
                 <button type="submit" style="color: #000000; border: 2px solid #000000" class="btn" data-dismiss="modal" aria-label="Close">Cancel</button>
                 <button class="btn text-white" style="background: #086343">Create Income</button>

@@ -258,21 +258,27 @@ class FarmerController extends Controller
     {
         $request->validate([
             "date" => 'required',
-            "cattle_id" => 'required|integer',
             "amount" => 'required',
-            "cost_note" => 'required',
+            "cattle_id" => 'required|integer',
+            "category" => 'required',
+            "invoice" => 'required',
+            "comment" => 'required',
         ], [
             "date.required" => 'Todays date is required.',
-            "cattle_id.required" => 'Please select a cattle.',
             "amount.required" => 'Please enter cost amount.',
-            "cost_note.required" => 'Please enter purpose of cost.',
+            "cattle_id.required" => 'Please select a cattle.',
+            "category.required" => 'Please select a category.',
+            "invoice.required" => 'Please select a invoice.',
+            "comment.required" => 'Please enter purpose of cost.',
         ]);
 
         FarmerExpense::create([
             "date" => $request->date,
-            "cattle_id" => $request->cattle_id,
             "amount" => $request->amount,
-            "cost_note" => $request->cost_note,
+            "cattle_id" => $request->cattle_id,
+            "category" => $request->category,
+            "invoice" => $request->invoice,
+            "comment" => $request->comment,
             "user_id" => Auth::user()->id,
         ]);
 
@@ -287,6 +293,41 @@ class FarmerController extends Controller
 
         return view('farmer.show-registered-cattle', compact('registeredcattle', 'pending', 'medicals'));
         
+    }
+
+    public function saveReport(Request $request)
+    {
+        $request->validate([
+            'cattle_id' => 'required|integer',
+            'pdf_file' => 'required|mimes:pdf',
+            'date' => 'required',
+            'details' => 'required',
+        ]);
+
+        
+        $medical = Medical::where('cattle_id', $request->cattle_id)->first();
+        
+        if ($medical) {
+            $medical->date = $request->date;
+            if (request('pdf_file')) {
+                $medical['pdf_file'] = \request('pdf_file')->store('images');
+            }
+            $medical->pdf_file = $medical['pdf_file'];
+            $medical->details = $request->details;
+        }else {
+            if (request('pdf_file')) {
+                $medical['pdf_file'] = \request('pdf_file')->store('images');
+            }
+            Medical::create([
+                'cattle_id' => $request->cattle_id,
+                'pdf_file' => $medical['pdf_file'],
+                'date' => $request->date,
+                'details' => $request->details,
+                'user_id' => auth()->user()->id
+            ]);
+        }
+
+        return redirect()->back()->with('report', 'Report Updated Successfully!!!');
     }
 
 }

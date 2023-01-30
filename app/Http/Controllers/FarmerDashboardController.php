@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Farmer_reg_1;
 use App\Farmer_reg_2;
 use App\Medical;
+use App\FarmerExpense;
 use Auth;
 class FarmerDashboardController extends Controller
 {
@@ -26,13 +28,15 @@ class FarmerDashboardController extends Controller
 
     public function financial()
     {
-        return view('fdashboard.financial');
+        $cattles = Farmer_reg_2::where('user_id', auth()->user()->id)->get();
+        return view('fdashboard.financial', compact('cattles'));
     }
 
     public function report()
     {
         $registeredcattles = Medical::where('user_id', auth()->user()->id)->get();
-        return view('fdashboard.report', compact('registeredcattles'));
+        $cattles = Farmer_reg_2::where('user_id', auth()->user()->id)->get(); 
+        return view('fdashboard.report', compact('registeredcattles', 'cattles'));
     }
 
     public function reportShow($id)
@@ -46,7 +50,11 @@ class FarmerDashboardController extends Controller
     public function reportCattle($id)
     {
         $registeredcattle = Farmer_reg_2::findOrFail($id);
-        return view('fdashboard.cattle-single', compact('registeredcattle'));
+        $certificate = Farmer_reg_1::where('user_id', auth()->user()->id)->first();
+        $expenses = FarmerExpense::where('category', '=', 'medical')->where('cattle_id', $id)->get()->sum('amount');
+        $expensesfood = FarmerExpense::where('category', '=', 'food')->where('cattle_id', $id)->get()->sum('amount');
+        $totalprofit = ($registeredcattle->price + $expenses + $expensesfood * 40) / 100;
+        return view('fdashboard.cattle-single', compact('registeredcattle', 'certificate', 'expenses', 'expensesfood', 'totalprofit'));
     }
 
     /**

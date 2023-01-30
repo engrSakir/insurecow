@@ -39,24 +39,32 @@ class CalenderController extends Controller
 
     public function new(Request $request)
     {  
+
         $this->validate($request, [
-            'title' => 'required',
-            'start' => 'required',
-            'end' => 'required',
+            'title'     => 'required',
+            'start'     => 'required',
+            'cattle_id'  => 'required',
+            'category'  => 'required',
+            'priority'  => 'required',
+            'details'   => 'required',
         ]);
 
-            $start =  Carbon::createFromFormat('m/d/Y', $request->start)->format('Y-m-d');
-            $end =  Carbon::createFromFormat('m/d/Y', $request->end)->format('Y-m-d');
             
             $event = new Event();   
             $event->title = $request->title;   
-            $event->start = $start;   
-            $event->end = $end; 
+            $event->start = Carbon::createFromFormat('m/d/Y', $request->start)->format('Y-m-d');   
+            $event->cattle_id = $request->cattle_id;   
+            $event->category = $request->category;   
+            $event->priority = $request->priority;      
+            if($request->end)
+            {
+                $event->end = Carbon::createFromFormat('m/d/Y', $request->end)->format('Y-m-d');; 
+            }else {
+                $event->end = Carbon::createFromFormat('m/d/Y', $request->start)->format('Y-m-d');
+            }
+            $event->details = $request->details; 
             $event->save();  
-            return redirect()->back();
-
-
-        
+            return redirect()->back();       
     }
 
     
