@@ -6,7 +6,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
             <!-- Content Row -->
-            <h3>Cattle    <a class="btn float-right text-dark" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border-radius: 5px;">New Report
+            <h3>Cattle    <a class="btn float-right text-dark" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border-radius: 5px;">New Report</a>
                           <a href="#" class="btn float-right text-dark"><img src="{{ asset('/images/Vector.png') }}" class="img-fluid float-right"></a></h3>
             <center>
                 <img src="{{ asset('storage/'.$registeredcattle->face_of_cow) }}" class="img-fluid mb-5">

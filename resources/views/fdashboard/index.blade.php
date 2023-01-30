@@ -25,7 +25,7 @@
                                     <i class="fas fa-cow fa-2x text-dark"></i>
                                 </div>
                             </div>
-                            <p class="cattle">180</p>
+                            <p class="cattle">{{ App\Farmer_reg_2::where('user_id', auth()->user()->id)->get()->count() }}</p>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                                     <i class="fas fa-cow fa-2x text-dark"></i>
                                 </div>
                             </div>
-                            <p class="cattle">120</p>
+                            <p class="cattle">{{ App\Farmer_reg_2::where('gender', 'male')->where('user_id', auth()->user()->id)->get()->count() }}</p>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                                 </div>
 
                             </div>
-                            <p class="cattle">100</p>
+                            <p class="cattle">{{ App\Farmer_reg_2::where('gender', 'female')->where('user_id', auth()->user()->id)->get()->count() }}</p>
                         </div>
                     </div>
                 </div>

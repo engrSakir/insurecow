@@ -28,13 +28,15 @@ class FarmerDashboardController extends Controller
 
     public function financial()
     {
-        return view('fdashboard.financial');
+        $cattles = Farmer_reg_2::where('user_id', auth()->user()->id)->get();
+        return view('fdashboard.financial', compact('cattles'));
     }
 
     public function report()
     {
         $registeredcattles = Medical::where('user_id', auth()->user()->id)->get();
-        return view('fdashboard.report', compact('registeredcattles'));
+        $cattles = Farmer_reg_2::where('user_id', auth()->user()->id)->get(); 
+        return view('fdashboard.report', compact('registeredcattles', 'cattles'));
     }
 
     public function reportShow($id)

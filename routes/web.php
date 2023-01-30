@@ -143,6 +143,7 @@ Route::middleware(['farmer', 'auth'])->group(function () {
 
         Route::post('task/save', 'farmer\CalenderController@new')->name('task.save');
         Route::post('income/save', 'farmer\FarmerIncomeController@new')->name('income.save');
+        Route::post('report/save', 'farmer\FarmerController@saveReport')->name('report.save');
 
         //--------------------------------------------------------------------Farmer Dashboard End------------------------
     });

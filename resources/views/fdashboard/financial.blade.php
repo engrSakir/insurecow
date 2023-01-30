@@ -210,8 +210,9 @@
                                     <label for="">Cattle:</label>
                                     <select name="cattle_id" class="form-control">
                                         <option value="">SELECT CATTLE</option>
-                                        <option value="1">Lalu</option>
-                                        <option value="2">Kalu</option>
+                                        @foreach($cattles as $cattle)
+                                            <option value="{{ $cattle->id }}">{{ $cattle->cattle_name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -256,8 +257,9 @@
                                     <label for="">Cattle:</label>
                                     <select name="cattle_id" class="form-control">
                                         <option value="">SELECT CATTLE</option>
-                                        <option value="1">Lalu</option>
-                                        <option value="2">Kalu</option>
+                                        @foreach($cattles as $cattle)
+                                            <option value="{{ $cattle->id }}">{{ $cattle->cattle_name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">

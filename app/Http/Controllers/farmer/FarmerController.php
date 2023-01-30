@@ -295,5 +295,40 @@ class FarmerController extends Controller
         
     }
 
+    public function saveReport(Request $request)
+    {
+        $request->validate([
+            'cattle_id' => 'required|integer',
+            'pdf_file' => 'required|mimes:pdf',
+            'date' => 'required',
+            'details' => 'required',
+        ]);
+
+        
+        $medical = Medical::where('cattle_id', $request->cattle_id)->first();
+        
+        if ($medical) {
+            $medical->date = $request->date;
+            if (request('pdf_file')) {
+                $medical['pdf_file'] = \request('pdf_file')->store('images');
+            }
+            $medical->pdf_file = $medical['pdf_file'];
+            $medical->details = $request->details;
+        }else {
+            if (request('pdf_file')) {
+                $medical['pdf_file'] = \request('pdf_file')->store('images');
+            }
+            Medical::create([
+                'cattle_id' => $request->cattle_id,
+                'pdf_file' => $medical['pdf_file'],
+                'date' => $request->date,
+                'details' => $request->details,
+                'user_id' => auth()->user()->id
+            ]);
+        }
+
+        return redirect()->back()->with('report', 'Report Updated Successfully!!!');
+    }
+
 }
 
