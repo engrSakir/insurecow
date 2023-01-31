@@ -36,13 +36,10 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-
         $inputs = \request()->validate([
             'nid_front' => 'required',
             'nid_back' => 'required',
-            'chairman' => 'required',
         ]);
-
 
         if (request('nid_front')) {
             $inputs['nid_front'] = \request('nid_front')->store('images');

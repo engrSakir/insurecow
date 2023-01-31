@@ -42,7 +42,11 @@
             }
         } */
 
-        
+        .dropdown-item.active, .dropdown-item:active {
+            color: #fff !important;
+            text-decoration: none;
+            background-color: #086343 !important;
+        }
         
     </style>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -424,6 +428,40 @@ function displayMessage(message) {
     $('#insurecow-datatable').DataTable({
         responsive: true
     });
+</script>
+<script>
+
+const calculateSale = (listPrice, discount) => {
+  listPrice = parseFloat(listPrice);
+  discount  = parseFloat(discount);
+  return (listPrice + ( listPrice * discount / 100 )).toFixed(2);
+}
+const calculateDiscount = (listPrice, salePrice) => {
+  listPrice = parseFloat(listPrice);
+  salePrice = parseFloat(salePrice);
+  return 100 + (salePrice * 100 / listPrice);
+}
+const $list = $('input[name="list"]'),
+      $disc = $('input[name="disc"]'), 
+      $sale = $('input[name="sale"]'); 
+    
+$list.add( $disc ).on('input', () => {
+  let sale = $list.val();              
+  if ( $disc.val().length ) {          
+    sale = calculateSale($list.val(), $disc.val());
+  }
+  $sale.val( sale );
+});
+
+$sale.on('input', () => {      
+let disc = 0;                
+if ( $sale.val().length ) {  
+  disc = calculateDiscount($list.val(), $sale.val());
+}
+$disc.val( disc );
+});
+
+$list.trigger('input');
 </script>
 </body>
 

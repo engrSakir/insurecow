@@ -41,7 +41,29 @@
               <div class="col-lg-5">
                 <p>Feed Expense : {{ $expensesfood }} Taka</p>
                 <p>Total Expense: {{ $expenses + $expensesfood }} Taka</p>  
-                <p class="font-weight-bold">Profitable Selling Price : {{ $registeredcattle->price + $expenses + $expensesfood + $totalprofit }} Taka</p>
+                <!-- <p class="font-weight-bold">Profitable Selling Price : {{ $registeredcattle->price + $expenses + $expensesfood + $totalprofit }} Taka</p> -->
+              </div>
+              <div class="col-lg-12">
+                <p class="font-weight-bold">Profit Calculator :</p>
+                <div class="row">
+                  <div class="col-lg-6">
+                  <div class="form-group">
+                  <label for="">Total Cattle Cost</label>
+                  <input type="number" name="list" value="{{ $registeredcattle->price + $expenses + $expensesfood }}" class="form-control" readonly>
+                </div>
+                
+                  </div>
+                  <div class="col-lg-6">
+                  <div class="form-group">
+                  <label for="">Percentage profit you want</label>
+                  <input type="number" name="disc" class="form-control" placeholder="%">
+                </div>
+                  </div> 
+                </div>
+                <div class="form-group">
+                  <label for="">Selling Price</label>
+                  <input type="number" name="sale" class="form-control" readonly style="font-weight: bold; color: red">
+                </div>
               </div>
             </div>
 

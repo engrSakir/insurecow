@@ -144,7 +144,6 @@ class CompanyController extends Controller
     public function history()
     {
         $user=User::where('role_1','fa')->where('company_id', auth()->user()->id)->get();
-
         return view('company.history', compact('user'));
     }
 
