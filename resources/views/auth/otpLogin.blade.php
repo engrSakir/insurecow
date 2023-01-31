@@ -129,7 +129,11 @@
                     <div class="card-body">
                         <p class="login-text mb-4">Sign In</p>
                         <p class="p-welcome-text mb-5">Welcome To Insure Cow!</p>
-
+                        @if(session('error'))
+                            <div style="color: red">
+                                {{session('error')}}
+                            </div>
+                        @endif
                         <form method="POST" action="{{route('otp.generate')}}">
                             @csrf
                             <!--User Name-->

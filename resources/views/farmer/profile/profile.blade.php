@@ -51,12 +51,84 @@
                             <input type="text" id="inputLastName" class="form-control input-style" name="phone" value="{{\Illuminate\Support\Facades\Auth::user()->phone}}"/>
                         </div>
                     </div>
-                    <div class="mb-4">
+                    <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                            <label class="form-label" for="inputLastName">Address :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" placeholder="Address" name="address"/>
+                            <label class="form-label" for="inputLastName">Father's Name :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="father_name" placeholder="Father's Name" />
                         </div>
                     </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Mother's Name :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="mother_name" placeholder="Mother's Name" />
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Present Address :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="present_address" placeholder="Present Address" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Permanent Address :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="permanent_address" placeholder="Permanent Address" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Date Of Birth :</label>
+                            <input type="date" id="inputLastName" class="form-control input-style" name="dob" placeholder="Date Of Birth" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">NID/Passport/Birth Registration No.  :</label>
+                            <input type="number" id="inputLastName" class="form-control input-style" name="nid" placeholder="NID/Passport/Birth Registration No." />
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Source Of Income :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="source_of_income" placeholder="Source Of Income"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Bank Account No :</label>
+                            <input type="number" id="inputLastName" class="form-control input-style" name="bank_no" placeholder="Bank Account No"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Farm Address :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="farm_address" placeholder="Farm Address"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Zila :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="zila" placeholder="Zila"/>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Upozila/Thana :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="thana" placeholder="Upozila/Thana"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Union :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="union" placeholder="Union"/>
+                        </div>
+                    </div>
+
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">City :</label>
@@ -77,14 +149,54 @@
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                            <label class="form-label" for="inputLastName">Country :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="country" placeholder="Country"/>
+                            <label class="form-label" for="inputLastName">Village :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="village" placeholder="Village"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Loan Amount :</label>
+                            <input type="number" id="inputLastName" class="form-control input-style" name="loan_amount" placeholder="Loan Amount"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Number Of Livestock :</label>
+                            <input type="number" id="inputLastName" class="form-control input-style" name="no_of_livestock" placeholder="Number OF Livestock"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <label class="form-label" for="inputLastName">Type Of Livestock :</label>
+
+                        <div class="form-outline">
+                            <select class="form-control" name="type_of_livestock" >
+
+                                <option>Cow</option>
+                                <option>Bull</option>
+                                <option>Ox</option>
+
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Sum Insured :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="sum_insured" placeholder="Sum Insured"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Image :</label>
                             <input type="file" id="inputLastName" class="form-control input-style" name="image"/>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Nationality :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="country" placeholder="Country"/>
                         </div>
                     </div><hr>
                     <br>

@@ -33,7 +33,11 @@
 
 
 
-
+    @if(session('success'))
+            <div style="color: #0f6848">
+                {{session('success')}}
+            </div>
+        @endif
     @if(session('error'))
         <div style="color: red">
             {{session('error')}}
