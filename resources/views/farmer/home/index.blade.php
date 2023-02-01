@@ -15,7 +15,7 @@
                 <div>
                     <h1 class="p-greeting" style="font-weight: bold">Welcome Mr. {{ Auth::user()->name }} to InsureCow ! ! !</h1>
                     <p align="center">Here is some option for you.</p>
-                    <center><a href="{{ route('reg_one.index') }}" class="btn w-50 text-white text-center mt-5 mb-5" style="background-color: #0f6848">Register Your Cattle</a></center>
+                    <center><a href="{{ route('reg_one.index') }}" class="btn w-50 text-white text-center mt-5 mb-5" style="background-color: #0f6848">Add cattle</a></center>
                 </div>
             </div>
             <div class="col-lg-5">
