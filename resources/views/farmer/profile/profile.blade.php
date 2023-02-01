@@ -29,14 +29,14 @@
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputFirstName">First name :</label>
-                            <input type="text" id="inputFirstName" class="form-control input-style" name="first_name" placeholder="First Name"/>
+                            <input type="text" id="inputFirstName" class="form-control input-style" name="first_name" placeholder="First Name" value="{{old('first_name')}}"/>
                         </div>
                     </div>
 
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Last name :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="last_name" placeholder="Last Name" />
+                            <input type="text" id="inputLastName" class="form-control input-style" name="last_name" placeholder="Last Name" value="{{old('last_name')}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -51,40 +51,152 @@
                             <input type="text" id="inputLastName" class="form-control input-style" name="phone" value="{{\Illuminate\Support\Facades\Auth::user()->phone}}"/>
                         </div>
                     </div>
-                    <div class="mb-4">
+                    <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                            <label class="form-label" for="inputLastName">Address :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" placeholder="Address" name="address"/>
+                            <label class="form-label" for="inputLastName">Father's Name :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="father_name" placeholder="Father's Name" value="{{old('father_name')}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Mother's Name :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="mother_name" placeholder="Mother's Name" value="{{old('mother_name')}}"/>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Present Address :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="present_address" placeholder="Present Address" value="{{old('present_address') }}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Permanent Address :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="permanent_address" placeholder="Permanent Address" value="{{old('permanent_address')}}"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Date Of Birth :</label>
+                            <input type="date" id="inputLastName" class="form-control input-style" name="dob" placeholder="Date Of Birth" value="{{old('dob')}}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">NID/Passport/Birth Registration No.  :</label>
+                            <input type="number" id="inputLastName" class="form-control input-style" name="nid" placeholder="NID/Passport/Birth Registration No." value="{{old('nid')}}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Source Of Income :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="source_of_income" placeholder="Source Of Income" value="{{old('source_of_income')}}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Bank Account No :</label>
+                            <input type="number" id="inputLastName" class="form-control input-style" name="bank_no" placeholder="Bank Account No" value="{{old('bank_no')}}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Farm Address :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="farm_address" placeholder="Farm Address" value="{{old('farm_address')}}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Zila :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="zila" placeholder="Zila" value="{{old('zila')}}"/>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Upozila/Thana :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="thana" placeholder="Upozila/Thana" value="{{old('thana')}}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Union :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="union" placeholder="Union" value="{{old('union')}}"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
                             <label class="form-label" for="inputLastName">City :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="city" placeholder="City"/>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="city" placeholder="City" value="{{old('city')}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">District :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="district" placeholder="District"/>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="district" placeholder="District" value="{{old('district')}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Zip Code :</label>
-                            <input type="number" id="inputLastName" class="form-control input-style" name="zip_code" placeholder="Zip Code"/>
+                            <input type="number" id="inputLastName" class="form-control input-style" name="zip_code" placeholder="Zip Code" value="{{old('zip_code')}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                            <label class="form-label" for="inputLastName">Country :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="country" placeholder="Country"/>
+                            <label class="form-label" for="inputLastName">Village :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="village" placeholder="Village" value="{{old('village')}}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Loan Amount :</label>
+                            <input type="number" id="inputLastName" class="form-control input-style" name="loan_amount" placeholder="Loan Amount" value="{{old('loan_amount')}}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Number Of Livestock :</label>
+                            <input type="number" id="inputLastName" class="form-control input-style" name="no_of_livestock" placeholder="Number OF Livestock" value="{{old('no_of_livestock')}}"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <label class="form-label" for="inputLastName">Type Of Livestock :</label>
+
+                        <div class="form-outline">
+                            <select class="form-control" name="type_of_livestock" value="{{old('type_of_livestock')}}">
+
+                                <option>Cow</option>
+                                <option>Bull</option>
+                                <option>Ox</option>
+
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Sum Insured :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="sum_insured" placeholder="Sum Insured" value="{{old('sum_insured')}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Image :</label>
                             <input type="file" id="inputLastName" class="form-control input-style" name="image"/>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="inputLastName">Nationality :</label>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="country" placeholder="Country" value="{{old('country')}}"/>
                         </div>
                     </div><hr>
                     <br>

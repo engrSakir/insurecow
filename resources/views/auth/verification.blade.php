@@ -33,30 +33,35 @@
 
 
 
-
+    @if(session('success'))
+            <div style="color: #0f6848">
+                {{session('success')}}
+            </div>
+        @endif
     @if(session('error'))
         <div style="color: red">
             {{session('error')}}
         </div>
     @endif
-
+    @error('otp')
+    <strong style="color: red">{{$message}}</strong>
+    @enderror
 <div class="container">
 
     <h1 class="p-3" style="color: #082E13; font-family: 'Roboto Slab';font-style: normal;font-weight: 700;font-size: 20px;line-height: 26px;text-decoration-line: underline;">Enter Your OTP</h1>
   <p class="para" align="center">An OTP sends to your mobile number. <br>Please enter the 6 digit OTP.</p>
-    @error('otp')
-    <strong style="color: red">{{$message}}</strong>
-    @enderror
-    <form action="{{route('otp.getlogin')}}" method="post">
-        @csrf
-    <div class="userInput">
 
-        <input type="text" name="otp" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec') "value="{{old('otp')}}">
-        <input type="text" name="otp" id="sec" maxlength="1" onkeyup="clickEvent(this,'third') " value="{{old('otp')}}">
-        <input type="text" name="otp" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')"value="{{old('otp')}}">
-        <input type="text" name="otp" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')"value="{{old('otp')}}">
-        <input type="text" name="otp" id="fifth" maxlength="1" onkeyup="clickEvent(this,'sixth')"value="{{old('otp')}}">
-        <input type="text" name="otp" id="sixth" maxlength="1" value="{{old('otp')}}">
+    <form action="{{route('otp.getlogin')}}" method="post">
+        {{ csrf_field() }}
+    <div class="userInput">
+        <input type="hidden" name="user_id" value="{{$user_id}}">
+
+        <input type="text" name="otp[]" id='ist'    maxlength="1" onkeyup="clickEvent(this,'sec') "value="{{old('otp')}}">
+        <input type="text" name="otp[]" id="sec"    maxlength="1" onkeyup="clickEvent(this,'third') " value="{{old('otp')}}">
+        <input type="text" name="otp[]" id="third"  maxlength="1" onkeyup="clickEvent(this,'fourth')"value="{{old('otp')}}">
+        <input type="text" name="otp[]" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')"value="{{old('otp')}}">
+        <input type="text" name="otp[]" id="fifth"  maxlength="1" onkeyup="clickEvent(this,'sixth')"value="{{old('otp')}}">
+        <input type="text" name="otp[]" id="sixth"  maxlength="1" value="{{old('otp')}}">
 
     </div>
 
