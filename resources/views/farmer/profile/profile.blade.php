@@ -81,13 +81,13 @@
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Date Of Birth :</label>
-                            <input type="date" id="inputLastName" class="form-control input-style" name="dob" placeholder="Date Of Birth" value="{{old('dob')}}"/>
+                            <input type="text" id="datepickerfarmer" class="form-control input-style" name="dob" placeholder="Date Of Birth" value="{{old('dob')}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">NID/Passport/Birth Registration No.  :</label>
-                            <input type="number" id="inputLastName" class="form-control input-style" name="nid" placeholder="NID/Passport/Birth Registration No." value="{{old('nid')}}"/>
+                            <input type="number" min="0" id="inputLastName" class="form-control input-style" name="nid" placeholder="NID/Passport/Birth Registration No." value="{{old('nid')}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -99,7 +99,7 @@
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Bank Account No :</label>
-                            <input type="number" id="inputLastName" class="form-control input-style" name="bank_no" placeholder="Bank Account No" value="{{old('bank_no')}}"/>
+                            <input type="number" min="0" id="inputLastName" class="form-control input-style" name="bank_no" placeholder="Bank Account No" value="{{old('bank_no')}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -144,7 +144,7 @@
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Zip Code :</label>
-                            <input type="number" id="inputLastName" class="form-control input-style" name="zip_code" placeholder="Zip Code" value="{{old('zip_code')}}"/>
+                            <input type="number" min="0" id="inputLastName" class="form-control input-style" name="zip_code" placeholder="Zip Code" value="{{old('zip_code')}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -156,13 +156,13 @@
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Loan Amount :</label>
-                            <input type="number" id="inputLastName" class="form-control input-style" name="loan_amount" placeholder="Loan Amount" value="{{old('loan_amount')}}"/>
+                            <input type="number" min="0" id="inputLastName" class="form-control input-style" name="loan_amount" placeholder="Loan Amount" value="{{old('loan_amount')}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Number Of Livestock :</label>
-                            <input type="number" id="inputLastName" class="form-control input-style" name="no_of_livestock" placeholder="Number OF Livestock" value="{{old('no_of_livestock')}}"/>
+                            <input type="number" min="0" id="inputLastName" class="form-control input-style" name="no_of_livestock" placeholder="Number OF Livestock" value="{{old('no_of_livestock')}}"/>
                         </div>
                     </div>
 

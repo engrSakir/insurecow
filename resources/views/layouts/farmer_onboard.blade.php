@@ -105,7 +105,7 @@
     </head>
 
     <body>
-    @include('inc.farmer_onboard_header')
+    @include('inc.farmer_header')
     {{-- content --}}
     <div class="container">
         @yield('content')

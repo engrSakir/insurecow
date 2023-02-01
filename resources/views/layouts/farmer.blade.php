@@ -109,6 +109,26 @@
     <script>
     $(document).ready(function () {
         var today = new Date();
+        $('#datepickerfarmer').datepicker({
+            format: 'mm-dd-yyyy',
+            autoclose:true,
+            endDate: "today",
+            maxDate: today,
+            changeYear:true,
+            yearRange: "-80:+0"
+        }).on('changeDate', function (ev) {
+                $(this).datepicker('hide');
+            });
+        $('#datepickerfarmer').keyup(function () {
+            if (this.value.match(/[^0-9]/g)) {
+                this.value = this.value.replace(/[^0-9^-]/g, '');
+            }
+        });
+    });
+    </script>
+    <script>
+    $(document).ready(function () {
+        var today = new Date();
         $('#datepicker2').datepicker({
             format: 'mm-dd-yyyy',
             autoclose:true,

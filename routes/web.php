@@ -130,6 +130,7 @@ Route::middleware(['farmer', 'auth'])->group(function () {
 //-------------------------------------------Farmer Dashboard------------------------------------
 
         Route::get('fdashboard', 'FarmerDashboardController@index')->name('fdashboard.index');
+        Route::get('export/cattles', 'FarmerDashboardController@export')->name('cattles.export');
         Route::get('cattles', 'FarmerDashboardController@cattle')->name('fdashboard.cattle');
         Route::get('calendar', 'farmer\CalenderController@index')->name('fdashboard.calender');
         Route::get('financial', 'FarmerDashboardController@financial')->name('fdashboard.financial');
