@@ -23,16 +23,11 @@ class FarmerDashboardController extends Controller
     {
         $total = FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount');
         $totalNumberIncome = FarmerIncome::where('user_id', auth()->user()->id)->get()->count();
-        $percentage = $totalNumberIncome / $total * 100;
-        
-        // $total1 = FarmerExpense::where('category', 'food')->where('user_id', auth()->user()->id)->get()->sum('amount');
-        // $totalNumberIncome1 = FarmerExpense::where('category', 'food')->where('user_id', auth()->user()->id)->get()->count();
-        // $percentage1 = $totalNumberIncome1 / $total1 * 100;
-
-        // $total2 = FarmerExpense::where('category', 'medical')->where('user_id', auth()->user()->id)->get()->sum('amount');
-        // $totalNumberIncome2 = FarmerExpense::where('category', 'medical')->where('user_id', auth()->user()->id)->get()->count();
-        // $percentage2 = $totalNumberIncome2 / $total2 * 100;
-        
+        if ($total != 0 && $totalNumberIncome != 0) {
+            $percentage = $totalNumberIncome / $total * 100;
+        }else {
+            $percentage = 0;
+        }
         $cattles = Farmer_reg_2::where('user_id', auth()->user()->id)->get();
         return view('fdashboard.index', compact('cattles', 'percentage'));
     }
