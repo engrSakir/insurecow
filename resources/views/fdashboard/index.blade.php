@@ -110,17 +110,17 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-uppercase mb-1 ctext" style="">
                                         Monthly Profits</div>
-                                    <p class="para">Total Profit Growth of 16%</p>
+                                    <p class="para">Total Profit Growth of {{ $percentage }}%</p>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-md-7 ">
                                                 <ul class="ul">
                                                     <li class="feed">Feed Costs</li>
-                                                    <p class="sixteen">16%</p>
+                                                    <p class="sixteen">13.2%</p>
                                                     <li class="medical">Medical Costs</li>
-                                                    <p class="twenty">20%</p>
-                                                    <li class="Affiliate"> Affiliate</li>
-                                                    <p class="sixteen">12%</p>
+                                                    <p class="sixteen">11.3%</p>
+                                                    <li class="feed">Others Cost</li>
+                                                    <p class="sixteen">18.1%</p>
                                                 </ul>
                                             </div>
                                             <div class="col-md-4">
@@ -202,50 +202,40 @@
             <!-- Content Row -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold" style="color: #086343">Latest Added User</h6>
+                    <h6 class="m-0 font-weight-bold" style="color: #086343">Latest Added Cattles</h6>
                 </div>
                 {{-- export button --}}
-                {{-- <div style="display: flex; justify-content:right ; padding:20px;">
+                <!-- <div style="display: flex; justify-content:right ; padding:20px;">
                     <a href="{{route('superadmin.download')}}" class="btn btn-success">Export Excel</a>
-                </div> --}}
-                <div  style="display: flex; justify-content:right ; padding:20px;">
+                </div> -->
+                <!-- <div  style="display: flex; justify-content:right ; padding:20px;">
 
                     <a href="#" class="d-none d-sm-inline-block btn btn-sm shadow-sm text-white" style="background: #086343;"><i
                             class="fas fa-download fa-sm text-white"></i> Generate Report</a>
-                </div>
+                </div> -->
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead style="background-color:#0f6848; color: #FFFFFF ">
-                            <tr align="center">
-
-
-                                <th>Date</th>
-                                <th>Cattle Name</th>
-                                <th>Cattle Id</th>
-                                <th>Gender</th>
-                                <th>Action</th>
-
-                            </tr>
+                                <tr align="center">
+                                    <th>Date</th>
+                                    <th>Cattle Name</th>
+                                    <th>Cattle Id</th>
+                                    <th>Gender</th>
+                                    <th>Action</th>
+                                </tr>
                             </thead>
 
                             <tbody>
-
-                                <tr align="center">
-                                    <td>hfgdhfg</td>
-                                    <td>hfgh</td>
-                                    <td>hfgh</td>
-                                    <td>hfgh</td>
-
-                                    <td><a href="" class="btn text-white" style="background: #086343;"><i class="fa fa-info-circle " aria-hidden="true"></i></a>
-
-                                    <a href=""  class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-
-                                </tr>
-
-
-
-
+                                @foreach($cattles as $cattle)
+                                    <tr align="center">
+                                        <td>{{ $cattle->created_at->format('d-m-Y') }}</td>
+                                        <td>{{ $cattle->cattle_name }}</td>
+                                        <td>{{ $cattle->cattle_unique_id }}</td>
+                                        <td>{{ $cattle->gender }}</td>
+                                        <td><a href="{{ route('cattles.export') }}"><i class="fa fa-download text-dark"></i></a></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

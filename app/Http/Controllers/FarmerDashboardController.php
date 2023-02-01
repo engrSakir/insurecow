@@ -7,7 +7,11 @@ use App\Farmer_reg_1;
 use App\Farmer_reg_2;
 use App\Medical;
 use App\FarmerExpense;
+use App\FarmerIncome;
 use Auth;
+
+use App\Exports\CattlesExport;
+use Maatwebsite\Excel\Facades\Excel;
 class FarmerDashboardController extends Controller
 {
     /**
@@ -17,7 +21,20 @@ class FarmerDashboardController extends Controller
      */
     public function index()
     {
-        return view('fdashboard.index');
+        $total = FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount');
+        $totalNumberIncome = FarmerIncome::where('user_id', auth()->user()->id)->get()->count();
+        $percentage = $totalNumberIncome / $total * 100;
+        
+        // $total1 = FarmerExpense::where('category', 'food')->where('user_id', auth()->user()->id)->get()->sum('amount');
+        // $totalNumberIncome1 = FarmerExpense::where('category', 'food')->where('user_id', auth()->user()->id)->get()->count();
+        // $percentage1 = $totalNumberIncome1 / $total1 * 100;
+
+        // $total2 = FarmerExpense::where('category', 'medical')->where('user_id', auth()->user()->id)->get()->sum('amount');
+        // $totalNumberIncome2 = FarmerExpense::where('category', 'medical')->where('user_id', auth()->user()->id)->get()->count();
+        // $percentage2 = $totalNumberIncome2 / $total2 * 100;
+        
+        $cattles = Farmer_reg_2::where('user_id', auth()->user()->id)->get();
+        return view('fdashboard.index', compact('cattles', 'percentage'));
     }
 
     public function cattle()
@@ -56,6 +73,11 @@ class FarmerDashboardController extends Controller
         $totalprofit = ($registeredcattle->price + $expenses + $expensesfood * 40) / 100;
         $cattles= Farmer_reg_2::where('user_id', auth()->user()->id)->get();
         return view('fdashboard.cattle-single', compact('registeredcattle', 'certificate', 'expenses', 'expensesfood', 'totalprofit', 'cattles'));
+    }
+
+    public function export() 
+    {
+        return Excel::download(new CattlesExport, 'cattles.xlsx');
     }
 
     /**

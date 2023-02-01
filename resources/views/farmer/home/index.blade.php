@@ -15,7 +15,11 @@
                 <div>
                     <h1 class="p-greeting" style="font-weight: bold">Welcome Mr. {{ Auth::user()->name }} to InsureCow ! ! !</h1>
                     <p align="center">Here is some option for you.</p>
+                    @if(auth()->user()->farmer_profile == null)
+                    <center><a href="{{ route('farmerprofiles.index') }}" class="btn w-50 text-white text-center mt-5 mb-5" style="background-color: #0f6848">Edit Profile</a></center>
+                    @else
                     <center><a href="{{ route('reg_one.index') }}" class="btn w-50 text-white text-center mt-5 mb-5" style="background-color: #0f6848">Add cattle</a></center>
+                    @endif
                 </div>
             </div>
             <div class="col-lg-5">
