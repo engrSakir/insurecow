@@ -42,7 +42,11 @@
             }
         } */
 
-        
+        .dropdown-item.active, .dropdown-item:active {
+            color: #fff !important;
+            text-decoration: none;
+            background-color: #086343 !important;
+        }
         
     </style>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -163,10 +167,10 @@
 <!-- Logout Modal-->
 <!-- Page level custom scripts -->
 
-<script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
+<!-- <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script> -->
 
-<script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
-<script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
+<!-- <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
+<script src="{{asset('js/demo/chart-pie-demo.js')}}"></script> -->
 
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -282,9 +286,7 @@
 <script type="text/javascript">
     function confirmation(e) {
         e.preventDefault();
-
         var url = e.currentTarget.getAttribute('href')
-
         Swal.fire({
             icon: 'warning',
             title: 'Are you sure?',
@@ -300,34 +302,68 @@
         })
     }
 </script>
-
-
-{{--calenedar with bar--}}
-
+@php
+    $data = App\Farmer_reg_2::select('id', 'created_at')->get()->groupBy(function($data){
+        return Carbon\Carbon::parse($data->created_at)->format('M');
+    });
+    $months=[];
+    $monthCount=[];
+    foreach($data as $month => $values) {
+        $months[] = $month;
+        $monthCount[] = count($values);
+    }
+@endphp
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
-    var xValues = ["1", "2", "3", "4", "5","6","7","8"];
-    var yValues = [85,70,60,50, 42, 34, 24, 15];
-    var barColors = ["#378216", "#D3EAC8","#378216","#D3EAC8","#378216","#D3EAC8","#378216","#D3EAC8"];
-
-    new Chart("myChart", {
-        type: "bar",
-        data: {
-            labels: xValues,
-            datasets: [{
-                backgroundColor: barColors,
-                data: yValues
-            }]
+var _ydata = JSON.parse('{!! json_encode($months) !!}');
+var _xdata = JSON.parse('{!! json_encode($monthCount) !!}');
+Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#292b2c';
+var ctx = document.getElementById("myChart");
+var barColors = ["#378216", "#D3EAC8","#378216","#D3EAC8","#378216","#D3EAC8","#378216","#D3EAC8"];
+var myLineChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    datasets: [{
+      label: _ydata,
+      backgroundColor: barColors,
+      borderColor: "rgba(2,117,216,1)",
+      data: _xdata,
+    }],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'month'
         },
-        options: {
-            legend: {display: false},
-            title: {
-                display: true,
-                text: "Cattle Stats"
-            }
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 6
         }
-    });
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max: 20,
+          maxTicksLimit: 5
+        },
+        gridLines: {
+          display: true
+        }
+      }],
+    },
+    legend: {
+      display: false
+    }
+  }
+});
+
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
 <script>
@@ -424,6 +460,40 @@ function displayMessage(message) {
     $('#insurecow-datatable').DataTable({
         responsive: true
     });
+</script>
+<script>
+
+const calculateSale = (listPrice, discount) => {
+  listPrice = parseFloat(listPrice);
+  discount  = parseFloat(discount);
+  return (listPrice + ( listPrice * discount / 100 )).toFixed(2);
+}
+const calculateDiscount = (listPrice, salePrice) => {
+  listPrice = parseFloat(listPrice);
+  salePrice = parseFloat(salePrice);
+  return 100 + (salePrice * 100 / listPrice);
+}
+const $list = $('input[name="list"]'),
+      $disc = $('input[name="disc"]'), 
+      $sale = $('input[name="sale"]'); 
+    
+$list.add( $disc ).on('input', () => {
+  let sale = $list.val();              
+  if ( $disc.val().length ) {          
+    sale = calculateSale($list.val(), $disc.val());
+  }
+  $sale.val( sale );
+});
+
+$sale.on('input', () => {      
+let disc = 0;                
+if ( $sale.val().length ) {  
+  disc = calculateDiscount($list.val(), $sale.val());
+}
+$disc.val( disc );
+});
+
+$list.trigger('input');
 </script>
 </body>
 

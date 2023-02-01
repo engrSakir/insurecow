@@ -31,7 +31,8 @@
                         </tr>
                     @endforeach
                 </tbody>
-                </table>
+            </table>
+            <a data-toggle="modal" data-target="#exampleModalCenter1" class="btn float-right text-dark" style="background: linear-gradient(101.16deg, #C7F8C9 0.38%, #DDEDC7 81.93%); border-radius: 5px;">New Report</a>
         </div>
     </div>
     <!-- End of Main Content -->

@@ -20,6 +20,7 @@ class CreateFarmerIncomesTable extends Migration
             $table->integer('cattle_id');
             $table->integer('user_id');
             $table->string('invoice');
+            $table->string('earning_category');
             $table->string('comment');
             $table->timestamps();
         });

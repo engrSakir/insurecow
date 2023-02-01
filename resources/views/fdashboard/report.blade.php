@@ -35,9 +35,11 @@
                         <tr>
                             <td class="dtr-control sorting_1" tabindex="0">{{ $loop->iteration }}</td>
                             <!-- <td><img src="{{ url('storage/'.$registeredcattle->cow_with_owner) }}" width="50px"></td> -->
-                            <td>{{ $registeredcattle->cattle->cattle_name }}</td>
-                            <td>{{ $registeredcattle->cattle->cattle_color }}</td>
-                            <td>{{ $registeredcattle->cattle->gender }}</td>
+                            @if($registeredcattle->cattle)
+                                <td>{{ $registeredcattle->cattle->cattle_name }}</td>
+                                <td>{{ $registeredcattle->cattle->cattle_color }}</td>
+                                <td>{{ $registeredcattle->cattle->gender }}</td>
+                            @endif
                             <td>
                                 <!-- {{ $registeredcattle->id }} -->
                                 <a href="{{ route('fdashboard.report.show', $registeredcattle->id) }}" class="btn text-dark" style="border: 1px solid black">View</a>

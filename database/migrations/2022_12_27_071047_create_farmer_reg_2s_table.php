@@ -40,6 +40,8 @@ class CreateFarmerReg2sTable extends Migration
 
             $table->string('health')->default('f');
             $table->string('price')->default('f');
+            $table->string('pregnant')->default('not_pregnant');
+            $table->string('calve')->default('not_calve');
             $table->integer('user_id');
 
             $table->timestamps();

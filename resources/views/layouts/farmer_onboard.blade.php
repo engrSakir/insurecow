@@ -32,6 +32,11 @@
         body,aside,select,option,header,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
             cursor: url('{{ asset('images/favicon.png') }}'), auto;
         }
+        .dropdown-item.active, .dropdown-item:active {
+            color: #fff !important;
+            text-decoration: none;
+            background-color: #086343 !important;
+        }
 
     </style>
     <!--=============== CSS ===============-->

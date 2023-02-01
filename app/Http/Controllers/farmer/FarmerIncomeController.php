@@ -17,6 +17,7 @@ class FarmerIncomeController extends Controller
             'cattle_id' => 'required',
             'invoice' => 'required',
             'comment' => 'required',
+            'earning_category' => 'required',
         ]);
 
         FarmerIncome::create([
@@ -26,6 +27,7 @@ class FarmerIncomeController extends Controller
             'user_id' => auth()->user()->id,
             'invoice' => $request->invoice,
             'comment' => $request->comment,
+            'earning_category' => $request->earning_category,
         ]);
 
         return redirect()->back()->with('success', 'Income added successfully.');

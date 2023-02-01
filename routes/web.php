@@ -119,7 +119,7 @@ Route::middleware(['farmer', 'auth'])->group(function () {
 
         //Insurance create from single cattle list
         Route::get('/insurance/companies', 'farmer\FarmerOnboardController@store')->name('onboard.store');
-
+        
         Route::post('/insurance/details/{id}', 'farmer\FarmerOnboardController@show')->name('onboard.show');
         Route::post('/insurance/send', 'farmer\request_quotations\PendingController@store')->name('insurance.store');
         Route::post('/insurance/single/save', 'farmer\request_quotations\InsuranceController@saveInsurance')->name('insurance.single.save');
@@ -146,6 +146,10 @@ Route::middleware(['farmer', 'auth'])->group(function () {
         Route::post('report/save', 'farmer\FarmerController@saveReport')->name('report.save');
 
         //--------------------------------------------------------------------Farmer Dashboard End------------------------
+    
+        Route::get('/claim', 'farmer\FarmerClaimController@index')->name('claim.index');
+        Route::get('/claim/confirmation', 'farmer\FarmerClaimController@confirm')->name('claim.confirm');
+        Route::post('/claim/confirmation', 'farmer\FarmerClaimController@store')->name('claim.store');
     });
 });
 
