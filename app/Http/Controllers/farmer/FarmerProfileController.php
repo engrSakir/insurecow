@@ -72,6 +72,7 @@ class FarmerProfileController extends Controller
             'type_of_livestock' => 'required',
             'sum_insured' => 'required',
             'country' => 'required',
+            'image'=>'required|mimes:jpeg,jpg,png',
         ];
         $this->validate($request,$inputs);
 

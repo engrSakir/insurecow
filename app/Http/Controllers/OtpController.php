@@ -11,21 +11,23 @@ use Illuminate\Support\Facades\Auth;
 
 class OtpController extends Controller
 {
- function  login(){
-     return view('auth.otpLogin');
- }
+    function login()
+    {
+        return view('auth.otpLogin');
+    }
 
 
-    function generate(Request $req){
+    function generate(Request $req)
+    {
         $req->validate([
-            'phone'=>'required|exists:users,phone'
+            'phone' => 'required|exists:users,phone'
         ]);
-        $otp= $this->generateOTP($req->phone);
+        $otp = $this->generateOTP($req->phone);
 
         $otp->sendSMS($req->phone);
 
-        return redirect()->route('otp.verification',[$otp->user_id])
-            ->with('success','Otp has been sent on your mobile number');
+        return redirect()->route('otp.verification', [$otp->user_id])
+            ->with('success', 'Otp has been sent on your mobile number');
     }
 
 //    public function generate(Request $request)
@@ -47,51 +49,63 @@ class OtpController extends Controller
 //            //
 //        }
 //    }
- function generateOTP($phone){
-    $user= User::where('phone',$phone)->first();
-    $otp=Otp::where('user_id',$user->id)->orderBy('id','desc')->first();
-    $now= now();
-    if ($otp && $now->isBefore($otp->expire_at)){
-        return $otp;
-     }
-   return Otp::create([
-        'user_id'=> $user->id,
-        'otp'=>rand(123456 , 99999),
-        'expire_at'=>$now->addMinutes(10),
-    ]);
- }
- function verification($user_id){
-     return view('auth.verification')->with([
-         'user_id'=>$user_id
-     ]);
- }
- function loginwithotp(Request $request){
-     $request->validate([
-         'otp'=>'required',
-         'user_id'=>'required|exists:users,id'
-     ]);
-    $otp= Otp::where('user_id',$request->user_id)->where('otp',$request->otp)->first();
-    $now= now();
-    if(!$otp){
-        return redirect()->back()->with('error','Your OTP is Not correct!');
-    }
-    elseif($otp && $now->isAfter($otp->expire_at)){
-        return redirect()->back()->with('error','Your OTP has been Expired!');
-
-    }
-
-    $user=User::whereId($request->user_id)->first();
-    if ($user){
-        $otp->update([
-            'expire_at'=>now()
+    function generateOTP($phone)
+    {
+        $user = User::where('phone', $phone)->first();
+        $otp = Otp::where('user_id', $user->id)->orderBy('id', 'desc')->first();
+        $now = now();
+        if ($otp && $now->isBefore($otp->expire_at)) {
+            return $otp;
+        }
+        return Otp::create([
+            'user_id' => $user->id,
+            'otp' => rand(123456, 99999),
+            'expire_at' => $now->addMinutes(10),
         ]);
-        Auth::login($user);
-        return redirect('/home');
     }
-     return redirect()->route('opt.login')->with('error','Your OTP is not correct');
 
- }
+    function verification($user_id)
+    {
+        return view('auth.verification')->with([
+            'user_id' => $user_id
+        ]);
+    }
 
+    function loginwithotp(Request $request)
+    {
+
+
+        $joined_test = join($request->otp);
+
+
+        $request->validate([
+            'otp' => 'required',
+            'user_id' => 'required|exists:users,id'
+        ]);
+        $otp = Otp::where('user_id', $request->user_id)->where('otp', $joined_test)->first();
+
+//        return $otp;
+
+
+        $now = now();
+        if (!$otp) {
+            return redirect()->back()->with('error', 'Your OTP is Not correct!');
+        } elseif ($otp && $now->isAfter($otp->expire_at)) {
+            return redirect()->back()->with('error', 'Your OTP has been Expired!');
+
+        }
+
+        $user = User::whereId($request->user_id)->first();
+        if ($user) {
+            $otp->update([
+                'expire_at' => now()
+            ]);
+            Auth::login($user);
+            return redirect('/home');
+        }
+        return redirect()->route('opt.login')->with('error', 'Your OTP is not correct');
+
+    }
 
 
 }
