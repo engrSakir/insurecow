@@ -35,12 +35,16 @@
         body,aside,select,option,header,div,input,label,footer,span,p,ul,li,a,input,table,tr,td,th,i {
             cursor: url('{{ asset('images/favicon.png') }}'), auto;
         }
-
-        /* @media only screen and (max-width: 320px) {
+        .scroll-to-top i {
+          margin-top: 12px;
+        }
+        /* 
+        @media only screen and (max-width: 320px) {
             .generate-report {
                 display: inline-block; 
             }
-        } */
+        } 
+        */
 
         .dropdown-item.active, .dropdown-item:active {
             color: #fff !important;
@@ -363,7 +367,26 @@ var myLineChart = new Chart(ctx, {
 });
 
 </script>
+<script>
+var _ydata = JSON.parse('{!! json_encode($months) !!}');
+var _xdata = JSON.parse('{!! json_encode($monthCount) !!}');
+Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#292b2c';
 
+
+var ctx = document.getElementById("myPieChart");
+var myPieChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: _ydata,
+    datasets: [{
+      data: _xdata,
+      backgroundColor: ["#97D92A", "#69EFB3","#97D92A", "#69EFB3"],
+    }],
+  },
+});
+
+</script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
 <script>
