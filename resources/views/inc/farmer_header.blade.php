@@ -40,7 +40,7 @@
                             @endif
 {{--                                <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li>--}}
                                 <li><a class="dropdown-item" href="{{ route('farmer.change.password') }}">Change Password</a></li>
-                                    <li><a class="dropdown-item" href="#">Farm Address</a></li>
+                                    <!-- <li><a class="dropdown-item" href="#">Farm Address</a></li> -->
 
 {{--                                <li><a class="dropdown-item" href="{{ route('farmer.expense') }}">Expenses</a></li>--}}
 {{--                                <li><a class="dropdown-item" href="{{ route('expense.history') }}">Expense History</a></li>--}}

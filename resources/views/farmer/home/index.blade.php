@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="col-lg-5">
-                <img src="{{ asset('images/Group.png') }}" alt="" class="img-fluid rounded">
+                <img src="{{ asset('images/farmer.png') }}" alt="" class="img-fluid rounded homepage shadow-1p">
             </div>
             @else
 
@@ -37,7 +37,7 @@
             </div>
 
             <div class="col-lg-5">
-                <img src="{{ asset('images/Group.png') }}" alt="" class="img-fluid rounded homepage" style="box-shadow: 0 10px 50px #000000;">
+                <img src="{{ asset('images/farmer.png') }}" alt="" class="img-fluid rounded homepage shadow-1p">
             </div>
 
             @endif

@@ -146,3 +146,10 @@ nav .navbar-nav li a:hover {
     }
     
 }
+.shadow-1p {
+    -webkit-box-shadow: 0 10px 50px #000000;
+	-moz-box-shadow: 0 10px 50px #000000;
+	-ms-box-shadow: 0 10px 50px #000000;
+	-o-box-shadow: 0 10px 50px #000000;
+    box-shadow: 0 10px 50px #000000;
+}

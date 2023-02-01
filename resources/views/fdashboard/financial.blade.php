@@ -35,7 +35,7 @@
                                     <div class="text-xl font-weight-bold text-uppercase mb-1" style="color:black ;">
                                         Total Value</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                        $ 12,00,000
+                                        ৳ {{ App\Farmer_reg_2::where('user_id', auth()->user()->id)->get()->sum('price') }}
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -56,7 +56,7 @@
                                     <div class="text-xl font-weight-bold text-uppercase mb-1" style="color:black ;">
                                         Total Costs</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                        $ 7,00,000
+                                        ৳ {{ App\FarmerExpense::where('user_id', auth()->user()->id)->get()->sum('amount') }}
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -80,7 +80,7 @@
                                     </div>
                                     <div></div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                        $ 5,00,000
+                                        ৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount') }}
                                     </div>
                                 </div>
                                 <div class="col-auto ">
@@ -105,7 +105,7 @@
                                     </div>
                                     <div></div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                        $1,50,000
+                                        ৳ {{ App\Medical::where('user_id', auth()->user()->id)->get()->sum('amount') }}
                                     </div>
                                 </div>
                                 <div class="col-auto ">
@@ -131,7 +131,7 @@
                                     <div class="text-xl font-weight-bold text-uppercase mb-1" style="color:black ;">
                                         Total Milk Sale</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                        $ 2,50,000
+                                        ৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->where('earning_category', 'milk')->get()->sum('amount') }}
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -152,7 +152,7 @@
                                     <div class="text-xl font-weight-bold text-uppercase mb-1" style="color:black ;">
                                         Total Bull Sale</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                        $ 6,00,000
+                                        ৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->where('earning_category', 'bull')->get()->sum('amount') }}
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -213,6 +213,14 @@
                                         @foreach($cattles as $cattle)
                                             <option value="{{ $cattle->id }}">{{ $cattle->cattle_name }}</option>
                                         @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Earning Category:</label>
+                                    <select name="earning_category" class="form-control">
+                                        <option value="">SELECT EARNING CATEGORY</option>
+                                        <option value="milk">MILK</option>
+                                        <option value="bull">BULL</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -294,8 +302,7 @@
                  
             <div class="row">
                 <div class="col-lg-9 p-3 mb-3" style="background: #F0F0F0;border-right: 25px solid #F8F9FC;">
-                <div class="card">
-                    
+                <div class="card">    
                     <div class="table-responsive" style="background: #F0F0F0;">
                         <table class="table text-dark">
                             <tbody>
@@ -304,30 +311,29 @@
                                     <th>Cattle Sales</th>
                                     <td></td>
                                     <td></td>
-                                    <td>$0.00</td>
+                                    <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->where('earning_category', 'bull')->get()->sum('amount') }}.00</td>
                                 </tr>
                                 <tr>
                                     <th>Total Income</th>
                                     <td></td>
                                     <td></td>
-                                    <td>$0.00</td>
+                                    <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount') }}.00</td>
                                 </tr>
                             <tr>
                                 <th>Cost of Goods Sold</th>
                                     <td></td>
                                     <td></td>
-                                    <td>$0.00</td>
+                                    <td>৳ {{ App\FarmerExpense::where('user_id', auth()->user()->id)->get()->sum('amount') }}.00</td>
                                 </tr>
                             <tr>
                                 <th>Gross Profit</th>
                                     <td></td>
                                     <td></td>
-                                    <td>$0.00</td>
+                                    <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount') - App\FarmerExpense::where('user_id', auth()->user()->id)->get()->sum('amount') }}.00</td>
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                        
+                    </div>        
                     </div>
                 </div>
                 <div class="col-lg-3 p-3" style="background: #F0F0F0;border-right: 25px solid #F8F9FC;"> 
@@ -335,37 +341,22 @@
                     <div class="table-responsive">
                         <table class="table">
                             <tbody class="text-dark">
-
+                                @foreach( App\FarmerIncome::where('user_id', auth()->user()->id)->take(5)->get() as $income )
                                 <tr>
-                                    <th>#0001 Milk Sell </th>
+                                    <th>#000{{ $loop->iteration }} {{ $income->comment }} </th>
                                     <td></td>
                                     <td></td>
-                                    <td class="text-success">+$80.00</td>
+                                    <td class="text-success">+৳ {{ $income->amount }}.00</td>
                                 </tr>
+                                @endforeach
+                                @foreach( App\FarmerExpense::where('user_id', auth()->user()->id)->take(5)->get() as $expense )
                                 <tr>
-                                    <th>#0002 Medicine Costs</th>
+                                    <th>#000{{ $loop->iteration }} {{ $expense->comment }}</th>
                                     <td></td>
                                     <td></td>
-                                    <td class="text-danger">-$80.00</td>
+                                    <td class="text-danger">-৳ {{ $expense->amount }}.00</td>
                                 </tr>
-                            <tr>
-                                <th>#0003 Milk Sell</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="text-success">+$80.00</td>
-                                </tr>
-                                <tr>
-                                    <th>#0004 Milk Sell</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="text-success">+$80.00</td>
-                                </tr>
-                                <tr>
-                                    <th>#0005 Milk Sell</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="text-success">+$80.00</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

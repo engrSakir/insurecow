@@ -54,7 +54,8 @@ class FarmerDashboardController extends Controller
         $expenses = FarmerExpense::where('category', '=', 'medical')->where('cattle_id', $id)->get()->sum('amount');
         $expensesfood = FarmerExpense::where('category', '=', 'food')->where('cattle_id', $id)->get()->sum('amount');
         $totalprofit = ($registeredcattle->price + $expenses + $expensesfood * 40) / 100;
-        return view('fdashboard.cattle-single', compact('registeredcattle', 'certificate', 'expenses', 'expensesfood', 'totalprofit'));
+        $cattles= Farmer_reg_2::where('user_id', auth()->user()->id)->get();
+        return view('fdashboard.cattle-single', compact('registeredcattle', 'certificate', 'expenses', 'expensesfood', 'totalprofit', 'cattles'));
     }
 
     /**

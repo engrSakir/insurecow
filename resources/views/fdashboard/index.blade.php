@@ -1,5 +1,30 @@
 @extends('layouts.fd')
+<style>
+    .component-image{
 
+    }
+    @media only screen and (max-width: 320px) {
+        .component-image{
+            position: relative;
+            left: 40px;
+            bottom: 90px;
+        }
+    }
+    @media only screen and (max-width: 375px) {
+        .component-image{
+            position: relative;
+            left: 40px;
+            bottom: 90px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .component-image{
+            position: relative;
+            left: 40px;
+            bottom: 90px;
+        }
+    }
+</style>
 @section('content')
     <!-- Main Content -->
     <div id="content">
@@ -101,7 +126,7 @@
                                             <div class="col-md-4">
 
 
-                                                <img class="img" src="{{asset('images/Component.png')}}" alt="component">
+                                                <img class="img-fluid component-image" src="{{asset('images/Component.png')}}" style="max-width:200px; position:relative; right: 40px;">
 
 
 
@@ -138,7 +163,7 @@
                         <!-- Card Body -->
                         <div class="card-body">
                             <div class="chart-area">
-                                <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                                <canvas id="myChart"></canvas>
                             </div>
                         </div>
                     </div>
@@ -156,40 +181,16 @@
                         <div class="card-body" style="height: 350px;">
                             <div class="chart-pie pt-4 pb-2" >
                                 <table class="table" >
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">Milk Sell</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Today 12PM</td>
-                                        <td>+$80.00</td>
-                                    </tr>
-                                    </tbody>
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">Milk Sell</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Today 12PM</td>
-                                        <td>+$80.00</td>
-                                    </tr>
-                                    </tbody>
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">Milk Sell</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Today 12PM</td>
-                                        <td>+$80.00</td>
-                                    </tr>
-                                    </tbody>
-
+                                <tbody class="text-dark">
+                                @foreach( App\FarmerIncome::where('user_id', auth()->user()->id)->take(5)->get() as $income )
+                                <tr>
+                                    <th>#000{{ $loop->iteration }} {{ $income->comment }} </th>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="text-success">+৳ {{ $income->amount }}.00</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
                                 </table>
                             </div>
 
