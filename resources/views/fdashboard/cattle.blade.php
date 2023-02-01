@@ -80,7 +80,7 @@
                 <div class="col-xl-3 col-md-6 col-xs-12 col-sm-12 mb-3">
                     <div class="card">
                         <div class="card-body">
-                            <img src="{{ asset('images/pie.png') }}" alt="" class="img-fluid" style="min-width: auto">
+                            <canvas id="myPieChart"></canvas>
                         </div>
                     </div>
                 </div>
