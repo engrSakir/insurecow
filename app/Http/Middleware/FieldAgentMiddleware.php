@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Middleware;
-use Illuminate\Support\Facades\Auth;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
-class CompanyMiddleware
+class FieldAgentMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class CompanyMiddleware
      */
     public function handle($request, Closure $next)
     {
-         if(Auth::user()->role_1=='c'){
+        if(Auth::user()->role_1=='fa'){
 
             return $next($request);
 

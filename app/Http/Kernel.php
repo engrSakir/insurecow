@@ -66,6 +66,7 @@ class Kernel extends HttpKernel
         'company'=> \App\Http\Middleware\CompanyMiddleware::class,
         'farmer'=> \App\Http\Middleware\FarmerMiddleware::class,
         'superadmin'=> \App\Http\Middleware\SuperAdminMiddleware::class,
+        'fieldagent'=> \App\Http\Middleware\FieldAgentMiddleware::class,
 
 
     ];

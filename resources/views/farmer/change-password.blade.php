@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{asset('css/login_page.css')}}" />
 @section('content')
 <div class="container">
-    <div class="row">
+    <div class="row p-4" >
         <div class="col-lg-12">
         <div class="col-lg-6 col-xs-12" style="margin: auto">
           <div class="card login-card p-5 h-100" style="background: #D7ECCB;">
