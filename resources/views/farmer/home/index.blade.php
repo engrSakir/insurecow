@@ -4,11 +4,9 @@
     <link rel="stylesheet" href="{{asset('/css/fcss/homepage.css')}}" />
 @endpush
 @section('content')
-<section class="mt-5 mb-4 p-4">
-
-    <div class="row mt-5">
+<section class="mt-3 mb-4 p-4">
+    <div class="row mt-3">
         <div class="d-lg-flex d-md-flex justify-content-center">
-
             <!--Cow Lists-->
             @if(auth()->user()->cattles()->count() == 0)
             <div class="col-lg-7">
@@ -16,9 +14,9 @@
                     <h1 class="p-greeting" style="font-weight: bold">Welcome Mr. {{ Auth::user()->name }} to InsureCow ! ! !</h1>
                     <p align="center">Here is some option for you.</p>
                     @if(auth()->user()->farmer_profile == null)
-                    <center><a href="{{ route('farmerprofiles.index') }}" class="btn w-50 text-white text-center mt-5 mb-5" style="background-color: #0f6848">Edit Profile</a></center>
+                        <center><a href="{{ route('farmerprofiles.index') }}" class="btn w-50 text-white text-center mt-5 mb-5" style="background-color: #0f6848">Edit Profile</a></center>
                     @else
-                    <center><a href="{{ route('reg_one.index') }}" class="btn w-50 text-white text-center mt-5 mb-5" style="background-color: #0f6848">Add cattle</a></center>
+                        <center><a href="{{ route('reg_one.index') }}" class="btn w-50 text-white text-center mt-5 mb-5" style="background-color: #0f6848">Add cattle</a></center>
                     @endif
                 </div>
             </div>

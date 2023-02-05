@@ -34,8 +34,9 @@ class FarmerDashboardController extends Controller
 
     public function cattle()
     {
+        $cattles = Farmer_reg_2::where('user_id', auth()->user()->id)->get();
         $registeredcattles = Farmer_reg_2::where('user_id', Auth::user()->id)->get();
-        return view('fdashboard.cattle', compact('registeredcattles'));
+        return view('fdashboard.cattle', compact('registeredcattles', 'cattles'));
     }
 
     public function financial()
@@ -55,7 +56,8 @@ class FarmerDashboardController extends Controller
     {
         $cattle = Farmer_reg_2::findOrFail($id);
         $medicals = Medical::where('user_id', auth()->user()->id)->get();
-        return view('fdashboard.report-single', compact('cattle', 'medicals'));
+        $cattles = Farmer_reg_2::where('user_id', auth()->user()->id)->get();
+        return view('fdashboard.report-single', compact('cattle', 'medicals', 'cattles'));
     }
 
 

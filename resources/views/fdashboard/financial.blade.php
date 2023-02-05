@@ -16,14 +16,14 @@
                 <a href="" class="btn float-right text-dark"><img src="{{ asset('/images/Vector.png') }}" class="img-fluid float-right"></a> </h3>
                 
                 @if( Session::has( 'success' ))
-                <div class="alert text-white mt-5" style="background: #226034">
-                    {{ Session::get( 'success' ) }}
-                </div>
+                    <div class="alert text-white mt-5" style="background: #226034">
+                        {{ Session::get( 'success' ) }}
+                    </div>
                 @endif
                 @if( Session::has( 'notification' ))
-                <div class="alert text-white mt-5" style="background: #226034">
-                    {{ Session::get( 'notification' ) }}
-                </div>
+                    <div class="alert text-white mt-5" style="background: #226034">
+                        {{ Session::get( 'notification' ) }}
+                    </div>
                 @endif
                 <div class="row">
                 <!-- Earnings (Monthly) Card Example -->
@@ -48,7 +48,7 @@
                 </div>
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-3 col-md-6 mt-2">
                     <div class="card mb-3" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
@@ -69,7 +69,32 @@
                 </div>
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-3 col-md-6 mt-2">
+                    <div class="card mb-3" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
+                        <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xl font-weight-bold text-uppercase mb-1" style="color:black ;">
+                                        Total Sell
+
+                                    </div>
+                                    <div></div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        ৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->where('earning_category', 'milk')->orWhere('earning_category', 'cattle')->get()->sum('amount') }}
+                                    </div>
+                                </div>
+                                <div class="col-auto ">
+                                    <i class="fas fa-cow fa-2x text-dark"></i>
+                                </div>
+
+                            </div>
+                            <!-- <p class="cattle">100</p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mt-2">
                     <div class="card mb-3" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
@@ -94,36 +119,7 @@
                 </div>
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6">
-                    <div class="card mb-3" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
-                        <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xl font-weight-bold text-uppercase mb-1" style="color:black ;">
-                                        Medical Costs
-
-                                    </div>
-                                    <div></div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                        ৳ {{ App\Medical::where('user_id', auth()->user()->id)->get()->sum('amount') }}
-                                    </div>
-                                </div>
-                                <div class="col-auto ">
-                                    <i class="fas fa-cow fa-2x text-dark"></i>
-                                </div>
-
-                            </div>
-                            <!-- <p class="cattle">100</p> -->
-                        </div>
-                    </div>
-                </div>
-
-
-            
-
-
-                <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6">
+                <!-- <div class="col-xl-3 col-md-6">
                     <div class="card mb-3" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
@@ -138,13 +134,12 @@
                                     <i class="fas fa-cow fa-2x text-dark"></i>
                                 </div>
                             </div>
-                            <!-- <p class="cattle">180</p> -->
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4">
+                <!-- <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                         <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
                             <div class="row no-gutters align-items-center">
@@ -159,13 +154,12 @@
                                     <i class="fas fa-cow fa-2x text-dark"></i>
                                 </div>
                             </div>
-                            <!-- <p class="cattle">120</p> -->
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-8 mb-4">
+                <div class="col-xl-3 col-md-8 mb-2">
                     <div class="card" style="height: 180px; width: 520px; color:black ;background: #F8F9FC">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
@@ -220,7 +214,7 @@
                                     <select name="earning_category" class="form-control">
                                         <option value="">SELECT EARNING CATEGORY</option>
                                         <option value="milk">MILK</option>
-                                        <option value="bull">BULL</option>
+                                        <option value="cattle">Cattle</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -295,7 +289,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <h3>   </h3>
@@ -311,14 +304,8 @@
                                     <th>Cattle Sales</th>
                                     <td></td>
                                     <td></td>
-                                    <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->where('earning_category', 'bull')->get()->sum('amount') }}.00</td>
-                                </tr>
-                                <tr>
-                                    <th>Total Income</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount') }}.00</td>
-                                </tr>
+                                    <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->where('earning_category', 'cattle')->get()->sum('amount') }}.00</td>
+                                </tr>            
                             <tr>
                                 <th>Cost of Goods Sold</th>
                                     <td></td>
@@ -326,10 +313,21 @@
                                     <td>৳ {{ App\FarmerExpense::where('user_id', auth()->user()->id)->get()->sum('amount') }}.00</td>
                                 </tr>
                             <tr>
-                                <th>Gross Profit</th>
+                                <th>Net Profit</th>
                                     <td></td>
                                     <td></td>
                                     <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount') - App\FarmerExpense::where('user_id', auth()->user()->id)->get()->sum('amount') }}.00</td>
+                                </tr>
+                                <th>Net Income</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount') - App\FarmerExpense::where('user_id', auth()->user()->id)->get()->sum('amount') }}.00</td>
+                                </tr>
+                                <tr>
+                                    <th>Total Profit</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount') }}.00</td>
                                 </tr>
                             </tbody>
                         </table>

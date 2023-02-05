@@ -199,8 +199,19 @@
                                     <label class="form-label" for="inputBreed">Cattle Breed :</label>
                                     <div class="col">
 
-                                        <input placeholder="Select Cattle Bread" type="text" id="cattle_breed" class="form-control input-style"
-                                               name="cattle_breed" v-model="cattle_breed"/>
+                                        <!-- <input placeholder="Select Cattle Bread" type="text" id="" 
+                                               name="cattle_breed" /> -->
+                                        <select name="cattle_breed" id="cattle_breed" v-model="cattle_breed" class="form-control input-style">
+                                            <option value="">SELECT BREED</option>
+                                            <option value="sahiwal">Sahiwal</option>
+                                            <option value="sindhi">Sindhi</option>
+                                            <option value="holstein-friesian">Holstein-Friesian</option>
+                                            <option value="jersey">Jersey</option>
+                                            <option value="brahman">Brahman</option>
+                                            <option value="red-chittagong-cattle">Red Chittagong Cattle</option>
+                                            <option value="pabna-cattle">Pabna Cattle</option>
+                                            <option value="mirkadim-cattle">Mirkadim Cattle</option>
+                                        </select>
 
 
                                         {{--                                <select class="form-select form-info form-control input-style">--}}
@@ -247,8 +258,8 @@
                                         <select class="form-select form-info form-control input-style" name="gender"
                                                 id="gender" v-model="gender">
                                                 <option value="">Select Cattle Gender</option>
-                                            <option value="male">Male</option>
-                                            <option value="female">Female</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
                                         </select>
                                     </div>
                                 </div>
