@@ -52,20 +52,22 @@ class HomeController extends Controller
             elseif(Auth::user()->role_1=='s')
             {
                 return redirect()->route('superadmin.index');
-                
-          
+
+
             }
-            elseif(Auth::user()->role_2=='fa')
+            elseif(Auth::user()->role_1=='fa')
             {
                 // return view('/home');
-                return "field agent";
+//                return "field agent";
+                return redirect()->route('fieldagent.index');
+
 
                 // return redirect('/home');
             }
             else {
                 abort(403);
             }
-            
+
     }
 }
 }
