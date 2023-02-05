@@ -321,13 +321,13 @@
                                 <th>Net Income</th>
                                     <td></td>
                                     <td></td>
-                                    <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount') - App\FarmerExpense::where('user_id', auth()->user()->id)->get()->sum('amount') }}.00</td>
+                                    <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount') }}.00</td>
                                 </tr>
                                 <tr>
                                     <th>Total Profit</th>
                                     <td></td>
                                     <td></td>
-                                    <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount') }}.00</td>
+                                    <td>৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->get()->sum('amount') - App\FarmerExpense::where('user_id', auth()->user()->id)->get()->sum('amount') }}.00</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -335,7 +335,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 p-3" style="background: #F0F0F0;border-right: 25px solid #F8F9FC;"> 
-                    <h5>Recent History<a href="#" class="btn" style="float: right; color: #000000;">See All</a></h5>
+                    <h5>Recent History<a href="#" class="p-1" style="float: right; color: #000000;font-size: 16px;">See All</a></h5>
                     <div class="table-responsive">
                         <table class="table">
                             <tbody class="text-dark">
