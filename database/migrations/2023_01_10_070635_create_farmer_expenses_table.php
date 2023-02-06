@@ -19,7 +19,7 @@ class CreateFarmerExpensesTable extends Migration
             $table->string('amount');
             $table->integer('cattle_id');
             $table->string('category');
-            $table->string('invoice');
+            $table->string('invoice')->nullable();
             $table->longText('comment');
             $table->integer('user_id');
             $table->timestamps();

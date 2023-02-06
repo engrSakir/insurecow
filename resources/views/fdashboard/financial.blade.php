@@ -75,8 +75,7 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xl font-weight-bold text-uppercase mb-1" style="color:black ;">
-                                        Total Sell
-
+                                        Total Sales
                                     </div>
                                     <div></div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
@@ -86,7 +85,6 @@
                                 <div class="col-auto ">
                                     <i class="fas fa-cow fa-2x text-dark"></i>
                                 </div>
-
                             </div>
                             <!-- <p class="cattle">100</p> -->
                         </div>
@@ -118,45 +116,7 @@
                     </div>
                 </div>
 
-                <!-- Earnings (Monthly) Card Example -->
-                <!-- <div class="col-xl-3 col-md-6">
-                    <div class="card mb-3" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
-                        <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xl font-weight-bold text-uppercase mb-1" style="color:black ;">
-                                        Total Milk Sale</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                        ৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->where('earning_category', 'milk')->get()->sum('amount') }}
-                                    </div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-cow fa-2x text-dark"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
 
-                <!-- Earnings (Monthly) Card Example -->
-                <!-- <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card" border style="height: 150px;width: 240px; background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
-                        <div class="card-body" style="background: linear-gradient(rgba(199, 248, 201, 1) , rgba(221, 237, 199, 1));">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xl font-weight-bold text-uppercase mb-1" style="color:black ;">
-                                        Total Bull Sale</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                        ৳ {{ App\FarmerIncome::where('user_id', auth()->user()->id)->where('earning_category', 'bull')->get()->sum('amount') }}
-                                    </div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-cow fa-2x text-dark"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
 
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-3 col-md-8 mb-2">
@@ -282,7 +242,7 @@
                                 </div>
                                 <div class="form-group float-right">
                                     <button type="button" style="color: #000000; border: 2px solid #000000" class="btn" data-dismiss="modal" aria-label="Close">Cancel</button>
-                                    <button class="btn text-white" style="background: #086343">Create Income</button>
+                                    <button class="btn text-white" style="background: #086343">Create Expense</button>
                                 </div>
                             </form>
                         </div>
