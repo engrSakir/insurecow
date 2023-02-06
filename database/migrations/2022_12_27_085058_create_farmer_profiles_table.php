@@ -39,9 +39,9 @@ class CreateFarmerProfilesTable extends Migration
             $table->string('zip_code');
             $table->string('country');
             $table->string('loan_amount');
-            $table->string('no_of_livestock');
+            $table->string('no_of_livestock')->nullable();
             $table->string('type_of_livestock');
-            $table->string('sum_insured');
+            $table->string('sum_insured')->nullable();
             $table->integer('user_id');
             $table->timestamps();
         });

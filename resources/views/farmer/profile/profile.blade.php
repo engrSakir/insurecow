@@ -1,8 +1,11 @@
 @extends('layouts.farmer')
 @push('css')
     <link rel="stylesheet" href="{{asset('css/form_page.css')}}" />
-@endpush
 
+@endpush
+@push('select2')
+
+@endpush
 @section('content')
 <section>
     <div class="container">
@@ -170,7 +173,7 @@
                         <label class="form-label" for="inputLastName">Type Of Livestock :</label>
 
                         <div class="form-outline">
-                            <select class="form-control" name="type_of_livestock" value="{{old('type_of_livestock')}}">
+                            <select  id="multiple" class="form-control multiple" name="type_of_livestock[]" >
 
                                 <option>Cow</option>
                                 <option>Bull</option>
@@ -217,3 +220,4 @@
 
 
 @endsection
+

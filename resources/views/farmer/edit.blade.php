@@ -80,7 +80,7 @@
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">Date Of Birth :</label>
-                            <input type="date" id="inputLastName" class="form-control input-style" name="dob" placeholder="Date Of Birth" value="{{old('dob',$profile->dob)}}"/>
+                            <input type="text" id="inputLastName" class="form-control input-style" name="dob" placeholder="Date Of Birth" value="{{old('dob',$profile->dob)}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -169,7 +169,7 @@
                         <label class="form-label" for="inputLastName">Type Of Livestock :</label>
 
                         <div class="form-outline">
-                            <select class="form-control" name="type_of_livestock"  value="{{$profile->type_of_livestock}}">
+                            <select id="multiple" class="form-control multiple" name="type_of_livestock[]"  value="{{json_encode($profile->type_of_livestock)}}">
 
                                 <option>Cow</option>
                                 <option>Bull</option>

@@ -53,7 +53,7 @@ class FarmerProfileController extends Controller
             'phone' => 'required',
             'present_address' => 'required',
             'permanent_address' => 'required',
-            'dob' => 'required',
+            'dob' => 'required|date|before:-18 years',
             'nid' => 'required|max:13',
             'father_name' => 'required',
             'mother_name' => 'required',
@@ -68,9 +68,9 @@ class FarmerProfileController extends Controller
             'district' => 'required',
             'zip_code' => 'required',
             'loan_amount' => 'required',
-            'no_of_livestock' => 'required',
+            'no_of_livestock' => 'nullable',
             'type_of_livestock' => 'required',
-            'sum_insured' => 'required',
+            'sum_insured' => 'nullable',
             'country' => 'required',
             'image'=>'required|mimes:jpeg,jpg,png',
         ];
@@ -99,7 +99,7 @@ class FarmerProfileController extends Controller
         $farmer_profile->zip_code = $request->zip_code;
         $farmer_profile->loan_amount = $request->loan_amount;
         $farmer_profile->no_of_livestock = $request->no_of_livestock;
-        $farmer_profile->type_of_livestock = $request->type_of_livestock;
+        $farmer_profile->type_of_livestock = json_encode($request->type_of_livestock) ;
         $farmer_profile->sum_insured = $request->sum_insured;
         $farmer_profile->country = $request->country;
         $farmer_profile->user_id = auth()->user()->id;
@@ -152,7 +152,7 @@ class FarmerProfileController extends Controller
             'phone' => 'required',
             'present_address' => 'required',
             'permanent_address' => 'required',
-            'dob' => 'required',
+            'dob' => 'required|date|before:-18 years',
             'nid' => 'required|max:13',
             'father_name' => 'required',
             'mother_name' => 'required',
@@ -167,9 +167,9 @@ class FarmerProfileController extends Controller
             'district' => 'required',
             'zip_code' => 'required',
             'loan_amount' => 'required',
-            'no_of_livestock' => 'required',
+            'no_of_livestock' => 'nullable',
             'type_of_livestock' => 'required',
-            'sum_insured' => 'required',
+            'sum_insured' => 'nullable',
             'country' => 'required',
         ];
         $this->validate($request,$inputs);
@@ -196,7 +196,9 @@ class FarmerProfileController extends Controller
         $farmer_profile->zip_code = $request->zip_code;
         $farmer_profile->loan_amount = $request->loan_amount;
         $farmer_profile->no_of_livestock = $request->no_of_livestock;
-        $farmer_profile->type_of_livestock = $request->type_of_livestock;
+
+        $farmer_profile->type_of_livestock = json_encode($request->type_of_livestock) ;
+
         $farmer_profile->sum_insured = $request->sum_insured;
         $farmer_profile->country = $request->country;
         $farmer_profile->user_id = auth()->user()->id;

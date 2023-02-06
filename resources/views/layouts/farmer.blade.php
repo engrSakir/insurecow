@@ -19,9 +19,9 @@
     <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css" rel="stylesheet">
-    <link href="{{ asset('/css/external_style.css') }}" rel="stylesheet" />        
+    <link href="{{ asset('/css/external_style.css') }}" rel="stylesheet" />
     <!--=============== CSS ===============-->
-    
+
     <!--==================== FONT AWESOME ====================-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet"
@@ -36,7 +36,13 @@
     <!--=============== CSS ===============-->
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+
     @stack('css')
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <style>
         .dropdown-item.active, .dropdown-item:active {
             color: #fff !important;
@@ -44,11 +50,15 @@
             background-color: #086343 !important;
         }
         </style>
+
     <title>InsureCow</title>
+
+
+
 </head>
 
 <body  style="background: linear-gradient(346.96deg, #C3EAD6 14.97%, #D7ECCB 90.96%);">
-    
+
     @include('inc.farmer_header')
     {{-- content --}}
     <div class="container">
@@ -59,6 +69,8 @@
     @include('inc.farmer_footer')
 
     <!--==================== JavaScript Bundle with Popper ====================-->
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -177,6 +189,17 @@
             })
         </script>
     @endif
+
+
+
+
+{{--select2--}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('#multiple').select2({
+            multiple:true
+        });
+    </script>
 </body>
 
 </html>
