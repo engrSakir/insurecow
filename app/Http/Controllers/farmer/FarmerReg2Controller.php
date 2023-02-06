@@ -56,7 +56,6 @@ class FarmerReg2Controller extends Controller
             'face_of_cow' => 'required',
             'left_side' => 'required',
             'right_side' => 'required',
-            'special_mark' => 'required',
             'cow_with_owner' => 'required',
             'price' => 'required|regex:/^([0-9]+)$/|not_in:0',
 

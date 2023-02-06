@@ -89,7 +89,7 @@
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label" for="inputLastName">Farmer name :</label>
-                                    <input placeholder="Enter Farmer Name" type="text" id="farmername" class="form-control input-style" name="farmername" v-model="farmername"/>
+                                    <input placeholder="Enter Farmer Name" type="text" id="farmername" class="form-control input-style" name="farmername" v-model="farmername" value="{{ auth()->user()->name }}"/>
                                 </div>
                             </div>
                         </div>
@@ -253,13 +253,15 @@
 
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
-                                    <label class="form-label" for="inputGender">Gender :</label>
+                                    <label class="form-label" for="inputGender">Cattle Type :</label>
                                     <div class="col">
                                         <select class="form-select form-info form-control input-style" name="gender"
                                                 id="gender" v-model="gender">
-                                                <option value="">Select Cattle Gender</option>
-                                                <option value="male">Male</option>
-                                                <option value="female">Female</option>
+                                                <option value="">SELECT CATTLE TYPE</option>
+                                                <option value="bull">Bull</option>
+                                                <option value="ox">Ox</option>
+                                                <option value="cow">Cow</option>
+                                                <option value="bred-heifer">Bred Heifer</option>
                                         </select>
                                     </div>
                                 </div>
@@ -536,7 +538,7 @@
         data() {
             return {
                 farmname : "",
-                farmername : "",
+                farmername : document.getElementById("farmername").value,
                 division : "",
                 district : "",
                 thana : "",

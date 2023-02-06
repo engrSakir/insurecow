@@ -35,7 +35,7 @@ class CreateFarmerReg2sTable extends Migration
             $table->string('face_of_cow');
             $table->string('left_side');
             $table->string('right_side');
-            $table->string('special_mark');
+            $table->string('special_mark')->nullable();
             $table->string('cow_with_owner');
 
             $table->string('health')->default('f');
