@@ -44,7 +44,7 @@ class PendingController extends Controller
                 'buying_price' => $request->buying_price,
                 'insurance_period' => $request->insurance_period,
                 'accidental_mortality'=> $request->accidental_mortality,
-                'additionalcoverages' => json_decode($request->additionalcoverages)
+                'additionalcoverages' => json_encode($request->additionalcoverages)
             ];
 
             $pakages = Package::where('insurance_period', 'LIKE', '%'.$request->insurance_period.'%')
