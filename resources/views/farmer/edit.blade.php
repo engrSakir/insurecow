@@ -137,7 +137,7 @@
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <label class="form-label" for="inputLastName">District :</label>
-                            <input type="text" id="inputLastName" class="form-control input-style" name="district" placeholder="District"  value="{{$profile->district}}"/>
+                            <input type="text" id="districts" class="form-control input-style " name="district" placeholder="District"  value="{{$profile->district}}"/>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">

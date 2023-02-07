@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\FarmerProfile;
 use App\User;
+use Illuminate\Support\Facades\Http;
 
 
 class FarmerProfileController extends Controller
@@ -20,6 +21,15 @@ class FarmerProfileController extends Controller
     public function index()
     {
         if (FarmerProfile::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first() == null) {
+
+//            $districts = Http::get('https://bdapis.com/api/v1.1/districts/');
+//            $data=json_decode($districts->body());
+//            foreach ($data as $datas){
+//                $datas=(array)$datas;
+//            }
+
+
+
             return view('farmer.profile.profile');
         } else {
             $profile = FarmerProfile::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first();

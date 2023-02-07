@@ -217,7 +217,7 @@
         <div class="col-lg-6">
           <div class="h-100">
             <div class="card-body">
-              <img src="{{ asset('/images/login_back.png') }}" class="img-fluid" alt="Cow" />
+              <img src="{{ asset('/images/ImagesLoginpage.png') }}" class="img-fluid" alt="Cow" />
             </div>
           </div>
         </div>
