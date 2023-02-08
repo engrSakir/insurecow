@@ -64,7 +64,7 @@ class FarmerProfileController extends Controller
             'present_address' => 'required',
             'permanent_address' => 'required',
             'dob' => 'required|date|before:-18 years',
-            'nid' => 'required|max:13',
+            'nid' => 'required|max:13|min:10',
             'father_name' => 'required',
             'mother_name' => 'required',
             'source_of_income' => 'required',
