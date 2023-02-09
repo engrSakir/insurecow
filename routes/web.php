@@ -26,17 +26,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-//==========================Agent=========================================
-Route::middleware(['fieldagent', 'auth'])->group(function () {
-//     Route::get('/home', 'HomeController@index')->name('home');
-    Route::group(['prefix' => 'fieldagent'], function () {
-        Route::get('home', 'FieldAgentController@index')->name('fieldagent.index');
 
-    });
-
-
-});
-//==========================================================================
 
 // --------------------------- company ----------------------
 Route::middleware(['company', 'auth'])->group(function () {
@@ -184,7 +174,19 @@ Route::middleware(['superadmin', 'auth'])->group(function () {
     });
 
 });
+//==========================Agent=========================================
+Route::middleware(['fieldagent', 'auth'])->group(function () {
+//     Route::get('/home', 'HomeController@index')->name('home');
+    Route::group(['prefix' => 'fieldagent'], function () {
+        Route::get('home', 'FieldAgentController@index')->name('fieldagent.index');
+        Route::get('reg','FieldAgentController@reg')->name('fieldagent.reg');
+        Route::post('store','FieldAgentController@storeFarmer')->name('fieldagent.storeFarmer');
 
+    });
+
+
+});
+//==========================================================================
 
 //Route::group(['prefix' => 'fdashboard'], function () {
 //    Route::get('home', 'FarmerDashboardController@index')->name('fdashboard.index');
