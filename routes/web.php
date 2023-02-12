@@ -181,6 +181,10 @@ Route::middleware(['fieldagent', 'auth'])->group(function () {
         Route::get('home', 'FieldAgentController@index')->name('fieldagent.index');
         Route::get('reg','FieldAgentController@reg')->name('fieldagent.reg');
         Route::post('store','FieldAgentController@storeFarmer')->name('fieldagent.storeFarmer');
+        Route::get('registered','FieldAgentController@registeredFarmer')->name('fieldagent.registeredFarmer');
+
+        Route::resource('/agentProfile', 'AgentController');
+
 
     });
 

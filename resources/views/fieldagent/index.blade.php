@@ -18,7 +18,7 @@
                                 <center>
                                     <a href="{{route('fieldagent.reg')}}" class="btn w-50 text-center mt-5 font-weight-bold text-white" style="background-color: #0f6848; border: 1px solid #226034;color: #082E13"><strong>Register Farmer</strong></a>
                                     <a href="" class="btn w-50 text-center mt-2 font-weight-bold" style="background-color: #ffffff; border: 1px solid #226034;color: #082E13"><strong>Assign Task</strong></a>
-                                    <a href="" class="btn w-50 text-center mt-2 font-weight-bold" style="background-color: #ffffff; border: 1px solid #226034;color: #082E13"><strong>View Registered Farmer</strong></a>
+                                    <a href="{{route('fieldagent.registeredFarmer')}}" class="btn w-50 text-center mt-2 font-weight-bold" style="background-color: #ffffff; border: 1px solid #226034;color: #082E13"><strong>View Registered Farmer</strong></a>
                                 </center>
                             </div>
                         </div>

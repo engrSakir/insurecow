@@ -86,6 +86,40 @@
                                 </span>
                             @enderror
                         </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Nid</label>
+                            <input
+                                id="email" name="nid" value="{{ old('nid') }}" required autocomplete="nid" autofocus
+                                type="number"
+
+                                class="form-control fontAwesome input-form  @error('nid') is-invalid @enderror"
+
+                                placeholder="Enter NID"
+                                required
+                            />
+                            @error('nid')
+                            <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Date Of Birth</label>
+                            <input
+                                id="email" name="dob" value="{{ old('dob') }}" required autocomplete="email" autofocus
+                                type="date"
+
+                                class="form-control fontAwesome input-form  @error('dob') is-invalid @enderror"
+
+                                placeholder="Enter Dob"
+                                required
+                            />
+                            @error('dob')
+                            <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
 
 
                         @if ($error = $errors->first('password'))

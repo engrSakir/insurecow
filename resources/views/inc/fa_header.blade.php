@@ -27,27 +27,23 @@
                         >
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="navbarDropdown"
-                            role="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                        >
-                            Profile
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            <a class="dropdown-item" href="">Farmer Profile</a>
-                            <a class="dropdown-item" href="">Agent Profile</a>
-                            <div class="dropdown-divider"></div>
-                            {{--                                <a class="dropdown-item" href="#"></a>--}}
 
-                        </div>
-                    </li>
+                            @if (auth()->user()->agent_profile()->count() == 0)
+                                <li class="nav-item nav-font"><a class="nav-link"  href="{{route('agentProfile.index')}}">Profile</a></li>
+                            @else
+                                <!-- Nav Item - Profile Edit -->
+                                <li class="nav-item nav-font">
+                                    <a class="nav-link"  href="{{ route('agentProfile.edit', auth()->user()->id) }}">
+                                        <span>Edit Profile</span></a>
+                                </li>
+                            @endif
+
+
+
+
+
+
                     <li class="nav-item nav-font">
                         <a class="nav-link" href="#">Notification</a>
 

@@ -19,7 +19,9 @@ class FieldAgentController extends Controller
         $inputs=[
           'name'=>'required',
           'phone'=>'required',
-          'email'=>'nullable',
+            'email'=>'nullable',
+          'nid'=>'required|max:13|min:10',
+          'dob'=>'required|date|before:-18 years',
           'password'=>'required|string|min:8|confirmed',
 
         ];
@@ -28,10 +30,19 @@ class FieldAgentController extends Controller
         $store->name=$request->name;
         $store->phone=$request->phone;
         $store->email=$request->email;
+        $store->nid=$request->nid;
+        $store->dob=$request->dob;
         $store->password=Hash::make($request->password);
+        $store->agent_id= auth()->user()->id;
 
         $store->save();
         return redirect()->back()->with('farmer','Farmer Registration Successful');
+
+    }
+
+    function registeredFarmer(){
+        $farmer=User::where('role_1','f')->where('agent_id', auth()->user()->id)->get();
+        return view('fieldagent.registeredFarmer',compact('farmer'));
 
     }
 }
