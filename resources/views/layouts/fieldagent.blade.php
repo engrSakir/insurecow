@@ -89,6 +89,43 @@
 
 <!-- Footer -->
 @include('inc.fa_footer')
+{{--Sweet Alert--}}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@if(session()->has('farmer'))
+    <script>
+        swal("Done!!","{!! Session::get('farmer')!!}","success",{
+            button:"OK",
+        })
+    </script>
+@endif
+<script type="text/javascript">
+    function confirmation(e) {
+        e.preventDefault();
 
+        var url = e.currentTarget.getAttribute('href')
+
+        Swal.fire({
+            icon: 'warning',
+            title: 'Are you sure?',
+            text: 'This action cannot be undone!',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, recall!'
+        }).then((result) => {
+            if (result.value) {
+                window.location.href=url;
+            }
+        })
+    }
+</script>
+
+
+{{--data tablse scipt--}}
+
+<script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
 </body>
 </html>

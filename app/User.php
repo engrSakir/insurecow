@@ -68,4 +68,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Policy::class);
     }
+    public function agent_profile()
+    {
+        return $this->hasOne(AgentProfile::class);
+    }
 }
