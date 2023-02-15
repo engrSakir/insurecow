@@ -231,3 +231,6 @@ Route::get('test', function () {
 
 
 
+//==================================Google Translate========================================
+
+Route::get('lang/change',[\App\Http\Controllers\LangController::class,'change'])->name('changeLang');

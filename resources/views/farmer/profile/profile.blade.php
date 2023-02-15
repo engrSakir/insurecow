@@ -25,31 +25,31 @@
                               style="background: #D7ECCB;">
                             @csrf
                             <div class="card-block p-2 card-block-top mb-4" style="background-color: #0f6848">
-                                <h4 class="ms-4">Farmer Profile</h4>
+                                <h4 class="ms-4">{{GoogleTranslate::trans('Farmer Profile',app()->getLocale())}}</h4>
                             </div>
                             <div class="card-block p-2 card-block-down" style="background: #D7ECCB;">
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
                                 <div class="row px-4">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label" for="inputFirstName">First name :</label>
+                                            <label class="form-label" for="inputFirstName">{{GoogleTranslate::trans('First name :',app()->getLocale())}}</label>
                                             <input type="text" id="inputFirstName" class="form-control input-style"
-                                                   name="first_name" placeholder="First Name"
+                                                   name="first_name" placeholder="{{GoogleTranslate::trans('First Name',app()->getLocale())}}"
                                                    value="{{old('first_name')}}"/>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label" for="inputLastName">Last name :</label>
+                                            <label class="form-label" for="inputLastName">{{GoogleTranslate::trans('Last name :',app()->getLocale())}}</label>
                                             <input type="text" id="inputLastName" class="form-control input-style"
-                                                   name="last_name" placeholder="Last Name"
+                                                   name="last_name" placeholder="{{GoogleTranslate::trans('Last Name',app()->getLocale())}}"
                                                    value="{{old('last_name')}}"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label" for="inputLastName">Email :</label>
+                                            <label class="form-label" for="inputLastName">{{GoogleTranslate::trans('Email :',app()->getLocale())}}</label>
                                             <input type="text" id="inputLastName" class="form-control input-style"
                                                    name="email"
                                                    value="{{\Illuminate\Support\Facades\Auth::user()->email}}"/>
@@ -57,7 +57,7 @@
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label" for="inputLastName">Phone :</label>
+                                            <label class="form-label" for="inputLastName">{{GoogleTranslate::trans('Phone :',app()->getLocale())}}</label>
                                             <input type="text" id="inputLastName" class="form-control input-style"
                                                    name="phone"
                                                    value="{{\Illuminate\Support\Facades\Auth::user()->phone}}"/>
@@ -65,17 +65,17 @@
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label" for="inputLastName">Father's Name :</label>
+                                            <label class="form-label" for="inputLastName"> {{GoogleTranslate::trans("Father's Name :",app()->getLocale())}}</label>
                                             <input type="text" id="inputLastName" class="form-control input-style"
-                                                   name="father_name" placeholder="Father's Name"
+                                                   name="father_name" placeholder="{{GoogleTranslate::trans("Father's Name ",app()->getLocale())}}"
                                                    value="{{old('father_name')}}"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label" for="inputLastName">Mother's Name :</label>
+                                            <label class="form-label" for="inputLastName">{{GoogleTranslate::trans("Mother's Name :",app()->getLocale())}}</label>
                                             <input type="text" id="inputLastName" class="form-control input-style"
-                                                   name="mother_name" placeholder="Mother's Name"
+                                                   name="mother_name" placeholder="{{GoogleTranslate::trans("Mother's Name ",app()->getLocale())}}"
                                                    value="{{old('mother_name')}}"/>
                                         </div>
                                     </div>
@@ -83,52 +83,52 @@
 
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label" for="inputLastName">Present Address :</label>
+                                            <label class="form-label" for="inputLastName">{{GoogleTranslate::trans("Present Address :",app()->getLocale())}}</label>
                                             <input type="text" id="inputLastName" class="form-control input-style"
-                                                   name="present_address" placeholder="Present Address"
+                                                   name="present_address" placeholder="{{GoogleTranslate::trans("Present Address",app()->getLocale())}}"
                                                    value="{{old('present_address') }}"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label" for="inputLastName">Permanent Address :</label>
+                                            <label class="form-label" for="inputLastName">{{GoogleTranslate::trans("Permanent Address :",app()->getLocale())}}</label>
                                             <input type="text" id="inputLastName" class="form-control input-style"
-                                                   name="permanent_address" placeholder="Permanent Address"
+                                                   name="permanent_address" placeholder="{{GoogleTranslate::trans("Permanent Address :",app()->getLocale())}}"
                                                    value="{{old('permanent_address')}}"/>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label" for="inputLastName">Date Of Birth :</label>
+                                            <label class="form-label" for="inputLastName">{{GoogleTranslate::trans("Date Of Birth :",app()->getLocale())}}</label>
                                             <input type="text" id="datepickerfarmer" class="form-control input-style"
-                                                   name="dob" placeholder="Date Of Birth" value="{{old('dob')}}"/>
+                                                   name="dob" placeholder="{{GoogleTranslate::trans("Date Of Birth ",app()->getLocale())}}" value="{{old('dob')}}"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label" for="inputLastName">NID/Passport/Birth
-                                                Registration No. :</label>
+                                            <label class="form-label" for="inputLastName"> {{GoogleTranslate::trans("NID/Passport/Birth
+                                                Registration No :",app()->getLocale())}}</label>
                                             <input type="number" min="0" id="inputLastName"
                                                    class="form-control input-style" name="nid"
-                                                   placeholder="NID/Passport/Birth Registration No."
+                                                   placeholder="{{GoogleTranslate::trans("NID/Passport/Birth Registration No ",app()->getLocale())}}"
                                                    value="{{old('nid')}}"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label" for="inputLastName">Source Of Income :</label>
+                                            <label class="form-label" for="inputLastName"> {{GoogleTranslate::trans("Source Of Income :",app()->getLocale())}}</label>
                                             <input type="text" id="inputLastName" class="form-control input-style"
-                                                   name="source_of_income" placeholder="Source Of Income"
+                                                   name="source_of_income" placeholder="{{GoogleTranslate::trans("Source Of Income ",app()->getLocale())}}"
                                                    value="{{old('source_of_income')}}"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label" for="inputLastName">Bank Account No :</label>
+                                            <label class="form-label" for="inputLastName">{{GoogleTranslate::trans("Bank Account No :",app()->getLocale())}}</label>
                                             <input type="number" min="0" id="inputLastName"
                                                    class="form-control input-style" name="bank_no"
-                                                   placeholder="Bank Account No" value="{{old('bank_no')}}"/>
+                                                   placeholder="{{GoogleTranslate::trans("Bank Account No ",app()->getLocale())}}" value="{{old('bank_no')}}"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">

@@ -206,6 +206,16 @@
 
     </script>
 
+{{--Language Script--}}
+    <script>
+        var url= "{{ route('changeLang') }}";
+        $('.changeLang').change(function (event){
+            // alert();
+            window.location.href = url+"?lang="+$(this).val();
+
+        })
+    </script>
+
 </body>
 
 </html>
