@@ -184,7 +184,8 @@ Route::middleware(['fieldagent', 'auth'])->group(function () {
         Route::get('registered','FieldAgentController@registeredFarmer')->name('fieldagent.registeredFarmer');
 
         Route::resource('/agentProfile', 'AgentController');
-
+        Route::get('farmer_upload','FieldAgentController@upload')->name('fieldagent.farmer_upload');
+        Route::post('import','FieldAgentController@import')->name('fieldagent.import');
 
     });
 

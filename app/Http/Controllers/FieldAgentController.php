@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Imports\UsersImport;
+use Maatwebsite\Excel\Facades\Excel;
+//use Maatwebsite\Excel\Excel;
 
 class FieldAgentController extends Controller
 {
@@ -44,5 +47,16 @@ class FieldAgentController extends Controller
         $farmer=User::where('role_1','f')->where('agent_id', auth()->user()->id)->get();
         return view('fieldagent.registeredFarmer',compact('farmer'));
 
+    }
+
+
+    function upload(){
+        return view('fieldagent.farmer_upload');
+    }
+
+    function import(Request $request){
+        $agent_id = auth()->user()->id;
+        Excel::import(new UsersImport($agent_id), request()->file('file'));
+        return redirect()->back()->with('msg','User Imported Successfully');
     }
 }

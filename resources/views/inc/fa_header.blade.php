@@ -49,6 +49,11 @@
 
                     </li>
 
+                    <li class="nav-item nav-font">
+                        <a class="nav-link btn" href="{{route('fieldagent.farmer_upload')}}" style="background: #FFFFFF;border-radius: 10px;font-family: 'Roboto Slab';font-style: normal;font-weight: 700;line-height: 26px;color: #226034;">Upload</a>
+
+                    </li>
+
 
 
                 </ul>
