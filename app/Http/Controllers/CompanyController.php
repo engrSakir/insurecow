@@ -77,6 +77,10 @@ class CompanyController extends Controller
 
         if ($request->role_1=='Field Agent'){
             $user->role_1='fa';
+        }
+
+        elseif ($request->role_1=='Farmer'){
+            $user->role_1='f';
         }else{
             abort(404);
         }
