@@ -6,7 +6,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
             <!-- Page Heading -->
-            <h1 class="h3 mb-4 text-gray-800 text-center"><u> Register Field Agent</u></h1>
+            <h1 class="h3 mb-4 text-gray-800 text-center"><u> Register Field Agent / Farmer</u></h1>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
