@@ -53,7 +53,7 @@
     </style>
 </head>
 
-<body style="background: linear-gradient(90deg, rgba(195,234,214,1) 0%, rgba(215,236,203,1) 35%);"> 
+<body style="background: linear-gradient(90deg, rgba(195,234,214,1) 0%, rgba(215,236,203,1) 35%);">
 
 <!--==================== NAVBAR ====================-->
 @include('inc/farmer_header')
@@ -65,13 +65,13 @@
 <div id="app">
     <div>
         <section>
-            <p class="heading mt-4">Registration Form</p>
+            <p class="heading mt-4"> {{GoogleTranslate::trans(' Registration Form  ',app()->getLocale())}}</p>
 
             <div class="card mt-4 mb-5">
                 <form class="" style="background: #D7ECCB;">
 
                     <div class="card-block p-2 card-block-top mb-4" style="background: #086343">
-                        <h4 class="ms-4">Farmer Information</h4>
+                        <h4 class="ms-4">{{GoogleTranslate::trans(' Farmer Information : ',app()->getLocale())}}</h4>
                     </div>
 
                     <div class="card-block p-2 card-block-down" style="background: #D7ECCB;">
@@ -80,7 +80,7 @@
                         <div class="row px-4">
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <label class="form-label" for="inputFirstName">Farm name :</label>
+                                    <label class="form-label" for="inputFirstName">{{GoogleTranslate::trans('Farm name : ',app()->getLocale())}}</label>
                                     <input placeholder="Enter Farm Name" type="text" id="farmname" class="form-control input-style"
                                            name="farmname" v-model="farmname"/>
                                 </div>
@@ -88,7 +88,7 @@
 
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <label class="form-label" for="inputLastName">Farmer name :</label>
+                                    <label class="form-label" for="inputLastName">{{GoogleTranslate::trans('Farmer name : ',app()->getLocale())}}</label>
                                     <input placeholder="Enter Farmer Name" type="text" id="farmername" class="form-control input-style" name="farmername" v-model="farmername" value="{{ auth()->user()->name }}"/>
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                         <div class="row px-4">
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <label class="form-label" for="inputDivision">Division :</label>
+                                    <label class="form-label" for="inputDivision"> {{GoogleTranslate::trans('Division : ',app()->getLocale())}}</label>
 
                                     <div class="col">
                                         <input placeholder="Select Division" type="text" id="division" class="form-control input-style"
@@ -199,7 +199,7 @@
                                     <label class="form-label" for="inputBreed">Cattle Breed :</label>
                                     <div class="col">
 
-                                        <!-- <input placeholder="Select Cattle Bread" type="text" id="" 
+                                        <!-- <input placeholder="Select Cattle Bread" type="text" id=""
                                                name="cattle_breed" /> -->
                                         <select name="cattle_breed" id="cattle_breed" v-model="cattle_breed" class="form-control input-style">
                                             <option value="">SELECT BREED</option>
@@ -224,7 +224,7 @@
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label" for="inputAge">Age :</label>
-                                    <input placeholder="Enter Cattle Age" min="1" type="number" id="age" class="form-control input-style" name="age" v-model="age"/>
+                                    <input placeholder="Enter Cattle Age" min="1" type="text" id="age" class="form-control input-style" name="age" v-model="age"/>
                                 </div>
                             </div>
 
@@ -457,6 +457,13 @@
 
                             <div class="col-md-4 mb-4">
                                 <div class="form-outline">
+                                    <label class="form-label" for="price">Special Marks: </label>
+                                    <input placeholder="Enter Special Marks" type="text" id="price" class="form-control input-style" v-model="price"/>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4">
+                                <div class="form-outline">
                                     <label class="form-label" for="price">Current Price: </label>
                                     <input placeholder="Enter Current Price" type="number" id="price" class="form-control input-style" v-model="price"/>
                                 </div>
@@ -619,7 +626,7 @@
                     alert('Data added successfully!');
                     window.location.href = '/farmer/confirmation';
                 });
-            
+
             }
         }
     })

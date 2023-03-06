@@ -63,11 +63,11 @@
 
 <div class="container">
 <section>
-    <p class="heading mt-4">Registration Form</p>
+    <p class="heading mt-4">{{GoogleTranslate::trans('Registration Form',app()->getLocale())}}</p>
 
     <div class="card card-style mt-4 mb-5" style="background: #D7ECCB;">
         <div class="card-block p-2 card-block-middle mb-4" style="background: #086343">
-            <h4 class="ms-4">Attachment</h4>
+            <h4 class="ms-4">{{GoogleTranslate::trans('Attachment ',app()->getLocale())}}</h4>
         </div>
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -84,7 +84,7 @@
                 <div class="row px-4 mt-4 mb-3">
                     <!-- Owner NID : -->
                     <div class="col-md-4 mb-5" style="background: #D7ECCB;">
-                        <p>NID Front:</p>
+                        <p> NID {{GoogleTranslate::trans(' Front: ',app()->getLocale())}}</p>
                         <div class="file-upload">
                             <div class="image-upload-wrap">
                                 <input
@@ -122,7 +122,7 @@
 
                     <!-- Vet Certiicate -->
                     <div class="col-md-4 mb-5" style="background: #D7ECCB;">
-                        <p>NID Back:</p>
+                        <p>{{GoogleTranslate::trans('NID Back: ',app()->getLocale())}}</p>
                         <div class="file-upload">
                             <div class="image2-upload-wrap">
                                 <input
@@ -164,7 +164,7 @@
 
                     <!-- Chairman Certificate -->
                     <div class="col-md-4 mb-5" style="background: #D7ECCB;">
-                        <p>Chairman Certificate :</p>
+                        <p>{{GoogleTranslate::trans('Chairman Certificate : ',app()->getLocale())}}</p>
                         <div class="file-upload">
                             <div class="image3-upload-wrap">
                                 <input
@@ -221,14 +221,14 @@
                         required
                     />
                     <label class="form-check-label" for="invalidCheck2">
-                        I agree to platform Terms of Service and Privacy Policy
+                        {{GoogleTranslate::trans('I agree to platform Terms of Service and Privacy Policy ',app()->getLocale())}}
                     </label>
                 </div>
             </div>
 
             <!-- Register button -->
             <div class="px-4 py-5">
-                <button type="submit" class="register-button" style="background: #086343">Register</button>
+                <button type="submit" class="register-button" style="background: #086343">{{GoogleTranslate::trans('Next: ',app()->getLocale())}}</button>
             </div>
         </form>
     </div>
