@@ -27,13 +27,13 @@
 
             <div class="col-lg-7">
                 <div>
-                    <h1 class="p-greeting" style="font-weight: bold">Welcome Mr. {{ Auth::user()->name }} to InsureCow ! ! !</h1>
+                    <h1 class="p-greeting" style="font-weight: bold">{{GoogleTranslate::trans('Welcome Mr.',app()->getLocale())}} {{ GoogleTranslate::trans(Auth::user()->name,app()->getLocale()) }} {{GoogleTranslate::trans('to InsureCow  ! ! !',app()->getLocale())}}</h1>
                     <p align="center" class="mb-5">{{ GoogleTranslate::trans('Here is some option for you.',app()->getLocale())}}</p>
                     <center>
-                        <a href="{{ route('reg_one.index') }}" class="btn w-50 text-center mt-5 font-weight-bold" style="background-color: #ffffff; border: 1px solid #226034;color: #082E13"><strong>Add cattle</strong></a>
-                        <a href="{{ route('farmer.registered.cattle') }}" class="btn w-50 text-center mt-2 font-weight-bold" style="background-color: #ffffff; border: 1px solid #226034;color: #082E13"><strong>View registered cattle</strong></a>
-                        <a href="{{ route('onboard.index') }}" class="btn w-50 text-center mt-2 font-weight-bold" style="background-color: #ffffff; border: 1px solid #226034;color: #082E13"><strong>Create insurance for your cattle</strong></a>
-                        <a href="{{ route('claim.index') }}" class="btn w-50 text-white text-center mt-2 mb-5 font-weight-bold" style="background-color: #0f6848">Claim Insurance</a>
+                        <a href="{{ route('reg_one.index') }}" class="btn w-50 text-center mt-5 font-weight-bold" style="background-color: #ffffff; border: 1px solid #226034;color: #082E13"><strong>{{GoogleTranslate::trans('Add cattle',app()->getLocale())}}</strong></a>
+                        <a href="{{ route('farmer.registered.cattle') }}" class="btn w-50 text-center mt-2 font-weight-bold" style="background-color: #ffffff; border: 1px solid #226034;color: #082E13"><strong>{{GoogleTranslate::trans('View registered cattle',app()->getLocale())}}</strong></a>
+                        <a href="{{ route('onboard.index') }}" class="btn w-50 text-center mt-2 font-weight-bold" style="background-color: #ffffff; border: 1px solid #226034;color: #082E13"><strong>{{GoogleTranslate::trans('Create insurance for your cattle',app()->getLocale())}}</strong></a>
+                        <a href="{{ route('claim.index') }}" class="btn w-50 text-white text-center mt-2 mb-5 font-weight-bold" style="background-color: #0f6848">{{GoogleTranslate::trans('Claim Insurance',app()->getLocale())}}</a>
                     </center>
                 </div>
             </div>

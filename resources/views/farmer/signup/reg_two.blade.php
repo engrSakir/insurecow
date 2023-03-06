@@ -81,8 +81,10 @@
 
 <body style="background: linear-gradient(90deg, rgba(195,234,214,1) 0%, rgba(215,236,203,1) 35%);">
 
+
     <!--==================== NAVBAR ====================-->
     @include('inc/farmer_header')
+
 
 
     <!--==================== FORM PAGE SECTION ====================-->
@@ -93,6 +95,20 @@
                 <section>
                     <p class="heading mt-4">Registration Form</p>
 
+<div class="container" style="linear-gradient(#C3EAD6 14.97%, #D7ECCB 90.96%);">
+<div id="app">
+    <div>
+        <section>
+            <p class="heading mt-4"> {{GoogleTranslate::trans(' Registration Form  ',app()->getLocale())}}</p>
+
+            <div class="card mt-4 mb-5">
+                <form class="" style="background: #D7ECCB;">
+
+                    <div class="card-block p-2 card-block-top mb-4" style="background: #086343">
+                        <h4 class="ms-4">{{GoogleTranslate::trans(' Farmer Information : ',app()->getLocale())}}</h4>
+                    </div>
+
+
                     <div class="card mt-4 mb-5">
                         <form class="" style="background: #D7ECCB;">
 
@@ -101,6 +117,31 @@
                             </div>
 
                             <div class="card-block p-2 card-block-down" style="background: #D7ECCB;">
+
+                        <!-- 2 column grid layout with text inputs for the first and last names -->
+                        <div class="row px-4">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" for="inputFirstName">{{GoogleTranslate::trans('Farm name : ',app()->getLocale())}}</label>
+                                    <input placeholder="Enter Farm Name" type="text" id="farmname" class="form-control input-style"
+                                           name="farmname" v-model="farmname"/>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" for="inputLastName">{{GoogleTranslate::trans('Farmer name : ',app()->getLocale())}}</label>
+                                    <input placeholder="Enter Farmer Name" type="text" id="farmername" class="form-control input-style" name="farmername" v-model="farmername" value="{{ auth()->user()->name }}"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2 column grid layout with text inputs for division and district -->
+                        <div class="row px-4">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" for="inputDivision"> {{GoogleTranslate::trans('Division : ',app()->getLocale())}}</label>
+
 
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
                                 <div class="row px-4">
@@ -198,6 +239,36 @@
                                                 class="form-control input-style" name="nid" v-model="nid" />
                                         </div>
                                     </div>
+
+                                        <!-- <input placeholder="Select Cattle Bread" type="text" id=""
+                                               name="cattle_breed" /> -->
+                                        <select name="cattle_breed" id="cattle_breed" v-model="cattle_breed" class="form-control input-style">
+                                            <option value="">SELECT BREED</option>
+                                            <option value="sahiwal">Sahiwal</option>
+                                            <option value="sindhi">Sindhi</option>
+                                            <option value="holstein-friesian">Holstein-Friesian</option>
+                                            <option value="jersey">Jersey</option>
+                                            <option value="brahman">Brahman</option>
+                                            <option value="red-chittagong-cattle">Red Chittagong Cattle</option>
+                                            <option value="pabna-cattle">Pabna Cattle</option>
+                                            <option value="mirkadim-cattle">Mirkadim Cattle</option>
+                                        </select>
+
+
+                                        {{--                                <select class="form-select form-info form-control input-style">--}}
+                                        {{--                                    <option value="1"></option>--}}
+                                        {{--                                </select>--}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" for="inputAge">Age :</label>
+                                    <input placeholder="Enter Cattle Age" min="1" type="text" id="age" class="form-control input-style" name="age" v-model="age"/>
+                                </div>
+                            </div>
+
 
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
@@ -512,6 +583,7 @@
                             </div> -->
 
 
+
                                     <div class="col-md-4 mb-4">
                                         <div class="form-outline">
                                             <label class="form-label" for="price">Current Price: </label>
@@ -520,6 +592,17 @@
                                         </div>
                                     </div>
 
+                    <div class="col-md-4 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" for="price">Special Marks: </label>
+                                    <input placeholder="Enter Special Marks" type="text" id="price" class="form-control input-style" v-model="price"/>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" for="price">Current Price: </label>
+                                    <input placeholder="Enter Current Price" type="number" id="price" class="form-control input-style" v-model="price"/>
 
                                 </div>
 
@@ -621,6 +704,7 @@
                     cow_with_owner: "",
                 };
             },
+
             methods: {
                 faceOfCow(event) {
                     var vm = this;
@@ -682,6 +766,48 @@
                     });
 
                 }
+
+
+            cowWithOwner(event) {
+                var vm = this;
+                vm.cow_with_owner = event.target.files[0];
+            },
+
+            addcow() {
+                const formData = new FormData();
+                formData.set("farmname", this.farmname);
+                formData.set("farmername", this.farmername);
+                formData.set("division", this.division);
+                formData.set("district", this.district);
+                formData.set("thana", this.thana);
+                formData.set("post", this.post);
+                formData.set("nid", this.nid);
+                formData.set("contact", this.contact);
+                formData.set("cattle_name", this.cattle_name);
+                formData.set("cattle_color", this.cattle_color);
+                formData.set("cattle_breed", this.cattle_breed);
+                formData.set("age", this.age);
+                formData.set("weight", this.weight);
+                formData.set("gender", this.gender);
+
+                formData.set("face_of_cow", this.face_of_cow);
+                formData.set("left_side", this.left_side);
+                formData.set("right_side", this.right_side);
+                formData.set("special_mark", this.special_mark);
+                formData.set("cow_with_owner", this.cow_with_owner);
+
+                // formData.set("health", this.health);
+                formData.set("price", this.price);
+
+
+                window.axios.post('{{ route('reg_two.store') }}', formData).then(el => {
+                    // console.log(el);
+                    // location.reload();
+                    alert('Data added successfully!');
+                    window.location.href = '/farmer/confirmation';
+                });
+
+
             }
         })
 

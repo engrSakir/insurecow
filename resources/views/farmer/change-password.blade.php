@@ -21,31 +21,31 @@
                 @csrf
               <!--User Name-->
                 <div class="mb-4 password-container" style="position: relative">
-                  <label for="password" class="form-label">Old Password: </label>
-                  <input type="password" class="form-control input-form" placeholder="Enter Old Password" required="required" name="current_password" id="current_password">
+                  <label for="password" class="form-label">{{GoogleTranslate::trans('Old Password:',app()->getLocale())}} </label>
+                  <input type="password" class="form-control input-form" placeholder="{{GoogleTranslate::trans('Enter Old Password',app()->getLocale())}}" required="required" name="current_password" id="current_password">
                   <i class="fas fa-eye-slash fa-eye" id="eye"></i>
                 </div>
 
                 <!--User Password-->
                 <div class="mb-4" style="position: relative">
-                  <label for="password" class="form-label">New Password: </label>
-                  <input type="password" class="form-control input-form" placeholder="Enter New Password" required="required" name="new_password" id="new_password">
+                  <label for="password" class="form-label"> {{GoogleTranslate::trans('New Password:',app()->getLocale())}} </label>
+                  <input type="password" class="form-control input-form" placeholder="{{GoogleTranslate::trans('Enter New Password',app()->getLocale())}}" required="required" name="new_password" id="new_password">
                   <i class="fas fa-eye fa-eye-slash" id="eye_1"></i>
                 </div>
 
                 <!--User Password-->
                 <div class="mb-4" style="position: relative">
-                  <label for="password" class="form-label">Confirm Password: </label>
-                  <input type="password" class="form-control input-form" placeholder="Confirm New Password" required="required" name="verify_password" id="verify_password">
+                  <label for="password" class="form-label"> {{GoogleTranslate::trans('Confirm Password:',app()->getLocale())}} </label>
+                  <input type="password" class="form-control input-form" placeholder=" {{GoogleTranslate::trans('Enter Confirm Password',app()->getLocale())}}" required="required" name="verify_password" id="verify_password">
                   <i class="fas fa-eye fa-eye-slash" id="eye_2"></i>
                 </div>
 
                 <!--Log In Button-->
                 <button type="submit" class="btn mb-4 text-white" style="background: #086343;">
-                    Change Password
+                    {{GoogleTranslate::trans('Change Password',app()->getLocale())}}
                 </button>
                 <a type="submit" class="btn btn-default mb-4">
-                    Cancel
+                     {{GoogleTranslate::trans(' Cancel',app()->getLocale())}}
                 </a>
 
               </form>
