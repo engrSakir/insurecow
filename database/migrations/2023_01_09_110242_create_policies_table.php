@@ -15,12 +15,8 @@ class CreatePoliciesTable extends Migration
     {
         Schema::create('policies', function (Blueprint $table) {
             $table->id();
-            $table->longtext('content');
-            $table->longtext('corona');
-            $table->longtext('schedule');
-
             $table->string('user_id');
-            $table->string('signature');
+            $table->string('policy');
             $table->timestamps();
         });
     }

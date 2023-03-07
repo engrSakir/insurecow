@@ -46,14 +46,12 @@ class CompanyPolicyController extends Controller
 
 
         $inputs = \request()->validate([
-            'content' => 'required',
-            'corona'=>'required',
-            'schedule'=>'required',
-            'signature' => 'required|mimes:jpeg,bmp,png,webp',
+
+            'policy' => "required|mimes:pdf|max:10000",
         ]);
 
-        if (request('signature')) {
-            $inputs['signature'] = \request('signature')->store('images');
+        if (request('policy')) {
+            $inputs['policy'] = \request('policy')->store('pdf');
         }
 
 
@@ -100,10 +98,8 @@ class CompanyPolicyController extends Controller
     {
         $inputs = [
 
-            'content' => 'required',
-            'corona'=>'required',
-            'schedule'=>'required',
-            'signature' => 'mimes:jpeg,bmp,png,webp',
+
+            'policy' => "required|mimes:pdf|max:10000",
 
         ];
 
@@ -113,17 +109,15 @@ class CompanyPolicyController extends Controller
 
         $policy=Policy::find($id);
 
-        $policy->content=$request->content;
-        $policy->corona=$request->corona;
-        $policy->schedule=$request->schedule;
 
 
 
 
-        if (request('signature')) {
-            $policy['signature'] = \request('signature')->store('images');
+
+        if (request('policy')) {
+            $policy['policy'] = \request('policy')->store('pdf');
         }else {
-            $policy['signature'] = $policy->signature;
+            $policy['policy'] = $policy->policy;
         }
 
 
