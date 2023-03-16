@@ -24,6 +24,8 @@ class CreateFarmerProfilesTable extends Migration
             $table->longText('permanent_address');
             $table->string('dob');
             $table->string('nid');
+            $table->string('farm');
+            $table->string('info');
             $table->string('father_name');
             $table->string('mother_name');
 

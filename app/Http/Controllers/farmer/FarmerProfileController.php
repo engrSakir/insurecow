@@ -65,6 +65,8 @@ class FarmerProfileController extends Controller
             'permanent_address' => 'required',
             'dob' => 'required|date|before:-18 years',
             'nid' => 'required|max:13|min:10',
+            'farm' => 'required',
+            'info' => 'required',
             'father_name' => 'required',
             'mother_name' => 'required',
             'source_of_income' => 'required',
@@ -95,6 +97,8 @@ class FarmerProfileController extends Controller
         $farmer_profile->permanent_address = $request->permanent_address;
         $farmer_profile->dob = $request->dob;
         $farmer_profile->nid = $request->nid;
+        $farmer_profile->farm = $request->farm;
+        $farmer_profile->info = $request->info;
         $farmer_profile->father_name = $request->father_name;
         $farmer_profile->mother_name = $request->mother_name;
         $farmer_profile->source_of_income = $request->source_of_income;

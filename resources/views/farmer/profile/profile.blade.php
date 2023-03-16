@@ -117,6 +117,24 @@
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
+                                            <label class="form-label" for="inputLastName"> {{GoogleTranslate::trans("Farm Location:",app()->getLocale())}}</label>
+                                            <input type="text" id="inputLastName"
+                                                   class="form-control input-style" name="farm"
+                                                   placeholder="{{GoogleTranslate::trans("Farm Location ",app()->getLocale())}}"
+                                                   value="{{old('farm')}}"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="inputLastName"> {{GoogleTranslate::trans("Group Information:",app()->getLocale())}}</label>
+                                            <input type="text" id="inputLastName"
+                                                   class="form-control input-style" name="info"
+                                                   placeholder="{{GoogleTranslate::trans("Group Information",app()->getLocale())}}"
+                                                   value="{{old('info')}}"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
                                             <label class="form-label" for="inputLastName"> {{GoogleTranslate::trans("Source Of Income :",app()->getLocale())}}</label>
                                             <input type="text" id="inputLastName" class="form-control input-style"
                                                    name="source_of_income" placeholder="{{GoogleTranslate::trans("Source Of Income ",app()->getLocale())}}"
