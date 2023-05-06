@@ -20,31 +20,31 @@
                       <ul class="nav navbar-nav ms-auto">
                           <li class="nav-item navbar-brand">
                               <a href="{{ route('farmer.index') }}"
-                                  class="nav-link">{{ GoogleTranslate::trans('Home', app()->getLocale()) }}</a>
+                                  class="nav-link">Home</a>
                           </li>
 
                           <!--Profile-->
                           <li class="nav-item dropdown navbar-brand">
                               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                   data-bs-toggle="dropdown" aria-expanded="false">
-                                  {{ GoogleTranslate::trans('Profile Info', app()->getLocale()) }}
+                                  Profile Info
                               </a>
                               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   @if (auth()->user()->farmer_profile()->count() == 0)
                                       <li><a class="dropdown-item"
-                                              href="{{ route('farmerprofiles.index') }}">{{ GoogleTranslate::trans('Profile', app()->getLocale()) }}</a>
+                                              href="{{ route('farmerprofiles.index') }}">Profile</a>
                                       </li>
                                   @else
                                       <!-- Nav Item - Profile Edit -->
                                       <li>
                                           <a class="dropdown-item"
                                               href="{{ route('farmerprofiles.edit', auth()->user()->id) }}">
-                                              <span>{{ GoogleTranslate::trans('Edit Profile', app()->getLocale()) }}</span></a>
+                                              <span>Edit Profile</span></a>
                                       </li>
                                   @endif
                                   {{--                                <li><a class="dropdown-item" href="{{ route('farmer.choose.plan') }}">Choose Plans </a></li> --}}
                                   <li><a class="dropdown-item" href="{{ route('farmer.change.password') }}">
-                                          {{ GoogleTranslate::trans('Change Password', app()->getLocale()) }}</a></li>
+                                          Change Password</a></li>
                                   <!-- <li><a class="dropdown-item" href="#">Farm Address</a></li> -->
 
                                   {{--                                <li><a class="dropdown-item" href="{{ route('farmer.expense') }}">Expenses</a></li> --}}
@@ -67,14 +67,14 @@
                           <li class="nav-item dropdown navbar-brand">
                               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                   data-bs-toggle="dropdown" aria-expanded="false">
-                                  {{ GoogleTranslate::trans('Cattles', app()->getLocale()) }}
+                                  Cattles
                               </a>
                               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   <li><a class="dropdown-item"
-                                          href="{{ route('reg_one.index') }}">{{ GoogleTranslate::trans(' Reegister Cattles', app()->getLocale()) }}</a>
+                                          href="{{ route('reg_one.index') }}"> Reegister Cattles</a>
                                   </li>
                                   <li><a class="dropdown-item"
-                                          href="{{ route('farmer.registered.cattle') }}">{{ GoogleTranslate::trans('Registered Cattles', app()->getLocale()) }}</a>
+                                          href="{{ route('farmer.registered.cattle') }}">Registered Cattles</a>
                                   </li>
                               </ul>
                           </li>
@@ -87,7 +87,7 @@
                               <!-- <button type="submit" class="signout-button">SignOut</button> -->
 
                               <a href="{{ route('fdashboard.index') }}" class="btn signout-button"
-                                  style="background: #086343; color: #ffffff !important">{{ GoogleTranslate::trans('Manage Farm ', app()->getLocale()) }}</a>
+                                  style="background: #086343; color: #ffffff !important">Manage Farm</a>
 
                           </li>
                           <!--Sign out-->
