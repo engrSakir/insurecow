@@ -489,34 +489,34 @@
 
 
 
-                                <!-- Vet Certificate -->
-                                <div class="col-md-4 mb-5">
-                                    <p>Vet Certificate : </p>
-                                    <div class="file-upload">
+{{--                                <!-- Vet Certificate -->--}}
+{{--                                <div class="col-md-4 mb-5">--}}
+{{--                                    <p>Vet Certificate : </p>--}}
+{{--                                    <div class="file-upload">--}}
 
-                                        <div class="image6-upload-wrap">
-                                            <input class="file6-upload-input" type='file'
-                                                   onchange="readURL6(this);" accept="image/*"
-                                                   @change="vetCertificate"/>
-                                            <img class="img-card" src="{{ asset('images/image.png') }}"/>
-                                        </div>
+{{--                                        <div class="image6-upload-wrap">--}}
+{{--                                            <input class="file6-upload-input" type='file'--}}
+{{--                                                   onchange="readURL6(this);" accept="image/*"--}}
+{{--                                                   @change="vetCertificate"/>--}}
+{{--                                            <img class="img-card" src="{{ asset('images/image.png') }}"/>--}}
+{{--                                        </div>--}}
 
-                                        <div class="file6-upload-content">
-                                            <img class="file6-upload-image" src=""
-                                                 alt="cow-with-owner"/>
+{{--                                        <div class="file6-upload-content">--}}
+{{--                                            <img class="file6-upload-image" src=""--}}
+{{--                                                 alt="cow-with-owner"/>--}}
 
-                                        </div>
-                                        <div class="image6-title-wrap">
-                                            <button class="file-upload-btn mt-4" type="button"
-                                                    onclick="$('.file6-upload-input').trigger( 'click' )"
-                                                    style="background: #086343">Upload
-                                            </button>
-                                            <button type="button" onclick="removeUpload6()"
-                                                    class="remove-image">
-                                                <i class="fa-solid fa-circle-xmark"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
+{{--                                        </div>--}}
+{{--                                        <div class="image6-title-wrap">--}}
+{{--                                            <button class="file-upload-btn mt-4" type="button"--}}
+{{--                                                    onclick="$('.file6-upload-input').trigger( 'click' )"--}}
+{{--                                                    style="background: #086343">Upload--}}
+{{--                                            </button>--}}
+{{--                                            <button type="button" onclick="removeUpload6()"--}}
+{{--                                                    class="remove-image">--}}
+{{--                                                <i class="fa-solid fa-circle-xmark"></i></button>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
 
                             </div>
