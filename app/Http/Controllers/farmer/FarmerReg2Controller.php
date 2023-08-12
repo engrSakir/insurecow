@@ -6,6 +6,8 @@ use App\Farmer_reg_2;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class FarmerReg2Controller extends Controller
 {
@@ -37,6 +39,17 @@ class FarmerReg2Controller extends Controller
      */
     public function store(Request $request)
     {
+
+        $process = new Process(['python', app_path('Python/example.py')]);
+        $process->run();
+
+        // executes after the command finishes
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        $request['perceptual_similarity'] = (int)$process->getOutput();
+
         $inputs = \request()->validate([
             'farmname' => 'required',
             'farmername' => 'required',
@@ -61,6 +74,7 @@ class FarmerReg2Controller extends Controller
 
             'agent_employee_id' => 'nullable',
             'agent_name' => 'nullable',
+            'perceptual_similarity' => 'required|numeric|max:5'
         ]);
 
 
@@ -88,7 +102,7 @@ class FarmerReg2Controller extends Controller
         $inputs['cattle_unique_id'] = uniqid();
 
         Farmer_reg_2::create($inputs);
-        
+
     }
 
     /**

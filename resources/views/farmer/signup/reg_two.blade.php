@@ -715,14 +715,29 @@
                 // formData.set("health", this.health);
                 formData.set("price", this.price);
 
-
-                window.axios.post('{{ route('reg_two.store') }}', formData).then(el => {
-                    // console.log(el);
-                    // location.reload();
-                    alert('Data added successfully!');
-                    window.location.href = '/farmer/confirmation';
+                window.axios.post('{{ route('reg_two.store') }}', formData)
+                .then(response => {
+                    // Check if the response indicates validation errors
+                    if (response.data.errors) {
+                       // Loop through the errors and display them
+                        for (const field in response.data.errors) {
+                            const errorMessage = response.data.errors[field][0]; // Assuming you want to display only the first error message
+                            const errorElement = document.getElementById(`${field}_error`); // Assuming you have HTML elements to display the error messages
+                            if (errorElement) {
+                                errorElement.textContent = errorMessage;
+                            }
+                        }
+                    } else {
+                        // No validation errors, process success
+                        // console.log(response);
+                        alert('Data added successfully!');
+                        window.location.href = '/farmer/confirmation';
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                    // Handle other errors if needed
                 });
-
             }
         }
     })
